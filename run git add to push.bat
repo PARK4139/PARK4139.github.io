@@ -1,7 +1,8 @@
 chcp 65001
-REM @echo off
+@echo off
 setlocal
 for /f "delims=" %%i in ('Powershell.exe get-date -Format 'yyyy MM dd HH mm ss'') do set yyyyMMddHHmmss=%%i
+cls
 
 
 git add *
