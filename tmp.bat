@@ -13,4 +13,7 @@ git push -u origin main
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> status
 :: git status | find "clean"
 git status | find "clean"
-timeout 3
+
+
+
+pause
