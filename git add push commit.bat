@@ -14,6 +14,6 @@ git commit -m "%yyyyMMddHHmmss%"
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> push
 git push -u origin main
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> status
-:: git status | find "clean"
-git status | find "clean"
+:: git status | find "nothing to commit"
+git status | find "nothing to commit"
 timeout 3
