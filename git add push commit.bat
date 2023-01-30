@@ -16,4 +16,4 @@ git push -u origin main
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> status
 :: git status | find "nothing to commit"
 git status | find "nothing to commit"
-timeout 2
+pause
