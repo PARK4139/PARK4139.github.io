@@ -1,11 +1,15 @@
-
-
-eclipse error
+com eclipse error
     Server Tomcat v8.0 jadorm was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
     Servers>Tomcat v8.0 jadorm >double click>timeout>45>135
     https://ndb796.tistory.com/99
     
-    
-
-호호호....
+  
+ja web server error 
+    호호호....
     내가 손댄 페이지에 */ 가 있었다. 내가 실수한건지...확인을 하려면 기존 이력을 확인해야한다. 항상 back up 용 *.zip 을 만들어 두자.
+
+
+
+
+PIE
+모든 텍스트 파일을 intellij 에서 열어서 한번에 검색해도 되고 잘 활용해 보자
