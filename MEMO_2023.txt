@@ -4684,10 +4684,12 @@ PIE
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>       technologies keyword collection
 1.voice to text recognition technologies 
-1.1.annyang.js
+1.1.annyang.js[annyang.min.js]
+1.1.p5.speech.js
 1.1.kakao STT API.html
 1.1.naver CSS API[clova speach s..]
 TTS 클라이언트 라이브러리 _ 클라우드 TTS 문서 _ 구글 클라우드
+
 
 1.text to voice recognition technologies 
 
