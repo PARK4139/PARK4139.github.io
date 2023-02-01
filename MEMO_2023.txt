@@ -4726,7 +4726,57 @@ done 2023 02 01 11 23
 
 
 
-class path는 무엇인가?
-class path는 lib의 위치를 의미한다.
+class path는 무엇인가?>class path는 lib의 위치를 의미한다.
 
- 
+ ________________________________________________________________________________________________________________ effective keyword collection
+
+IIS 유지보수
+	u_exyyMMdd.log
+
+
+로그섬
+
+
+
+________________________________________________________________________________________________________________ withv 일일업무보고 template
+일일업무보고_박정훈_2023MMdd
+업무보고
+
+
+
+
+
+
+
+
+___________________________________________________________________________________ 20230201from박정훈_기숙사비,_보증금_환불등록_무르기
+20210721 2021 1학기 202012699 << name >>
+
+select * From MEMBER_TB where STD_NO ='202012699'
+<< id_no >>	202012699	<< name >>
+
+select * From DORM_APPLY_TB where ID_NO ='<< id_no >>' and RECRUIT_YEAR ='2021' and RECRUIT_CODE='2601000'
+
+select * From IN_AMT_TB where ID_NO ='<< id_no >>' and RECRUIT_YEAR ='2021' and RECRUIT_CODE='2601000'
+
+select * from code_tb where code_lcd='<< code_lcd >>'
+
+필요하다면 begin tran
+
+--delete From IN_AMT_TB where ID_NO ='<< id_no >>' and RECRUIT_YEAR ='<< RECRUIT_YEAR >>' and RECRUIT_CODE='<< RECRUIT_CODE >>' and IN_RETURN_CODE <>'<< IN_RETURN_CODE >>'
+
+commit
+
+___________________________________________________________________________________ DB데이터_비교_확인
+박정훈 : 환불등록_취소_전(환_취_전)
+	expence_tb
+	in_amt_tb
+
+박정훈 : 환불등록_취소_후(환_취_후)
+	expence_tb
+	in_amt_tb
+
+
+
+박정훈 : 기숙사 환불등록 취소를 한다는 의미이다.
+박정훈 : 식당의 환불등록 과는 별도의 개념이다.
