@@ -1,0 +1,1356 @@
+useful API and SDK
+
+google map API
+
+TTS API
+
+
+
+
+
+from jhpmodule import jhpfunction as jhp
+
+#jhpmodule.py
+
+jhp(x,y,a,b,c)
+
+
+
+
+
+top level package
+
+bottom level package
+
+
+
+package를 만들어 쓰자
+
+jhppkg
+
+
+
+
+
+
+
+# my python syntax docummentation
+
+
+
+
+
+
+
+
+
+data001 = ['09/05', '09/06', '09/07', '09/08', '09/09']
+
+close_price = [10500, 10300, 10100, 10800, 11000]
+
+close_table = dict(zip(date, close_price))
+
+print(close_table)
+
+print(close_table)
+
+# {'09/05': 10500, '09/06': 10300, '09/07': 10100, '09/08': 10800, '09/09': 11000}
+
+
+
+
+
+
+
+
+
+
+
+
+
+# recommand to use below modules
+
+from re import L
+
+from this import d
+
+from tkinter import N
+
+from turtle import title
+
+
+
+
+
+
+
+
+
+
+
+
+
+# variables
+
+data1 = 'jung hoon park'
+
+data2 = '100'
+
+data3 = '100.0'
+
+data4 = '100'
+
+data5 = '0'
+
+data6 = '0.0'
+
+data7 = 'pjh4139'
+
+data11 = jung hoon park 
+
+data12 = 100 
+
+data13 = 100.0 
+
+data14 = 100 
+
+data15 = 0 
+
+data16 = 0.0 
+
+data17 = pjh4139 
+
+data19 = true
+
+data20 = false
+
+data22 = [1,2,3,4,5,6]
+
+data25 = ('sky','berry','duri')
+
+data26 = (1,2,3,4,5,6)
+
+data27 = ('tommy')
+
+data30 = {'name':'sky','age':2,'Korean_dog_ID':'i_should_find_this','spicies':'래브라도_리트리버'}
+
+
+
+
+
+
+
+
+
+# list methods and built in functions for list 1/2
+
+data = [2, 4, 3, 1, 5, 10, 9]
+
+data[0]
+
+data[:]
+
+data[0:3]
+
+data[1:3]
+
+data[7:]
+
+data[:3]
+
+data[-4:-2]
+
+data[x:y]
+
+max(data)
+
+min(data)
+
+data+[100]
+
+list(seq)
+
+data.count(obj)
+
+set([1,2,3])
+
+set([4,6,5])
+
+set([1,2,3]).intersection(set([4,6,5]))             # intersection
+
+set([1,2,3]).union(set([4,6,5]))                    # union
+
+set([1,2,3]).difference(set([4,6,5]))               # difference
+
+set([1,2,3]).add(4)
+
+set([1,2,3]).remove(4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# list and string
+
+data=[]
+
+data
+
+data = ['sky','berry','duri'] + ['nori', 'chalddeog', 'pi', 'choco', 'tomy'] + ['sky'] * 5
+
+data = data + ['nori', 'chalddeog', 'pi', 'choco', 'tomy']
+
+data = data * 10
+
+data.sort(reverse=True)       # accending order
+
+data.sort(reverse=False)      # decending order
+
+data = list(reversed(data)) # reverse order
+
+data.insert(0,'first element')
+
+data.insert(0,'\n')
+
+data.insert(0,'\n')
+
+data.insert(0,'\n')
+
+data22 = '##jhp'.join(data)
+
+data22 = data22.replace("sky","하늘이")
+
+data = data22.split('##jhp')
+
+data.remove('\n')           # remove element
+
+data.insert(len(data),'last element')
+
+data = list(set(data))
+
+len(data)
+
+del data
+
+del data[0]
+
+del data[:3]
+
+del data[3:]
+
+data
+
+print(data)
+
+data=[]
+
+
+
+
+
+
+
+# list to string 1/3
+
+data = '##jhp'.join(data)
+
+data = data.replace('##jhp',' ')
+
+
+
+
+
+# list to string 2/3
+
+data22 = '##jhp'.join(data21)
+
+data22 = data22.replace('##jhp','\n')
+
+
+
+
+
+# list to string 3/3(왜 실패지? 하나의 list가 아니라 여러개의 list를 핸들링 해서 그런가?)
+
+data = '\n'.join(data)
+
+data = data.split('\n')
+
+
+
+
+
+data = data.replace("sky","하늘이")
+
+data = data.replace("##jhp","")
+
+data = data.split('##jhp')
+
+
+
+
+
+
+
+
+
+
+
+
+
+# string
+
+data22='i will be a useful and high sallary taking programmer'
+
+len(data22)
+
+count(data22)
+
+
+
+startswith()
+
+endswith()
+
+find()
+
+rfind()
+
+index()
+
+rindex()
+
+
+
+endode()
+
+decodde()
+
+
+
+isalnum()
+
+isalpha()
+
+isdigit()
+
+isnumeric()
+
+isdecimal()
+
+
+
+islower()
+
+isupper()
+
+swapcase()
+
+istitle()
+
+title()
+
+capitalize()
+
+
+
+lstrip()
+
+rstrip()
+
+strip()
+
+isspace()
+
+center()
+
+
+
+data25=()      # remove all elements of tuple
+
+
+
+splitlines()
+
+replace()
+
+zfill()
+
+ljust()
+
+rjust()
+
+
+
+
+
+
+
+
+
+
+
+data30.key()
+
+tuple(data30.key())
+
+list(data30.key())
+
+data30.items()
+
+list(data30.items())
+
+tuple(data30.items())
+
+data30.get('name')
+
+data30.get('age')
+
+data30.get('korean_dog_ID')
+
+'name' in data30
+
+'weight' in data30
+
+data30.clear()          # clear all element in dictionary  
+
+
+
+
+
+
+
+
+
+
+
+# 집합 : 중복 제거
+
+set({})
+
+set('')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# complex number
+
+data1=1+4j
+
+data1.real
+
+data1.imag
+
+data1.conjugate()
+
+abs(data1)
+
+  
+
+# bool
+
+a = 1
+
+b = 2
+
+a>b
+
+# False
+
+
+
+# tuple can't replace element easily, if we replace elements of tuple, we should convert tuple to list.
+
+# enter elements that we don't replace into tuple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# escape code that i use frequently
+
+\n       # LF
+
+\t
+
+\\
+
+\'
+
+\'
+
+\r       # CR
+
+\f       # FF : form feed, 프린터에 보내면 연속용지가 다음 페이지의 시작 부분으로 넘겨진다.
+
+\b       # backspace
+
+\a       # make beep sound at PC speaker
+
+\000     # null 문자
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ctrl shift L
+
+# ctrl shift d
+
+# ctrl d
+
+# ctrl alt arrow
+
+# shift enter
+
+# alt l
+
+# ctrl alt enter
+
+
+
+
+
+
+
+# 개발자 생태계가 구축
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+# tuple의 원소를 수정할 수 없어서 tuple을 다시 재정의 해야한다.
+
+data = ('a', 'b', 'c')
+
+data = ('A', 'b', 'c')
+
+
+
+
+
+data = (1, )
+
+list(data)
+
+tuple(data)
+
+type(data)
+
+data = ('a', 'b', 'c')
+
+list(data)
+
+
+
+
+
+
+
+tuple(range(1,101,1))
+
+tuple(range(2,102,2))
+
+tuple(range(2,100,2))
+
+
+
+
+
+
+
+
+
+
+
+# tuple 언팩킹(아마도 괄호를 벗기기 때문이지 않나 싶다.)
+
+temp = ('apple', 'banana', 'cake')
+
+a, b, c = temp
+
+print(a, b, c)
+
+print(temp)
+
+a
+
+b
+
+c
+
+print(a)
+
+print(b)
+
+print(c)
+
+
+
+
+
+
+
+a, b, *c = (0, 1, 2, 3, 4, 5)
+
+a
+
+b
+
+c
+
+
+
+scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
+
+*valid_score,_,_ = scores
+
+print(*valid_score)
+
+
+
+
+
+scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
+
+a, *valid_score, b = scores
+
+print(valid_score)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# dictionary
+
+temp = {}
+
+ice = {'메로나': 1000, '폴라포': 1200, '빵빠레': 1800}
+
+print(ice)
+
+
+
+
+
+
+
+
+
+ice = {'메로나': 1000, '폴라포': 1200, '빵빠레': 1800}
+
+ice['죠스바'] = 1200
+
+ice['월드콘'] = 1500
+
+print(ice)
+
+# {'메로나': 1000, '폴라포': 1200, '빵빠레': 1800, '죠스바': 1200, '월드콘': 1500}
+
+
+
+
+
+
+
+ice = {'메로나': 1000,
+
+       '폴로포': 1200,
+
+       '빵빠레': 1800,
+
+       '죠스바': 1200,
+
+       '월드콘': 1500}
+
+ice['메로나'] = 1300
+
+del ice['메로나']
+
+print('메로나 가격: ', ice['메로나'])
+
+
+
+
+
+
+
+inventory = {'메로나': [300, 20], 
+
+             '비비빅': [400, 3], 
+
+             '죠스바': [250, 100]}
+
+print(inventory)
+
+print(inventory['메로나'][0], '원')
+
+# 300 원
+
+print(inventory['메로나'][1], '개')
+
+# 20 개
+
+inventory['월드콘'] = [500, 7]
+
+print(inventory)
+
+# {'메로나': [300, 20], '비비빅': [400, 3], '죠스바': [250, 100], '월드콘': [500, 7]}
+
+
+
+
+
+
+
+
+
+
+
+icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
+
+ice = list(icecream.keys())
+
+price = list(icecream.values())
+
+print(ice)
+
+print(price)
+
+print(sum(icecream.values()))
+
+
+
+
+
+
+
+icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
+
+new_product = {'팥빙수':2700, '아맛나':1000}
+
+icecream.update(new_product)
+
+print(icecream)
+
+
+
+
+
+
+
+keys = ('apple', 'pear', 'peach')
+
+vals = (300, 250, 400)
+
+result = dict(zip(keys, vals))
+
+print(result)
+
+# {'apple': 300, 'pear': 250, 'peach': 400}
+
+
+
+
+
+
+
+
+
+
+
+Jung hoon par/<
+
+업종 변경도 용기가 필요하다고 생각합니다.
+
+퇴사도 용기가 필요하다고 생각합니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+번호 붙여서 나열해줘
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MATLAB Simulink seems like GUI program
+
+it is based on MATLAB language
+
+MATLAB language is based on python.
+
+MATLAB을 활용한 AI
+
+AI 모델 및 AI 시스템 설계
+
+ML, DL, 강화학습
+
+MATLAB 언어는 세상에서 가장 자연스러운 계산 수학 표현 방식
+
+행렬 기반 
+
+matlab.engine.start_matlab
+
+matlab.engine.find_matlab
+
+matlab.engine.connect_matlab
+
+
+
+matlab.engine.shareEngine
+
+matlab.engine.engineName
+
+matlab.engine.isEngineShared
+
+
+
+
+
+matlab.engine.MatlabEngine
+
+matlab.engine.FutureResult
+
+
+
+
+
+
+
+
+
+
+
+
+
+Simulink
+
+시스템 및 소프트웨어 아키텍처의 설계, 분석 및 테스트도 가능
+
+시스템을 설계하고 하드웨어로 옮기기 전에 시뮬레이션하고 코드를 작성하지 않고 배포하는 데 사용되는 블록 다이어그램 환경입니다.
+
+다이어그램으로 설계를 하면 코드를 만들어 주는 것 같은데
+
+하드웨어를 제조하기 전에 시스템 설계 및 시뮬레이션
+
+PX4 simulink
+
+
+
+
+
+etc
+
+(ubuntu)(mame emulator)
+
+(windows 10)(mame emulator)
+
+neo-geo emulator
+
+
+
+cameleon
+
+greymon
+
+kimera
+
+metamon
+
+scul greymon
+
+
+
+
+
+
+
+수중드론
+
+
+
+google drive를 이용하여 파일 백업은 집에서 하고 USB 써라
+
+
+
+
+
+
+
+
+
+
+
+
+
+a='Jung Hoon '
+
+b='Park'
+
+a+b
+
+
+
+
+
+a='love u '
+
+a*10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+한화인 웹페이지 UX가 잘되어 있는 것 같다 사용하기 편리하다. 언젠가 website 를 만들게 된다면 reverse engineering 할 가치가 있다고 느껴졌다.
+
+
+
+
+
+초등 수학부터
+
+정승제 선생님의 수학공부를 배운걸 파이썬으로 다큐멘테이션을 만들자.
+
+import math
+
+
+
+measure
+
+a=3 meter
+
+b=7 meter
+
+
+
+
+
+promise
+
+a=3
+
+b=7
+
+x=3.141592
+
+
+
+
+
+단항
+
+a=3
+
+b=7
+
+not a
+
+a=True
+
+a=False
+
+
+
+
+
+
+
+compare
+
+a>b
+
+a<b
+
+a<=b
+
+a>=b
+
+a==b
+
+a!=b
+
+1 and 1
+
+1 and 0
+
+0 and 1
+
+0 and 0
+
+1 or 1
+
+0 or 1
+
+1 or 0
+
+0 or 0
+
+
+
+
+
+x=0b1100
+
+x=0b1101
+
+x=
+
+
+
+a=116
+
+a=0b1110100
+
+a=0x74
+
+
+
+
+
+bin(116)
+
+hex(116)
+
+
+
+
+
+
+
+# 비트 연산 : 같은 자리 끼리 하는 연산 2진에서 쓰임. 6진법은 모르겠다.언제 어떻게 쓰일런지 모르겠다.
+
+
+
+1&1
+
+1&0
+
+0&1
+
+0&0
+
+
+
+1|1
+
+1|0
+
+0|1
+
+0|0
+
+
+
+# xor
+
+1^1
+
+1^0
+
+0^1
+
+0^0
+
+
+
+
+
+# shift 연산 : 언제 어떻게 쓰일런지 모르겠다.
+
+116>>1
+
+116>>2
+
+116>>3
+
+116<<1
+
+116<<2
+
+116<<3
+
+bin(116>>1)
+
+bin(116>>2)
+
+bin(116>>3)
+
+bin(116<<1)
+
+bin(116<<2)
+
+bin(116<<3)
+
+
+
+# identity 연산자 : is  갑자기 메모리 이야기가 나와서 당황스러울 수 있다.
+
+이 부분 역시 이해가 안된다면 일단 넘어가도 좋지만, 더 멋진 개발자가 되기 위해서는 다시한번 돌아와서 훑어보고 가자.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+not useful
+
+~1 : 모든 비트를 반전시킨다. 앞 자리의 0은 생략가능.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Beautiful is better than ugly)
+
+"명시적인 것이 암시적인 것 보다 낫다." (Explicit is better than implicit)
+
+"단순함이 복잡함보다 낫다." (Simple is better than complex)
+
+"복잡함이 난해한 것보다 낫다." (Complex is better than complicated)
+
+"가독성은 중요하다." (Readability counts)
+
+
+
+
+
+
+
+
+
+한글 영어 혼합된 글에서 영어만 남기는 프르고르매
+
+한글을 ""으로 대체한다.
+
+
+
+
+
+
+
+indentation	들여쓰기
+
+
+
+
+
+line break
+
+;
+
+
+
+annotation
+
+#
+
+
+
+
+
+my computer program language log table(이걸 만들자..)
+
+python shell	C shell	c++ shell java shell windows shell        linux shell
+
+
+
+
+
+
+
+
+
+
+
+
+
+def y(a):
+
+	y=a*3
+
+	print(y)
+
+	return a
+
+
+
+
+
+def y(a):
+
+	y=(a)(a//3)+(a%3)
+
+	print(y)
+
+	return a
+
+
+
+def y(a,b):
+
+	print(y)
+
+	return a+b
+
+
+
+
+
+
+
+
+
+
+
+
+

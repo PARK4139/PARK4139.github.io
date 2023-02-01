@@ -1,0 +1,63 @@
+# 자연어 처리 by using DL
+
+
+
+pip list
+
+pip freeze > installed_current_package.txt
+
+pip uninstall -r installed_current_package.txt -y
+
+pip install pipenv
+
+cd desktop
+
+cd "pipenv 001"
+
+pipenv shell
+
+pip freeze > current_package.txt
+
+pip uninstall -r current_package.txt -y
+
+pip install -r current_package.txt -y
+
+echo certifi==2021.10.8 >> current_package.txt
+
+echo distlib==0.3.4 >> current_package.txt
+
+echo filelock==3.6.0 >> current_package.txt
+
+echo platformdirs==2.5.2 >> current_package.txt
+
+echo six==1.16.0 >> current_package.txt
+
+echo virtualenv==20.14.1 >> current_package.txt
+
+echo virtualenv-clone==0.5.7 >> current_package.txt
+
+echo numpy==1.22.3 >> current_package.txt
+
+echo pipenv==2022.4.21 >> current_package.txt
+
+
+
+
+
+pip install Numpy
+pip install Pandas
+pip install scikit-learn
+pip install matplotlib
+pip install seaborn
+pip install nltk
+
+pip install tensorflow
+
+pip install gensim
+
+pip install scikit-learn
+
+pip show tensorflow
+
+
+

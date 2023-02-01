@@ -1,0 +1,90 @@
+
+spring 모듈
+	spring boot
+	spring cloud
+	spring data 
+		spring data jpa
+		spring data mybatis
+			sql mgmt
+	spring batch
+	spring sequrity
+
+spring char
+	POJO
+		object
+		java class
+	spring IoC
+		Inversion of Control
+			개발자의 객체관리권한을 spring framework의 spring container에게 넘어 갔음.
+			applicaton이 객체관리권한을 가진상태
+			did move object control from somewhere to spring container
+
+	spring DI
+		Dependancy injection
+		의존관계주입
+	spring AOP(관점중심프로그램)
+	spring PSA(이식가능한추상화)
+
+
+spring container에서 bean(web에서 사용되는 java 객체) 자동 관리 지원
+spring container에서 되도록 하는 코드 작성
+
+
+
+spring framework에서 거의 모든 리소스의 위치와 파일명 디렉토리명 패키지명은 의미가 있다. 
+멱등성(idempotent)			연산을 여러 번 적용하더라도 결과가 달라지지 않는 성질
+
+컴퓨터와 소통하는 개발자
+이 에러는 아래의 상황과 동등하다고 생각한다.
+consonle: 타임리프 쓴다고 build.gradle에 쓰기로 약속했으면서 타임리프 사용 준비해놨는데 왜 안쓰냐? 그래서 뱉은 에러다 임마.
+class 숨은코드찾기 implements 숨은그림찾기
+class 숨은패턴찾기 implements 숨은그림찾기
+
+
+
+
+
+
+
+
+spring boot annotations {
+	기본 annotations{
+		@SpringBootApplication : //app!!, use this class is set as spring boot application
+		
+		@Controller : //app!, use this class is set as view supporting controller
+		@RestController : //app!, use this class is set as RestAPI supporting controller
+		
+		@RequestMapping(path="/api") : //app!, use this class is mapped with URL as /api
+		@GetMapping(path="/try1") : //app!, use this class is mapped with http get method URL as /try1
+		@PostMapping(path="/try1") : //app!, use this class is mapped with http post method URL as /try1
+		@PutMapping(path="/try1") : //app!, use this class is mapped with http put method URL as /try1
+		@DeleteMapping(path="/try1") : //app!, use this class is mapped with http delete method URL as /try1
+		
+		@RequestParam : //app!, use this parameter is set as request parameter
+		@RequestBody : //app!, use this ? is set as request body에 있는 object를 json으로 mapping을 하기 위해 parsing하는데 쓸 수 있도록 준비시켜둬. 
+	}
+	aop 관련 annotations {
+		동작시점관련 annotations {
+			@Pointcut : set this * as 핵심 관심 메소드
+			@Before : before method execution
+			@After : after method execution regardless of whether an exception occurred or not
+			@After-returning : after method execution normaly
+			@After-throwing : after method execution eceptionally
+			@Around : 메소드 호출 이전, 이후, 예외발생 등 모든 시점에서 동작 
+		}
+	}
+	spling boot validation{}
+	spling boot validation customed{
+		@Valid : //POJO java class 검증 관련 ...
+	}
+} 
+@Pointcut
+pointcut 표현식
+	1. execution : 가장 정교한 포인트컷을 만들 수 있음 
+					  리턴타입 패키지경로 클래스명 메서드명(매개변수)
+					  
+					  
+
+
+					  
+					  

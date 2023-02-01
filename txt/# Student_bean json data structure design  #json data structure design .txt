@@ -1,0 +1,20 @@
+{
+	"model":"Student_bean"
+	"name":"박정훈"
+	"subject":[
+		{
+			"subject_name":"수학"
+			"subject_score":"90점"
+		},
+		{
+			"subject_name":"영어"
+			"subject_score":"90점"
+		},
+	]
+}
+샘플 데이터를 하드코딩하고
+데이터를 관찰하여 데이터에서 유사 패턴을 찾는다
+그룹핑하여 데이터 재정렬을 한다
+패턴을 아우를 수 있는 일반화된단어로 이름을 붙인다.
+
+

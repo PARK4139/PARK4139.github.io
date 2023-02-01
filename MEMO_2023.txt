@@ -4679,7 +4679,21 @@ PIE
 사쿠라 마나
 요시자와 아키호
 모모타니 에리카
+ 
 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>       technologies keyword collection
+1.voice to text recognition technologies 
+1.1.annyang.js
+1.1.kakao STT API.html
+1.1.naver CSS API[clova speach s..]
+TTS 클라이언트 라이브러리 _ 클라우드 TTS 문서 _ 구글 클라우드
+
+1.text to voice recognition technologies 
+
+
+1.text translation
+1.1.pypapago.py
 
 
 
@@ -4709,6 +4723,8 @@ done 2023 02 01 11 23
 
 
 
+class path는 무엇인가?
+class path는 lib의 위치를 의미한다.
 
 
 

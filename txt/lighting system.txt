@@ -1,0 +1,187 @@
+ppt로 만들것.
+
+_____________________________________________________________________________  
+
+system 01 HWCI tree
+
+1. system 01 lighting system
+
+1.1. Requrement
+
+1.2. Structure
+
+TBD start
+
+LG LED module
+
+	input is 12V TBDampare
+
+	output is TBD Lx
+
+SMPS
+
+	convert 220V 60Hz AC to 12V 0Hz DC
+
+battery
+
+power cable
+
+arduino nano
+
+wifi module
+
+12V relay module
+
+TBD end
+
+1.3. case flow
+
+1.3.1. power flow
+
+1.3.2. data flow
+
+
+
+
+
+lighting system CSCI tree
+
+
+
+1. design policy
+
+1.2. identifier allcating policy
+
+R-TBD-TBD-TBD-TBD
+
+R-LS-HWCI-TBD-0001
+
+R-LS-CSCI-TBD-0001
+
+R-LS-function-1000
+
+D-LS-function-1000
+
+T-LS-function-1000
+
+R-LS-function-2000
+
+D-LS-function-2000
+
+T-LS-function-2000
+
+1. L1
+
+2. L2
+
+3. L3
+
+
+
+1. L00
+
+2. LL0
+
+3. LLL
+
+
+
+1. L00
+
+2. 0L0
+
+3. 00L
+
+
+
+1. TBD
+
+2. TBD
+
+3. TBD
+
+
+
+identifier tree
+
+lighting system requirement identifier tree
+
+ighting system design identifier tree
+
+ighting system test identifier tree
+
+
+
+identifier chart
+
+identifier          test result
+
+
+
+
+
+
+
+development item life cycle.unreal engine
+
+
+
+_____________________________________________________________________________  
+
+total cost tree
+
+재료비
+
+인건비
+
+_____________________________________________________________________________  
+
+POSIX IPC
+
+	비교적 최근에 개발된 표준 API
+
+_____________________________________________________________________________  	
+
+수억 줄의 코드베이스
+
+코드를 오염시키는 행위
+
+언어 스타일 미준수는 매우 나쁜 행위로 ...취급되는 것 같다...
+
+_____________________________________________________________________________  
+
+rfRepeaterBot
+
+wifiRepeaterBot
+
+sensingBot
+
+_____________________________________________________________________________  
+
+sensing system
+
+_____________________________________________________________________________  
+
+arduino nano
+
+_____________________________________________________________________________  
+
+lighting alarm logic flow
+
+RFP.blend
+
+SDD.ppt
+
+STP.ppt
+
+SRS.docx
+
+file.ppt
+
+_____________________________________________________________________________  
+
+ i felt , code that written via computer language is 명시적인 ,than korean language.
+
+_____________________________________________________________________________  
+
+workresult by unreal engine

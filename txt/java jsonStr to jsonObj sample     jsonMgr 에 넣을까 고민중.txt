@@ -1,0 +1,19 @@
+User u = new User();
+ u.firstName = "Sample";
+ u.lastName = "User";
+ u.email = "sampleU@example.com";
+
+ObjectMapper mapper = new ObjectMapper();
+    
+try {
+    // convert user object to json string and return it 
+    return mapper.writeValueAsString(u);
+}
+
+  // catch various errors
+  catch (JsonGenerationException e) {
+    e.printStackTrace();
+} 
+  catch (JsonMappingException e) {
+    e.printStackTrace();
+}

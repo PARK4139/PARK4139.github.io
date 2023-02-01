@@ -1,0 +1,67 @@
+명명법
+
+전기능완전준수단어
+
+전기능미완전준수단어
+
+	초기 설계 시 전기능완전주수단어이다가 기능이 추가되어 전기능미완전준수단어가 된 경우->전기능미완전준수단어
+
+
+
+_____________________________________________________________________________  
+
+만들어 둔 property를 call하여 사용한다.
+
+만들어 둔 method를 call하여 사용한다.
+
+만들어 둔 library를 call하여 사용한다.
+
+만들어 둔 object를 call하여 사용한다.
+
+만들어 둔 framework를 call하여 사용한다.
+
+만들어 둔 fileSystem를 call하여 사용한다.
+
+만들어 둔 FHS를 call하여 사용한다.
+
+만들어 둔 DB를 call하여 사용한다.
+
+만들어 둔 data를 call하여 사용한다.
+
+만들어 둔 information를 call하여 사용한다.
+
+만들어 둔 web를 call하여 사용한다.
+
+만들어 둔 #를 call하여 사용한다.
+
+
+
+
+
+
+
+_____________________________________________________________________________  [  프로그래머들의 표현법  ] 
+
+calmel style expression
+
+paskal style expression
+
+camel case way : javascript users use this way a lot
+
+underscore case way
+
+
+
+
+
+
+
+
+
+	
+
+Computer science==전산학
+
+실수를 하지 않는 프로그래머는 없다.
+
+debugging 실력이 높은 것이 좋다.

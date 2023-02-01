@@ -1,0 +1,1692 @@
+#1st log raspberry pi os
+
+pi
+
+ENTER
+
+raspberry
+
+ENTER
+
+
+
+
+
+#(Timezone->asia,seoul      KLeyboard 105      Console Auto Login)
+
+sudo raspi-config
+
+
+
+
+
+cd pi?(이건 테스트 필요한부분이다.)
+
+
+
+update apt
+
+sudo apt update
+
+
+
+upgrade apt
+
+sudo apt upgrade
+
+
+
+
+
+sudo apt install git
+
+
+
+
+
+#INSTALL LIBRARY NODEJS
+
+sudo su
+
+curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+sudo apt install nodejs
+
+y
+
+
+
+
+
+
+
+git clone https://gitlab.com/dronecast/io.dronecast.broadcaster.git
+
+airon.develop@gmail.com
+
+theairon4@
+
+cd io.dronecast.broadcaster
+
+npm install
+
+
+
+
+
+#Permanently authenticating with Git repositories
+
+git config --system --unset credential.helper
+
+git config credential.helper store
+
+cd io.dronecast.broadcaster
+
+git pull
+
+airon.develop@gmail.com
+
+theairon4@
+
+
+
+vi ~/.profile
+
+export DEVICE_ID="[DEVICE_ID]"
+
+Drone 1: pC8wNxvIR8w4d8fbwoWZ
+
+Drone 2: 0o6ia8QVDfEgdIUcu09g
+
+Drone 3: IucXXe4nxCybzFltvrOg
+
+control O
+
+enter
+
+control x
+
+source ~/.profile
+
+
+
+
+
+crontab -e
+
+1
+
+enter
+
+* * * * * /home/pi/io.dronecast.broadcaster/shell/heartbeat.sh
+
+control o
+
+enter
+
+control x
+
+
+
+
+
+
+
+
+
+
+
+#REFER TO http://www.waailap.nl/instruction/215/setup-hifiberry-amp2.html
+
+sudo nano /boot/config.txt
+
+remove the line 'dtparam=audio=on'
+
+add the line 'dtoverlay=hifiberry-dacplus'
+
+control o
+
+enter
+
+control x
+
+
+
+
+
+#control Volume
+
+alsamixer
+
+
+
+
+
+#1 min 이내 작업 완료
+
+sudo apt install mplayer
+
+y
+
+
+
+
+
+#1 min 이내 작업 완료
+
+sudo npm i -g pm2
+
+
+
+
+
+
+
+pm2 start app.js
+
+pm2 startup
+
+
+
+shutdown now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________ ls
+
+ls
+
+ls -all
+
+ls *.txt
+
+
+
+
+
+#show permission of file
+
+ls –l file_name
+
+
+
+_____________________________________________________________ cd
+
+cd ..
+
+
+
+#change directory and looking for *.txt via full pathname
+
+cd /home/pi
+
+
+
+#change directory and looking for *.txt via relative pathname
+
+cd ~/*.txt
+
+
+
+
+
+_____________________________________________________________ mv
+
+
+
+_____________________________________________________________ cp
+
+
+
+_____________________________________________________________ rm
+
+
+
+_____________________________________________________________ chmod #change mode
+
+#test.txt에는 user에게 read,write,excute 권한을 부여 받음.
+
+chmod u=rwx,g+x test.txt
+
+
+
+chmod o=rwx,g+x test.txt
+
+
+
+chmod u=rwx,g=rx test.txt
+
+
+
+chmod a=rwx test.txt
+
+
+
+#test.txt에는 all(user,group,other)에게 r,w,x 권한을 부여
+
+chmod a=rwx test.txt
+
+
+
+#chmod 777 test.txt
+
+chmod u=rwx test.txt
+
+chmod g=rwx test.txt
+
+chmod o=rwx test.txt
+
+
+
+
+
+#chmod 4755 test.txt
+
+chmod u=rwx test.txt
+
+chmod g=rx test.txt
+
+chmod o=rx test.txt
+
+
+
+
+
+_____________________________________________________________ apt
+
+#show contents of package
+
+apt show git
+
+
+
+
+
+#show installed package 
+
+apt list --installed
+
+
+
+
+
+#show list that can available versions of packages of current hardware system
+
+apt list --all-versions
+
+
+
+
+
+#show list that something
+
+apt list --upgradable
+
+
+
+
+
+
+
+
+
+
+
+sudo apt install git
+
+sudo apt install nodejs
+
+sudo apt install mplayer
+
+
+
+sudo apt remove git
+
+sudo apt remove nodejs
+
+sudo apt remove mplayer
+
+
+
+
+
+
+
+sudo apt purge git
+
+	Purge is useful when you have messed up with the configuration of a program. 
+
+	You want to completely erase its traces from the system and perhaps start afresh. 
+
+	And yes, you can use apt purge on an already removed package.
+
+
+
+
+
+sudo apt autoremove
+
+	automatically remove all packages and libraries
+
+
+
+
+
+
+
+
+
+
+
+sudo apt update
+
+sudo apt full-upgrade
+
+
+
+
+
+_____________________________________________________________git
+
+sudo vi ~/.gitonfig
+
+
+
+git config --global user.email '아이디@이메일.com'
+
+git config --globar user.name '유저 이름'
+
+git init
+
+git remote add origin "repository 주소"
+
+
+
+
+
+
+
+git add test.txt
+
+git add --all
+
+
+
+
+
+git status
+
+
+
+
+
+#clone code from local repository to remote repository
+
+git commit -m '메시지'
+
+
+
+
+
+#clone code
+
+git push origin master
+
+git push origin branch_name
+
+
+
+
+
+git merge branch_1
+
+
+
+
+
+#clone code from remote repository to local repository
+
+git clone "repository 주소"
+
+git clone https://gitlab.com/dronecast/io.dronecast.broadcaster.git
+
+
+
+
+
+
+
+cd io.dronecast.broadcaster
+
+git pull
+
+
+
+
+
+
+
+
+
+git remote add origin server_address
+
+
+
+
+
+git checkout master
+
+
+
+git branch -d mybranch
+
+
+
+
+
+# Remove credential
+
+git config --system --unset credential.helper 
+
+
+
+# Store credential
+
+git config credential.helper store 
+
+
+
+_____________________________________________________________raspi-config
+
+sudo raspi-config
+
+set timezone to seoul
+
+set keyboard to USA
+
+SET ? TO console auto login
+
+
+
+
+
+
+
+
+
+____________________________________________________________curl
+
+curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+
+
+
+
+_____________________________________________________________pm2
+
+sudo npm i -g pm2
+
+
+
+
+
+
+
+
+
+
+
+
+
+#node.js  (app.js)   control instructions
+
+pm2 monitoring 
+
+
+
+pm2 list
+
+
+
+npm install pm2 -g
+
+pm2 version
+
+
+
+pm2 reload all
+
+
+
+
+
+
+
+pm2 start app.js
+
+pm2 startup
+
+
+
+
+
+pm2 stop all
+
+pm2 stop 
+
+
+
+
+
+pm2 log
+
+
+
+pm2 logs idle_name
+
+
+
+
+
+
+
+
+
+____________________________________________________________npm
+
+cd io.dronecast.broadcaster
+
+npm install
+
+
+
+
+
+
+
+_____________________________________________________________crontab
+
+# show editor of crontab #
+
+# crontab -e #
+
+
+
+# show current list of crontab #
+
+# crontab -l #
+
+
+
+# remove crontab #
+
+# crontab -r #
+
+
+
+# save list of crontab #
+
+# :wq enter #
+
+
+
+
+
+
+
+
+
+crontab -e
+
+* * * * * /home/pi/io.dronecast.broadcaster/shell/heartbeat.sh
+
+
+
+
+
+# excute crontab every per min #
+
+# * * * * * ls -al #
+
+
+
+# excute crontab every 45mins 5hours friday #
+
+# 45 5 * * 5 /home/script/test.sh #
+
+
+
+# excute crontab every 45mins 5hours MONDAY #
+
+# 45 5 * * 1 /home/script/test.sh #
+
+
+
+# excute crontab every 57mins 7hours WEEKDAY #
+
+# 57 7 * * 1 /home/script/test.sh
+
+# 57 7 * * 2 /home/script/test.sh
+
+# 57 7 * * 3 /home/script/test.sh
+
+# 57 7 * * 4 /home/script/test.sh
+
+# 57 7 * * 5 /home/script/test.sh
+
+# 57 7 * * 6 /home/script/test.sh
+
+
+
+# excute crontab every 57mins 7hours WEEKEND #
+
+# 57 7 * * 1 /home/script/test.sh
+
+# 57 7 * * 2 /home/script/test.sh
+
+# 57 7 * * 3 /home/script/test.sh
+
+# 57 7 * * 4 /home/script/test.sh
+
+# 57 7 * * 5 /home/script/test.sh
+
+# 57 7 * * 6 /home/script/test.sh
+
+
+
+# EXCUTE CRONTAB EVERY 7HOURS 1ST DAY #
+
+# * 7 1 * * /home/script/test.sh
+
+
+
+# EXCUTE CRONTAB EVERY 7HOURS APRIL #
+
+# * 7 1 * * /home/script/test.sh
+
+
+
+
+
+# EXCUTE CRONTAB EVERY 25th 12th month#
+
+# * * 25 12 * /home/script/test.sh
+
+
+
+# MANUALLY BACK UP CRONTAB LIST
+
+# crontab -l > /home/bak/crontab_bak.txt
+
+
+
+# AUTOMATICALLY BACK UP CRONTAB LIST EVERY 50MINS 23HOURS
+
+# 50 23 * * * crontab -l > /home/bak/crontab_bak.txt
+
+_____________________________________________________________tar
+
+#[ or ] is factor that distinguish different factors
+
+#if use tar you can reduce compresion time.
+
+
+
+# make archive
+
+# tar -cvf [createTarName.tar] [target] [target2] [...]
+
+
+
+# show archive
+
+# tar -tvf [target.tar]
+
+
+
+# make archive disable
+
+# tar -xvf [target.tar]
+
+
+
+# 아카이브 일부 삭제
+
+$ tar --delete --file=[target.tar] [deleteFileName]
+
+
+
+# 아카이브에 파일 추가
+
+$ tar -rvf [target.tar] [targetFile]
+
+_____________________________________________________________vi or nano
+
+
+
+nano ~/.profile
+
+
+
+
+
+
+
+
+
+vi ~/.profile
+
+export DEVICE_ID="[DEVICE_ID]"
+
+
+
+
+
+sudo vi /boot/config.txt
+
+remove the line 'dtparam=audio=on'
+
+add the line 'dtoverlay=hifiberry-dacplus'
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________source
+
+source ~/.profile
+
+
+
+
+
+
+
+
+
+_____________________________________________________________ alsamixer
+
+
+
+
+
+
+
+_____________________________________________________________
+
+
+
+# '>' 표준 출력 (new)
+
+# ls > test.txt # 표준 출력을 파일에 기록한다.
+
+
+
+# '>>' 표준 출력 (append)
+
+# ls >> test.txt # 표준 출력을 파일 끝에 덧붙인다.
+
+
+
+# '<' 표준 입력
+
+# read test.txt with cat instructions and show test.txt
+
+# cat < test.txt
+
+
+
+
+
+# '*' 모든 문자와 일치하는 와일드 카드 문자
+
+# test.txt, tes/123.txt 등 일치하는 모든 파일/디렉토리(내부)가 출력된다.
+
+# ls tes* 
+
+
+
+# '?' 하나의 문자와 일치하는 와일드 카드 문자
+
+# test.txt, test.txx 등 하나 일치한 파일을 출력한다.
+
+# ls test.tx?
+
+
+
+
+
+# 파이프 문자 예제
+
+# ps 명령어를 통한 표준 출력을 프로세스 정보 중 "tomcat"이 들어간 프로세스를 찾기 위해 표준 입력으로 삽입한다.
+
+# ps -ef | grep tomcat
+
+
+
+
+
+# 명령의 끝을 나타낸다.
+
+;
+
+
+
+# 이전의 명령이 실패하면 실행하는 조건문 문자
+
+|| 
+
+
+
+# 이전의 명령이 성공하면 실행하는 조건문 문자
+
+&&
+
+
+
+# 명령을 백그라운드에서 실행한다.
+
+& 
+
+
+
+# 변수에 접근할 수 있는 문자
+
+$ 
+
+
+
+
+
+# stdin (표준 입력)
+
+0 
+
+
+
+# stdout (표준 출력)
+
+1 
+
+
+
+# stderr (에러 출력)
+
+2 
+
+
+
+# 표준 에러 리다이렉션 ( stderr 만 출력 )
+
+$ ./test.sh >> ./test.log 2>&1
+
+
+
+# 표준 출력이 필요 없다.
+
+$ ./test.sh >> /dev/null 2>&1
+
+__________________________________________________________SSH
+
+#Secure Shell
+
+#네트워크 프로토콜
+
+$ ssh user@hostname
+
+$ ssh user@127.0.0.1
+
+
+
+show .ssh directory
+
+$ cd ~/.ssh
+
+
+
+show file of .ssh directory
+
+ls -al
+
+
+
+
+
+make SSH rsa KEY
+
+ssh-keygen -t rsa -b 4096 -C "myname@mydomain.com"
+
+
+
+
+
+SHOW context of id_rsa.pub
+
+cat id_rsa.pub
+
+
+
+
+
+SHOW context of id_rsa
+
+cat id_rsa
+
+-----BEGIN RSA PRIVATE KEY-----
+
+...
+
+-----END RSA PRIVATE KEY-----
+
+
+
+
+
+
+
+input hss-rsa_key into the authorized_keys directory(can access withous passwords)
+
+vi authorized_keys
+
+ssh-rsa ...
+
+....== jdm@jdm.kr
+
+ssh-rsa ...
+
+....== other@other.host
+
+
+
+
+
+access B.host
+
+$ ssh root@B.HOST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5V 3A ADAPTER(WITH USB FEMALE PORT)
+
+5V 3A ADAPTER(WITH USB FEMALE PORT)
+
+CLEAN PACK SIZE1
+
+CLEAN PACK SIZE2
+
+MICRO 32GM SD CARD
+
+MICRO 32GM SD CARD
+
+
+
+
+
+
+
+
+
+MISSION EQUIPMENT USER MANUAL---------------------------------------
+
+MISSION EQUIPMENT OVERVIEW
+
+USER GUIDE
+
+USER OPERATION
+
+TROUBLESHOOTING
+
+
+
+
+
+
+
+PREPARATION CHECK LIST-------------------------------------------------------
+
+PURCHASE 32GB MICRO SD CARD
+
+PURCHASE SD CARD READER
+
+PURCHASE HDMI CABLE
+
+PURCHASE 5V 3A POWER SUPPLY
+
+PURCHASE USB C CABLE
+
+PURCHASE RASPBERRY PI 4 VER B
+
+PURCHASE HIFI BERRY AMP2 1.1v
+
+PURCHASE WIRED KEYBOARD
+
+PURCHASE WIRED MOUSE
+
+PURCHASE COMPUTER
+
+PREPARE INTERNET ENVIRONMENT
+
+DOWNLOAD RASPBERRY PI OS
+
+UNZIP  RASPBERRY PI OS
+
+DOWNLOAD RASPBERRY PI IMAGER 
+
+INSTALL  RASPBERRY PI IMAGER
+
+OPEN  RASPBERRY PI IMAGER
+
+FORMAT 32GB MICRO SD CARD AS FAT32
+
+LOAD RASPBERRY PI OS IMAGE
+
+
+
+
+
+
+
+______________________________________________________showing something
+
+ls
+
+ls -all
+
+
+
+#SHOW raspberry pi hardware ver.
+
+cat /proc/device-tree/model
+
+
+
+#SHOW raspberry pi os ver.
+
+cat /etc/*release*
+
+
+
+#SHOW os bit type.
+
+getconf LONG_BIT
+
+
+
+
+
+#SHOW general inforamation(kernel version,CPU TYPE OF RASPBERRY_PI
+
+uname -a
+
+
+
+
+
+#SHOW current linked wifi information
+
+iwconfig
+
+
+
+
+
+#SHOW SCANNED WIFI AROUND HERE
+
+sudo iwlist wlan0 scan
+
+
+
+
+
+#SHOW ACCOUNTS
+
+whoami
+
+
+
+
+
+#SHOW DATA FROME REMOTE
+
+curl --output
+
+
+
+#show http header without showing content
+
+curl --head
+
+
+
+#SHOW PSK OF WIFI
+
+wpa_passphrase WIFI_NAME WIFI_PASSWORD
+
+
+
+
+
+#MAKE DIRECTORY
+
+mkdir directory_1
+
+
+
+
+
+
+
+
+
+
+
+
+
+download something by using cURL instructions
+
+curl
+
+
+
+upload something by using cURL instructions
+
+curl
+
+
+
+
+
+install rpi-imager by using apt instructions
+
+sudo apt install rpi-imager
+
+
+
+by using wget
+
+wget
+
+
+
+
+
+
+
+REBOOT RASPBERRY_PI
+
+sudo reboot
+
+
+
+
+
+CHANGE DIRECTORY
+
+cd
+
+
+
+CHANGE DIRECTORY
+
+cd..
+
+
+
+
+
+CHANGE DIRECTORY
+
+cd sub_directory_1
+
+
+
+
+
+
+
+SPECIFY CURRENT_DIRECTORY AS GIT REPOSITORY
+
+git init
+
+
+
+git clone REMOTE_REPOSITORY_ADDRESS
+
+
+
+
+
+add file_1
+
+git add file_1
+
+
+
+git commit -m "new file" 
+
+
+
+git reset
+
+
+
+show current_branch_name, added_file, changed_file, directory_list
+
+git status
+
+
+
+git push
+
+
+
+
+
+git config --global user.name "user_name"
+
+
+
+git config --global user.email "e_mail_address"
+
+
+
+
+
+
+
+
+
+
+
+
+
+TTS.mp3
+
+
+
+rm -r file.txt
+
+
+
+
+
+
+
+sudo nano app.js
+
+
+
+echo $DEVICE_ID
+
+
+
+
+
+
+
+REMOVE 46TH LINE
+
+
+
+
+
+close with saving
+
+
+
+
+
+$DEVICE_ID
+
+PS
+
+SP
+
+
+
+
+
+_______________________________________________________________
+
+authrized GitLab accounts 
+
+id: airon.develop@gmail.com
+
+pw: theairon4@
+
+
+
+
+
+dronecast.io accounts for airon
+
+id: demo@dronecast.io
+
+pw : tester
+
+DEVICE_Key
+
+Drone 1: pC8wNxvIR8w4d8fbwoWZ
+
+Drone 2: 0o6ia8QVDfEgdIUcu09g
+
+Drone 3: IucXXe4nxCybzFltvrOg
+
+
+
+
+
+
+
+
+
+dronecast.io accounts for DMI 
+
+id : dmi@dronecast.io
+
+PW : tester
+
+
+
+_______________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+show branch
+
+git branch
+
+
+
+
+
+make branch
+
+git branch subdir01
+
+
+
+
+
+?
+
+git checkout -b subdir01
+
+
+
+git checkout master
+
+
+
+git checkout master git merge bug_fix
+
+
+
+
+
+bring master from origin
+
+git checkout master git pull origin master
+
+
+
+
+
+git merge subdir01
+
+
+
+
+
+show remote_repository
+
+git remote -v
+
+
+
+make name_1 repository
+
+git remote add name_1
+
+
+
+remove name_1 repository
+
+git remote rm name_1
+
+
+
+?
+
+git pull
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SWITCH USER FROM CURRENT_ADMIN TO ANOTHER_ADMIN(환경변수 유지,환경변수 미유지)
+
+su another_admin
+
+su - another_admin
+
+su root
+
+su - root
+
+
+
+
+
+SWITCH USER FROM CURRENT_USER TO PREVIOUS_USER
+
+logout
+
+exit
+
+
+
+
+
+
+
+troubleshooting related to wifi----------------------------------------
+
+
+
+WIFI_ISSUE
+
+RASPBERRY PI MENU/preferences/raspberry pi configuration/localisation/wifi contry #TRY TO CHANGE WIFI CONTRY TO KOR,UK,IT,USA,KOR AND CHECK THAT IT IS WORK.
+
+
+
+
+
+update problem
+
+do not use sudo apt-get upgrade
+
+use sudo apt full-upgrade
+
+
+
+
+
+
+
+
+
+
+
+
+
+troubleshooting
+
+#not genearte TTS.mp3
+
+#PERMISSION PROBLEM
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________
+
+주문
+
+
+
+lte 에그 np30k   np30u  np30
+
+https://www.coupang.com/np/search?component=&q=lte+%EC%97%90%EA%B7%B8&channel=user
+
+SPEAKER
+
+SPEAKER
+
+SPEAKER
+
+DISPLAY
+
+DISPLAY
+
+DISPLAY
+
+
+
+
+
+3마스터 냉장고 청소
+
+케빈 요청벡스코 업체 조사 공유
+
+
+
+
+
+
+
+reducing raspberry pi os.img
+
+$ sudo apt-get autoclean
+
+: 불안전하게 다운로드된 패키지나 오래된 패키지의 삭제.
+
+$ sudo apt-get clean
+
+: 디스크 공간 확보를 위해 /var/cache/apt/archives/ 에 캐쉬된 모든 패키지 삭제
+
+
+
+
+
+
+
+
+
+
+
+
+

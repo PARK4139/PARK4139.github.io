@@ -1,0 +1,35 @@
+______________________________________________________________________________________  <  search keyword  >
+______________________________________________________________________________________  <  #for indexing  >
+______________________________________________________________________________________  <  #for finding  >
+______________________________________________________________________________________  <  search keyword in alphaDB.txt  >
+______________________________________________________________________________________  <  useful keywords collectionDB for searching data at alpha.java >
+루틴아이디어
+marker 2022 07 21 09 33
+marker100
+marker200
+smart
+windows 10 smart security
+shortest
+policy
+object
+javaPrograms
+java programs
+java
+html
+facts
+basic
+[ js ]
+[ html ]
+[ css ]
+[ \d{3} ]
+[ \S{5} ]
+DB
+8051
+(temporary marker)
+(event)
+ java 
+  java  
+ DBMS 
+ ( label )
+( button )
+name

@@ -1,0 +1,745 @@
+cockpit
+
+flightcrew station
+
+
+
+instrument panel
+
+
+
+avionics
+
+
+
+MFD(
+
+
+
+system selft test
+
+falut list
+
+
+
+Instrument is maden by designer to make pilot recognize parameter of aircraft easily
+
+
+
+instrument system	//Instrument is consist of 3 element
+
+	indicating element//		indicating element is in cockpit and flightcrew station
+
+	enlarging element
+
+	sensing element
+
+
+
+
+
+
+
+airspeed indicator from pneumatic sensor
+
+	indicating air speed(IAS)
+
+			압력눈금 대신 speed 눈금으로 표시
+
+	marking of indicator
+
+		slip page marking
+
+		white 방사선
+
+			유리가 미끄러졌는지를 확인하기 위해 표시
+
+		red 방사선
+
+			최대 및 최소 운용한계 range
+
+		녹색 arc line
+
+			안전 운용 range
+
+		노란색 arc line
+
+			초과 금지까지의 경계 또는 경고 range
+
+		푸른색 arc line
+
+			연료와 공기 혼합비가 오토린일 때 상용 안전 운용 버위
+
+		white arc line
+
+			플랩 조작에 따른 aircraft의 speed range
+
+
+
+직독식 instrument system
+
+	indicator와 sersor가 따로 변환되지 않고 직접 연결이 되어 바로 indicating
+
+
+
+remote indicating instrument system
+
+	sensing element로 부터 mechanical 변위 or 직선 변위를 electrical signal로 바꾸어 electrical wire를 통하여 indicating element에 전달
+
+		오토신()
+
+			회전자도 교류전자석, 교류작동?
+
+		마그네신(magnesyn)
+
+			회전자로 영구자석 사용, 교류전원 공급
+
+		DC self synchronizing(DC sel-syn)
+
+			회전자로 영구자석 사용, 직류전원 공급
+
+
+
+instrument system
+
+	Engine Indications and Crew Alerting System(EICAS)
+
+		pilot에게 Engine status,유압, 공기압, 방빙, 환경제어 시스템의 경고 상태를 display system. 
+
+		engine status parameter
+
+			RPM
+
+			ITT엔진 내부 온도
+
+			Fuel Flow
+
+			Fuel Quantity
+
+			Oil Pressure
+
+		
+
+	Full Authority Digital Electronics(또는 Engine) Control(FADEC)
+
+		digital computer
+
+		Electronic Engine Control(EEC) or Electronic Control Unit(ECU) 불림
+
+
+
+
+
+
+
+
+
+
+
+Callibration air speed(CAS)
+
+	pneumatic sensor로부터 sensed signal을 computer를 거쳐 IAS에 기계적 error 수정
+
+equivalient air speed(EAS)
+
+	CAS에 공기의 압축성 고려
+
+True air speed(TAS)
+
+	EAS에 altitude 변화에 따른 밀도변화 수정
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+kinds of instrument
+
+	mechanical instrument
+
+	전기적 instrument
+
+	전자적 instrument
+
+	gyro instrument
+
+		rate of turn indicator
+
+			procession
+
+		directional gyro indicatior
+
+			rigidity
+
+		자이로 수평지시계
+
+			rigidity
+
+			procession
+
+		inclinometer
+
+			구부러진 유리관 속에서 강철 볼이 선회시 원심력에 의해 아래로 쳐지짐
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+types of instrument
+
+	1) Flight Instrument
+
+		attitude indicator
+
+			aircraft atitude
+
+		airspeed indicator
+
+			aircraft airspeed
+
+		attitude and direction indicator
+
+		rate of turn indicator
+
+		direction indicator
+
+			aircraft altitude
+
+	2) Engine Instrument
+
+		Engine
+
+		engine 제외 system 동력장치
+
+	3) Radio/Navigation Instrument
+
+		aircraft speed
+
+		aircraft 진로
+
+		aircraft position
+
+		aircraft 방위
+
+	4) etc instrument
+
+		flap position indicator
+
+		Liquid oxygen quantity indicator
+
+		AOA indicator
+
+		AOA indexer
+
+		malfunction light
+
+		inclinometer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+instrument system
+
+	    2) instrument 장?탈착/취급시 주의사항 준수 여부
+
+	     * Jetcal Test
+
+		
+
+
+
+error of instrument system
+
+	aviation instrument들은 aircraft의 운용 range가 넓기 때문에 여러 가지 환경변화에 의해 error가 발생되며 error란 instrument지시와 실제 지시치와의 차이를 말하며 종류는 다음과 같다.
+
+	Frictional Error
+
+		indicating element 또는 enlarging element의 미끄럼 Joint간의 마찰 저항에 의한 것
+
+		으로 보석 Bearing(BRG)(example : Sapphire)을 사용함으로써 감소시킬 수 있다.
+
+		이 error를 엔진으로부터 오는 VIBRATION이 이를 해소시키는데 좋은 효과를 준다.
+
+		매우 적은 vibration appear on engine of 제트기
+
+		마찰에 의한 frictional error의 해소 목적으로 
+
+		특정 instrument에 VIBRATOR를 단다. (example altimeter)
+
+	Leakage Error
+
+		      instrument Case나 배관의 밀봉 불충분으로 생기는 것으로 동-정압 계통 및 압력 계 기에서 흔히 나타나는 error이다.
+
+	Thermal Error
+
+		      instrument 주위의 온도가 instrument를 Calibration 할 때의 표준 온도와 다른데 기인하는 것으로
+
+		      가) 기계적 구성품의 수축, 팽창 등에 의한 것.
+
+		      나) Collapsible Chamber나 스프링의 탄성율 변화에 의한 것.
+
+		      다) 대기의 온도가 표준 대기와의 차이에 의한 것.
+
+		      가), 나)의 사항은 주로 Bi-Metal로 된 온도보상장치에 의해 -30 ℃～ +50 ℃ 간의 것은 상온error라 하여 자동 수정되며, 다)의 사항은 공기 밀도에 영향을 미치므로 해서 생기는 error이며 반드시 계산 수정해야 한다.
+
+	Elastic Error
+
+		      Creep Strength(포복 강도) of material 에 의한 것으로 altimeter 등에서 볼 수 있는 error이다.
+
+	Vibration Error
+
+		      vibration of instrument panel 이나 가동부의 불량에 의해 생기는 needle의 Fluctuation(요동)을 말한다.
+
+	error by installed position(장착오차)
+
+		      instrument 장착에 잘못이 있든지 aircraft의 atitude 변화에 따라 생기는 error로 instrument 내의 가동부가 불평되게 되며 이는 진동error의 원인이 되기도 한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pitot-static pressure system
+
+	airspeed indicator
+
+		diaphram
+
+		베르누이 정리
+
+	rate of climb indicator
+
+		aneroid
+
+	altimeter
+
+		aneroid
+
+
+
+
+
+
+
+
+
+
+
+vibrator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aviation instrument system maintenance
+
+
+
+
+
+removal
+
+installation
+
+취급
+
+test
+
+functional check
+
+operational check
+
+		      
+
+trouble이 발생한 경우에는 해당 instrument의 정비 지침서에 따라서 
+
+right troubleshooting에 의한 수리를 실시
+
+
+
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+kinds of sensor
+
+	fuel pressure transmitter
+
+		diaphram or two bellows
+
+	hydraulic oil pressure transmitter
+
+		burbon tube
+
+	airspeed indicator
+
+		diaphram
+
+	rate of climb indicator
+
+		aneroid	
+
+	altimiter
+
+		aneroid
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+magnetic compass
+
+	error of magnetic compass
+
+		정적 error
+
+			반원차 : 수평철재 및 전류에 의한 error
+
+			사분원차 : 수평철재에 대한 error
+
+			불이차 : 제작상 error or 장착 잘못에 따른 error
+
+		동저 error
+
+			북선error(선회error) : 선회시 카드면과 비행기 atitude에 따른 error
+
+			가speederror : 가속에 따른 컴퍼스 카드면의 흐트러지는 error
+
+			와동error : aircraft의 불규칙적인 움직임으로 발생하는 error
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+gyro
+
+	rigidity
+
+		외부에서 힘이 가해지지 않는 한 항상 같은 atitude를 유지하려는 성질
+
+	precesstion	
+
+		외부에서 가해진 힘의 방향과 90°뒤쳐진 방향으로 atitude가 변하는 성질
+
+
+
+
+
+
+
+
+
+
+
+
+
+white arc line
+
+	  대기speed계에 사용되는 색표식으로써 최대 착륙 하중시의 실속speed에서 FLAP을 내릴 수 있는 speed까지의 range.
+
+	  수치가 작은 하한점이 실속speed이고 수치가 큰 상한점이 FLAP을 내리더라도 강도상 문제가 없는 FLAP 내림 최대speed이다.
+
+
+
+
+
+
+
+aircraft speedinstrument 중 백색arc line이 의미하는 뜻은?
+
+	  답 : 최대착륙 중량시의 실속speed에서 Flap을 Down 시킬 수 있는 speed까지의 range
+
+	       적색방사선 표시지시(Barber Pole) : 최대운용 한계speed
+
+
+
+Pitot Tube Heating trouble시 발생하는 결함은?
+
+	   답 : Pitot Tube에 Icing이 생김으로써 관련 Air Speed instrument, Air Data Computer, 여압계통, Auto Pilot 등에 trouble
+
+
+
+
+
+Static Port가 동체 양면에 있는 이유는?
+
+	   답 : 선회시에도 정압의 변동이 없기 때문에 지시에 error 유발이 없다.
+
+	이것도 문제가 이상한거 아니야?
+
+
+
+
+
+
+
+Pitot Tube가 막혔다면 그 조치
+
+	   답 : Pitot의 동정압계통이 작동하지 못하므로 airspeed indicator,rate of climb indicator,altimeter가 작동 못함
+
+	문제가 이상한데요....
+
+	이 답은 조치가 아니에요...결과적인 부분아닌가요?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+altimeter
+
+	kinds of altitude
+
+		true altitude
+
+			from sea level
+
+		absolute altitude
+
+			from 지형
+
+		기압 altitude
+
+			from standard atmospere at standard sea level 29.92inHg 로부터
+
+	calibration of altimeter
+
+		- QNE 보정 : 표준 대기압 (29.92inHg)를 기준으로 altitude지시 - 기압altitude
+
+		              고altitude나 해상 비행시 14000ft이상에서 사용
+
+		- QHE 보정 : altitude계가 활주로 표고를 지시하도록 보정 - 진altitude
+
+		              altitude가 14000ft 미만에서 사용
+
+		- QFE 보정 : 활주로 위를 기준으로 altitude지시
+
+
+
+
+
+
+
+
+
+
+
+
+
+indicator removal
+
+	instrument의 지시 불량 maybe or not instrument의 trouble.
+
+	이럴 경우에는 우선 instrument 지시 불량의 원인을 instrument 계통 전반에 걸쳐 살펴보고, 그 결과 지시 불량의 원인이 instrument라는 것이 확인되었을 때 instrument를 장탈 한다.
+
+
+
+
+
+
+
+indicator removal
+
+	removal order
+
+		가) 전원, 고압 작동유와 관련 있는 동력원을 차단한다.
+
+		나) 장탈 instrument의 명칭, 형식, 제작사명, 제조 번호, 최종 수리 날짜 및 수리자 명을 기록한다.
+
+		다) 장탈 할 때에 연결된 배선, 배관은 다시 연결할 때 혼동되지 않게 꼬리표(Tag)를 붙이고 해당 회로명도 기록한다.
+
+		라) instrument의 배관, 배선을 떼어 내고 구멍을 전용 캡(Cap)이나 플러그(Plug)로 막는다. 만일, 이것들이 없을 때에는 비닐을 사용해서 고무줄로 묶는다.
+
+		마) 나사를 풀고 instrument를 instrument판에서 떼어 낸다.
+
+		바) 장탈 한 instrument에는 사용 불능(Un Serviceable)이라고 꼬리표에 기록하고, 그 이유를 기록하여 나중에 참고할 수 있게 한다.
+
+		사) 만일, 지정된 케이스가 있을 때에는 케이스에 넣어 운반한다.
+
+	installation of indicator
+
+		1.instrument를 장착할 때에는 instrument에 Serviceable(사용 가능)이라고 tag(꼬리표)에 표시되어 있는지 반드시 verify
+
+		2.장탈 할 때의 반대의 순서로 장착한다.
+
+	장착이 끝난 후에는 다음 사항을 확인한다.
+
+		가) 장탈시의 꼬리표와 비교, 확인해서 잘못 연결하지 않았는지 확인한다.
+
+		나) 배관 방법이 올바르게 되었는지 확인한다.
+
+		다) 배선에 잘못된 굽힘이나 죔이 없는지 확인한다.
+
+		라) 작동 시험을 한다.
+
+		마) 시험이 끝나면 배관, 배선에 단 꼬리표를 떼어 낸다.
+
+
+
+
+
+
+
+pitot-static pressure system leaking check
+
+	Vacuum/pressure,
+
+	전기적으로 작동하는 instrument의 동력 시스템 검사 trouble탐구
+
+	Vacuum powered instrument which senses pitching and rolling movements about the airplanes lateral and longitudinal axes.

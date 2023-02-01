@@ -1,0 +1,11 @@
+0 directory_list.txt
+1 [SubsPlease] Boku no Hero Academia - 120 (1080p) [AC17168E].mkv
+2 [SubsPlease] Boku no Hero Academia - 121 (1080p) [EA06602A].mkv
+3 [SubsPlease] Yuru Camp Movie (1080p) [547C8607].mkv
+
+
+
+
+ren 1.mkv "[SubsPlease] Boku no Hero Academia - 120 (1080p) [AC17168E].mkv"
+ren 2.mkv "[SubsPlease] Boku no Hero Academia - 121 (1080p) [EA06602A].mkv"
+ren 3.mkv "[SubsPlease] Yuru Camp Movie (1080p) [547C8607].mkv"

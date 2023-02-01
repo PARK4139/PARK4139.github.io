@@ -1,0 +1,4935 @@
+/*********************************************
+
+Project     : ADC_Single
+
+Version     : V1.0
+
+Date        : 2006.04.01
+
+
+
+cHIP        : ATmega128
+
+	Clock       : 16MHz
+
+
+
+Author      : Kim Jong Hyung
+
+Company     : AvrMall.com
+
+Comments    : ADC Single Serial test Program
+
+
+
+*********************************************/
+
+
+
+#include <mega128.h>
+
+#include <stdio.h>
+
+#include <delay.h>
+
+
+
+#define ADC_START ADCSRA.6=1
+
+#define ADC_CHECK ADCSRA.6=0
+
+#define ADC_EOC ADCSRA.4
+
+
+
+char flash TITLE[] = "\n\rM128KIT V2.0 ADC TEST1";
+
+
+
+unsigned int adc_data[7];  // ADC Value variable
+
+
+
+// ADC Single Mode
+
+void ADC_Init(int channel)
+
+{
+
+        ADMUX = channel;
+
+        ADCSRA = 0x86;   //ADCEN, xtal/64
+
+}
+
+
+
+void adconversion(int ch)
+
+{
+
+        ADC_Init(ch);
+
+        ADC_START; //ADC_START 
+
+        //ADCSRA.6=1
+
+        while(!(ADC_EOC)); //ADC_Convertion         
+
+        adc_data[ch]=ADCW; //ADCH, ADCL
+
+}
+
+
+
+void send_prompt(void)
+
+{
+
+        printf("\r>>");
+
+}
+
+
+
+void main(void)
+
+{        
+
+        unsigned int adc_value;
+
+
+
+        // Ports init 
+
+        DDRB = 0xff;   // output Port
+
+        DDRF = 0x00;   // input Port 
+
+        
+
+        // Timer(s)/Counter(s)
+
+        TIMSK=0x40;
+
+
+
+        // USART init
+
+        UCSR0A=0x00;
+
+        UCSR0B=0x18;
+
+        UCSR0C=0x06;
+
+        UBRR0H=0x00;
+
+        UBRR0L=0x67;//(xtal - 16MHz)
+
+        //UBRR0L=0x33;//(xtal - 8MHz)
+
+
+
+        putsf(TITLE);
+
+        send_prompt();
+
+
+
+        while(1)
+
+        {                               
+
+               adconversion(0);
+
+               printf("\n\rad ch0 value : %02d",adc_data[0]);
+
+               
+
+               adc_value = (float)((adc_data[0]*5/1024))*10;
+
+               printf("\n\rad ch0 voltage : %02d",adc_value);
+
+                                              
+
+               delay_ms(2000);  
+
+                        
+
+               //adconversion(1);
+
+               //printf("\n\rad ch1 value : %02d",adc_data[1]);
+
+               
+
+               //delay_ms(2000);
+
+        }
+
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OCR site
+
+	http://ocr.retia.co.kr/
+
+	í•˜ë£¨ 10íšŒ ì œí•œ
+
+
+
+
+
+software
+
+	ì•„í¬ë¡œë²³ í”„ë¡œ
+
+		OCR ì§€ì›
+
+	JOCR
+
+		20ê°œêµ­ì˜ ë¬¸ìë¥¼ ì¸ì‹
+
+		ì‹¤í–‰íŒŒì¼ í¬ê¸°ëŠ” 82KB ì— ë¶ˆê³¼
+
+		'recognize'ë²„íŠ¼ì„ í´ë¦­í•˜ë©´ ê°„ë‹¨í•œ ì„¤ì¹˜ ê³¼ì •ì´ ì§„í–‰ë©ë‹ˆë‹¤.
+
+		 ì‚¬ìš©ë²•ì€ í”„ë¡œê·¸ë¨ì„ ì‹¤í–‰í•œ í›„ 
+
+		ì´ë¯¸ì§€ë‚˜ PDF íŒŒì¼ì„ ì»´í“¨í„°ì— ë„ì›Œë†“ê³  ì»´í“¨í„° í™”ë©´ì„ ìº¡ì³í•©ë‹ˆë‹¤.
+
+		ì´ë¯¸ì§€ ì†ì— í¬í•¨ ëœ ì–¸ì–´ì˜ ì¢…ë¥˜ë¥¼ ì„ íƒí•©ë‹ˆë‹¤.
+
+		â€˜recognizeâ€™ë²„íŠ¼ì„ í´ë¦­í•©ë‹ˆë‹¤.
+
+	A-PDF OCR
+
+		30ì¼ ë°ëª¨
+
+	video editor
+
+		VirtualDub
+
+	audacity
+
+		MP3ë¡œ ì œì‘ëœ ìŒì•…ì´ë‚˜ ìŒì„±íŒŒì¼ì—ì„œ ì›í•˜ëŠ” ë¶€ë¶„ë§Œ ì˜ë¼ë‚´ëŠ” í”„ë¡œê·¸ë¨ìœ¼ë¡œëŠ” ë¬´ë£Œë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” audacity ê°€ ê°€ì¥ ì˜ ì•Œë ¤ì ¸ìˆë‹¤
+
+		ê·¸ëŸ¬ë‚˜  MP3 ìŒì›ì—ì„œ íŠ¹ì •ë¶€ë¶„ë§Œ ì˜ë¼ë‚¼ ë•ŒëŠ” ì‚¬ìš©ë²•ì´ ì•½ê°„ ë³µì¡í•˜ê³  í”„ë¡œê·¸ë¨ì´ ì—†ëŠ” ê³³ì—ì„œëŠ” ì‘ì—…í•˜ê¸°ê°€ í˜ë“¤ë‹¤.
+
+	magicone
+
+		video editor
+
+	itunes
+
+		http://www.apple.com/itunes/
+
+		ë¯¸êµ­ ìœ ëª…ëŒ€í•™ì˜ ê°•ì˜ë¥¼ í˜„ì¬ ë¬´ë£Œë¡œ ì œê³µí•˜ê³  ìˆë‹¤.
+
+		ë¯¸êµ­ëŒ€í•™ ê°•ì˜ë¥¼ ë“£ê³  ì‹¶ìœ¼ë©´ ì¼ë‹¨ itunesì— ê°€ì„œ ìµœì‹  itunesí”„ë¡œê·¸ë¨ì„ ë‹¤ìš´ ë°›ëŠ”ë‹¤.
+
+		ë‹¤ìš´ë°›ì€ í”„ë¡œê·¸ë¨ì„ ì„¤ì¹˜í•˜ê³  ë‚˜ë©´ í”„ë¡œê·¸ë¨ ì‹¤í–‰ì°½ ì¢Œì¸¡ì— itunes storeê°€ ë³´ì¸ë‹¤. ì´ê²ƒì„ í´ë¦­í•˜ë©´ ê°€ì…ì ˆì°¨ê°€ ì§„í–‰ë˜ëŠ”ë° ì¹´ë“œë²ˆí˜¸ì™€ ì£¼ì†ŒëŠ” ìŒì•…ì„ êµ¬ì…í•  ê²ƒì´ ì•„ë‹ˆë©´ ì·¨ì†Œí•´ë„ ëœë‹¤. 
+
+		ê°€ì…ì ˆì°¨ê°€ ëë‚˜ë©´ itunes store í™”ë©´ì´ ë©”ì¸ì— ëœ¨ëŠ”ë° ë§¨ì•„ë˜ itunes U ë¥¼ í´ë¦­í•˜ë©´  10ì—¬ê°œê°€ ë„˜ëŠ” ë¯¸êµ­ì˜ ìœ ëª…ëŒ€í•™ ëª…ë‹¨ì´ ì•„ë˜ì— ë‚˜ì˜¨ë‹¤
+
+		ë§˜ì— ë“œëŠ” ëŒ€í•™ê³¼ ê°•ì˜ë¥¼ ì„ íƒí•˜ê³  'ì–»ê¸°'ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì¢Œì¸¡ì— ë“£ê³ ì í•˜ëŠ” ëŒ€í•™ ê°•ì˜ëª©ë¡ì´ ë‚˜ì˜¤ê³  ì–¸ì œë“ ì§€ ì¸í„°ë„· ì—°ê²°ìƒíƒœì—ì„œ í´ë¦­í•˜ë©´ ë“¤ì„ ìˆ˜ ìˆë‹¤.
+
+
+
+ìš”ì¦˜ì—ëŠ” ì„¤ì¹˜ê°€ í•„ìš”ì—†ëŠ” ì›¹ì–´í”Œë¦¬ì¼€ì´ì…˜ì´ ëŒ€ì„¸
+
+	image fileì„ GIFë¡œ ë§Œë“¤ì–´ì£¼ëŠ” ì›¹ì–´í”Œë¦¬ì¼€ì´ì…˜
+
+		http://www.gickr.com/
+
+	smashing magazine
+
+		photoshop tutorial!! 
+
+		ì´ì™¸ì—ë„ ì›¹ë””ìì¸, ë¸”ë¡œê·¸ ë””ìì¸ì— ëŒ€í•œ ë‹¤ì–‘í•˜ê³  í’ë¶€í•œ ì •ë³´ë¥¼ ê°€ì§€ê³  ìˆë‹¤.
+
+		ì›¹ë””ìì¸ì— ê´€ì‹¬ì´ ë§ë‹¤ë©´  ë°˜ë“œì‹œ ë¶ë§ˆí¬ í•´ë‘ì–´ì•¼ í•  ì‚¬ì´íŠ¸ë‹¤.
+
+	Tune find
+
+		ì˜í™”ë‚˜ ë“œë¼ë§ˆì— ì‚½ì…ëœ ì˜¤ë¦¬ì§€ë„ ì‚¬ìš´ë“œ íŠ¸ë™ë¶€í„° ì‚½ì…ê³¡ì— ì´ë¥´ê¸°ê¹Œì§€ ì‚¬ìš©ëœ ëª¨ë“  ìŒì•…ì„ ì•„í‹°ìŠ¤íŠ¸ì™€  ê³¡ëª©ëª…ìœ¼ë¡œ ì¼ëª©ìš”ì—°í•˜ê²Œ ë³´ì—¬ì¤€ë‹¤.  
+
+	My IP address & My IP address locator
+
+		ë‚´ ì»´í“¨í„°ì˜ IP ì£¼ì†Œë¥¼ ì¶”ì í•´ ì£¼ëŠ” ì›¹ì‚¬ì´íŠ¸ë‹¤
+
+
+
+
+
+	GTD (getting things done) ëŠ” 'í• ì¼ ë°”ë¡œ í•´ì¹˜ìš°ê¸°' 
+
+		programì€ ì•„ë‹ˆì§€ë§Œ ìƒê°í•´ë³´ê¸°		
+
+	E-book 
+
+		programì€ ì•„ë‹ˆì§€ë§Œ ìƒê°í•´ë³´ê¸°
+
+
+
+
+
+
+
+
+
+
+
+OCR program 
+
+	ì´ë¯¸ì§€ì—ì„œ text ì¶”ì¶œ
+
+	Optical Character Recognitionê´‘í•™ë¬¸ì ì¸ì‹
+
+replace
+
+	->flight
+
+	->motor
+
+	->power
+
+	->measurement
+
+	->range
+
+	->twin engine
+
+	->lb
+
+	->efficiency
+
+	->propeller
+
+->battery
+
+->voltage
+
+
+
+
+
+Library
+
+	AUW(All Up Weight):RC plane¿¡¼­ ¸ğµç ºÎÇ°À» ÀåÂøÇßÀ»¶§ÀÇ weight
+
+	FWR(Flying Weight Range):RC plane¿¡¼­ flight°¡´ÉÇÑ weight range.
+
+	glue(Á¢ÂøÁ¦)
+
+	Lipo battery(LithiumPolymer Battery)
+
+	prop(propeller)
+
+	RPM(revolution per minute)
+
+	kV(RPM per Volt)
+
+	Recommended power(±ÇÀå µ¿·Â)
+
+	GP(gasoline power)
+
+	EP(Electrical power)
+
+	EDF(Electrical ducted Fan)
+
+	every moment(¸Å¼ø°£)	
+
+	ATV(Adjust Travel Volume)
+
+	EPA(End Point Adjust)
+
+
+
+unit convert: naver unit convert or google unit convert{ex: 3kgf to lbf}
+
+	lb vs lbf?
+
+	1lb¡Ö0.453592kgf
+
+	1lb¡Ö453g¡Ö0.453kg
+
+	2.2lb¡Ö1kg
+
+	1HP¡Ö746W
+
+
+
+fomula
+
+	V=IR(V=voltage,I=current,R=resistance)
+
+	P=VI(P=power,V=voltage,I=current)
+
+	P=FV
+
+
+
+
+
+
+
+
+
+(Energy conversion)
+
+	1.(energy of battery)-->(torque of motor)
+
+	2.Generate certain Loss in process of energy conversion(concept of efficiency)
+
+
+
+
+
+
+
+
+
+RC models
+
+	RC air vehicle(RC plane,RC drone....)
+
+	RC car
+
+	RC boat
+
+	RC tank
+
+	RC motorcycle
+
+	RC drone
+
+		tricopter
+
+		quardcopter
+
+		hexcopter
+
+		octacopter
+
+	and etc.)
+
+
+
+
+
+
+
+
+
+
+
+how to control power of drive system of rc car
+
+	basic principle
+
+		speed
+
+			voltage
+
+			current
+
+			reduction gear
+
+
+
+
+
+
+
+
+
+
+
+
+
+mechanical connection of drive system of RC air plane 
+
+	propeller
+
+	adapter between propeller and shaft
+
+	reduction gear
+
+	motor shaft
+
+
+
+
+
+center shaft
+
+gear box
+
+	diff gear
+
+joint cup 
+
+dogborn shaft
+
+Knuckles[¾÷¶óÀÌÆ®]
+
+Hub
+
+wheel
+
+tire
+
+
+
+
+
+
+
+
+
+mechanical connection of drive system of RC car
+
+	motor
+
+	pinion gear
+
+	spur gear
+
+	drive shaft
+
+	diff gear box
+
+		drive gear
+
+		driven gear
+
+		ring gear
+
+	wheel shaft
+
+
+
+
+
+
+
+
+
+
+
+plane design summary
+
+	1.plane weight 
+
+	2.plane ¸ñÀû choice
+
+	3.plane weight power choice
+
+	4.motor choice, Prop choice
+
+	6.ESC choice 
+
+	7.battery choice
+
+plane design main point summary
+
+	1. (max allowed current of motor) < (max current of ESC) <  (max continuous discharge current of battery)
+
+	2. (torque of motor) and (rpm of motor)¿¡ ÀûÁ¤ÇÑ °Í »ç¿ë
+
+	if you use prop size(diameter of prop or pitch of prop) bigger than proper prop size,motor can be damaged for overload With high probability(³ôÀº È®·ü·Î)
+
+
+
+
+
+
+
+
+
+
+
+
+
+transmitter
+
+	Gun type transmitter[pistol grip type type transmitter]
+
+	stick type transmitter[box type transmitter]
+
+
+
+
+
+Transmitter
+
+	FM Transmitter
+
+	AM Transmitter
+
+
+
+
+
+
+
+transmitter mode
+
+	(Mode 1)
+
+	(Mode 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RC car
+
+	Electric powered RC car
+
+	Gas powered RC car
+
+		¼ÒÇü±Û·Î¿ì¿£Áø
+
+		¼ÒÇü°¡¼Ö¸°¿£Áø	
+
+
+
+RC car
+
+	On-road RC car
+
+		touring car
+
+		racing car
+
+	off-road RC car
+
+		buggy car
+
+		rally car
+
+		stadium truck
+
+		monster truck
+
+
+
+RC car
+
+	1/5 scale RC car
+
+	1/8 scale RC car
+
+	1/10 scale RC car
+
+	1/12 scale RC car
+
+	1/14 scale RC car
+
+	1/16 scale RC car
+
+	1/18 scale RC car
+
+	1/20 scale RC car
+
+	1/28 scale RC car
+
+	1/32 scale RC car
+
+	1/87 scale RC car
+
+
+
+
+
+
+
+
+
+RC airplane
+
+	under powered airplane
+
+		just crash to surface of ground
+
+	over powered airplane
+
+		is not bad.but additional increase of weight
+
+		±×¸¸Å­ additional battery ¼Ò¸ğ·® Áõ°¡ flight time °¨¼Ò
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+goal,configration of vehicle choice
+
+
+
+
+
+air plane
+
+	Training model/Sport Model
+
+		1lb AUW, we want 100w motor (3s 20c Lipoly) mid kv for general flying, probably around 1200kv~1400kv, so around 8" prop
+
+		1lb weight¿¡ 100W power motor ÇÊ¿ä. battery´Â 3S 20C Á¤µµ. µû¶ó¼­, motor´Â 1200~1400kV, propeller´Â 8ÀÎÄ¡)
+
+
+
+	3D/F3A Model
+
+		1lb AUW, we want 150w motor (3s 20c~30c Lipoly) low kv, 1000kv or under, spinning 10~11" prop, highly efficient at low throttle openings giving lot's of prop wash over control surfaces at all times, high thrust for low rpm and low amps draw at higher throttle openings.
+
+		1lb weight¿¡ 150W motor(3S 20~30C battery), Àú¼Ó motor(1000kV)¿¡ ÇÁ·ÎÆä·¯´Â 10~11ÀÎÄ¡ Á¤µµ. º¸Åë Àú¼Ó motor´Â ³·Àº rpmd¿¡¼­ ÃßÁø·ÂÀÌ °­ÇÏ°í, °í¼Órpm¿¡¼­ Àúcurrent)
+
+	Warbird/scale Model(ÀüÅõ±â, ±º¿ë±â)
+
+		1lb AUW 120w motor, kv choice,  either of the above, it is personal choice
+
+		1lb´ç 120Wmotor,  °³ÀÎÃëÇâ¿¡ µû¶ó motor kV ¼±ÅÃ. ¼Óµµ¸¦ ¿øÇÏ¸é high kV, small prop. )
+
+
+
+	High Speed Delta type model
+
+		1lb AUW, 200w motor (3s 25c~30c Lipoly)  2200kv~3200kv motor, 5"~6" Prop, high speed/low torque, low thrust at low throttle openings, high speed from high rpm at full throttle.
+
+		1lb´ç 200W motor, battery´Â 3S 25~30C, motor´Â 2200kV ~ 3200kVmotor, propeller´Â 5~6ÀÎÄ¡. °í¼Ó¿¡¼­´Â ÅäÅ©°¡ ³·°í È¸Àü¼ö´Â ºü¸§,) 
+
+
+
+
+
+
+
+
+
+if air plane weight¡Ö2.3lb,plane ¸ñÀû¡ÖÀÏ¹İÀû flight or °¡º­¿î aerobotic flight¡Ö100W/1lb
+
+	100(2.3)W/1(2.3)lb=230W/2.3lb ......ÀÌ¹Ç·Î.......power=230W ÀÌ ÇÊ¿ä
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power of power plant Choice	
+
+
+
+power choice
+
+	generally,manufacture company of rc airplaneÀÇ ±Ç°í »ç¾ç¿¡ µû¶ó¼­ batteryÀ» °áÁ¤ÇÏ´Â °ÍÀÌ Á¦ÀÏ ¹Ù¶÷Á÷
+
+	Exceptionally,you have to know voltage range of battery for getting power
+
+
+
+fomula
+
+		(max discharge current of battery)=(capacitance of battery)(discharge c rate of battery)= 1.3A x 20C = 26
+
+
+
+
+
+xPPA? battery ´ÜÀ§?
+
+
+
+almost case
+
+	Low power RC plane:20C battery
+
+	Mid power RC plane:20C~ 30C battery
+
+	High power RC plane:30C ÀÌ»ó battery
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+motor choice
+
+
+
+ex) data sheet of motor
+
+	spec of motor	
+
+		D2836/8
+
+		Brushless Outrunner Motor
+
+		rated Battery
+
+			7.4~14.8V
+
+		rotational speed=1100kv
+
+		Max allowed current=18A 
+
+		No load current=1A????????????????
+
+		Max power=336W
+
+		Internal resistance=0.107 ohm
+
+		Weight=70g(including connectors)
+
+		Diameter of shaft=4mm
+
+		Dimensions: 28x36m
+
+
+
+
+
+
+
+		recommended prop size
+
+	2S(7.4V)
+
+		7.4V x 1100kV = 8140 rpm
+
+		11 x 7 (inch)
+
+	3S(11.1V)
+
+		11.1 x 1100kV = 12210 rpm
+
+		À§,¾Æ·¡ »çÀÌÀÇ Àû´çÇÑ Å©±â·Î °áÁ¤
+
+	4S(14.8V)
+
+		14.8 x 1100kV = 16280 rpm	  
+
+		7 x 3 (inch)
+
+	Max thrust: 1130g
+
+
+
+
+
+
+
+	
+
+ex) NTM Drive 2826 Brushless Motor
+
+		Max Power of motor=215W(if 12v) or 286W(if 15v)
+
+		rotational speed of motor=1200rpm/v
+
+		Max allowed current of motor=17A
+
+		Weight of motor=57.6g
+
+
+
+		rated ESC: 20A
+
+		diameter of Shaft of motor=3mm
+
+		Cell count: 3s~4s Lipoly
+
+		Bolt holes=16mm & 19mm
+
+		Bolt thread: M3
+
+		connector of wire of motor=3.5mm Bullet-connector
+
+
+
+		Prop Tests:
+
+			7x6E and 11.1v - 90W - 8A         
+
+			7x6E and 14.8v - 192W - 13A               
+
+			8x4E and 11.1v - 100W - 9A
+
+			8x4E and 14.8v - 222W - 15A
+
+			8x6E and 11.1v - 145w - 13A
+
+motor spec data sheet
+
+	proppeller data
+
+		if you install any size propeller to motor,The data sheet can be very useful to you
+
+		it is test data(about thrust,discharge current and etc.)
+
+
+
+	(max rotational speed of motor)=2000Kv=2000RPM/v
+
+	(input voltage of motor)=7.4v
+
+	(efficiency Coefficient of motor)=0.9
+
+	(Max allowed current of motor)=...A
+
+	(rotational speed per voltage of motor)=((2,000RPMX7.4)/(1vX7.4)) X 0.9 = 13,320RPM/7.4v
+
+	torque of motor=
+
+	T(winding turns of motor)=
+
+
+
+
+
+	No load rotational speed of motor=35520rpm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+weight choice
+
+
+
+balancing CG
+
+	if you sellect brushless motor,you know weight of RC plane.
+
+	generally,RC plane´Â design¿¡ µû¶ó¼­ flightÀÌ °¡´ÉÇÑ FWR°¡ ÀÖ´Âµ¥(Áï, ¸îkgºÎÅÍ  ¸îkg±îÁö)¸¦ °®°í ÀÖ´Ù°í ÇÕ´Ï´Ù.	
+
+	FWR ¾È¿¡ AUW°¡ ÀÖ¾î¾ß°ÚÁÒ?
+
+	
+
+AUW measurement of your airplane and AUM is in FWR.so RC plane can fly
+
+
+
+
+
+Recommended power of motor according to weight
+
+	Vintage types and many non-aerobatic indoor flyers:50w~70w / 1lb
+
+	ÀÏ¹İÀû ½Ç³»¿ëµµ, ¶Ç´Â ºñ°î¿¹¿ë
+
+
+
+	Trainers, gliders and high wing airplane:70w~100w / 1lb
+
+
+
+	Sport flyer with general aerobatic performance:100w / 1lb
+
+
+
+	Warbirds:120w~150w / 1lb
+
+	±º¿ë±â
+
+
+
+	Multi engined models:100w / 1lb (thrust from Multiple props gives in effect, more than 100w per 1lb performance)
+
+
+
+	EDF Jets:150w~200w / 1lb
+
+	(twin engine plane(twin engine)(º¹¼öÀÇ propellerÀÇ (Thrust)Àº ½ÇÁúÀûÀ¸·Î 1lb´ç 100W ÀÌ»óÀÇ È¿°ú!!)
+
+	
+
+	3D, F3A and high performance Models:150w~200w / 1lb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+battry for RC
+
+	NiCd battery
+
+		°ú°Å¿¡ ¸¹ÀÌ ½è¾ú°í
+
+	Li-Fe battery
+
+		¸¹ÀÌ ½èÁö¸¸
+
+	Li-Po battery
+
+		´ë¼¼´Ù
+
+
+
+
+
+battery choice
+
+	Up to 50w : (0W~50W: Lipo 1S - Lipo 2S of the series(3.7v-7.4v)
+
+	up to 100w : (50W~100W: Lipo 2S of the series - Lipo 3S of the series(7.4V - 11.1V) 
+
+
+
+	100w Up to 500w : 3s (This is the practical upper limit for 3s Lipo's, so basically, models of 5lb AUW)
+
+		     (3S Li-Po batteryÀÇ ÇÑ°è´Â ¿©±â±îÁö. AUW·Î Ä¡¸é 5lb¡Ö2.5kg)
+
+
+
+	500w up to 800w : 4s (This is the 0.40~0.46 glow equivalent range favoured by many club flyers)
+
+	
+
+	800w up to 1000w : 5s (800W - 1000W, 5S(18.5V)
+
+	
+
+	900w up to 1500w : 6s (this is the 0.60~0.90 ic equivalent range) (900W - 1500W, 6S(22.2V)
+
+	
+
+	8s~10s packs are for very large and generally specialised models. (large airplaneÀÇ °æ¿ì, 8S-10S Áï, 37V class)
+
+
+
+
+
+battery choice for air plane
+
+	max allowed current of ESC choice
+
+	so,capacitance of battery=2200mAh,voltage of battery=14.8V,discharge C rate of battery=25C Á¤µµ·Î ¼±ÅÃÇÏ¸é
+
+	max discharge current of battery=44A±îÁö ³ª¿À¹Ç·Î ¾ÈÀüÇÒ °ÍÀ¸·Î »ı°¢µË´Ï´Ù.
+
+
+
+
+
+Li-ion battey¿Í Li-Po battery Â÷ÀÌÁ¡?
+
+	°¡Àå Å« Â÷ÀÌÁ¡Àº, ÀüÇØÁúÀÌ ÇüÅÂ°¡ ´Ù¸¨´Ï´Ù.
+
+	¸®Æ¬ÀÌ¿Â ÀüÁö´Â ÀüÇØÁúÀÌ ¾×Ã¼ÀÌÁö¸¸,
+
+	Li-Po´Â Á©(Gel)ÀÔ´Ï´Ù.
+
+	µû¶ó¼­, ¸®Æ¬ÀÌ¿ÂÀüÁö´Â ¾×Ã¼ÀÇ ÀüÇØÁúÀÌ±â ¶§¹®¿¡ ¿ë±âÀÇ ¹ĞºÀÀÌ Á¦ÀÏ Áß¿äÇÏ°ÚÁÒ.
+
+	µû¶ó¼­, ¿ë±âÀÇ Çü»óÀ» ¸¸µå´Âµ¥ Á¦¾à»çÇ×ÀÌ ¹ß»ıÇÕ´Ï´Ù. ÇÏÁö¸¸,
+
+	Li-PoÀÇ °æ¿ì¿¡´Â ¸»¶û¸»¶ûÇÑ Á© Å¸ÀÙÀÇ ÀüÇØÁúÀÌ±â ¶§¹®¿¡ ¿ë±âÀÇ Çü»óÀ» Á» ´õ ÀÚÀ¯·Ó°Ô Á¦ÀÛÀÌ °¡´ÉÇÏ´Ù°í ÇÕ´Ï´Ù.
+
+	¾×Ã¼ ÀüÇØÁúÀÇ °æ¿ì¿¡´Â Æø¹ßÀÇ À§Çè¼ºÀÌ ÀÖÁö¸¸, ¹İ°íÃ¼ »óÅÂÀÎ Á©ÀÇ °æ¿ì¿¡´Â Æø¹ßÀÇ À§ÇèÀº ¾øÀ¸¸ç, ´ÜÁö Á¶±İ ºÎÇ®¾î ¿À¸£´Â Á¤µµ? ÀÔ´Ï´Ù.
+
+	±× ÀÌ¿ÜÀÇ ³ª¸ÓÁö Æ¯Â¡Àº µÑ ´Ù °ÅÀÇ ºñ½ÁÇÏ´Ù°í ÇÕ´Ï´Ù.
+
+	ÀÌ Â÷ÀÌÁ¡¿¡ µû¸£´Â Àå´ÜÁ¡(Æø¹ß¼º, battery Çü»óÀÇ ÀÚÀ¯·Î¿ò)ÀÌ ³ªÅ¸³­´Ù
+
+
+
+
+
+ Ç×¸ñ
+
+	¸®Æ¬ ÀÌ¿Â 
+
+	¸®Æ¬ Æú¸®¸Ó 
+
+ ÀüÇØÁú
+
+	¾×Ã¼(¸®Æ¬ÀÌ¿Â ¾×Ã¼)
+
+	Gel(Á©)
+
+		(ÁØ°íÃ¼ »óÅÂ = Æú¸®¸Ó + Àü±âºĞÇØ¾×)
+
+		(Polyethylene glycol ¶Ç´Â Polyvinylidene fluoride
+
+ voltage
+
+	3.7v	
+
+	3.7v
+
+ ¾ÈÁ¤¼º
+
+	º¸Åë(Æø¹ß À§Çè¼º)
+
+	³ôÀ½ 
+
+
+
+ battery Çü»ó µğÀÚÀÎ 
+
+	³ª»İ  
+
+	ÁÁÀ½
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+battery
+
+	Capacity=xAh
+
+		generally,(volume)size of battery¿Í ºñ·Ê
+
+		2000mAh battery°¡ ÀÖ´Ù¸é, 2000mA·Î ±ÕÀÏÇÏ°Ô(Constant) 1hµ¿¾È ÀÌ·ĞÀûÀ¸·Î dischargeÀÌ °¡´É
+
+		2000mAh battery´Â °°Àº ·®ÀÇ ÀÏ¿¡ ´ëÇÑ Ãâ·ÂÀ» ³¾ ¶§ 1000mAh batteryº¸´Ù 2¹è ¿À·¡ ¾´´Ù
+
+		Çö½ÇÀº ±× ÀÌÀü¿¡ ¹æÀüÀ» Â÷´Ü
+
+		If °ú¹æÀü Li-Po batteryÀÇ Æ¯¼º»ó ´Ù½Ã ÃæÀüÀ» ÇÒ ¼ö ¾ø°ÔµÇ¸ç
+
+		batteryÀÇ life spanÀÌ ³¡ ÀÌ µÉ ¼öÀÖ´Ù
+
+		ESC¿¡¼­ ÀÏÁ¤ voltage(´ë·« 3.2V) Á¤µµ°¡ µÇ¸é battery ·Î ºÎÅÍ power °ø±ŞÂ÷´Ü(for battery)
+
+	Discharge C rate
+
+		[battery¿¡¼­ »Ì¾Æ³¾ ¼ö ÀÖ´Â quantity of energy]
+
+		for example,if capacity of battery pack=2000mAh and discharge C rate=20C
+
+			discharge of battery=2000mA x 20C = 400000mA(40A) current¸¦ ³»»ÕÀ»¼ö ÀÖ½À´Ï´Ù.(ÃÊ¿¡??PPA?)
+
+		batteryÀÇ ¹æÀüÀ² °áÁ¤
+
+			»ç¿ëÇÏ°íÀÚ ÇÏ´Â motor,servo µîÀÇ loadÀÇ »ç¾çÀÌ ¾î´À Á¤µµÀÇ current¸¦ ÇÊ¿ä·Î ÇÏ´ÂÁö¿¡ µû¶ó¼­ °áÁ¤ÇØ¾ßÇÑ´Ù
+
+			if, motorÀÇ continuous allowed current=50A
+
+				2000mAh, 20C battery´Â Á» ºÎÁ·
+
+				ÀÌ·²¶§´Â ´õ Å« ¹æÀüÀ²À» °¡Áø battery¸¦ ¼±ÅÃ
+
+				25C ~30C Á¤µµÀÇ battery°¡ ÁÁ°ÚÁÒ
+
+				priceÀº Á» ´õ ¿Ã¶ó°¡°ÚÁÒ
+
+		
+
+	Burst Rate
+
+		battery°¡ º¸Åë 10~20sec Á¤µµ¿¡ ÃÖ´ëÇÑ »Ì¾Æ³¾ ¼ö ÀÖ´Â ÃÖ´ë Çã¿ë ¿¡³ÊÁöÀÇ ¾ç
+
+		ÇÏÁö¸¸, ±× ÀÌ»óÀ¸·Î´Â ºÒ°¡ÇÕ´Ï´Ù. ¾îµò°¡ ¸ÀÀÌ °¡°Ô µÇÀÖ°Åµç¿ä.
+
+		* Âü°í·Î, 
+
+		30C battery¸¦ 20C·Î ²ÙÁØÈ÷ ¾´´Ù¸é
+
+		20C battery¸¦ 20C·Î ¾µ¶§º¸´Ù ´õ ¿À·§µ¿¾È »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.
+
+
+
+	voltage=7.4v
+
+		Rated voltage of Li-Po battery=3.7V
+
+		¿ÏÃæ voltage of Li-Po battery=4.2V
+
+		Li-Po battery¸¦ ¿À·¡ »ç¿ëÇÏ·Á¸é ¹æÀü voltageÀ» ²À ÁöÄÑ¾ß ÇÕ´Ï´Ù. 
+
+		º¸Åë, 3V ¾Æ·¡·Î´Â ¹æÀüÇØ¼­´Â ¾ÈµË´Ï´Ù. 
+
+		³Ë³ËÇÏ°Ô 3.2V±îÁö ¾²¸é ¹æÀüÀ» Áß´ÜÇÏ¼¼¿ä. 
+
+		±×·¡¾ß ¿À·¡ ¿À·¡ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù
+
+		¸®Æ¬°è¿­ÀÇ ÀüÁö
+
+			ÀÏÁ¤ voltage ÀÌÇÏ·Î °ú¹æÀü µÇ¸é ´Ù½Ã º¹±¸°¡ ¾ÈµÈ´Ù
+
+		°ú¹æÀüµÈ battery¸¦ ´Ù½Ã ÃæÀüÇÏ·Á°í ÇÒ¶§ battery¿¡¼­ ½ÉÇÑ ¿­ÀÌ ¹ß»ıÇÏ¸é¼­ Àß¸øÇÏ¸é ÅÍÁú ¼ö°¡ ÀÖ½À´Ï´Ù.
+
+		
+
+
+
+		1S Li-Po battery
+
+			Rated voltage=3.7V
+
+		1S battery
+
+		2S battery
+
+		3S battery
+
+			3 Serlal
+
+
+
+
+
+			(voltage)À» ³ôÀÏ¶§´Â Á÷·Ä(S)·Î ¿¬°á
+
+			(Capacity)¸¦ Å°¿ì·Á¸é º´·Ä(P)·Î ±¸¼º
+
+
+
+		
+
+		¿ÏÀü ÃæÀüµÇ¸é 3 x 4.2V = 12.8V
+
+		(±× ÀÌ»óÀÇ voltageÀ¸·Î ÃæÀüÇÏ¸é.....¾Æ½ÃÁÒ? Å«ÀÏ ³³´Ï´Ù!!)
+
+
+
+
+
+		3S1P battery
+
+			3S = 3 x 3.7V = 11.1V (Rated voltage)
+
+		3S1P(3Serlal1Parallel)
+
+		3S2P battery
+
+			voltageÀº µ¿ÀÏÇÏÁö¸¸ capacityÀº 2¹è°¡ µÇ´Â °Ì´Ï´Ù. generally volumeµµ µûºíÀÌ µÇ°ÚÁÒ.
+
+	weight
+
+	Size
+
+		in case of rc airplane,you have to select proper weight of battery for balancing CG
+
+	volume
+
+
+
+
+
+
+
+ex battery)
+
+	Turnigy 2200mAh 3S 20C Lipo Pack
+
+		Minimum Capacity: 2200mAh (True 100% Capacity)
+
+		Configuration: 3S1P / 11.1v / 3Cell
+
+		Constant Discharge: 20C
+
+		Peak Discharge (10sec): 30C    <-- Burst Rate
+
+		Pack Weight: 188g
+
+		Pack Size: 103 x 33 x 24mm
+
+		Charge Plug: JST-XH
+
+		Discharge Plug: XT60
+
+
+
+
+
+
+
+Li-Po battery Charging
+
+	Use always battery charger
+
+	adapter ÇŞ°¥¸®¸é ¾ÈµË´Ï´Ù!! 
+
+	Li-Po batteryÀÇ ÃæÀü¹æ¹ıÀº º¸Åë (Á¤current ÃæÀü)ÇÏ¿© ÀÏÁ¤ voltage(¿ÏÃævoltage)¿¡ µµ´ŞÇÏ¸é (Á¤voltage ÃæÀü)À» ÇÏ°Ô µË´Ï´Ù.
+
+	µû¶ó¼­, ±×³É adapter¸¦ ´ş¼® ¿¬°áÇÏ¸é ¾ÈµË´Ï´Ù. ¶ÇÇÑ battery voltageÀ» 4.2VÀÌ»ó ÃæÀüÇÏ¸é ¾ÈµË´Ï´Ù.
+
+	(¿¹¸¦µé¸é, 2S batteryÆÑÀÇ °æ¿ì¿¡´Â 8.4V( 2 x 4.2V) ÀÌ»ó ÃæÀüÇØ¼­´Â ¾ÈµÊ!!)
+
+
+
+Li-Po battery ¿À·§µ¿¾È ¾ÈÀüÇÏ°Ô »ç¿ëÇÏ´Â ¹ı
+
+	single battery voltageÀ» 3.2VÀÌÇÏ·Î ¶³¾îÁö°Ô ÇÏÁö ¸¶¼¼¿ä
+
+		¿¹¸¦µé¸é, 3S batteryÀÇ °æ¿ì¿¡´Â 3 x 3.2V = 9.6V ÀÌÇÏ·Î ¶³¾îÁöµµ·Ï »ç¿ëÇÏÁö ¸¶¼¼¿ä!
+
+	ÃæÀüµÈ battery ÆÑÀº ¾È¾µ¶§´Â ºĞ¸®ÇØ ³õÀ¸¼¼¿ä..
+
+
+
+
+
+
+
+If discharge c rate¢Ó
+
+	,price¢Ó
+
+	,terminal of wire¢Ó
+
+	,diameter of wire¢Ó
+
+	If resistance of wire is a little more bigger than proper value of resistance,it can be happen Unexpected things like fire (((wire generate many heat......)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+calculation
+
+
+
+
+
+
+
+
+
+	
+
+max continuous allowed current
+
+	¿¬¼ÓÀûÀ¸·Î motor¸¦ µ¹·Áµµ ¹«¸®°¡ ¾ø´Â current
+
+
+
+
+
+
+
+
+
+
+
+propeller
+
+	Length
+
+		Length Áõ°¡=>°ø±â¸¦ ¹Ğ¾î³»´Â ³¯°³ area Áõ°¡=>´õ ¸¹Àº ¹Ù¶÷(Ç³·®)À» ¹Ğ¾î³¾ ¼ö ÀÖ°ÚÁÒ
+
+		´õ ¸¹Àº ¹Ù¶÷À» ¹Ğ¾î³»·Á¸é motorÀÇ torqueÀÌ ¼¼¾ß°ÚÁÒ?
+
+		propeller°¡ (±æ¼ö·Ï) motor´Â torque°¡ ³ôÀº °ÍÀ¸·Î ¼±Á¤ÇØ¾ß ÇÔ
+
+		±â´Ù¶õ ¸·´ë±â¸¦ µ¹¸®·Á¸é torqueÀÌ ¸¹ÀÌ µé¾î°¡µíÀÌ
+
+		±â´Ù¶õ propeller¸¦ µ¹¸®·Á¸é torque of motor°¡ Ä¿¾ß°ÚÁÒ
+
+		same power¶ó¸é torque of motor°¡ Ä¿Áö¸é rpm´Â ÁÙ¾î¾ß °ÚÁÒ
+
+	Pitch
+
+		a propeller moved distance in air (1 revolution of propeller)
+
+			(ÀÌ°Ç ¾Æ¸¶ effective pitch of propellerÀÇ °³³äÀÌ´Ù)
+
+		
+
+		pitch of screw
+
+			distance between threads(³ª»ç»ê)
+
+		if screw turn (1 revolution of screw),screw move as much as pitch of screw
+
+
+
+		³» ±â¾ï¿¡ Á¤È®ÇÑ ¿ë¾î·Î´Â effective pitch¶û ...pitch °¡ ÀÖÀ¸¸ç pitch of propeller¿Í´Â ´Ù¸¥ °³³äÀÌ´Ù
+
+
+
+		pitch of propeller°¡ Å¬¼ö·Ï 1È¸Àü½Ã¿¡ ÀÌµ¿°Å¸®°¡ ´õ Å©°ÚÁÒ.
+
+	
+
+		if,increase rpm of motor,increse pitch of propeller
+
+			increse speed of plane
+
+			ÇÏÁö¸¸, motor°¡ °ßµ®¾ßÇÏ°ÚÁÒ.
+
+		³ª»çÀÇ °æ¿ì
+
+			ÇÇÄ¡°¡ ÃÎÃÎ(ÀÛÀº)ÇÑ °ÍÀÏ¼ö·Ï µå¶óÀÌ¹ö¸¦ »ì»ì µ¹·Áµµ ³ª»ç°¡ ÀüÁø
+
+			ÀÌµ¿°Å¸®´Â ÀÛ°ÚÁÒ
+
+			³ª»çÀÇ ÇÇÄ¡°¡ ³Î³Î(Å¬¼ö)ÇÒ¼ö·Ï µå¶óÀÌ¹ö¸¦ ¼¼°Ô µ¹·Á¾ß ³ª»ç°¡ ÀüÁø
+
+			³ª»ç¸¦ µ¹¸®´Â µå¶óÀÌ¹ö´Â torque of motor
+
+	ÀçÁú
+
+
+
+
+
+thrust=?? HP
+
+
+
+APC »ç propeller
+
+	propeller ¸¸µå´Â ¾÷Ã¼ Áß¿¡¼­ À¯¸í
+
+	(http://www.apcprop.com/) 
+
+
+
+
+
+
+
+
+
+
+
+Performance Data
+
+
+
+      ========== 11x7 size propeller ==========
+
+
+
+       RPM       VMPH       EFF      HP
+
+      1000         7        0.76    0.0000
+
+      2000        14        0.76    0.0040
+
+      3000        21        0.76    0.0120
+
+      4000        29        0.77    0.0290
+
+      5000        36        0.79    0.0550
+
+      6000        43        0.81    0.0930
+
+      7000        51        0.82    0.1470
+
+      8000        58        0.83    0.2180 = 162.6 W( 0.2180 x 746 = 162.6 W )
+
+      9000        68        0.84    0.2720
+
+     10000        75        0.85    0.3720
+
+     11000        83        0.85    0.4960
+
+     12000        91        0.86    0.6460 = 481.9 W(0.6460 x 746 = 481.9 W)
+
+     13000        98        0.87    0.8300
+
+     13999       106        0.87    1.0530
+
+     15000       113        0.87    1.3240
+
+     16000       121        0.87    1.6580
+
+     17000       128        0.87    2.0670
+
+     18000       135        0.85    2.6940
+
+     19000       139        0.77    4.3270
+
+     21000       150        0.66    6.8760
+
+
+
+
+
+           ========== 7x3 size propeller==========
+
+
+
+       RPM       VMPH       EFF      HP
+
+      1000         2        0.60    0.0000
+
+      2000         5        0.61    0.0000
+
+      3000         8        0.61    0.0010
+
+      4000        11        0.61    0.0020
+
+      5000        14        0.61    0.0030
+
+      6000        17        0.61    0.0060
+
+      7000        19        0.61    0.0090
+
+      8000        22        0.61    0.0140
+
+      9000        25        0.61    0.0200
+
+     10000        28        0.61    0.0270
+
+     11000        31        0.63    0.0350
+
+     12000        34        0.64    0.0450
+
+     13000        37        0.65    0.0560
+
+     13999        39        0.66    0.0690
+
+     15000        42        0.67    0.0840
+
+     16000        45        0.68    0.1010
+
+     17000        48        0.69    0.1200 = 89.5 W ( 0.1200 x 746 = 89.5W)
+
+     18000        51        0.69    0.1420
+
+     19000        54        0.70    0.1670
+
+     20000        56        0.71    0.1940
+
+     21000        59        0.71    0.2240
+
+     22000        62        0.72    0.2580
+
+     23000        65        0.72    0.2950
+
+     24000        68        0.73    0.3370
+
+     25000        71        0.73    0.3840
+
+     26000        74        0.74    0.4350
+
+     26999        80        0.74    0.4480
+
+     28000        79        0.73    0.5840
+
+     29000        82        0.70    0.7120
+
+     30000        85        0.67    0.8340
+
+     31000        88        0.63    1.0370
+
+     32000        87        0.61    1.2660
+
+     33000        88        0.55    1.5620
+
+     34000        86        0.53    1.7500
+
+
+
+
+
+
+
+
+
+
+
+
+
+power of aircraft choice ->propeller choice -> motor choice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+prop choice
+
+	generally,manufacture company of motor provide proper propeller size datasheet about motor
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+voltageÀÌ ³ôÀº °æ¿ì ÀÛÀº propeller¸¦ ¾²°í voltageÀÌ ³·Àº °æ¿ì Å« propeller¸¦ ¾²ÀÚ
+
+	3¼¿ÀÇ LiPo ¹èÅÍ¸®¸¦ ¾²´Â °æ¿ì È¸Àü¼ö°¡ ¿Ã¶ó°¡±â ¶§¹®¿¡ ÀÛÀº 6X4 Á¤µµÀÇ ÀÛÀº propeller¸¦ ½á¼­ ¸ğÅÍ¿¡ ¹«¸®°¡ °¡Áö ¾Ê°Ô ÇÏ°í
+
+	¹İ´ë·Î 2¼¿ ¹èÅÍ¸®¸¦ ¾²´Â °æ¿ì È¸Àü¼ö°¡ ³·¾ÆÁö±â ¶§¹®¿¡ ¸¹Àº Ç³·®À» ¸¸µé¾î³»´Â 8X4 propeller¸¦ ½á¼­ Ãß·ÂÀ» È®º¸ÇÏ¶ó´Â ÀÇ¹Ì
+
+
+
+	Áï °á°úÀûÀ¸·Î °°Àº Ãß·Â, ¹Ù²ã¸»ÇÏ¸é °°Àº ¿ÍÆ®¸¦ À¯ÁöÇÏ¹Ç·Î½á max continuous allowed current¸¦ ÃÊ°úÇÏÁö ¸»¶ó´Â ¶æ
+
+	
+
+
+
+
+
+
+
+
+
+If,Slow Flyer Props
+
+	max RPM = 65000rpm
+
+	diameter of propeller=9inch
+
+1. (max kv of motor)=65000/ 9v = 7222 (rpm/v)
+
+2.If,(7.4v battery)
+
+	7222 rpm / 7.4 V = 975 kv ÀÌ µË´Ï´Ù.
+
+	motor´Â ´ë·« 975kV¸¦ ¾²¸é µÇ°ÚÁÒ?
+
+	
+
+
+
+
+
+
+
+If,reduce propeller size,increse voltage of battery.
+
+power=?
+
+
+
+if,7x3 size propeller,4S(14.8V) battery.
+
+rpm=14.8 x 1100kV=16280 rpm
+
+rpm¡Ö17000 ÀÏ °æ¿ì¿¡ power¡Ö90W.
+
+propeller°¡ ÀÛ¾ÆÁ®¼­ rpm´Â ³ô¾ÆÁ³Áö¸¸ 90W Á¤µµ·Î´Â thrust¡Ö450g¡Ö1lb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+APC Propeller Performance Data(MaxPE.dat)
+
+	battery 2S(7.4V)
+
+		8140rpmÀÏ¶§
+
+			11x7 size propeller¸¦ »ç¿ëÇÒ ¶§
+
+			thrustÀ» Ã£¾Æº¸¸é
+
+			´ë·« 8000rpmÀÇ °æ¿ì, 0.2180HP=162.6W
+
+			9000rpmÀ¸·Î Àâ´õ¶óµµ 203W(0.2720x746)  
+
+	battery 3S(11.1V)
+
+		11.1 x 1100kV = 12210rpm
+
+		ÀÌ°ÍÀ» ¾Æ·¡ Ç¥¿¡¼­ Ã£¾Æº¸¸é ¾à 0.6460HP = 482W°¡ µË´Ï´Ù
+
+		motorÀÇ max powerº¸´Ù ´õ Å« power°ªÀÌ¹Ç·Î
+
+		Àß¸øÇÏ¸é(¾Æ¸¶ ½ÊÁßÆÈ±¸) motor°¡ ¹öÆ¼Áö ¸øÇÏ°í Å» ¼ö ÀÖ°Åµç¿ä(Burn out)
+
+		11x7 size propeller¿Í 3S battery Á¶ÇÕÀº À§ÇèÇÕ´Ï´Ù.
+
+
+
+
+
+
+
+
+
+100W¿¡ 1lb(¾à453g) Á¤µµÀÇ thrustÀÌ¶ó°í °è»êÇÏ±âµµ ÇÕ´Ï´Ù.
+
+¶Ç´Â 1W´ç 5g Á¤µµÀÇ thrustÀ» º¸±âµµ ÇÕ´Ï´Ù. 
+
+
+
+
+
+N100 Data : Static Condition(plane ¼Óµµ°¡ zeroÀÏ ¶§)¿¡¼­ 100W powerÀ» ¾ò±â À§ÇÑ propellerÀÇ RPM
+
+[ http://www.apcprop.com/v/downloads/PERFILES_WEB/N100.DAT ]
+
+
+
+N100 Data
+
+	µ¿ÀÏÇÑ powerÀ» ¾ò±â À§ÇØ¼­
+
+		ÀÛÀº propeller´Â °í¼Ó RPMÀÌ ÇÊ¿äÇÏ¸ç
+
+		Å« propeller´Â Àú¼Ó RPMÀÌ ÇÊ¿äÇÕ´Ï´Ù
+
+		°í¼Ó RPMmotor¿¡ Å« propeller¸¦ ¾²¸é...... motor,ESC can burn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Li-Po battery choice
+
+	plane Çü»ó¿¡ µû¶ó¼­ ´Ù¾çÇÑ battery°¡ Á¸ÀçÇÏ°Åµç¿ä.
+
+	µû¶ó¼­, ÀÚ½ÅÀÇ RC¸ğÇü¿¡ ¾Ë¸ÂÀº battery¸¦ ¼±ÅÃÇÏ·Á¸é ¾Æ·¡ »çÇ×À» °í·ÁÇØ¾ß ÇÕ´Ï´Ù.
+
+
+
+	2. life cycle of battery (»ç¿ëÈ½¼ö, Áï, Ãæ¹æÀü È½¼ö¶ó°í º¸¸é µÊ)Àº ¾î´À Á¤µµÀÎÁö.
+
+	3. size of battery¿Í weight of battery°¡ ÀÚ½ÅÀÇ RC¸ğÇü¿¡ Àû´çÇÑÁö.
+
+	4. ¾Ë¸ÂÀº voltage°ú current¸¦ ÀûÀıÇÑ Power °ø±ŞÇÒ ¼ö ÀÖ´ÂÁö.( P=VI)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESC choice
+
+	Max allowed current of motorÀÇ 1.5¹è Á¤µµ°¡ ÀûÇÕÇÏ´Ù°í ÇÕ´Ï´Ù¸¸,, ¾î¶² »ç¶÷Àº ³Ë³ËÇÏ°Ô 2¹è Á¤µµ·Î ESC choice 
+
+	Max allowed current of motor=17A ÀÌ¹Ç·Î ESC´Â (17A class ÀÌ»óÀÇ ESC) choice
+
+		25.5A class ESC or 34A class ESC
+
+	if increse Max allowed current of ESC.
+
+	increse weight of ESC
+
+
+
+ESC choice 
+
+	22.5A class ESC
+
+	about 30A class ESC·Î ÇÏ¸é
+
+	(Max allowed current of motor)<(max allowed current of ESC)
+
+
+
+(max power of motor)¿¡¼­ (max allowed current of Motor)¸¦ (discharge C Rate of battery)ÀÇ 50%(1.5)(1.5¹è)¸¦ Àâ´Â °ÍÀÌ ÁÁ´Ù°í ÇÕ´Ï´Ù.
+
+(100%(2.0)(2¹è)¸¦ Àâ´Â »ç¶÷µµ ÀÖ´Ù)
+
+
+
+
+
+ex1)
+
+	if capacity of battery=1300mAh,discharge c rate of battery=40C,max discharge current of battery=52A 
+
+	52AÀÇ 50~60%¡Ö26A~31.2A
+
+	choice 26A~31.2A class ESC and motor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RC car spec example
+
+turnigy 1.	
+
+	Spec:
+
+		Motor: 4800KV Brushless inrunner (2040)
+
+		ESC: 25A Brushless (with Reverse)
+
+		Battery: 2S LiPo (98x25x40mm Max Size) w/ XT-60 connector [Required]
+
+		Servo: 15g Micro
+
+		Traction: Full Time 4WD, Twin Diff with slipper clutch on Spur gear
+
+		Length: 245mm 
+
+		Width: 190mm 
+
+		Height: 120mm to top of Cab
+
+		Ground Clearance: 20~30mm Adjustable
+
+
+
+	spec of Required item for running
+
+		2S 1000~1300mAh LiPo
+
+		2CH Radio System (Rx/Tx)
+
+
+
+
+
+
+
+how to reduce damage for rc car
+
+	dust proof
+
+	water proof
+
+	Have a break 
+
+
+
+
+
+
+
+
+
+Àß ¸Á°¡Áö´Â rc car ºÎÇ°
+
+	2monthÀ» °®°í ³î¸é¼­ ºÎ¼­Áø ºÎÇ°À» Àû¾îº¾´Ï´Ù.
+
+1.(Front C Bracket)
+
+¾Õ¹ÙÄû º£ÀÌ¸µ È¦´õ¸¦ °¨½Î´Â ºÎºĞ
+
+Á¶Çâ(¹æÇâ)ÀåÄ¡ÀÇ ¿òÁ÷ÀÓ¿¡ µû¶ó»ç ÁÂ¿ì·Î È¸ÀüÀ» ÇÕ´Ï´Ù.
+
+±×·¯´Ù º¸´Ï±î ÀÚµ¿Â÷°¡ ºü¸¥ ¼Óµµ·Î ÀüÁøÇÏ´Ù°¡ ±ŞÈ÷ ¹æÇâÀ» ²©°Å³ª ¶Ç´Â ¾îµò°¡ ÅÎ¿¡ ºÎµúÈ÷¸é
+
+°­ÇÑ ÈûÀÌ Àü´ŞµÇ¸é¼­ ºÎ¼­Áö´õ¶ó±¸¿ä. 
+
+¾Õ¹ÙÄû ÁÂ¿ì ¸ğµÎ ºÎ·¯Á®¼­ ¼ø°£Á¢ÂøÁ¦·Î À¾±ŞÃ³Ä¡¸¦ ÇØ¼­ »ç¿ëÁßÀÔ´Ï´Ù
+
+±×·¯´Ù°¡ ¹®µæ ¶°¿À¸¥ ¾ÆÀÌµğ¾î´Â,, ¾ãÀº ÇÃ¶ó½ºÆ½ º¸°­Àç(º¸Åë, ÀÌ¾îÆù ¶Ç´Â Ä©¼Ö Æ÷Àå¿ë ÇÃ¶ó½ºÆ½ Á¶°¢)¸¦ ¼ø°£Á¢ÂøÁ¦·Î µ¡´ë´Â °Ì´Ï´Ù.
+
+±×·¯¸é Á» ´õ Ãæ°İ°Ô °­ÇÒ °Í °°¾Æ¼­ ¾Æ·¡ ±×¸²Ã³·³ ºÙ¿© ºÃ½À´Ï´Ù. 
+
+¾ÆÁ÷±îÁö´Â Àß ¾²°í ÀÖ½À´Ï´Ù. ¹°·Ğ, Á¶±İÀº Á¶½ÉÇØ¼­ ÁÖÇàÀ» ÇÏ°í´Â ÀÖ½À´Ï´Ù¸¸... Á» ´õ µÎ°í ºÁ¾ßÁÒ^^
+
+
+
+
+
+
+
+2. ¾Õ¹ÙÄû »ó´Ü ¼­½ºÆæ¼Ç ¾Ï È¦´õ(Front Upper Suspension Arm Holder)
+
+ÀÌ°Í ¿ª½Ã, À§ÀÇ Cºê¶óÄÏÀÌ ºÎ·¯Áú¶§ °°ÀÌ Ãæ°İÀ» ¹Ş¾Æ¼­ ºÎ·¯Á³½À´Ï´Ù
+
+È®½ÇÈ÷ Á¶ÇâÀåÄ¡ ÂÊ¿¡ Ãæ°İÀÌ °¡ÇØÁö¸é ÀÌ¿Í °°Àº ¾àÇÑ ºÎÇ°µéÀÌ ¸ÕÀú ºÎ¼­Áö³ª º¾´Ï´Ù
+
+ÀÌ°Í ¿ª½Ã ¼ø°£Á¢ÂøÁ¦·Î ¼ö¸®ÇÏ¿© ´Ù½Ã ¾²°í ÀÖ½À´Ï´Ù. 
+
+
+
+
+
+3.(Spur Gear)
+
+	Á¶±×¸¸ ¸ğ·¡¾Ë°»ÀÌ °°Àº°ÍÀÌ µé¾î°¡¸é ÇÇ´Ï¾ğ±â¾î¿Í ÇÔ²² °¥·Á¹ö¸®´õ¶ó±¸¿ä.. 
+
+	°í¼Ó È¸ÀüÀ» ÇÏ´Â ºÎÇ°ÀÌ¶ó¼­ ´õ¿í ´õ ±×·² ¼ö ÀÖ°ÚÁö¸¸... ¾Æ¹«·¡µµ Á» ½±°Ô ¸¶¸ğµÇ´Â °Í °°¾Æ¿ä
+
+	ÀçÁúÀÌ ³ªÀÏ·ĞÀÎÁö ¾Æ´Ï¸é ±×³É ÇÃ¶ó½ºÆ½ÀÎÁö... 
+
+	plastic spur gear ¸»°í ³ªÀÏ·Ğ spur gear´Â ÈÎ¾À ³»±¸¼ºÀÌ ¶Ù¾î³ª°í ÇÕ´Ï´Ù.
+
+	Â÷µ¿±â¾î·ù(Â÷µ¿ ÇÇ´Ï¾ğ + ¸µ±â¾î µî)´Â ±İ¼ÓÀçÁúÀÌ´õ¶ó±¸¿ä. ³»±¸¼ºÀÌ ÈÎ¾À ¶Ù¾î³³´Ï´Ù.
+
+	°¡²û ±¸¸®½º¸¦ Á» º¸ÃæÇØ ÁÖ½Ã¸é ÁÁÀ»µí ½Í±º¿ä.
+
+
+
+4.(Pinion Gear)
+
+	plastic pinion gear
+
+	metal pinion gear
+
+	ÀçÁúÀº ±İ¼ÓÀÎµ¥.. ÀÌ°Íµµ ¸ğ·¡¾Ë°»ÀÌ µîÀÌ µé¾î°¡¸é ÈìÁıÀÌ ³ª±â ½ÃÀÛÇÏ°í
+
+	spur gear¿Í ¸Â¹°¸®¸é¼­ ¼­·Î ¾ù¹ÚÀÚ°¡ ³ª¸é¼­ ¼­·Î°¡ ¼­·Î¸¦ ¸Á°¡¶ß¸®±â ½ÃÀÛÇÕ´Ï´Ù
+
+	°í¼ÓÁÖÇà½Ã ´õ¿í ´õ ±×·± °Í °°½À´Ï´Ù.
+
+	ÀúÀÇ °æ¿ì¿¡´Â, 3Sbattery¿¡ ¿¬°áÇØ¼­ ¼Óµµ¸¦ Á» ¿Ã·ÁºÃ´õ´Ï...ÀÌ Áö°æÀÌ µÈ °ÍÀÌÁÒ.
+
+	¿Ü±¹ »ç¿ëÀÚµéÀÇ °æÇè´ã¿¡ 4S±îÁöµµ ¿¬°áÇØ¼­ ÇØºÃ´Ù°í ÇÏ´Âµ¥
+
+	4S·Î ÇÏ¸é ¼Óµµ°¡ °ÅÀÇ ½Ã¼Ó60¸¶ÀÏ(¾à 100km/h)ÀÌ¶ó°í ÇÕ´Ï´Ù
+
+	ÀúÀÇ °æ¿ì¿¡´Â 3S±îÁö ÇØºÃ´Âµ¥ ¾à 70km/h Á¤µµ ³ª¿Âµí 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+motor chice
+
+	[DC motor ¼±Á¤ ¹æ¹ı]
+
+	(power of motor)
+
+	(Torque of motor)
+
+	(Load weight of motor)
+
+	 
+
+
+
+power of motor=100W ÀÌ¸é
+
+	10,000rpm x 0.974kg.cm=1000rpm x 9.74kg.cm°¡ µÇÁö¸¸
+
+	motorÀÇ È¸Àü¼ö´Â 1000 ~ 10,000 rpmÀÇ range°¡ µÇ¾î 
+
+	measurementÇÏ±â°¡ ¾î·Æ±â ¶§¹®¿¡ rpm¿Í torque¸¦ ÁöÁ¤ÇØ ÁÖ´Â °ÍÀÌ ÇÊ¿äÇÕ´Ï´Ù
+
+
+
+
+
+
+
+[basic]
+
+	
+
+	input ·® (Wi) = voltage(V) x current(A)
+
+	output ·® (Wo) = 0.01027 x rpm x torque(kg.cm)
+
+	efficiency of motor(%) =(Wi)/(Wo)
+
+
+
+
+
+!!!!!!!!!!!
+
+	power of motor=output of motor
+
+
+
+
+
+±×·¯³ª motor´Â LoadÀÇ º¯µ¿¿¡ µû¶ó Currentµµ º¯ÇÏ°Ô µÇ¹Ç·Î
+
+°°Àº motor¿¡¼­µµ °øÂ÷(Tolerance)°¡ Ä¿¼­ ´Ù¸£°Ô Ç¥½ÃµÉ ¼ö ¹Û¿¡ ¾ø½À´Ï´Ù
+
+
+
+Motor performance curve
+
+	generally,max output power of motorÀº (Starting torque)±âµ¿ÅäÅ©ÀÇ 50% À§Ä¡
+
+	max efficiency of motorÀº starting torqueÀÇ ´ë·« 15% À§Ä¡°¡ µÇ´Âµ¥
+
+	°¡´ÉÇÑ max efficiency range?¿¡¼­ »ç¿ëÇÏ´Â °ÍÀÌ ¹Ù¶÷Á÷ÇÕ´Ï´Ù.
+
+ 
+
+
+
+ÀÌ·± ÀüÁ¦ ÇÏ¿¡ motor¸¦ ¼±Á¤ÇÒ ¶§ ´ÙÀ½°ú °°ÀÌ ÇÏ´Â °ÍÀÌ ÁÁ½À´Ï´Ù.
+
+ 
+
+[40W motor ¼±Á¤½Ã]
+
+popup original Image
+
+- 40watt motorÀÏÁö¶óµµ Rated voltage°ú Rated load torque ¶Ç´Â Rated rotational speed´Â ÁöÁ¤ÇÏ¿©¼­
+
+¡¤  »ç¿ë voltage   V  = 24V
+
+¡¤  Rated torqe   Tr = 2kg.cm
+
+¡¤  Rated rpm Nr = 2000rpm
+
+°¡Á¤ÇÑ´Ù¸é ´ÙÀ½°ú °°ÀÌ °è»êÇÒ ¼ö ÀÖ½À´Ï´Ù.
+
+ 
+
+¡¤  Rated power(Rated output)              : Wo = 0.01027 x 2 x 2000 = 41.08W
+
+¡¤  (Strating torque)           : Ts = 2 / 0.15 = 13.3 Kg.cm
+
+¡¤  (No load rpm)     : No = (13.3 x 2000) / (13.3 - 2) = 2353 rpm
+
+¡¤  max power(Max. efficiency output) : Wm = 0.01027 x (13.3 / 2) x (2353 / 2) = 80.35W
+
+ 
+
+
+
+
+
+usually,DC motorÀÇ max efficiencyÀº motor Á¾·ù¿¡ µû¶ó 40 ~ 85% Á¤µµ ÀÌ¸ç
+
+PMDC motor(parmanent DC motor)¸é efficiencyÀÌ 65% Á¤µµÀÔ´Ï´Ù
+
+µû¶ó¼­, motor¿¡ ÀÎ°¡µÇ´Â Àü·ÂÀº Wi = 41.08 / 0.65 = 63.2W
+
+ÀÌ¶§ voltageÀÌ DC 24VÀÌ¹Ç·Î currentÄ¡   I = 2.63 A°¡ µË´Ï´Ù.
+
+ 
+
+±×·¡¼­ 40W±Ş DCmotor ¼±Á¤¿¡ ÀÖ¾î ÇÊ¿äÇÑ Specification of motor
+
+¡¤  (No load Rotational speed) : No = 2,350 rpm
+
+¡¤  (Rated torque)Rated ºÎÇÏ          : Tr =  2Kg.cm
+
+¡¤  (Rated Rotational speed)        : Nt = 2,000 rpm
+
+¡¤  (Rated current)         :  Ir = 2.3 A
+
+¡¤  (Starting torque)±âµ¿ÅäÅ©         : Ts = 13.3 kg.cm
+
+À» ¸¸Á·ÇÏ´Â motor¸¦ ¼±Á¤ÇÏ¸é µË´Ï´Ù.
+
+ 
+
+¿©±â¼­ 40W±Ş motorÀÇ Å©±â´Â 
+
+AC motor´Â º¸Åë 90degree
+
+DC motor´Â powerÀÌ ÁÁ¾Æ 80degreeÀÇ motor¸¦ ¼±Á¤ÇÏ½Ã¸é µË´Ï´Ù.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+motor choice
+
+
+
+
+
+servo motor
+
+	analog servo motor
+
+	digital servo motor
+
+
+
+servo motor
+
+	ÀÏ¹İ¼­º¸´ÂÁÂ, ¿ì60degree ¾¿ È¸ÀüÇÒ¼öÀÖÀ¸¸ç 
+
+	¿äÆ®¿¡ »ç¿ëµÇ´Â ¼¼ÀÏÀ©Ä¡¼­º¸ °°Àº°ÍÀº360degree±îÁö È¸Àü ÇÒ¼öÀÖ±âµµÇÏ´Ù.
+
+
+
+servo horn
+
+servo saver
+
+
+
+example (spec of servo motor )
+
+	Operating voltage : 2.8~4.2V
+
+	speed : 0.05sec/60
+
+	torque : 0.07kg-cm
+
+	size : 17 x 6.2 x 16 mm
+
+	weight : 1.8g
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RC planeÀÇ power system
+
+	manufature factory of propeller provide propeller performance data
+
+	propeller performance data provide (¾î¶² RPMÀÏ¶§ ¾ó¸¶¸¸Å­ÀÇ (Power)À» ³¾ ¼ö ÀÖ´Â Áö)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RC car of power system
+
+
+
+1. rpm of motor = ¸ğÅÍ kV x ¹èÅÍ¸® Àü¾Ğ(V) = 4800kV x 7.4V = 35520 rpm(revolution per minute : 1ºĞ´ç È¸Àü¼ö)
+
+2. 1Â÷ °¨¼Óºñ = Â÷µ¿±â¾î¹Ú½º ±â¾îºñ(Á¦Ç°¸¶´Ù ´Ù¸§) = Â÷µ¿(Diff)¸µ±â¾î¼ö / Â÷µ¿(Diff)ÇÇ´Ï¾ğ ±â¾î¼ö = 38/14 = 2.714
+
+3. 2Â÷ °¨¼Óºñ = ½ºÆÛ±â¾î ÀÌ»¡¼ö / ¸ğÅÍ ÇÇ´Ï¾ğ±â¾î ÀÌ»¡¼ö = 60 / 15 = 4 
+
+
+
+Gear Ratio
+
+	Revolution of motor(1revolution of wheel)
+
+	gear ratio=1Â÷ °¨¼Óºñ x 2Â÷ °¨¼Óºñ
+
+Rollout
+
+	propel distance of wheel(1revolution of motor)
+
+	Rollout= diameter of tire / gear ratio = diameter of tire x 3.14 /gear ratio
+
+ 
+
+
+
+'RC Final Gear Ratio LITE'
+
+	±¸±ÛÇÃ·¡ÀÌ¿¡¼­ ´Ù¿î·ÎµåÇÏ¼Å¼­ ¼³Ä¡ÇÏ½Ã¸é µË´Ï´Ù.
+
+	ÀÚ½ÅÀÇ spec of rc carÀ» ÀÔ·ÂÇÏ¸é (final gear ratio),(rollout),(maximum rpm of motor), ÃÖ´ë¼Óµµ(potential speed)¸¦ º¸¿©Áİ´Ï´Ù
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rc car spec example
+
+	1.motor
+
+		brushless
+
+		4800kV
+
+	2.battery
+
+		LiPo
+
+		7.4V
+
+		2 Serial
+
+	3.gear
+
+		pioion gear
+
+			plain gear
+
+			15T
+
+		spur gear
+
+			plain gear
+
+			60T
+
+		drive gear
+
+			Bevel gear
+
+			14T
+
+		driven gear
+
+			Bevel gear
+
+			38T
+
+	4.speed of car
+
+
+
+
+
+
+
+
+
+
+
+
+
+EP rc car ±¸¼ºÇ°
+
+	rear assy
+
+	front assy
+
+		upper arm
+
+		lower arm
+
+		king pin
+
+		C hub[C cup bracat?)
+
+		turnbuckle[Å¸ÀÌ·Îµå]
+
+		upper shasis[upper deck]
+
+		main shasis
+
+	drived assy
+
+
+
+	..shock absorber
+
+		coil spring
+
+		damper
+
+	..shock tower
+
+		[damper stay],[damper stay]
+
+		suspension
+
+	Differential Gear of RC car 
+
+		diff gear case
+
+		ring gear
+
+		side gear
+
+		diff pinion gear
+
+		diff pinion gear shaft
+
+		axle shaft pinion gear
+
+		axle shaft
+
+		spur gear
+
+		crutch?
+
+	tire 
+
+		rpm of tire=
+
+		diameter of tire=
+
+	gear
+
+		T(Tooth)teeth of gear=
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+receiver
+
+
+
+READY SET
+
+RTR(READY TO RUN)
+
+
+
+
+
+
+
+
+
+Áö»ó(¼ö»ó)¿ë Çã°¡ frequency
+
+	27MHz
+
+		26.995 27.045 27.095 27.145 27.195
+
+	40MHz
+
+		40.255 40.275 40.295 40.315 40.335 40.355 40.375 40.395 40.415 40.435
+
+		40.455 40.475 40.495
+
+	75 MHz
+
+		75.630 75.650 75.670 75.690 75.710 75.730 75.750 75.770 75.790
+
+	2.4GHz
+
+engine
+
+	air filter
+
+	muffler
+
+	centrifugal clutch
+
+	¸®ÄÚÀÏ starter or pull starter
+
+	Ä¼ºê·¹ÅÍ
+
+engine
+
+	2 cycle engine
+
+		almost °íÈ¸Àü¿ë 2 cycle engine is used in GP rc car
+
+	4 cycle engine
+
+		
+
+	
+
+
+
+
+
+
+
+fuction
+
+	ATV
+
+	EPA
+
+	Â÷·®ÀÇ°æ¿ì2¹øÃ¤³Î(º¯¼Ó)ÀÇEPA Àü/ÈÄ¹üÀ§¸¦100%·ÎÇÏ°íº¯¼Ó±â¼ÂÆÃÀ»ÇÕ´Ï´Ù.
+
+
+
+
+
+
+
+
+
+
+
+RC ÀÚµ¿Â÷µµ½ÇÁ¦ÀÚµ¿Â÷Ã³·³Å¬·¯Ä¡°¡ÀåÂøµÇ¾îÀÖ¾î¼­Á¤ÁöÁß¿¡µµ½Ãµ¿ÀÌ
+
+²¨ÁöÁö¾ÊÀ½
+
+
+
+
+
+body painting
+
+	»ç¿ëÇÏ´Âµµ·á¿ª½Ã Æ÷¸®Ä«º¸³×ÀÌÆ®Àü¿ë
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+run manual
+
+	Á¶Á¾±âÀÇÁ¶Á¾°£¿¡³»ÀåµÈ½ºÇÁ¸µÀÇÈû¿¡ÀÇÇÑ¸®ÅÍ´×(Retruning)Àº°íÁúÀûÀÎ³ª»ÛÁ¶Á¾½À°ü
+
+
+
+
+
+
+
+
+
+flight time,run time(ÁÖÇà½Ã°£)ÀÌ ³Ê¹« ±æ¾îµµ
+
+	Àç¹Ì°¡ ¹İ°¨
+
+	mechnical parts ¼ö¸í ´ÜÃà
+
+
+
+
+
+play in with hobbywing website
+
+play in with NASA website
+
+ÀÌ´ë·Î °¡´Ù °£ ³­ ¾÷±×·¡ÀÌµå µÇÁö ¾ÊÀ» °ÍÀ¸·Î º¸ÀÎ´Ù.
+
+ÀÌ´ë·Î °¡´Ù °£ ³­ ¸ØÃâ °ÍÀ¸·Î º¸ÀÎ´Ù.
+
+ÀÌ´ë·Î °¡´Ù °£ ³­ µµÅÂµÉ °ÍÀ¸·Î º¸ÀÎ´Ù.
+
+´ç½ÅÀº °¡°í ÀÖ´Â°¡?
+
+´ç½ÅÀº ¼­ ÀÖ´Â°¡?
+
+
+
+Áö±İ ÇöÀç »ó»óµÇ´Â ¹Ì·¡ÀÇ ¸ğ½ÀÀ» ¹Ù²Ù°í ½Í´Ù
+
+ÀÎ»ıÀÇ Èå¸§À» ¹Ù²Ù°í ½Í´Ù
+
+
+
+ 
+
+upgrade me
+
+upgrade my specification
+
+ÀÎÇÏ´ëÇĞ±³ ÆíÀÔÇĞ
+
+check job recruit webpage
+
+KAI Ãë¾÷
+
+Ç×¿ì¿¬ Ãë¾÷
+
+
+
+
+
+
+
+
+
+Á¦ ÀåÁ¡Àº ½Ç¹«¸¦ ÇØº¸¾Ò´ø °æÇè¿¡ ÀÇÇØ¼­ ½ÇÁ¦ ÇÊ¿ä¼ºÀ» ¸ö¼Ò ¾Ë±â ¶§¹®ÀÔ´Ï´Ù.
+
+ÇÊ¿ä¼ºÀ» ¾Æ´Â »ç¶÷
+
+
+
+´ëÇÑ¹Î±¹¿¡¼­ Á¦ÀÏ ÁÁÀº ´ëÇĞÀÌ¶ó°í »ı°¢ÇÏ¸ç
+
+ÀÌ¿¡ °É¸Â´Â ³ë·ÂÀ» ÇÏ°í½Í½À´Ï´Ù.
+
+ÀÌ¿¡ °É¸Â°Ô »óÀÀÇÏ´Â
+
+
+
+
+
+ÇØ½£
+
+Èæ½£
+
+Áß±¹½£
+
+¹Ì±¹½£
+
+¾ÆÀÎ½£
+
+È­ÀÌÆ®½£
+
+¼³½£
+
+
+
+
+
+±× °÷¿¡ ½áÁ® ÀÖ¾ú´Ù
+
+Çàº¹Àº º»ÀÎÀÌ ½º½º·Î ¸¸Á·ÇÑ °÷¿¡ ÀÖ´Ù
+
+
+
+
+
+UNNAMED PROJECT BOM
+
+ÇÏÇÁ¹Ì·¯ ÇÊ¸§
+
+°­È­À¯¸®
+
+ÁÖ¹æ¼¼Á¦
+
+ºĞ¹«±â
+
+½Ç¸®ÄÜ ¹Ğ´ë
+
+
+
+
+
+UNNAMED PROJECT 
+
+
+
+
+
+
+
+SD CARD 8GB ÀÌ»ó
+
+WWW.RASPBERRYPI.ORG
+
+	DOWNLOAD
+
+		RASPBIAN
+
+			DOWNLOAD ZIP
+
+RUFUS.AKEO.IE
+
+	RUFUS 3.1 DOWNLOAD
+
+
+
+RUFUS 3.1 ½ÇÇà
+
+ÀåÄ¡¼±ÅÃ : SD CARD ¼±ÅÃ
+
+ºÎÆ®¼±ÅÃ : RASPBIAN-STRETCH.IMG  				
+
+½ÃÀÛ
+
+È®ÀÎ
+
+
+
+¶óÁîº£¸® ÆÄÀÌ3 B+
+
+
+
+USB ¼ÒÇü ¸¶ÀÌÅ©
+
+USB Àü¿ø ½ºÇÇÄ¿(AUX ³»Àå ½ºÇÇÄ¿)
+
+AUX 3.5MM MALE-MALE AUDIO CABLE
+
+MICRO USB ADAPTER(3A ÀÌ»ó)
+
+HDMI CABLE
+
+MONITOR
+
+
+
+
+
+
+
+
+
+
+
+¼Ö·Î¾ÆÀÌºê
+
+¼Ö·Î¶ó¸®
+
+
+
+³»°¡ ÁÁ¾ÆÇÏ´ø Ä³¸¯ÅÍµé ±×·Áº¸±â
+
+ÀÇ»ó¿¡ ³Ö¾îº¸±â È¤Àº ÇÑ Æ÷½ºÅÍ¿¡ ´Ù ±×·Áº¸±â
+
+
+
+¿ìÁßÅ°½º
+
+¿ìÁßÄ·ÇÎ
+
+
+
+
+
+___________________________________________________________________________________________________________________________
+
+¿µ»ó ¾Õ ºÎºĞÀÇ ºü¸¥ UI µğÀÚÀÎ ¸¶À½¿¡ µç´Ù javascript·Î ¸¸µé ¼ö ÀÖÀ¸·Á³ª? ¿µ»óÆíÁıÇÁ·Î±×·¥°°Àº°É·Ğ°¡?
+
+https://youtu.be/zC6qi_f6icA
+
+Å°Áî³ª ¾ÆÀÌ ¹öÃß¾ó ¿µ»óÀ» Âü°íÇÏÀÚ
+
+virtual sekai ni log in suru
+
+Å°Áî³ª ¾ÆÀÌ ¹è°æ°°Àº ±âº» ¹è°æ È­ÀÌÆ® ¹ÙÅÁ °ËÁ¤»ö ±×¸®µå 
+
+ÆíÁı¿µ»ó°è ¹öÃò¾ó À¯Æ©¹ö
+
+¹öÃß¾óÀ¯Æ©¹ö
+
+³»°¡ ¸¸µç ¼¼°è¸¦ ¼³¸íÇÏ´Â Ä³¸¯ÅÍÀÇ ¼ºÇâ »ç°í¹æ½Ä ÀÌ ¸ğµç°Ç ³»°¡ °áÁ¤ÇÏ°í ÀÚ½Å°¨À» °¡Á®µµ µÇÀİ¾Æ
+
+´ÏÁö»êÁö
+
+È¦·Î¶óÀÌºê
+
+VR CHAT
+
+
+
+SMART CITY DESIGN
+
+
+
+
+
+ºñ¿À°í ¹Ì¼¼¸ÕÁö ¸¹Àº ³¯Àº ÀÚ±â°³¹ß ÇÏ´Â ³¯
+
+À¶ÇÕ °øºÎ
+
+	¿µ¾î ÇÃ·¯½º ¼öÇĞ
+
+	ÀÏ¾î ÇÃ·¯½º ÁÖ½Ä
+
+
+
+
+
+º¹¼Ò¹æÁ¤½Ä
+
+¹ÌºĞ¹æÁ¤½Ä
+
+
+
+
+
+_________________________________________________________________________________________________________________________________
+
+ .dwg, .dwf, .dxf 
+
+TitaniumÀ»
+
+____________________________________________________________________________________________________________________________________
+
+Çã¸§ÇÑ Áı
+
+
+
+³ª¹«²ÛÀÌ µÇ±âµµ ÇÏ°í
+
+°í´ë ½£
+
+
+
+¾ÆÄ«´Ï¾È
+
+	»ç¶û½º·¯¿î ¿©¼º
+
+
+
+
+
+
+
+Å¬·¹¾î
+
+ºí·¹¾î
+
+ÁÖÄ«ÀÌ ½£ÀÇ ÀÚ»ìÀÇ ½£
+
+cnn ±«±â½º·¯¿î Àå¼Ò
+
+°¡Àå °øÆ÷½º·¯¿î Àå¼Ò
+
+·¯½Ã¾Æ °ËÀº¾Ç¸¶ µ¿±¼
+
+6Hz ÀúÁÖÆÄ´Â °øÆ÷½º·¯¿òÀ» ¸¸µé¾î³½´Ù
+
+
+
+
+
+¼¼»ó¿¡¼­ °¡Àå ½½ÇÂ Àå¼Ò
+
+¼¼»ó¿¡¼­ °¡Àå ½½ÇÂ ³ë·¡
+
+¼¼»ó¿¡¼­ °¡Àå ½½ÇÂ ÀÌ¾ß±â
+
+¼¼»ó¿¡¼­ °¡Àå ½½ÇÂ ¿ìÁ¤
+
+½Ç¸¶¸®·Î ºÎÅÍ ½ÃÀÛµÇ´Â ÀÌ¾ß±â
+
+
+
+
+
+____________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+unresolved problemS OF PHYSICS
+
+
+
+SO I TRIED AGAIN IN A DIFFERENT WAY.
+
+THE PRIMARY ADHENSION WAS MADE WITH DOUBLE-SIDED TAPE
+
+
+
+____________________________________________________________________________________________________________________________________
+
+ARMATURE TELECOMMUNICATION
+
+
+
+¾Æ¸¶Ãß¾î¹«¼±Åë½Å °ü·Ã
+
+IARU-R3
+
+KARL
+
+
+
+HOW TO USE IN EMERGENCY SITUATION
+
+
+
+____________________________________________________________________________________________________________________________________
+
+
+
+¹®Àå¿¡ Á¶±İ´õ Á¤º¸°¡ ¸¹ÀÌ µé¾î°£ Ç³¼ºÇÑ ¹®ÀåÀ» ¸¸µé ¼ö ÀÖ´Â ´É·Â
+
+
+
+´ëÇĞ¿ø
+
+´ëÇĞ±³
+
+Àü¹®ÇĞ±³
+
+
+
+_______________________________________________________________________________________________________________________________________
+
+Research Methodology
+
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+
+
+
+¿¬±¸Æ÷Æ® Æú¸®¿À
+
+½º¸¶Æ® ¹Ì·¯ ÄÁ¼Á µğÀÚÀÎ 1
+
+½º¸¶Æ® ¹Ì·¯ ÄÁ¼Á µğÀÚÀÎ N
+
+½º¸¶Æ® ÀÛ¾÷½Ç
+
+
+
+_______________________________________________________________________________________________________________________________________
+
+ÀÎÇÏ´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ Áö¿ø¿ä°Ç
+
+ÀÎÇÏ´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ °ø°ú´ëÇĞ Ç×°ø¿ìÁÖ°øÇĞ°ú °æÀï·ü 27.50 : 1 
+
+
+
+
+
+
+
+¼­¿ï´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ FACTS AND FIGURES
+
+¼­¿ï´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ Áö¿ø¿ä°Ç(°ø°ú´ëÇĞ ±âÁØ) : TEPS 327Á¡ ÀÌ»ó ,TOEFL 86Á¡ ÀÌ»ó
+
+¼­¿ï´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ ¸ğÁıÀÎ¿ø : Ç×°ø¿ìÁÖ°øÇĞ°ú 1¸í ¸ğÁı
+
+¼­¿ï´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ Áö¿ø¼­·ù : ÀÔÇĞÁö¿ø¼­,¼öÇèÇ¥,»çÁø(ÀÔÇĞÁö¿ø¼­¿ë ¹× ¼öÇèÇ¥¿ë),Á¹¾÷Áõ¸í¼­ ¿øº»,ÇĞ»ç°úÁ¤ ÀüÇĞ³â ¼ºÁ¤Áõ¸í¼­ ¿øº»(100ºĞÀ§ Á¡¼ö),TOEFL ¼ºÀûÇ¥ ¿øº»,ÇĞ·ÂÁ¶È¸µ¿ÀÇ¼­
+
+¼­¿ï´ëÇĞ±³ 21ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ ÀÔ·Â»çÇ× ÇÊ¿äÁ¤º¸ : Á¹¾÷ÀÏÀÚ,ÇĞ·ÂÁ¶È¸ ´ã´çºÎ¼­,ÇĞ·ÂÁ¶È¸ ´ã´çÀÚ ÀÌ¸ŞÀÏ ÁÖ¼Ò
+
+Àü°ø°ú¸ñ ÀÌ·Ğ½ÃÇè(°øÇĞ¼öÇĞ,°øÇĞ¼öÇĞ¥°,°øÇĞ¼öÇĞ¥±, ¹°¸®)
+
+¸éÁ¢
+
+±¸¼ú°í»ç
+
+°øÀÎ¿µ¾î Á¡¼ö(
+
+
+
+
+
+¼­¿ï´ëÇĞ±³ 22ÇĞ³âµµ ÇĞ»çÆíÀÔÇĞ
+
+Ç×°ø¿ìÁÖ°øÇĞ°ú 1¸í ¸ğÁı
+
+
+
+
+
+Ãë¸®È÷ ´ëÇĞ ¹«ÀÎÇ×°ø±â¿¡ °üÇÑ ÇĞ°ú¿Í ÇĞ±³ ±³°ú¼­ ¾Ë¾Æ³»¼­ °øºÎ
+
+MIT ´ëÇĞ ¹«ÀÎÇ×°ø±â¿¡ °üÇÑ ÇĞ°ú¿Í ÇĞ±³ ±³°ú¼­ ¾Ë¾Æ³»¼­ °øºÎ
+
+
+
+
+
+
+
+»ç¶÷À» ¾ËÀÚ
+
+¼­¿ï´ë °ø°ú´ëÇĞ ±â°è°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ Ç×°ø¿ìÁÖ°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ Àç·á°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ Àü±âÁ¤º¸°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ °Ç¼³È¯°æ°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ ¿¡³ÊÁöÀÚ¿ø°øÇĞ°ú
+
+¼­¿ï´ë °ø°ú´ëÇĞ ÄÄÇ»ÅÍ°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ È­ÇĞ»ı¹°°øÇĞºÎ
+
+¼­¿ï´ë °ø°ú´ëÇĞ °ÇÃàÇĞ°ú°ÇÃàÇĞÀü°øÇĞ°ú
+
+¼­¿ï´ë °ø°ú´ëÇĞ °ÇÃà°øÇĞÀü°ø»ê¾÷°øÇĞ°ú
+
+¼­¿ï´ë °ø°ú´ëÇĞ ¿øÀÚÇÙ°øÇĞ°ú
+
+¼­¿ï´ë °ø°ú´ëÇĞ Á¶¼±ÇØ¾ç°øÇĞ°ú
+
+
+
+
+
+______________________________________________________________
+
+CLOTHES PUZZLE
+
+WHAT IS YOUR NEXT PUZZLE
+
+ÀÌ»Ú°Ô ÀÔ°í½Í´Ù
+
+¿Âµµ¿¡ ¸Â°Ô ÀÔ°í ½Í´Ù
+
+	Ãß¿ï¶© µû¶æÇÏ°Ô
+
+	´õ¿ï¶© ½Ã¿øÇÏ°Ô
+
+
+
+30µµ CLOTHES PUZZLE
+
+25µµ ÆĞ¼Ç
+
+20µµ ÆĞ¼Ç
+
+169CM
+
+28CM
+
+______________________________________________________________
+
+¸¶Æ÷±¸ ¶óÀÌÄ¿¼¥
+
+¿÷½º¾Æ¿ô
+
+ÇÃ·§ÆûÇÃ·¹ÀÌ½º
+
+½ºÄÃÇÁ(HIGH END BRAND)
+
+¾ÆÀÌ¾Ú¼¥
+
+¼®ÃÌÈ£¼ö ·Ôµ¥¿ùµå¸ô
+
+¼®ÃÌÈ£¼ö ·Ôµ¥¹éÈ­Á¡
+
+
+
+³×¹ö±×¸°½ºÅä¾î
+
+³ë½ºÆäÀÌ½º °ø½Ä ¿ÀÇÁ¶óÀÎ ¸ÅÀå
+
+¾Ğ±¸Á¤·Îµ¥¿À ¿¡µñÆ¼µå ¼¥
+
+BOE SHOP#LIFE STYLE EDIT SHOP
+
+The Conran Shop#LIFE STYLE EDIT SHOP
+
+Â÷·ÁÀÔ°í °¡±â
+
+¼ÒÆÄ¿ø´Ü½º¿ÍÄ¡¸¦ »ùÇÃÀ»...?¾òÀ» ¼ö ÀÖ´ÂÁö ¹°¾îº¸±â
+
+
+
+SMART DESIGN FURNITURE
+
+SMART WEARABLE 
+
+SMART MIRROR
+
+Å« »çÀÌÁîÀÇ ¿ø¸ñ Å×ÀÌºí(¿ìµå½½·¦)
+
+½ºÅ×ÀÎ¸®½º À§¿¡ À¯¸®¸¦ ¾ñÀ¸¸é ¾î¶² ´À³¦ÀÌÁö?
+
+SMART DRAWER
+
+FURNITURE TO HAVE WHEEL CONTROL SYSTEM. 
+
+
+
+
+
+
+
+___________________________________________________________________________________________
+
+±İÀÏ ÃÖ°í¿Âµµ
+
+±İÀÏ ÃÖÀú¿Âµµ
+
+±İÀÏ ÃÖ°í ¹Ì¼¼¸ÕÁö
+
+±İÀÏ ÃÖÀú ¹Ì¼¼¸ÕÁö
+
+
+
+
+
+___________________________________________________________________________________________
+
+
+
+
+
+´ÚÅÍÁö ¾à»ê¼º ·¹µå ºí·¹¹Ì½¬ Å¬¸®¾î ¼öµù Æû
+
+¶ó¿îµå·¦ 1025 µ¶µµ ÆĞµå   PHA 
+
+¾Æ·Î¸¶Æ¼Ä« À¯±â³ó ¾Ë·Î¿¡ º£¶ó Á©(AFTER SUN RAY)
+
+¿¡½ºÆ®¶ó ¾ÆÅäº£¸®¾î 365 Å©¸²
+
+¹Ì»ş ¼öÆÛ ¾ÆÄí¾Æ ¿ïÆ®¶ó È÷¾Ë·Ğ Å©¸²
+
+
+
+
+
+¶ó¿îµå·¦ ÀÚÀÛ³ª¹« ¼öºĞ Å©¸²	
+
+¶ó¿îµå·¦ 1025 µ¶µµ Å¬·»Àú
+
+´ÚÅÍµğÆÛ·±Æ® ºñÅ¸¸®ÇÁÆ®-A
+
+´õ ·¦¹ÙÀÌºí¶ûµÎ ¿Ã¸®°í È÷¾Ë·ç·Ğ»ê 5000Åä³Ê
+
+¸ŞÀÌÅ©ÇÁ·¥ À¯ºêÀÌ µğÆæ½º ¹Ì ¸ğÀÌ½ºÃ³ ¼±Å©¸²
+
+______________________________________________________________________________
+
+Åõ¸í °¡¹æ
+
+Åõ¸í Ä³¸®¾î
+
+¸Ş½¬ °¡¹æ
+
+ÄÚµğ³×ÀÌÅÍ °¡¹æ
+
+½º¸¶Æ® Ä³¸®¾î(º¸Á¶¹èÅÍ¸®)
+
+¸Ş½¬µå Æ÷ÄÏ
+
+½º¸¶Æ® ¼­·ù°¡¹æ(º¸Á¶¹èÅÍ¸®)
+
+³ëÆ®ºÏ °¡¹æ
+
+
+
+______________________________________________________________________________
+
+ÃÊ°æ·®ºñÇàÁ¶Á¾ÀåÄ¡ ±âÃâ¹®Á¦ CBT ¹®Á¦ ¹× ÇØ¼³
+
+GNSWJDQKR999
+
+¤±¤²1¤¥2¤·¤§3!@#
+
+
+
+
+
+
+
+AW3DW1SW2###
+
+
+
+ 
+
+______________________________________________________________________________
+
+
+
+°øºÎÀÇ ±¹Á¦È­
+
+;±¹Á¦ ¾ğ¾î 
+
+;±¹Á¦ ´ÜÀ§
+
+;±¹Á¦ °úÇĞ °øÇĞ ¿ë¾î
+
+
+
+ÇÑ±¹Ç×°ø´ë Ä¿¸®Å§·³ µû¶ó °øºÎ
+
+MIT Ä¿¸®Å§·³ µû¶ó °øºÎ
+
+ÇÁ¸°½ºÅÏ Ä¿¸®Å§·³ µû¶ó °øºÎ
+
+IVY league Ä¿¸®Å§·³ µû¶ó °øºÎ
+
+
+
+
+
+¼­¿ï´ëÇĞ±³
+
+±â°èÇ×°ø°øÇĞºÎ
+
+
+
+
+
+
+
+
+
+ÇÑ±¹Ç×°ø´ëÇĞ±³
+
+Ç×°ø¿ìÁÖ ¹× ±â°è°øÇĞºÎ
+
+Ç×°øÀüÀÚ ¹× Á¤º¸Åë½Å°øÇĞºÎ(ÀüÀÚ ¹× Ç×°øÀüÀÚ°øÇĞ Àü°ø
+
+Ç×°øÀüÀÚ ¹× Á¤º¸Åë½Å°øÇĞºÎ(Á¤º¸Åë½Å°øÇĞ Àü°ø)
+
+Ç×°øÀüÀÚ ¹× Á¤º¸Åë½Å°øÇĞºÎ(ÄÄÇ»ÅÍÁ¤º¸°øÇĞ Àü°ø)
+
+Ç×°øÀç·á°øÇĞ°ú
+
+
+
+ÇÑ±¹Ç×°ø´ëÇĞ±³ ÆíÀÔÇĞ
+
+ÀÏ¹İÆíÀÔ, ÇĞ»çÆíÀÔ,±ºÀ§Å¹ ÆíÀÔÇĞ
+
+
+
+ÆíÀÔÇĞ °ú¸ñ
+
+ÆíÀÔ¿µ¾î(¿µ¾î ÇÊ±â°í»ç)    ÆíÀÔ¼öÇĞ(¼öÇĞÇÊ±â°í»ç)
+
+
+
+°øÇĞºÎ ÆíÀÔÇĞ Á¡¼ö °è»ê
+
+¿µ¾î 50% + ¼öÇĞ 50%
+
+
+
+ÆíÀÔÇĞ ¸ğÁı ÀÎ¿ø
+
+ÀÏ¹İÆíÀÔ 75¸í
+
+ÇĞ»çÆíÀÔ 44¸í
+
+
+
+ÀÏ¹İ ¸éÁ¢(ÀÏ¹İÆíÀÔÇĞ ¿Ü)
+
+(1) 1´Ü°è ÀüÇü¿¡ ÇÕ°İÇÑ ¼öÇè»ı°ú ±ºÀ§Å¹ ÆíÀÔÇĞ ¼öÇè»ıÀº ¸éÁ¢À» ½Ç½ÃÇÑ´Ù.
+
+(2) ¸éÁ¢¹æ¹ı : ¸éÁ¢À§¿ø 2ÀÎ - ¼öÇè»ı 1ÀÎ
+
+(3) ¸éÁ¢½Ã°£ : 10ºĞÀÌ³»
+
+(4) Æò°¡¿µ¿ª : Áö¿øµ¿±â, ÇĞ¾÷°èÈ¹, ÀÎ¼º µî
+
+
+
+ÇÑ±¹Ç×°ø´ëÇĞ±³ÆíÀÔÀº ´ëÃ¼ÀûÀ¸·Î 
+
+ÀÏ¹İÆíÀÔÀÌ ÇĞ»çÆíÀÔº¸´Ù ³ôÀº °æÀï·üÀ» ³ªÅ¸³»°í ÀÖ½À´Ï´Ù
+
+20:1 Á¤µµÀÇ °æÀï·ü
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ÆíÀÔ¸éÁ¢
+
+´ëÇĞ Áö¿øµ¿±â, ÇĞ¾÷°èÈ¹, Àå·¡Èñ¸Á, ÆíÀÔÀÇ ¸ñÀû
+
+ÀÌ°ø°è¿­Àº ¹®Á¦Ç®ÀÌ, Áõ¸í, ¹ıÄ¢
+
+±× ÇĞ¹®¿¡ ´ëÇÑ ÀÌ½´³ª, ÀÇ°ß
+
+
+
+°úÁ¦¸¦ ÆÀ¿öÅ©·Î ÇØ°áÇØ¾ß ÇÏ´Â °æ¿ì°¡ ¸¹¾Æ ¸®´õ½Ê, ÀÇ»ç¼ÒÅë ´É·Â
+
+µîÀ» ÆíÀÔ ¸éÁ¢¿¡¼­µµ ¿ä±¸
+
+ SNS
+
+¸éÁ¢°ü°ú ´«À» ¸ÂÃß°í ¹Ì¼Ò¸¦ ¶í ¾ó±¼ Ç¥Á¤À¸·Î 
+
+È£°¨À» ÁÙ ¼ö ÀÖ´Â ¿ä¼Ò¸¦ ÃÖ´ëÇÑ °®Ãß°í
+
+¸éÁ¢Àå¿¡ µé¾î°¡´Â °ÍÀº ±âº» Áß¿¡ ±âº»
+
+
+
+Á¶±İ ³­°¨ÇÑ Áú¹®ÀÌ¶óµµ ´çÈ²ÇÏÁö ¸»°í 
+
+ÃÖ´ëÇÑ Ã¢ÀÇÀûÀ¸·Î ´ë´äÇÑ´Ù¸é ÁÁÀº Á¡¼ö¸¦ ¹ŞÀ» ¼ö ÀÖ½À´Ï´Ù!!
+
+Àû±ØÀûÀ¸·Î ÇÕ¸®ÀûÀÎ °á·ĞÀ» µµÃâÇÏ·Á°í ³ë·ÂÇÏ´Â ÀÚ¼¼¸¸À¸·Îµµ
+
+ÃæºĞÈ÷ ÁÁÀº ÀÎ»óÀ» ÁÙ ¼ö ÀÖ´Ù´Â °Í ÀØÁö ¸¶¼¼¿ä^^
+
+
+
+ÇÏÁö¸¸ ¾î¶² ¿ÊÀ» ÀÔµçÁö
+
+±ò²ûÇÏ°í ´ÜÁ¤ÇÏ°Ô ÀÔ´Â °ÍÀÌ °¡Àå Áß¿äÇÏ´Ù´Â °ÍÀ» ÀØÁö ¸¶¼¼¿ä^^
+
+
+
+
+
+ÇêµÈ ²ŞÀÏ Áöµµ ¸ğ¸£Áö¸¸ Á¦°¡ Áö±İ »ı°¢ÇÒ ¼ö ÀÖ´Â ¼±¿¡¼­ ±²ÀåÈ÷ Á¦ ³ª¸§ÀÇ ÃÖ¼±ÀÇ ¼±ÀÌ¶ó°í »ı°¢ÇÕ´Ï´Ù
+
+automatic_secretary_system_partitial_program_1
+
+
+
+SRS
+
+jhp->sys	: i want to know weather.
+
+jhp->sys	: i want to turn on pc.
+
+sys->jhp : 
+
+
+
+
+
+flow chart(perspective of activity diagram)
+
+
+
+
+
+/------------------------------system 1st mode___________________________
+
+sys->me
+
+if i turn on sys
+
+
+
+speak that
+
+that 1
+
+
+
+/------------------------------system 2nd mode___________________________
+
+me->sys
+
+check time
+
+if time is time 1
+
+	that 1
+
+	clean your body
+
+if time is time 2
+
+	that 2
+
+	develope your self
+
+if time is time 3
+
+	that 3
+
+	ìŠ¤íŠ¸ë ˆì¹­ í•˜ì„¸ìš”
+
+if time is time 4
+
+	that 4
+
+	do exercise
+
+if time is time 5
+
+	that 5
+
+	ìŠ¤íŠ¸ë ˆì¹­ í•˜ì„¸ìš”
+
+if time is time 6
+
+	that 6
+
+	ê°€ìŠµê¸°ì— ë¬¼ì„ ë„£ì„ì„¸ìš”
+
+if time is time x
+
+	that x
+
+	ê°€ìŠµê¸° ì‘ë™ì„ í•˜ì„¸ìš”
+
+if time is time x
+
+	that x
+
+	ê°€ìŠµê¸° ì‘ë™ì„ í•˜ì„¸ìš”
+
+if time is time x
+
+	that x
+
+	connect smartphone to battery charger
+
+
+
+if time is time x
+
+	that x
+
+	drink water
+
+
+
+
+
+if time is time x
+
+	that x
+
+	spray water
+
+
+
+
+
+if time is time x
+
+	that x
+
+	do activity for environment
+
+	do activity for human being
+
+		compare ê³µê¸°ì •í™”ì‹ë¬¼ë“¤ì˜ íš¨ìœ¨
+
+		get ê³µê¸°ì •í™”ì‹¤ë¬¼ë“¤ that have best effect.
+
+		plant 1 tree 1 times per 1 year
+
+		think ì§€êµ¬í™˜ê²½ì„ ìœ„í•œ ì¢‹ì€ ë°©ë²•
+
+	do activity for me
+
+
+
+/------------------------------system 3nd mode___________________________
+
+
+
+
+
+
+
+automatic secretary system partitial program 2 
+
+
+
+
+
+
+
+update spoken_file following time change
+
+	if current time=06 30 00 00 , turn on light
+
+	if current time=06 30 00 00 , music play as fade in
+
+	remove file.txt every 13 min
+
+	make file.txt every 14 min
+
+	speak file.txt every 15 min
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+control brightness module
+
+
+
+
+
+
+
+220V
+
+
+
+
+
+0.5V ~ 12V
+
+
+
+
+
+AI
+
+TTS
+
+STT
+
+clover note
+
+
+

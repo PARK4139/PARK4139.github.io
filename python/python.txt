@@ -1,0 +1,39 @@
+c:
+
+setlocal
+
+set yyyyMMddhhmmss = ..........
+
+
+
+
+
+pip list>>currentPythonPackageList - %yyyyMMddhhmmss%.txt
+
+python -m pip install --upgrade pip
+
+
+
+
+
+echo d | pip uninstall somePackage
+
+
+
+
+
+pip install SomePackage==1.0.4
+
+pip install pywin32
+
+echo 아니 ...win32com을 쓰려는데 다른 이름인 pywin32를 install 해야할 수 있다.
+
+
+
+
+
+
+
+____________________________________________
+
+`manager target(python package).txt

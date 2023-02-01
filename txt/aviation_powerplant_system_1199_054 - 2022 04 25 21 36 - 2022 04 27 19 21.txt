@@ -1,0 +1,1827 @@
+1.real로 만들어지거나 먼저 존재하는 것에 대하여 귀납적 방식으로 선공부하고 연역적 방식을 tool로서 판단한다
+
+
+
+
+
+2.classification by 형상
+
+	example	
+
+		engine class
+
+		system class
+
+		module class
+
+		assembly class
+
+		LRU class
+
+		SRU class
+
+		attaching part class
+
+		
+
+		
+
+	
+
+
+
+powerplant system
+
+	reciprocating engine
+
+		reciprocal engine
+
+		    2) 점화장치 작업 및 작업안전사항 준수 여부
+
+		    3) 윤활 장치 점검(기능, 작동유 점검 및 보충)
+
+		    4) 주요 지시계기 및 경고장치 이해
+
+		
+
+cycle of engine
+
+       - 오토 cycle : 열 공급이 정적과정, 
+
+	항공기용 reciprocating engine의 기본 cycle
+
+       - 브레이튼 cycle : 2개의 정압?단열과정, 
+
+	항공기용 가스터빈가관의 cycle
+
+       - 사바테 cycle : 2개의 단열?정적과정, 1개의 정압과정(정적?정압cycle)
+
+
+
+
+
+
+
+
+
+cowl flap
+
+	       - cooling air의 유량을 조절함으로써 기관의 cooling효과를 조절하는 장치
+
+	       - 지상 작동시 full open 한다.
+
+
+
+
+
+
+
+opposite type engine
+
+	작은 마력 필요시(소형항공기용)
+
+	- 구조 간단, 공기저항, 진동이 적다
+
+	- 실린더수 많아지면 위로 쌓을 수는 없으니 뒤로 연장을 하며 길어져서 
+
+
+
+	
+
+radial engine
+
+	큰 마력 필요시(중?대형 항공기용)
+
+	- 기관당 실린더수 많고, 마력당 무게비 적음
+
+	- 전면면적이 커 공기저항 크고, 실린더수 많으면 cooling 어려움
+
+
+
+
+
+
+
+		
+
+점화시기	spark plug(igniting
+
+	       - 내부 점화시기 조정
+
+			마그네토의 E-gap 위치와 브레이커 포인터가 열리는 순간을 맞춤
+
+	       - 외부 점화시기 조정
+
+			마스터 실린더가 점화 진각에 있을 때 크랭크축의 위치와 마그네토 점			화시기를 일치시키는 것
+
+밸브 오버랩
+
+	흡입행정 초기 I/V 및 E/V가 동시에 열려 있는 각도
+
+	       - 장점 : 체적효율 향상, 배기가스 완전 배출, cooling효과 좋음
+
+	       - 단점 : 저속 작동시 연소되지 않은 혼합가스의 배출 손실 및 역화의 위험성 비정상 연소
+
+Detonation
+
+	       - 정상 점화 후 연소되지 않은 혼합가스가 자연 발화온도에 도달 폭발
+
+	       - 실린더 내부의 압력과 온도가 비정상적으로 급상승 심한 진동 발생
+
+	       - 엔진 part 손상초래, 정상 점화 후 발생
+
+Pre Ignition
+
+	- 정상 점화 전 비정상 원인에 의한 과열로 국부적인 곳에서 점화
+
+	- 방지 방법 : 적당한 옥탄가 연료 사용, 매니폴드 압력 및 온도 낮춤
+
+	
+
+
+
+HYDRAULIC LOCK
+
+	- radial type engine에서 기관 정지 후 오일 및 기타의 액체가 중력에 의해 하부 실린더로 몰리고 	다음 시동시 액체의 비압축성으로 피스톤이 멈추는 것
+
+
+
+
+
+vapor lock
+
+
+
+	
+
+piston ring의 구성
+
+	        - piston ring이 3개인 경우 : 압축링 - 2개, 오일링 - 1개
+
+	        - piston ring이 4개인 경우 : 압축링 - 2개, 오일링 - 2개
+
+	        - piston ring이 5개인 경우 : 압축링 - 3개, 오일링 - 2개
+
+piston ring
+
+	        - 압축 링 : 가스 누설 방지, 열 전달
+
+	        - 오일 링 : 윤활유 공급?제거
+
+	        - 내 마멸성, 고온에 작용을 위한 고 탄성, 고 열전도율 필요
+
+실린더 압축력이 정상이 되지 못하는 이유
+
+	        - 밸브 시트나 밸브 페이스의 접촉 불량
+
+	        - piston ring의 마멸 또는 손상
+
+	        - 부정확한 밸브 틈새
+
+	        - piston ring이나 실린더 벽의 과도한 마모
+
+밸브 페이스 각도
+
+	        - 30°각이나 45°각이 주로 사용(흡입-30°, 배기-45°)
+
+	        - 30°각 : 공기 흐름율 좋음
+
+	        - 45°각 : 밸브에서 밸브시트까지 열 흐름율 좋음
+
+
+
+radial type engine의 cam 로브 수
+
+	        - n = (N±1)/2      ( + : 같은 방향, - : 반대 방향 )
+
+
+
+cam 판의 회전속도
+
+	        - cam 속도 = 1/(로브수×2)
+
+
+
+각 부품들의 측정?치수 검사
+
+	        - 부싱, bearing 등의 내경 측정 : telescoping gauge
+
+	        - 외경 : 마이크로 미터, 마이크로 미터, 캘리퍼스
+
+	        - 구멍 : 플러그 게이지
+
+	        - 간극 측정 : 두께 게이지
+
+	        - 회전축의 휨 측정(편심) : 다이얼 게이지
+
+	        - 밸브 늘어남 점검 : contour gauge(stretch gauge)
+
+
+
+Valve clearance) : 밸브 스템과 로커 암 사이의 간격
+
+	        - 크면 밸브가 늦게 열리고 빨리 닫힌다(밸브오버랩 짧아짐)
+
+	        - 작으면 밸브가 빨리 열리고 늦게 닫힌다(밸브오버랩 길어짐)
+
+	        - 열간 간격(0.07“)이 냉간 간격(0.01”)보다 큼 → 실린더 팽창률이 푸시로드보다 큼
+
+	        - radial type engine의 간격 조절은 압축행정 상사점에서 나사를 오른쪽→작아짐, 왼쪽→커짐
+
+	        대향형 기관은 overlap시에만 작으면 작은 푸시로드, 크면 큰 푸시로드 사용
+
+유압식 밸브 리프터(유압 태핏)
+
+	        - 열팽창에 대한 변화와 상관없이 V/V 간격을 항상 0으로 자동조정
+
+	        - 밸브 개폐시기가 정확, 정규 출력 좋음, 작동 시 충격, 소음 무
+
+	        - 밸브 기구의 수명 연장
+
+	
+
+		
+
+		
+
+bearing 종류
+
+        - 평형 bearing : 저출력 항공기엔진에 사용, 방사성 하중
+
+        - 롤러 bearing : 고출력 항공기엔진에 사용, 방사성 하중
+
+        - 볼 bearing : 마찰이 적어 대형엔진이나 gas turbine engine의 추력 bearing으로 사용
+
+Shaft Balance
+
+        - 정적 균형 : 단열식에서 정적 균형을 맞추기 위해 카운터 웨이터 사용
+
+        - 동적 균형 : 회전에 의한 변형, 비틀림, 진동을 막기 위해 다이나믹 댐퍼 설치
+
+MAP(manifold pressure)
+
+        - 기관성능에 중요한 영향
+
+        - 대기압보다 항상 낮으나 과급기로 높일 수 있다.
+
+        - 일반적으로 절대 압력을 나타냄
+
+        - MAP 높으면 혼합가스 압력증가와 압축 압력증가 초래
+
+
+
+기화기의 빙결 ⇒ 출력 손실과 MAP 감소 초래
+
+
+
+항공용 가솔린의 구비조건
+
+	        - 고 발열량, 고 기화성, 저 증기폐색, 고 안티노크성, 안정성, 내식성, 내한성
+
+
+
+
+
+vapor lock(증기폐색)
+
+        - 기화성 좋은 연료나 연료 라인이 가열됐을 때 발생
+
+        - 방지법 : 승압펌프(booster pump)나 고옥탄가 연료 사용
+
+
+
+
+
+boost pump
+
+      - 압력식 연료계통에서는 주연료 펌프 기관이 작동하기 전까지 작동하지 않음
+
+        - 시동시 주연료 펌프 fail시, 이?착륙시, 고고도시 사용
+
+        - 원심식이 많고, 연료 transfer에도 사용
+
+        - reciprocating engine에서의 승압펌프는 연료 탱크에서 엔진 구동펌프까지 공급하는 역할
+
+knocking
+
+        - 압축비가 너무 클 때 비정상 화염전파로 연소실내 불규칙 폭발이 일어나는 것
+
+        - 기관의 출력, 효율 낮추고 기관 파손을 일으킴
+
+        - 과급 압력 낮추고, 온도 낮추거나 점화시기 지연, 고안티노크성 연료
+
+후화(after fire)와 역화(back fire)
+
+        - 후화 : 과농후 혼합비에서 연소속도 느려져 배기행정까지 연소
+
+        - 역화 : 희박 혼합비에서 연소속도 느려져 배기행정을 지나 흡입행정까지 연소
+
+주요 기화기 장치
+
+        - 완속 장치 : 완속 작동시 주 노즐에서 연료가 분사되지 않고 완속 노즐에서 분사
+
+        - 이코너마이저 장치 : 순항 출력이상일 때 작동, 농후 혼합비 형성
+
+        - 가속 장치 : 출력의 급증일 때 연료를 강제적으로 분사
+
+        - 프라이머 : 기관 시동시 실린더 내로 강제적으로 농후 혼합비 형성
+
+압력 분사식 기화기의 장점
+
+        - 기화기 결빙 현상 없음
+
+        - 비행자세에 영향을 받지 않고 중력이나 관성에도 영향을 받지 않음
+
+        - 엔진 속도와 하중에도 상관없이 연료가 정확히 자동적으로 공급
+
+        - 경제적이고 출력에 따른 연료 조절이 간단, 균일
+
+		
+
+압력 분사식 기화기의 다이프램
+
+        - A chamber : 임팩트 공기 압력(전압)
+
+        - B chamber : 밴튜리 흡입 압력(정압)
+
+          ⇒ A-B의 압력차이로 생기는 힘 : 공기 미터링 힘
+
+        - C chamber : 미터링 된 연료 압력
+
+        - D chamber : 미터링 되지 않은 연료 압력
+
+          ⇒ C-D의 압력차이로 생기는 힘 : 연료 미터링 힘
+
+        - E chamber : 연료 펌프 압력
+
+윤활유의 특성
+
+	        - 유성이 좋을 것, 알맞은 점도, 점도 변화가 적을 것(점도지수 클 것)
+
+	         낮은 온도에서 유동성 좋을 것, 산화 및 탄화 경향이 적을 것, 부식성 없을 것
+
+펌프의 종류(쓰임새에 따른)
+
+	        - 연료 주 펌프 : 베인식
+
+	        - 연료 승압 펌프 : 원심식
+
+	        - 오일 펌프 : 기어식
+
+호퍼 탱크의 목적
+
+	        - 별도의 oil tank로 엔진의 난기 운전 단축
+
+오일 희석 장치(oil dilution sys')
+
+	        - 추운날 난기 운전을 돕기 위해 엔진 정지 직전에 가솔린을 오일 탱크에 분사
+
+기관의 점화 순서
+
+	        - 6기통 수평대향형 : 1-4-5-2-3-6 or 1-6-3-2-5-4
+
+	        - 9기통 radial type engine : 1-3-5-7-9-2-4-6-8
+
+	        - 배전판 순서 : 번호순서대로
+
+고압 점화장치의 고고도 비행 사용시 고장원인
+
+	        - 플래시 오버 : 고고도의 저밀도 공기가 저절연으로 고전압 튐
+
+	        - 캐패시턴스 : 점화 플러그의 간격에서 전압상승시까지 열에너지로 발산
+
+	        - 습기 : 습기가 많으면 전도율이 증가하여 고압전기가 샌다
+
+	        - 코로나 : 도선 근처 금속 절연체에 전기응력 발생
+
+브레이커 포인트와 콘덴서, P-lead 선
+
+	        - 브레이커 포인트 : 1차 코일과 병렬, E-gap 위치에서 open, 순간 고전압 유도
+
+	        - 콘덴서 : 브레이커 포인트의 아크 흡수, 잔류자기 소멸, 저용량→arc, 고용량→저불꽃
+
+	                  ※ 브레이커 포인트와 콘덴서는 병렬 연결
+
+	        - P-lead : open되면 엔진정지 안됨, 단락되면 점화 안됨
+
+	                  ※ P-lead선과 1차코일선은 병렬 연결
+
+마그네토의 회전속도
+
+	        - 
+
+마그네토의 점검
+
+	        ① 점화 스위치를 both → left 후 rpm낙차 관찰 후 left → both
+
+	        ② 점화 스위치를 both → right 후 rpm낙차 관찰 후 right → both
+
+	        ③ 스위치를 한 방향에 오래 있지 않도록 주의 → fouling이 생길 수도 있음
+
+킥백 방지법
+
+	        - 임펄스 커플링 : 시동시 순간적으로 마그네토를 고 회전 시킴
+
+	        - 승압 코일 : 마그네토의 정상 작동시까지 외부전원으로 점화불꽃 형성
+
+	        - retard finger : finger의 점화시기 지연
+
+체적 효율
+
+	        - 같은 압력, 같은 온도 조건에서 흡입가스의 체적과 행정 체적과의 비
+
+	        - 체적효율 감소원인
+
+		      ㅇ 밸브의 부적당한 타이밍          ㅇ 너무 작은 Manifold 지름 
+
+		      ㅇ 너무 많이 구부러진 Manifold     ㅇ 고온공기
+
+		      ㅇ 연소실 고온                     ㅇ 불안전한 배기
+
+		      ㅇ 과도한 속도
+
+	
+
+turbo-jet engine
+
+	    1) 주요 구성품 및 기능
+
+	    2) 점화장치 작업 업 작업안전사항 준수 여부
+
+	    3) 윤활장치 점검(기능, 작동유 점검 및 보충)
+
+	    4) 주요 지시계기 및 경고장치 이해
+
+	
+
+gas turbine engine의 reciprocating engine에 대한 특성
+
+	        - 연소가 연속적, 중량당 출력이 큼
+
+	        - 저진동, 고출력
+
+	        - 저온 시동성이 좋고, 윤활유 소비 적음
+
+	        - 저급 연료 사용
+
+	        - 비행 속도 클수록 효율 높고 초음속 비행가능
+
+	        - 연료 소모량 많고 소음이 적다
+
+
+
+
+
+turbo-jet engine
+
+	      ㅇ 저고도, 저속에서 연료소모율 높고 고속에서 추진효율 좋음
+
+	      ㅇ 전면면적 좁고, 초음속 범위에 걸쳐 우수한 성능
+
+	      ㅇ 천음속에서 초음속 범위에 걸쳐 우수한 성능
+
+	      ㅇ 이륙거리 길고 소음 심함
+
+	      ㅇ 후기 연소기 사용으로 추력증대 가질 수 있음
+
+터보 팬 기관
+
+	      ㅇ 이?착륙거리의 단축 및 추력 증가
+
+	      ㅇ 무게 경량, 경제성 향상 터보 팬 구동(78%), 배기가스 추력(22%)을 이용하여 출력발생
+
+	      ㅇ 소음 덜 심하고, 날씨 변화에 영향 적음
+
+터보 프롭 기관
+
+	      ㅇ 엔진 회전수 감속시켜 프로펠러 구동(75%), 나머지는 배기가스 추력(25%)을 이용하여 출력발생
+
+	      ㅇ 저속에 높은 효율, 고속에서 작동하지 못함
+
+	      ㅇ 무게가 무거우나 역추력 발생 용이
+
+터보 샤프트 기관
+
+	ㅇ 축 구동(100%)을 이용하여 출력발생
+
+	ㅇ 자유터빈 사용으로 시동시 부하가 적다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module construction
+
+        - 엔진의 정비성 향상이 목적, 몇 개의 정비 단위로 설계, 교환?수리 용이
+
+
+
+
+
+	reciprocating engine
+
+		        - 오토 cycle - 정적가열
+
+	gas turbine engine
+
+		        - 브레이턴 cycle - 정압가열
+
+	gas turbine engine 흡입 덕트 부분의 압력 회복점
+
+		        - 압축기 입구의 정압이 대기압과 같아지는 항공기 속도, 낮을수록 좋은 흡입관
+
+	압축기 실속
+
+		        - 압력비를 높이기 위해 단수를 늘리면 시동성과 가속성이 떨어져 실속
+
+		        - 실속 발생은 엔진의 큰 폭발과 진동 수반, 출력 감소, 로터?스테이터 손상
+
+		        - 방지법 : 가변 안내 베인, 가변 정익 베인, 가변 바이 패스 밸브, 다축식 압축기, 서지 블리드 밸브(메뉴얼 작동)
+
+	
+
+	
+
+	축류식 압축기와 원심식 압축기 비교
+
+		ㅇ 전면면적 小 → 다량의 공기처리
+
+		ㅇ 압력비 증가 → 여러단 제작가능
+
+		ㅇ 압축기 고성능 → 고성능 기관사용
+
+		ㅇ 단당 압력비 높음
+
+		ㅇ 구조간단 값이 저렴
+
+		ㅇ 구조튼튼, 무게 가벼움
+
+		ㅇ FOD 손상 쉬움
+
+		ㅇ 고가의 제작비, 무게 무거움
+
+		ㅇ 높은 시동 파워
+
+		ㅇ 저압력비
+
+		ㅇ 저효율, 소량의 공기처리
+
+		ㅇ 전면면적 커서 항력 큼
+
+		
+
+	압축기 실속 원인
+
+		        - 압축기 출구 압력이 너무 높을 때(C.D.P가 높을 때)
+
+		        - 압축기 입구 온도가 너무 높을 때(C.I.T가 높을 때)
+
+		        - 기관의 회전속도가 너무 낮아져 압축기 출구부분에 choke현상 발생
+
+		        - 공기 흡입속도가 작을수록, 기관 회전속도가 클수록 발생
+
+	압축기 실속을 줄이는 방법
+
+		        - 압축기 블레이드의 청결유지 및 파손수리
+
+		        - 정확한 블레이드 각 유지 및 조절
+
+		        - 터빈 노즐의 한계값 유지
+
+		        - 주 연료장치의 연료 스케줄을 한계값 내로 유지
+
+		        - 가변 정익 베인의 작동 각도를 한계값으로 유지
+
+	블리드 밸브(압축기 뒤쪽 설치)
+
+		        - 기관 저속에서만 작동, 고속에서 close
+
+	다축식 압축기
+
+		        - 압축비 높이고 실속방지 역할        - 구조복잡, 무게 증가
+
+		        - 시동기에 부하가 적게 걸린다
+
+		        - N1(저압 터빈 축) : 자체속도 유지, N2(고압 터빈 축) : 엔진속도 제어
+
+	반동도(reaction rate)
+
+		        - 축류식 압축기에서 단당 압력상승 중 rotor 깃이 담당하는 압력상승 백분율
+
+	연소실의 성능
+
+		        - 연소 효율 : 실제 증가된 열량 / 공급된 열량  
+
+		              연소실 입구 압력, 온도 낮고 속도 빠를수록 낮아짐
+
+		        - 압력 손실 : 연소실 입구와 출구의 전압차
+
+		        - 출구온도 분포 : 온도 분포가 균일하거나 바깥지름이 안쪽지름보다 커야함
+
+		        - 재시동 특성 : 재시동 가능 범위가 넓을수록 안정성 좋음
+
+		        - 연소실의 연소 중 공기량 : 1차공기량의 25%, 이상 공연비 15 : 1
+
+		        - 연소실 길이 : 작을수록 좋다
+
+	선회 깃(swirl guide vane)
+
+		        - 연소실 입구에 1차공기 흐름을 적당히 소용돌이를 주어 유입속도 감소시킨 후 공기와 연료가 잘 섞임 ⇒ 화염 전파속도 증가, 항상 안정되고 연속적인 연소가능
+
+	터빈의 종류
+
+		        - 충동 터빈 : 반동도=0, rotor 전후의 압력, 속도는 같고, 방향만 바뀜
+
+		        - 반동 터빈 : rotor를 지나면서 압력은 낮아지고 속도는 증가, 방향도 바뀜
+
+		        - 충동-반동 터빈 : rotor에 트위스트를 가하여 root는 충동 터빈, tip은 반동 터빈
+
+	노즐 가이드 베인(노즐 다이어프램)
+
+		        - 노즐 가이드 베인(stator) : 압력감소, 속도 증대, 흐름방향 결정
+
+	터빈 깃의 cooling방법
+
+		        - 대류 cooling : 깃 내부를 중공제작 cooling air 통과
+
+		        - 충돌 cooling : 터빈 깃 앞전 안쪽표면에 cooling air 충돌시켜 cooling
+
+		        - 공기막 cooling : 터빈 깃의 표면에 작은 구멍을 뚫어 찬 공기막 형성 cooling
+
+		        - 침출 cooling : 터빈 깃의 다공성 재료로 만들고 차가운 공기가 스며 나오게 cooling
+
+	gas turbine engine 연료의 구비조건
+
+		        - 저 증기압, 저 빙결점, 고 인화점, 대량 생산 용이, 저렴, 고 발열량, 내식성, 
+
+		          저 점성, 청결, 균질
+
+	reciprocating engine과 gas turbine engine의 펌프 비교
+
+		reciprocating engine
+
+		gas turbine engine
+
+		main 펌프
+
+		베인식
+
+		기어형
+
+		승압펌프
+
+		원심식
+
+		원심식
+
+		오일펌프
+
+		기어형
+
+		기어형, 지로터형
+
+		
+
+	FCU의 작동요소
+
+		        - 기관의 회전수(rpm), 압축기 출구 압력(CDP) or 연소실 압력,
+
+		         압축기 입구온도(CIT), 동력 레버위치(PLA)
+
+	여압 및 드레인 밸브(P & D V/V : Pressurizing & Dump V/V)
+
+		        - 연료 조정장치(FCU)와 연료 매니폴드 사이에 위치, 1차와 2차 연료로 분배
+
+		        - 기관 정지 시 남은 연료를 외부로 방출하여 다음 시동 시 과열시동 방지
+
+		        - 일정 압력 수준 도달 시까지 연료흐름 차단
+
+		
+
+		
+
+	열점 : 열로 인해 검게 그을리거나 재료가 타서 남은 형태
+
+		        - combustion chamber : 연료노즐의 이상으로 연소실 벽이 그을리거나 검게 탄 흔적
+
+		        - turbine blade : cooling air hole이 막혀 뜨거운 공기가 blade에 직접 닿은 자국
+
+	윤활유 탱크
+
+		        - hot tank : oil cooler가 pressure line에 장착 고온 oil이 tank로 들어감
+
+		        - cold tank : oil cooler가 return line에 장착 저온 oil이 tank로 들어감
+
+	fuel-oil cooler
+
+		        - Jet 기관의 높은 온도로 oil의 과열, oil의 양이 적기 때문에 oil cooler 사용
+
+		        - 연료-윤활유 cooling기 : 1차목적 - 윤활유 cooling, 2차목적 - 연료 예열
+
+	gas turbine engine의 소음장치
+
+		        - 배기가스 중의 저주파를 고주파로 변환
+
+		        - 배기가스에 대한 대기에 상대속도를 줄이거나 혼합되는 면적을 넓게 함
+
+		        - 터보팬 기관의 1차 공기와 2차 공기와의 상대속도가 작아 불필요
+
+		        - 다수튜브 제트 노즐형
+
+		        - 주름살형
+
+		        - 소음 흡수 라이너 부착
+
+	배기 노즐의 목적
+
+		        - 가스의 속도 증가
+
+	tail cone의 목적
+
+		        - 가스의 축류 형성
+
+	가스터빈 점화계통의 reciprocating engine과의 차이점
+
+		        - 시동 할 때만 점화가 필요
+
+		        - 점화시기 조절장치가 없어 구조와 작동이 간편
+
+		        - ignitor의 교환이 빈번하지 않다
+
+		        - ignitor가 기관 전체에 두 개 정도만 필요
+
+		        - 교류전력을 이용 할 수 있다
+
+	시동기에 공급되는 압축공기 동력원
+
+		        - 가스 터빈 압축기(G.T.C)
+
+		        - 보조 동력 장치(APU)
+
+		        - 다른 기관에서 cross feed하여 사용
+
+	비정상 시동
+
+		        - 과열시동 : 배기가스 온도가 규정 한계 값 이상 상승
+
+		          ⇒ FCU 고장, 압축기 입구부분의 공기 흐름 제한
+
+		        - 결핍시동 : idle rpm에 도달하지 못하는 상태
+
+		          ⇒ 과열시동이 되기 전에 시동중지, 불충분한 시동동력
+
+		        - 시동불능 : 규정된 시간 안에 시동되지 않는 현상
+
+		          ⇒ 불충분한 전력공급, 연료 흐름 막힘, ignition sys', FCU 고장
+
+	물 분사
+
+		        - 주목적 : 추력 증가, 압축기 입구나 디퓨저에 분사, 제트 엔진 cooling (공기밀도 증가)
+
+		        - 높은 기온일 때 효과가 크고, 알코올과 섞어 사용(⇒ 물 빙결방지)
+
+		
+
+	후기 연소기 (주로 군용기<초음속기> 사용)
+
+		        - 총 추력 50%증가 가능, 연료소모율 큼
+
+		        - 구성
+
+			      ㅇ 후기 연소 라이너 : 무 작동시 배기관 사용
+
+			      ㅇ 연료 분무대 : 확산 통로에 장착
+
+			      ㅇ 불꽃 홀더 : 가스속도 감소 와류형성(불꽃이 꺼지는 걸 방지)
+
+			      ㅇ 가변 면적 배기노즐 : 무 작동시 수축, 작동시 과열, 고압 방지 역할
+
+	역추력 장치(reverse thrust sys')
+
+		        - 착륙 후 항공기 제동으로 사용
+
+		        - 착륙 직후 속도 빠를 때 효과크고, 너무 느려 질 경우 재흡입 실속 가능
+
+		        - 항공 역학적 차단방식과 기계차단 방식이 있음
+
+		        - 작동장치는 블리드 공기 이용한 공기압식과 유압식이 있음
+
+		        - 스로틀의 저속위치에서만 작동
+
+		        - 터보팬 기관은 fan reverse만 대부분 설치
+
+	gas turbine engine 시동 절차(터보팬 기관)
+
+		        ① 동력레버 : idle 위치
+
+		        ② 연료차단 레버 : close 위치(시동 및 점화 스위치 on이 아니면 close)
+
+		        ③ 주 스위치 : on
+
+		        ④ 연료 승압펌프 : on
+
+		        ⑤ 시동 스위치 : on(rpm & oil pressure 증가 관찰)
+
+		        ⑥ 점화스위치 : on(rpm 10% 이상에서 작동)
+
+		        ⑦ 연료차단 레버 : on(시동여부는 EGT확인, 시동은 2분 이상 걸리지 않도록)
+
+		        ⑧ 시동 완료 후 시동 스위치 및 점화 스위치 off
+
+		          ※ 시동시 EGT > 시동 후 EGT
+
+	motoring의 목적 및 방법
+
+		        - dry motoring : ignition off, fuel off에서 starter만으로 엔진 rotating
+
+		        - wet motoring : ignition off, fuel on에서 starter만으로 엔진 rotating
+
+		        - wet motoring 후에는 반드시 dry motoring으로 잔여 연료 blow out
+
+		        - 목적 : 연료계통이나 오일계통 정비 작업시 bleed air하기 위함이고 oil이나 fuel leak를 알아보기 위함
+
+	기관조절(engine trimming)
+
+		        - 정해진 rpm에서 정격출력을 내도록 FCU 조정
+
+		        - 트림시기 : 엔진 교환시, FCU 교환시, 배기노즐 교환시
+
+	추진 효율
+
+		        - 공기가 기관을 통해 얻은 운동에너지와 추진동력과의 비
+
+	추력에 영향을 미치는 요소
+
+		        - rpm : 설계속도에 도달하면 급격히 증가
+
+		        - speed : 흡입공기 압력이 높아지면 밀도증가로 추력 증가
+
+		        - 고도 : 고도가 높아짐에 따라 추력 감소
+
+		        - 밀도 : 외기 온도 감소시 밀도 증가하면 추력 증가
+
+	
+
+	
+
+	
+
+		gas turbine engine fuel system
+
+			gas turbine engine fuel
+
+				jet engine fuel
+
+					낮은 증기압(높은 상승률, 고도도 대기압 낮음 - Vapor Lock 위험)
+
+					낮은 빙점(고고도 비행 -56.5℃에서 얼지 않아야 함)
+
+					높은 인화점(사고시 화재 예방) 및 높은 발열량
+
+					대량생산 가능, 저가(연료 소비량 많기 때문)
+
+					낮은 점성(FCU 정밀 작동), 균질/청결성  	=> 최적 : 등유(Kerosene)
+
+				jet engine fuel
+
+					연료는 Bubble Tower에서 원유 가열,분해를 하여 액화, 분류한다
+
+					원유 : 가솔린 40%, 케로신(등유) 6%, 디젤 17%, 벙커유(중유) 24%, 윤활유 3%, 기타 10%
+
+					연료에 산화방지제, 부식방지제, 빙결방지제, 미생물살균제 등을 첨가(일부 유종에만 휘발유 혼합물을 첨가)
+
+					연료에 수분이 포함되어 있으면 연료 필터의 빙결, 연료 탱크의 부식, 미생물의 성장 촉진 등의 원인이 됨.
+
+				가솔린 40%, 케로신(등유) 6%, 디젤 17%,
+
+					JP-3 50% (JP : Jet Petroleum, Jet Propulsion)
+
+				jet engine fuel 종류
+
+					군 용
+
+						JP-1
+
+							;케로신 타입
+
+						AV Gasoline
+
+							항공용 reciprocating engine
+
+						JP-4
+
+							전투기 제트 기관
+
+						JP-5
+
+							항공모함
+
+							고 인화점 케로신 타입
+
+						JP-8
+
+							현전투기
+
+							케로신 타입
+
+						
+
+					민간용(규격 : ASTM : American Society for Testing Materials)
+
+						JET A	
+
+							여객기
+
+						JET A-1
+
+							여객기
+
+						JET B
+
+							와이드 컷 타입
+
+				jet engine fuel 종류
+
+					Wide-cut Type
+
+						끓는점의 범위가 35~315˚C에서 증류되는 가솔린과 케로신의 혼합물
+
+					Kerosene Type
+
+						끓는점의 범위가 165~290˚C에서 증류되는 연료
+
+			gas turbine engine fuel flow
+
+				fuel tank→booster pump(승압)→(Fuel Heater)→(fuel filter)→MFP(Main Fuel Pump)→(fuel filter) →MFC(Main Fuel Control unit)→FFT(Fuel Flow Transmitter)/ FFM(Fuel Flowmeter)→(Fuel Oil Cooler)→P&D valve(Pressurizing & Dump valve)→Fuel Manifold연료다기관→Fuel Nozzle→(Combustion Chamber)
+
+			constructure
+
+				MFC주연료장치 
+
+					MFC kinds
+
+						Hydro-mechanical Type MFC
+
+							Hydro-mechanical Type MFC kinds
+
+								FCU(Fuel Control Unit)
+
+								MFC(Main Fuel Control)
+
+								MEC(Main Engine Control)
+
+							Hydro-mechanical Type MFC explanation
+
+								(Metering Section)과 (Computing Section)으로 구성
+
+						Electronic Type MFC
+
+							Electronic Type kinds
+
+								FADEC(Full Authority Digital Electronics Control)
+
+								DEEC(Digital Electronic Engine Control)
+
+								DECU(Digital Engine Control Unit)
+
+							Electronic Type MFC explanation
+
+								전자 엔진 조절장치 (FADEC, EEC, ECU)
+
+								모든 비행 상태에서 조종사 요구에 부응하여 최적의 엔진 조정을 수행하기 위해 입력신호를 전산처리하여 작동 부분품을 일괄 조정하는 기능을 함.
+
+				MFC metering factor
+
+					엔진 회전수(RPM, N2)
+
+					압축기 입구 온도(CIT, T2)
+
+					압축기 출구 압력(CDP) 또는 연소실 압력(Pb)
+
+					동력레버[스로틀] 위치(PLA)
+
+					대기 압력(Pam)
+
+				MFC control
+
+					속도 조절
+
+					연료 조정/차단
+
+					VSV가변 정익 베인
+
+					가변 바이패스 밸브
+
+				Fuel Pump
+
+					Fuel Pump kinds
+
+						(Centrifugal Pump) : 승압용 펌프(부스터 펌프, Booster Pump)
+
+						    - 승압 펌프 : 시동할 때나 기관 구동 중 연료펌프가 고장일 때와 같은 비상시에는 수동식 펌프나 전기 구동식 승압펌프가 연료를 충분하게 공급해주어야 한다. 또한, 이/착륙, 고고도에서 사용하고 탱크간 연료를 이송시키는 데도 사용
+
+						(Gear Pump) : 주연료 펌프에 주로 사용
+
+						(Plunger Pump) : 피스톤형 펌프
+
+				Pressure Relief Valve
+
+					압력이 높으면 밸브가 서서히 Open되어 연료는 다시 펌프 입구로 들어감
+
+				6.Fuel Nozzle
+
+					Fuel Nozzle explanation
+
+						C/C에 fuel를 미세하게 분무하는 장치
+
+					Fuel Nozzle kinds
+
+						분무식
+
+							단식 노즐
+
+							복식 노즐
+
+								일반적으로 사용
+
+								1차 연료
+
+									넓은 각도, 시동시
+
+								2차 연료
+
+									좁은 각도, 멀리 분사, 완속 이상
+
+						증발식
+
+					Hot Spot열점 현상 
+
+						fuel nozzle spray angle 불량 시 C/C wall에 fuel이 직접 닿아서 그을리거나 검게 탄 흔적이 발생하며, 터빈 블레이드의 cooling air 구멍이 막히거나 고열이 가해지면 열로 인해 검게 그을리거나 재료가 타서 균열 또는 떨어져나가는 현상 발생
+
+						Hot Streak
+
+						Combustion Chamber Hot Spot : 연료노즐의 이상으로 연소실 벽이 그을리거나 검게 탄 흔적
+
+						Turbine Blade Hot Spot: cooling air Hole이 막혀 뜨거운 공기가 Blade에 직접 닿은 자국
+
+				Fuel Filter
+
+					Fuel Filter explanation
+
+						연료내 불순물 걸러내기 위함. 보통 연료펌프 앞과 뒤에 하나씩 사용, 막힘 대비 바이패스 밸브와 함께 사용
+
+					fuel filter type
+
+						paper cartridge type fuel filter종이 카트리지형 연료 필터
+
+							paper cartridge type종이 카트리지형 explanation
+
+								종이로 제작, 주기적 교체, 저압용
+
+						screen type fuel filter
+
+							분해가능한 스테인레스 강철망, 저압용, 펌프 입구
+
+						convoluted screen type fuel filter콘벌류트 스크린형
+
+							두루마리형으로, 여과기 주위에 회전시켜 여과
+
+						screen disk type fuel filter스크린-디스크형
+
+							가는 강철망, 주기적 세척, 펌프출구
+
+				P&D valve(Pressurizing & Dump Valve)
+
+					P&D valve(Pressurizing & Dump Valve) explanation
+
+						FCU와 manifold 중간에 위치
+
+						목적
+
+							기관정지 시 매니폴드와 연료노즐에 남은 연료 외부 배출 : 화재, 과열시동 예방
+
+							일정 연료 압력이상 될 때까지 연료 흐름 차단
+
+							계통에 압력을 주어 시동 시 원활한 흐름 조정(1차와 2차 연료 흐름 분리)
+
+				(Fuel Flowmeter/fuel Transmitter)
+
+					lb/hr 연료 소비량 측정할 수 있는 유량계
+
+				(Fuel-Oil Cooler)
+
+					유입된 차가운 연료로 가열된 오일을 cooling시키고
+
+					연료는 데워져 빙결을 막고
+
+					연소성을 향상시킴.
+
+				fuel Drain 목적
+
+					Skin 부식과 부정확한 연료량을 지시하는 원인이 되는 Tank 하면의 수분 제거
+
+				연료보급시 3점 접지(정전기 방출) 방법 및 순서
+
+					항공기와 연료차
+
+					연료차와 지면
+
+					항공기와 지면을 Earth(접지)
+
+		
+
+
+
+
+
+Eng High RPM에서 A/C Pneu' Air는 어디서 얻는가?
+
+	   답 : Low Stage(8 TH Air)
+
+
+
+Compressor Bleed Air의 사용처는?
+
+	   답 : 1) Cabin 여압,  2) Anti-Icing,  3) 연료계통 가압,  4) Gyro 계기장치
+
+연료와 오일의 설계단위 중량은?
+
+	   답 : 연료(AV-Gas) - 1 ℓ당 0.72Kg, 윤활유 - 1 ℓ당 0.9Kg
+
+
+
+
+
+
+
+추력에 영향을 미치는 요소
+
+	   대기온도, 대기압력, 가속, 고도
+
+FUEL CONTROL 하는 것은
+
+	   BLEED V/V ENG' VANE, THRUST
+
+ENG' CONTROL
+
+	   왕복 ENG : AIR CONTROL,   JET ENG : FUEL CONTROL
+
+THRUST REVERSER 작동조건
+
+	   항공기가 지상에 있을 때 (LANDING GEAR TOUCH DOWN)
+
+	   POWER LEVER IDLE POSITION
+
+	   THRUST REVERSER LEVER를 REVERSER POSITION으로 댕겼을 때
+
+AFTER FIRE
+
+	   혼합되지 않은 연료가 실린더를 통해 배기 밸브로 나가 점화(농후) 
+
+	   BACK FIRE
+
+	   불꽃의 전파 속도가 느리기 때문에 일어나는 현상으로 INTAKE로서 전화되는 현상(희박)
+
+	   KICK BACK
+
+	   조기 점화로 연소압력이 역방향으로 CRANK SHAFT를 회전시키는 현상
+
+HOT START
+
+	   EGT 상승.  F. C. U 고장.  FUEL LINE 빙결.
+
+	   압축기 입구 공기 흐름 제한 등의 원인
+
+	   HUNG START
+
+	   시동 후 IDLE RPM에 도달하지 않고 이보다 낮은 RPM에 있는 현상.
+
+	   이때 EGT는 계속 상승.   STARTER에 공급되는 동력의 불충분이 원인
+
+	   NO START
+
+	   ENG' 이 시간 내에 시동되지 않는 것을 말한다.
+
+	   RPM EGT가 상승하지 않는 것으로 판단.  FCU 등이 원인
+
+JET 연료
+
+	   JP-1 : 증기압력이 낮으므로 작동상 연료 증발 손실이 적고 화재 위험성이 없음.
+
+	          AIR START곤란.  가솔린보다 단위용적당 발열량이 약10%높고 윤활성이 좋다.
+
+	   JP-3 : 케로신, 가솔린, 디젤유의 혼합물
+
+	          값이 비교적 저렴.
+
+	   JP-4 : 케로신과 낮은 증기압.  가솔린과의 혼합물.
+
+	   JP-5 : 높은 인화점의 케로신유.   폭발 위험성이 거의 없다.
+
+	          낮은 증기압을 가진 연료.   높은 연화점 초음속 A/C용
+
+	   JP-6 : 초음속 A/C로부터의 고온도 요구에 부응하기 위하여 개발.
+
+	          JP-4보다 더 높은 열적 안정성, JP-5보다 더 낮은 빙점.
+
+	   민간용
+
+	   A-1형 : JP-5와 유사하나 빙점이 다른 케로신형 연료
+
+	   B형 : JP-4와 유사한 연료.
+
+
+
+COMPRESSOR STALL
+
+	   가.  압축기 출구 압력이 너무 높을 때
+
+	   나.  CHOCK현상 발생시
+
+	   다.  압축기 입구의 공기온도가 높을 때
+
+	   라.  COMP가 F. O. D되었을 때, 더러울 때
+
+
+
+
+
+
+
+EHM(ENG HEAVY MAINTENANCE) OVHL
+
+	   엔진을 정기적으로 기체로부터 장탈 하여 공장에서 분해 검사하는 것으로서 필요에 따라서 sampling insp program을 병행해서 실시 할 수 있다.
+
+COMPRESSOR STALL
+
+	   a. 흡입 공기 속도가 작을수록,  ENG' INTAKE TEMP' HIGH,  압축기 출구 압력이 너무 높을 때,
+
+	     COMPRESSOR의 RPM이 클수록
+
+	   b. ENG을 가속할 때 연료의 흐름이 너무 많으면 COMPRESSOR 출구압력이 높아져 흡입 공기 속도가 감소하게 되어 실속의 원인이 된다.
+
+	   c. ENG' RPM이 설계점 이하로 낮아질 때
+
+ENG' STALL 방지책
+
+	   a. MULTI SPOOL 구조 : 설계 압력비를 실속 영역으로 접근시킬 수 있기 때문에 결국 높은 효율 및 압력비를 얻을 수 있다.
+
+	   b. VSV (VARIABLE STATOR VANE) : COMPRESSOR의 IGV 및 STATOR VANE의 ANGLE의 변할 수 있게 만들어 놓으므로 써 공기 흐름의 방향과 속도를 조정하여 항상 일정하게 ROTOR BLD의 받음각을 유지시켜줌.
+
+	   c. BLEED V/V : ENG'이 저속으로 회전할 때 이 V/V가 자동으로 열리어서 압축공기의 일부를 외부로 배출함으로써 배출되는 공기량만큼 유입 공기의 속도가 증가하여 BLD의 받음각이 감소함으로 실속을 방지함.
+
+F. C. U INPUT SIGNAL
+
+	   PLA(PWR LEVER ANGLE), CLA(CONDITION MOTOR LEVER ANGLE)
+
+	   Pamb(AMBIENT PRESS'), CDP(COMP' DISCHARGE PRESS), N2 RPM
+
+	   CIT(COMP' INLET TEMP') EGT(EXHAUST GAS TEMP')
+
+P & D V/V  --  FUEL PRESS'로 OPERATING됨
+
+	  1차 연료와 2차 연료로 FUEL FLOW를 분류하고 ENG' 정지시 FUEL MANIFOLD 내에 남아 있는 연료를DRAIN 시켜 화재를 방지한다.
+
+	  ENG' STARTING : PRESS' V/V OPEN, DUMP V/V CLOSE.
+
+	  ENG' SHUTDOWN : PRESS' V/V CLOSE, DUMP V/V OPEN.
+
+ENG' TRIM시기
+
+	   ENG', FCU, THRUST REVERSER, TAIL PIPE, EXHAUST CASE CHANGE.
+
+	   기타 ENG'성능에 관련된 PART or COMPONENT CHANGE
+
+	   무풍, 무습도, 정풍상태에서 ELECTRIC, HYD', PNEUMATIC PWR의 사용을 최소로 한다.
+
+KEY WASHER --  오직 1회만 사용가능
+
+	    ENG'이나 진동이 극심한 부위에 사용된다.  TAP TYPE과 CUP TYPE이 있다.
+
+Boost Pump 기능 및 고장시 Fuel Flow 계통 설명
+
+	  답 : 기능 - Press에 의해 탱크로부터 엔진으로 연료를 공급하고 Defueling, Transfer 시에도 사용.
+
+	      Flow - Pump ⇒ Discharge Check Valve ⇒ Eng Fuel S/O/V ⇒ Eng Pump
+
+Boost Pump의 Type과 역할에 대하여 설명하시오.
+
+	  답 : 115V AC Motor에 의해 구동되는 Centrifugal Type Pump로서 Tank Fuel을 Press로 엔진계통에 연결시킴
+
+Fuel 의 종류는 ?
+
+	  답 : reciprocating engine연료 : AV Gas 115-145, 제트엔진연료 : JET A, JET A-1, JP-8
+
+Fuel Performance Numbering 에 대해서 설명하라.
+
+	   답 : Fuel 의 Anti-Knock성(제폭성)을 나타내는 Octane가 100을 퍼포먼스가 100 으로 정하고 여기에 4 Ethyl Lead를 첨가하여 제폭성능을 향상시킨 값
+
+Fuel Pump 구성품.
+
+	   답 : Impeller, Motor, Pump Housing,
+
+Fuel Pump 중 원심력 Pump 의 장점은 ?
+
+	   답 : Positive Displacement Pump 가 아니므로 Relief V/V가 불필요. 
+
+Jet Engine Fuel 의 첨가제 는 ?
+
+	   답 : 방빙제, 미생물 성장 억제제, 
+
+
+
+
+
+kinds of Starter
+
+	1) Pneumatic Starter - 현재의 대부분의 대형항공기에서 쓰임, 가볍다, 공기압이 필요
+
+	2) Electric Starter - 무게가 무겁다.
+
+	3) Starter Generator - 엔진 시동시 Starter, 정상 작동시 Generator로 사용
+
+
+
+
+
+kinds of Starter
+
+	   답 : 가스터어빈의 시동은 외부동력을 이용하여 압축기를 회전시킴으로써 연소실에 필요한 공기를 연소실에 보내서 일단 연소가 시작된 후에는 엔진이 자립회전 속도에 이를 때까지 압축기의 회전속도를 높이는 역할을 한다.  Starter의 종류는
+
+	     1) 전기식 시동기(Electric Starter) - 전기식 시동계통에 형식이 있다. 하나는 시동 목적으로만 이용되는 전동기식(Electric Motor Type)이며, 다른 하나는 엔진이 정상 자립속도에 달하면 발전기역할을 하게되는 시동기 발전기식(Starter Generator Type)이다.
+
+	     2) 공기식 시동기(Pneumatic Starter) - 공기식 시동기는 항공장비의 무게를 감소시키기 위해서 설계된 것으로 이 시동기는 같은 동력을 내는 전기식 시동기에 비하여 무게가 1/4 밖에 안 된다.
+
+	     3) 공기 충돌식 시동기(Air-Impingement Starter) - 이 형식은 공기유입 Duct만 가지고 있기 때문에 시동기 중 가장 간단한 형식이라고 할 수 있다. 작동중인 엔진이나 지상동력 장치로부터 공급된 공기는 Check Valve를 통하여 Turbine Blade나 원심압축기로 유도된다.
+
+	     4) 카트리지형 시동기(Cartridge Starter) - 화약이나 특수한 액체연료를 이용하여 그 연소가스에 의해 시동기를 구동시키는 형식도 있으나 최근에는 거의 사용되지 않음
+
+Bleed Air 사용처 
+
+	   답 : 1) Air Condition 계통
+
+	       2) 계기(Gyro)
+
+	       3) 유압(Shock 방지)
+
+	       4) Anti-Icing System
+
+	       5) Turbine Section Cooling
+
+	       6) Main Fuel Regulator
+
+	       7) Balance Chamber에 Air 공급
+
+
+
+
+
+
+
+항공기관사
+
+	항공기에 탑승하여 발동기 및 기체를 취급하는 행위(조종장치 제외)
+
+
+
+Motoring 이유는?
+
+	연료계통 및 오일계통을 분리 작업했을 때 계통 내에 공기가 차므로 Air Locking을 방지하기 위하여 엔진을 공회전 시켜 공기를 빼내고 또한 계통 내에 오일이나 연료가 고인 것을 제거하기 위해서도 Motoring 한다.
+
+Air Starter의 장점은
+
+	Electrical Starter 보다 무게가 1/4 가볍다.
+
+	       이 Air Turbine Starter는 항공장비의 중량을 감소하기 위하여 고안된 것으로 이 공기 터빈 시동기는 터빈부 감속기어 장치와 자동연결 및 분리장치 등으로 구성된다.
+
+
+
+
+
+공중에서 비행 중 엔진이 Flame Out 되었다 당신이 조종사라면 어떻게 하겠는가?
+
+	Flame Out이란 연소정지로서 엔진이 꺼지는 것을 말한다. 이때는 엔진 재시동 절차에 따라 재시동 하면 된다.
+
+
+
+
+
+
+
+Vapor Lock
+
+	연료나 오일 또는 작동유의 계통에 Air가 차서 유체의 흐름을 막거나 흐름이 불충분하여 작동이 불량한 상태를 말하며 연료에서는 JP-3가 이런 현상의 발생율이 높아 엔진 연소정지현상을 초래하므로 낮은 증기압 특성을 갖도록 연료를 개량하여 JP-8이 생산됨
+
+oil tank의 팽창 여유공간 ⇒ 10%
+
+
+
+
+
+
+
+fuel tank의 팽창 여유공간 ⇒ 2%
+
+	
+
+시동중 흡입계통에서 화재시 계속 시동 회전
+
+       엔진내부에서 화재시 즉시 연료차단 시동 회전
+
+       외부에서     화재시 즉시 연료차단 소화기 방출
+
+	
+
+	
+
+		ENG 구조
+
+	   TURBO FAN: COMPRESSOR, COMBUSTION CHAMBER, TURBINE, NOZZLE, G/B
+
+	   아음속에서는 추진 효율이 좋고 연료소비율이 낮다.  소음이 작다.
+
+	   FUEL FLOW CHART
+
+	   FUEL--BOOSTER PUMP--SHUT OFF V/V--FUEL HEATER--FUEL FILTER--FUEL PUMP--FUEL CONTROL UNIT--FUEL FLOW TRANSMITTER--FUEL OIL COOLER--P & D V/V--FUEL MANIFOLD--FUEL NOZZLE--C/C
+
+	   OIL FLOW CHART (HOT TANK SYSTEM)
+
+	   OIL TANK--OIL PUMP--OIL FILTER--PRESSURE REGULATOR --F/O/C--LAST CHANCE SCREEN FILTER--BEARING LUBRICATION--SCAVENGE--OIL TANK
+
+	   FCU(FUEL CONT' UNIT) : 모든 기관 작동조건에 대응하여 공급되는 연료유량을 적절하게 제어하는 장치
+
+	   SOURCE:PLA (PWR LEVER ANGLE), CLA(CONDITION MOTOR LEVER ANGLE),N2 RPM, CIT(COMP INLET TEMP),      CDP(COMP DISCHARGE PRESS'),PAMB
+
+	   P & D V/V (PRESSURIZED & DRAIN VALVE) :
+
+	                1. 2차 연료 분리
+
+	                주 연료장치에 충분한 압력이 걸릴 때까지 연료 흐름차단. 
+
+	                ENG 정지시 FUEL MANIFOLD 및 NOZZLE에 남아 있는 FUEL DRAIN.
+
+Fuel Strainer 장착위치
+
+	1) 연료탱크의 밑바닥, 2) 계통의 가장 낮은 곳, 3) 기화기 입구의 여과기
+
+	       연료계통에 외부물질이 들어오는 것을 방지하기 위하여 연료 여과망(Fuel Strainer, Fuel Filter)을 설치할 필요가 있는데 여과기는 보통 3군데 위치한다.
+
+Fuel Pump의 Type
+
+	1) Pulsating Type, 2) Vane Type, 3) Gear Type, 4) Centrifugal Type 등
+
+TURBINE COOLING METHOD
+
+	   * 대류 cooling
+
+	     HOLLOWED TYPE의 내부로 COOLING AIR가 지나감에 따라 cooling되며 가장 많이 사용.
+
+	   * 충돌 cooling
+
+	     TURBINE BLADE 내부에 작은 공기통로를 설치하여 이 통로에서 TURBINE BLD의 앞쪽 빈 쪽을 향하여 공기를 충돌시켜 BLD를 COOLING.
+
+	     BLADE or NOZZLE의 LEADING EDGE 부분의 COOLING에 사용.
+
+	   * 공기막 cooling
+
+	     작은 구멍을 뚫어서 여기로 COOLING AIR를 나오게 함으로써 엷은 공기막을 형성시켜 고온의 GAS가 직접표면에 닿는 것을 막아준다.
+
+	   * 침출cooling
+
+	     BLADE를 다공성 재료로 만들고 내부에서 차가운 공기가 스며 나오게 함으로써 cooling하는 방법.
+
+BOOSTER PUMP 목적
+
+	   TANK의 연료를 ENGINE으로 압송.
+
+	   고공에서 일어나는 VAPOR LOCK 현상을 방지.
+
+VENT SYSTEM
+
+	   연료 보급중 TANK 내부에 걸리는 정압이나 연료가 ENG' 에서 소모될 때 결리는 부압을 제거시켜 TANK STRUCTURE를 보호하기 위함.
+
+DUMP SYSTEM
+
+	   비상시 항공기 중량을 최대착륙 중량이내로 감소시키기 위해 연료의 일부를 대기중으로 방출시키는 SYSTEM.
+
+	   규정상 10,000FT 상공에서 45분간 비행 및 1회의 이착륙을 수행할 수 있는 연료량을 남기게 된다.
+
+SCAVENGE PUMP 용량이 큰 이유
+
+	   RETURN 되는 OIL은 열에 의해 용량이 커지고 거품 등이 섞여서.
+
+ENG' TRIM은 어떻게 언제
+
+	   ENG'교환시, FCU교환시, T/R 교환시, TAIL PIPE or EXHAUST CASE교환시, EXHAUST MIXER교환시.
+
+	   무풍, 무습도, 정풍상태에서 ELECTRIC, HYD', PNEU POWER
+
+TSFC
+
+	   단위 추력당 1시간당 연료소비량을 추력연료 소비율이라 하며 TSFC로 나타낸다.
+
+BFCS
+
+	   시간당 연소되는 연료의 무게를 엔진에 의해서 발생되는 마력으로 나눔.
+
+SFC
+
+	   마력당, 시간당 소모되는 연료의 양.
+
+FCU COMPUTING SIGNAL
+
+	   RPM (N2)
+
+	   CDP (COMP' DISCHARGE PRESS')
+
+	   PLA (POWER LEVER ANGLE) 
+
+	   Tt2(CIT) (COMP' INLET TEMP)
+
+HOT START (과열시동)
+
+	   시동시 배기가스 온도가 규정된 한계값 이상으로 증가하는 현상. 
+
+	   F. C. U의 고장, 연료라인의 빙결, 압축기 입구 부에서의 공기 흐름의 제한.
+
+	   HUNG START (결핍시동)
+
+	   시동이 시작된 후 기관의 회전수가 완속회전수까지 증가하지 않고 시동기에 공급되는 동력이 불충분 할 때 이보다 낮은 회전수에 머물러 있는 현상.     
+
+	   NO START (시동불능)
+
+	   기관이 규정된 시간 안에 시동되지 않는 현상. 
+
+	   F. C. U나 그 밖의 부분의 고장
+
+FUEL NOZZLE
+
+	   증발식과 분무식이 있다.
+
+	   분무식, 단식, 복식
+
+	   * 단식 노즐은, 구조가 간단하다는 이점은 있으나, 대형엔진에서는 큰 연료 압력과 공기 흐름의 변화에 따라 충분하게 분사시켜 주지 못하므로 현용ENG'에는 별로 사용하지 않는다.
+
+	   * 복식 노즐은 ONE INLET를 통해서 FUEL이 들어와 1,2차로 분배되어 분사된다.
+
+	     FLOW DIVIDER V/V에서 분배됨. (CF엔진)
+
+	     PW ENG"은 P/D V/V에서 분배되어 TWO INLET LINE을 통해서 들어온다.
+
+	     1차 연료는 넓은 각도로 분사되어 시동이 용이하게 하며 IDLE과 엔진 가속시에도 계속 분사된다.            2차 연료는 비교적 좁은 각도로 분사되며, HIGH POWER시 연소실 벽에  직접 닿지 않도록 분사된다.
+
+
+
+engine run up시운전 절차
+
+	    1) 시동절차 개요 및 준비사항
+
+	    2) 시운전 실시
+
+	    3) 시운전 도중 비상사태 발생시(화재) 응급조치 방법
+
+	    4) 시운전 종료 후 마무리 작업 절차
+
+	항공기 출발 시 기관 시동 요령을 서술하시오
+
+		    1) 조종실 승무원은 기관을 시동하겠다는 것을 지상작업자에게 알려준다.
+
+		    2) 지상 작업자는 기관 근처에 인원 및 장비가 없는 것을 확인한 뒤 조종실 승무원에게 시동해도 된다고 알려줌.
+
+		    3) 기관을 시동한다.
+
+		
+
+	출발 전 기관 시동시 작업자가 주지하여야 할 사항
+
+		    1) 시동순서 확인
+
+		    2) 소화기가 지정된 장소에 있는가 확인
+
+		    3) 배풍(후풍)이 강할 때 기관 실속의 원인이 되므로 기수가 바람방향으로 향하게 한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	(engine run up)시운전 절차 
+
+		Engine Ground Safety Precautions
+
+			Task 71-00-00-802-001-J00 Engine Ground Safety Precautions
+
+			A. General
+
+			(1) The operating characteristics of jet engine powered airplanes require care to prevent injury to personnel and damage to property.
+
+			(2) Personnel must not only avoid the engine inlet, but also the exhaust nozzle where hot, high velocity exhaust gases are discharged, and the fan discharge area where high velocity air is discharged. The velocity of the fan discharge air, particularly at high thrust settings, is sufficiently high to cause serious injury. When the thrust reverser is in the reverse thrust position, the fan air is discharged forward rather than rearward, while the exhaust gases are still discharged rearward.
+
+			(3) Following are some of the general safety items which shall be supplemented according to the needs of the job to prevent accidents.
+
+			Warning: ALL PERSONNEL MUST AVOID DANGER AREAS IN FRONT, REAR, AND SIDES OF POWER PLANT AND REMAIN OUTSIDE OF ENGINE SAFETY BARRIER, IF USED, DURING GROUND RUNNING OPERATIONS. THE ENGINE IS CAPABLE OF DEVELOPING ENOUGH SUCTION AT THE INLET TO PULL A PERSON UP TO OR PARTIALLY INTO THE INLET WITH POSSIBLE FATAL RESULTS. THEREFORE, WHEN APPROACHING ANY TYPE OF JET ENGINE, PRECAUTIONS MUST BE TAKEN TO KEEP CLEAR OF THE INLET AIR STREAM. THE SUCTION NEAR THE INLET CAN ALSO PULL IN HATS, GLASSES, LOOSE CLOTHING AND WIPE-RAGS FROM POCKETS. ANY LOOSE ARTICLES MUST BE MADE SECURE OR REMOVED BEFORE WORKING AROUND THE ENGINE.
+
+			DO NOT USE ENGINE NACELLE SERVICE INTERPHONE JACK ON ENGINE WHICH IS TO BE STARTED OR IS IN OPERATION. PERSONNEL MAY BE INJURED BY ENGINE INLET SUCTION OR EXHAUST BLAST.
+
+			(4) Engine Inlet and Exhaust (Figure 201 and Figure 202)
+
+			(5) Exhaust Characteristics
+
+				(a) Velocity
+
+					1) At high engine speeds the fan discharge and engine exhaust may pick up and blow loose dirt, sizeable stones, sand and debris a distance of several hundred feet.
+
+					2) Therefore, due caution must be used in parking the airplane for run up to avoid injury to persons or damage to property or other aircraft.
+
+					3) A blast fence is suggested if the engines are going to be operated in an area where there is not sufficient space available for dissipation of the fan and exhaust blast.
+
+				(b) Temperature
+
+					1) High temperature will be found up to several hundred feet from the exhaust nozzle depending on wind conditions.
+
+					2) Closer to the engine, the exhaust temperature is high enough to deteriorate bituminous pavement, therefore, concrete aprons are suggested for run up areas.
+
+					3) Occasionally when a jet engine is started, excess fuel that has accumulated in the turbine exhaust sleeve ignites and long flames are blown out of the exhaust nozzle.
+
+					4) The possibility of this hazard must be watched and all flammable materials kept in the clear.
+
+				(c) Toxicity
+
+					1) Tests have indicated that the carbon monoxide content is low but other gases are present which have a disagreeable odor and are irritating in effect.
+
+					2) Exposure will usually cause watering or a burning sensation of the eyes.
+
+					3) Less noticeable, but important, is the respiratory irritation which may be caused.
+
+					4) For both these reasons exposure must be avoided, particularly in confined spaces or pockets where the concentration may build up.
+
+			(6) Engine Cool Down
+
+				(a) After engine operation, care must be taken to ensure that the turbine exhaust sleeve and plug have cooled before any work is performed in these areas. All other parts may usually be worked on without danger of burn.
+
+			(7) Engine Noise
+
+				Warning: EAR PROTECTION MUST BE WORN BY ALL PERSONS WHO WORK NEAR THE ENGINE WHILE THE ENGINE OPERATES. LOUD NOISE FROM THE ENGINE CAN CAUSE TEMPORARY OR PERMANENT DAMAGE TO THE EARS.
+
+				Warning: USE APPROVED SAFETY EQUIPMENT FOR EARS FOR ALL PERSONNEL WHEN THEY ARE NEAR NOISE THAT IS MORE THAN 84 DBA. THIS WILL PREVENT INJURIES TO THEIR EARS.
+
+				(a) Jet engines typically produce noise capable of causing temporary, as well as permanent, loss of hearing.
+
+					1) Excessive noise can damage your ears.
+
+					2) Exposure to high quantities of noise for a short time, can cause temporary damage to your ears, and your ears can become less sensitive to hear sound.
+
+					3) Exposure to high quantities of noise for a long time can cause permanent damage to your ears, and you can lose your hearing.
+
+					4) Exposure to very high quantities of noise for a short time can cause permanent damage to your ears, and you can lose your hearing.
+
+					5) When you are near an engine in operation, always use ear protection to decrease your exposure to engine noise.
+
+						a) A cup-type ear protection is recommended.
+
+					6) Make sure that you use the correct ear protection when you are near an engine that is in operation
+
+					7) There are two graphs, the noise time limits and the one engine operation noise contours.
+
+						a) The noise contour graphs are guidelines for the amount of noise that is made by the engine at three defined power settings for the standard conditions shown on the graph.
+
+						b) When the data from the noise contour graphs is used with the noise time limit chart, you can determine the need for hearing protection for a certain condition.
+
+						c) The noise time limits are from the standards of the Occupational Safety and Health Administration (OSHA), the International Organization for Standardization (ISO) and the European Union (EU) (Figure 203).
+
+						d) For one engine operation, the noise contours are given for ground idle thrust, breakaway thrust, and takeoff thrust (Figure 204).
+
+						Note: This figure also gives the values for engine noise caused by dual engine operation.
+
+						e) To find the quantity of noise energy, use a sound level meter, COM-1616.
+
+						f) For the distance and the circumferential position from the engine, find the maximum noise from the applicable noise contour graph.
+
+						<1> Compare this value with the noise time limits graph.
+
+						g) Speak to a noise safety person to help you make the decision about the risk of noise damage to your ears.
+
+						Note: These noise contour graphs should not be used as a reliable basis for the prediction of noise in the surrounding community. These graphs are given to show the noise environment and to give guidance for hearing safety practices. Decisions about the risks of noise exposure should be made by a qualified, noise safety expert with the aid of a sound level measuring instruments.
+
+						Warning: THE ENGINE IGNITION SYSTEM IS CHARACTERISTICALLY HIGH IN ENERGY. THE NATURE OF THE SYSTEM IS SUCH AS TO MAKE THE SYSTEM A HAZARDOUS, POSSIBLY FATAL, SOURCE OF ELECTRICAL SHOCK UNLESS PRECAUTIONS ARE EXERCISED. NEVER ATTEMPT TO WORK ON THE IGNITION SYSTEM WHEN THE ENGINE IS OPERATING.
+
+						NEVER ATTEMPT TO WORK ON IGNITION SYSTEM WITHOUT MAKING THE SYSTEM INOPERATIVE AND MANUALLY DISCHARGING THE CURRENT BY GROUNDING THE EXCITER TERMINAL.
+
+					(8) Engine Ignition
+
+					(9) Fuel and Lubricating Oils
+
+		engine run up check list
+
+			?모든 항공기의 ENGINE RUN UP은 소정의 교육을 필하고 인가된 자에 한해 실시
+
+			?항공기의 EMGINE RUN UP은 지정된 장소에서만 수행할 것
+
+			?NOTE : 주기장 내 SPOT에서는 N2 80% 이상 POWER UP 금지
+
+			?ENGINE 후류에 의한 위험지역 내에 물체의 존재 여부 및 사람, 차량등의 불시의 침입을 방지하기 위해 지상 감시자릉 배치할 것.
+
+			?모든 DOOR는 완전히 닫은 상태여야하며, 항공기 출입문 근처에 작업대 등의 물체가 있어서는 안된다.
+
+			?항공기 부근에는 20 KG 이상의 분말 소화기를 배치하고, HIGH POWER RUN UP시에는 RUBBER CHOCK 를 사용할 것.
+
+			?ENGINE RUN UP 이 완료 될 때까지 COCKPIT 과 지상 감시자는 통신을 유지 하고 HIGH POWER INCREASE 시에는 무전기를 사용하여 안전거리를 확보한다.
+
+			?항공기가 RUN-UP 장소에 도착한 후 TOW-BAR 및 BY-PASS PIN을 제거해야 한다
+
+			?항공기의 TIRE가 닿는 부분에 OIL , GREASE , 눈 등이 있는지 미리 확인하고 PARKING BRAKE 를 SETTING 한다. ( COCKPIT 및 NOSE WHEEL WELL 에서 BRAKE L’T 점등확인 )
+
+			? 항공기는 가급적 정풍 방향으로 위치시키며 , 배풍 및 측풍일 경우 AMM에서 LIMIT값을 확인하여 조치한다. ( GROUND LOCK PIN 확인 필수 )
+
+			?ENGINE INLET AREA 에 흡입될 가능성이 있는 외부물질을 제거한다.
+
+			?ENGINE DRAIN MAST 에서 FLUID LEAK 여부를 확인하라.
+
+			?NOSE & MAIN LANDING GEAR 앞 뒤로 CHOCK 하라
+
+			?잔류 연료량을 점검하고 필요시 추가 공급하라. ( HYD FLUID를 COOLING 할 수 있는 연료 여부 점검 )
+
+			?HYD FLUID의 양을 점검하라ENGINE OIL 의 양을 점검하라
+
+			?IDG OIL의 양을 점검하라PITOT PROBE 의 덮개를 제거 하라
+
+			?THRUST REVERSER LEVER 와 POWER CONTROL LEVER 의 위치를 확인한다
+
+			?WEATHER RADAR C/B를 OPEN 하라
+
+			?ENGINE LIGHT UP 후 IDLE 도달까지 각종 엔진관련 계기를 CHECK하라
+
+			?STARTER LEVER IDLE POSITION 이후 EGT증가 여부
+
+			?STARTIN 최대 EGT 가 725도 초과 여부
+
+			?ENGINE SHUT DOWN 이후 엔진이 완전히 정지할 때까지 엔진에 접근금지
+
+			?ENGING 이 완전히 cooling 되기 이전에는 INTAKE & EXHAUST COVER 장착은 물론 HANGAR 내에 견인하여서는 안된다
+
+			?RUN UP 장소 주변을 정리 정돈한다.
+
+		turbofan engine run up procedure시동 절차
+
+			① 동력레버 : idle 위치
+
+			② 연료차단 레버 : close 위치(시동 및 점화 스위치 on이 아니면 close)
+
+			③ 주 스위치 : on
+
+			④ 연료 승압펌프 : on
+
+			⑤ 시동 스위치 : on(rpm & oil pressure 증가 관찰)
+
+			⑥ 점화스위치 : on(rpm 10% 이상에서 작동)
+
+			⑦ 연료차단 레버 : on(시동여부는 EGT확인, 시동은 2분 이상 걸리지 않도록)
+
+			⑧ 시동 완료 후 시동 스위치 및 점화 스위치 off
+
+			※ 시동시 EGT > 시동 후 EGT
+
+		시운전 도중 비상사태 발생시(화재 등) 응급조치 방법
+
+			(1)This operating procedure provides the instructions necessary for operating the engine under normal conditions. This procedure may be used for checking operation of the engine or related systems when engine operation is required.
+
+			(2)During cold weather, additional preparations such as preheating may be necessary. Cold weather engine operation is described in par. 6.
+
+			(3)Engine compartment cleanliness is important because the intensive mass airflow tends to draw foreign objects into the engine.Thoroughly clean and check area after completion of any work. Keep the inlet area free of foreign matter.
+
+			(4)In order to prevent corrosion in the compressor stages and damage to the fan, it is recommended that the engine inlet and exhaust be suitably covered whenever possible. When there is freezing precipitation or sufficient wind to rotate the engine, it is particularly important to cover the engine immediately.
+
+			(5)The drain mast should be observed during starting for evidence of excessive leakage. 
+
+			(6)Engine indication should be recorded by observing vertical scale displays during transient operation and digital displays during stabilized operation.
+
+			(7)For starting engine with thrust reverser in reverse (deployed) position, place reverse thrust levers in down (forward thrust) position and forward thrust lever in idle position and observe normal starting procedures. When bleed pneumatic pressure builds up, thrust reverser will return to forward (stowed) position.

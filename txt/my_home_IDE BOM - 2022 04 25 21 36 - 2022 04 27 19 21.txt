@@ -1,0 +1,120 @@
+my_home_IDE BOM(엑셀 작성)
+
+1lv
+
+2lv
+
+
+
+pi bag
+
+jetson bag
+
+nylon nut
+
+air purifier
+
+
+
+
+
+jetson nano system
+
+	arduino nano - Copy - Copy - Copy
+
+	jetsonboard power
+
+	python
+
+	relay - Copy - Copy - Copy
+
+	인공지능
+
+
+
+
+
+power system
+
+	larger power supply
+
+
+
+heat monitoring system
+
+	열화상카메라 또는 적외선 열센서
+
+
+
+heat level control system
+
+cooling system
+
+	heat moving line
+
+	copper heat sink
+
+	aircirculator
+
+fan system 1
+
+	arduino nano
+
+	fan
+
+	relay
+
+		it can be compatible with ardoino nano.
+
+fan system 2
+
+	arduino nano
+
+	fan
+
+	relay
+
+		it can be compatible with ardoino nano.
+
+
+
+dust monitoring system
+
+
+
+dust level control system
+
+	유입부 페브릭 필터(스타킹어떤가)
+
+
+
+
+
+
+
+
+
+notebook
+
+
+
+
+
+
+
+00 lighting system
+
+
+
+
+
+
+
+desktop
+
+	CPU
+
+	GPU
+
+	motherboard
+

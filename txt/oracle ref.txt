@@ -1,0 +1,117 @@
+
+insert into __________TB (__________COL1,__________COL2,__________COL3) values (1,'mgmt_num1',sysdate);
+insert into __________TB (__________COL1,__________COL2,__________COL3) values (2,'mgmt_num2',sysdate);
+insert into __________TB (__________COL1,__________COL2,__________COL3) values (3,'mgmt_num3',sysdate);
+update __________TB set __________COL1='3', __________COL3='30-dec-9999' where __________COL1=0;
+select __________COL1,__________COL2,__________COL3 from __________TB ;
+select __________COL1,mgmt_code_first,mgmt_code_last,__________COL3 from __________TB order by __________COL1 desc ;
+select * from __________TB order by __________COL1 asc;
+select * from __________TB order by __________COL1 asc;
+
+
+
+-- try experimental
+-- create sequence __________TB_SEQUENCE1;
+-- insert into __________TB (__________COL1,__________COL2,__________COL3) values (__________TB_SEQUENCE1.nextval,'mgmt_num2',sysdate);
+-- insert into __________TB (__________COL1,__________COL2,__________COL3) values (__________TB_SEQUENCE1.nextval,'mgmt_num3',sysdate);
+-- insert into __________TB (__________COL1,__________COL2,__________COL3) values (__________TB_SEQUENCE1.nextval,'mgmt_num1',sysdate);
+-- select __________TB_SEQUENCE1.currval from __________TB;
+-- select __________TB_SEQUENCE1.currval from dual;
+-- select * from __________TB order by __________COL1 asc;
+
+
+
+
+
+
+TERMINOLOGIES_MAP.XLS
+insert into TERMINOLOGIES_MAP (idx,category_ichi,category_ni,category_san) values (____val1,DB,)
+table==list1
+fields==headers==columns
+records==body==rows==valueinputed
+table==emplist1
+ddl==정의어 - generation, removal 등등
+ddl==data defination language
+ddl 영역을 diagram화하자.
+dml==조작어 - 처리,조회,검색,수정,추가 등등
+dml==처리,조회,검색,수정,추가
+dcl==제어어 - 권한 관련 등등dcl==권한...
+sql==structured query language
+sql==language used in db
+sql==language that handle db.
+sql==ddl&&dml&&dcl
+dbms==system that manage db via sql.
+rdbms==관계형dbms
+rdbms program 제품군==oracle&&mysql && mssql && mariadb
+nosql program 제품군==
+nosql==not only sql==비관계형dbms==기존의 관계형 db의 한계를 뛰어넘기 위해 만들어진 새로운 형태의 db라서,rdbms보다 더 융통성 있는 data 모델을 사용
+nosql program 제품군==mongodb, couchdb
+표의 형태==행과 열 구성
+oracle 19c
+:: __________________________________________________________________________ control issue
+:: __________________________________________________________________________ commentizing issue
+if we use 한글 입력기, we can not commentize text via shortcuts as ctrl /.
+try1{ 	if we want to commentize text with ctrl /,we need to try to replace to 영문 입력기. }
+:: __________________________________________________________________________ ora-00001
+for unique
+try1{ 	remove unique }
+try2{ 	don't try insert,because it is intended }
+:: __________________________________________________________________________ ora-00937 -- not a single-group group function
+issue occours because sqldeveloper can't print 14 rows...and 1rows... coincidently.
+:: __________________________________________________________________________ ora-00904
+for invalid identifier
+try1{
+:: __________________________________________________________________________ ora-12560
+windows 10\services
+oracleserviceorcl
+
+
+
+
+
+
+
+CODE_MAP.XLS
+CODE_MAP.SQL
+CODE_MAP.BAT
+CREATE TABLE CODE_MAP (
+	IDX INT IDENTITY(1,1),
+	CODE_NM VARCHAR(18),
+	CODE_VALUE VARCHAR(18),
+	REG_DATE DATETIME DEFAULT GETDATE(),
+	primary key(IDX)
+)
+
+
+
+QNA_MAP.XLS
+QNA_MAP.SQL
+QNA_MAP.BAT
+create table QNA_MAP{
+	idx		name	 description
+}
+
+
+
+SHORTCUTS_MAP.XLS
+SHORTCUTS_MAP.SQL
+SHORTCUTS_MAP.BAT
+create table SHORTCUTS_MAP{
+    insert into (program, shortcut, description) values (intellij	,  alt f1  , file location open with explorer shortcuts);
+    insert into (program, shortcut, description) values (intellij 	,  ctrl insert    , C line at clipboard );
+	insert into (program, shortcut, description) values ( intellij	,		shift del        ,     //D line at text editor );
+	insert into (program, shortcut, description) values ( intellij	,		ctrl rr          , );
+	insert into (program, shortcut, description) values ( intellij	,		ctrl w            ,    //select );
+	insert into (program, shortcut, description) values ( win10      ,  win v		 ,  // clipboards list );
+	insert into (program, shortcut, description) values ( dbever     ,   ALT+Up ALT+Down  , 다음쿼리로 이동 );
+	insert into (program, shortcut, description) values ( dbever      ,  ctrl enter );
+    insert into (program, shortcut, description) values (________ 	,  ________   , ________ );
+
+}
+
+
+CODE_SEGMENT_MAP.xls
+CODE_SEGMENT_MAP.sql
+create table CODE_SEGMENT_MAP{
+insert into (program, code_segment, description) values (cmd.exe 	,  lsnrctl services    , check sid );
+}

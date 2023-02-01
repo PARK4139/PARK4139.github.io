@@ -1,0 +1,35 @@
+data=data.replace('jhp##????-??-??,'_')
+
+data=data.replace('jhp##,'_')
+
+data=data.replace('@,'_')
+
+data=data.replace('(,'_')
+
+data=data.replace('),'_')
+
+data=data.replace('[,'_')
+
+data=data.replace('],'_')
+
+data=data.replace('-,'_')
+
+data=data.replace('%,'_')
+
+data=data.replace('__','_')
+
+data=data.replace(' ','_')
+
+
+
+
+
+
+
+한자를 영어로 번역하여   파일명 변경
+
+
+
+
+
+data=data.replace('\n','_')

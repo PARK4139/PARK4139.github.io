@@ -1,0 +1,368 @@
+unity
+
+	pjh4139@gmail.com
+
+	s2elysiums2S
+
+
+
+
+
+
+
+autodesk
+
+	pjh4139
+
+	s2elysiums2S
+
+
+
+
+
+
+
+game tutorial
+
+	http://www.youtube.com/watch?v=GHLY0ZeD6Rg&list=PLX2vGYjWbI0Tg4eS9w29PPqg0Fx4sIL7p
+
+	http://www.youtube.com/watch?v=RAac3e8vKRw
+
+	http://www.youtube.com/playlist?list=PLX2vGYjWbI0Tg4eS9w29PPqg0Fx4sIL7p
+
+
+
+
+
+굉장히 좋은 유니티와 관련된 언어 강좌
+
+	http://www.youtube.com/watch?v=ZJoLGOhAKKI
+
+
+
+
+
+게임 강좌
+
+	https://www.youtube.com/channel/UCVkecn3e56Wm7sOQl0OInzA
+
+	http://www.youtube.com/watch?v=r_1ZjMZ4uQ0
+
+	http://www.youtube.com/watch?v=gXx26EQ-qZk
+
+	http://www.youtube.com/user/myleje/videos
+
+
+
+
+
+minimum fps
+
+	16fps
+
+	24fps
+
+	30fps
+
+	60fps
+
+
+
+
+
+draw call
+
+	draw call이 높아 지면 FPS가 낮아지므로 draw call를 낮춰야 좋음
+
+	갤럭시3의 경우 300정도
+
+
+
+
+
+프로그래밍을 배워야 하는 이유
+
+	http://www.youtube.com/watch?v=SESuctdE9vM
+
+
+
+
+
+
+
+
+
+
+
+
+
+가상
+
+	http://www.youtube.com/watch?v=TWeSZAes3Oc
+
+
+
+
+
+
+
+system
+
+	PK(player kill)
+
+
+
+
+
+
+
+유니티 무료 에셋
+
+
+
+	https://www.assetstore.unity3d.com/kr/#!/content/3547
+
+(향유고래)
+
+
+
+	https://www.assetstore.unity3d.com/kr/#!/content/15667
+
+(남자캐릭터)
+
+
+
+	https://www.assetstore.unity3d.com/kr/#!/content/18705
+
+(무슨짱)
+
+
+
+
+
+free asset
+
+	https://www.assetstore.unity3d.com/kr/#!/content/20040
+
+	https://www.assetstore.unity3d.com/kr/#!/content/16934
+
+	https://www.assetstore.unity3d.com/kr/#!/content/13811
+
+	https://www.assetstore.unity3d.com/kr/#!/content/18705
+
+	https://www.assetstore.unity3d.com/kr/#!/content/13001
+
+	https://www.assetstore.unity3d.com/kr/#!/content/21028
+
+
+
+
+
+asset 
+
+	https://www.assetstore.unity3d.com/kr/#!/category/1/page/1/sortby/popularity
+
+	https://www.assetstore.unity3d.com/kr/#!/category/98/page/1/sortby/popularity
+
+
+
+
+
+
+
+
+
+
+
+
+
+unity 스크립트 프레퍼런스
+
+	http://www.devkorea.co.kr/reference/Documentation/ScriptReference/index.html
+
+
+
+
+
+unity script 
+
+	http://docs.unity3d.com/ScriptReference/Input.html
+
+
+
+
+
+
+
+UNITY PROMOTION VIDEO
+
+	http://www.youtube.com/watch?v=7766tXOpYI0
+
+
+
+
+
+캐릭터
+
+	http://fantasymasters.tistory.com/category/?page=26
+
+
+
+
+
+
+
+
+
+
+
+player object
+
+	the poor
+
+	the rich
+
+
+
+
+
+object	
+
+	Exit gate
+
+	Next gate
+
+	water park
+
+	snow theme park
+
+	바이킹
+
+	자이로 드롭
+
+	관람차
+
+	zoo tycoon
+
+	pool(수영장) 
+
+	극장	
+
+	뮤지컬
+
+	아지트
+
+	학교
+
+	ironman
+
+	tarnsformer
+
+	drone(camera)
+
+
+
+
+
+
+
+sound 
+
+	epic music
+
+	http://www.youtube.com/watch?v=Ym8JjY4fy-M
+
+	http://www.youtube.com/watch?v=DeXoACwOT1o
+
+
+
+
+
+MMORPG VR game
+
+	http://www.youtube.com/watch?v=JCR5v2s4inA
+
+	http://www.youtube.com/watch?v=EWcKZdnrF9U
+
+	3DXCHAT
+
+	http://www.youtube.com/watch?v=YNIFjsZvJUE
+
+
+
+
+
+unity game
+
+	the forest
+
+	http://www.youtube.com/watch?v=B3CV7E9h8Nc
+
+	http://www.youtube.com/watch?v=qkvo5gO9n6Y
+
+
+
+unity game video
+
+	http://www.youtube.com/watch?v=d6gP88XQtbY
+
+	http://www.youtube.com/watch?v=T0GI4jjr8qM
+
+	http://www.youtube.com/watch?v=pd7JN_idUnQ
+
+제목
+
+	악당은 바쁘다(와 이소가시)
+
+	우리들의 아지트
+
+
+
+
+
+mode
+
+	캐릭터에게 초능력 스킬 부여	
+
+	
+
+
+
+
+
+game video
+
+	http://www.youtube.com/watch?v=PAqVwhY7Odk
+
+	http://www.youtube.com/watch?v=pIts69D_xEI
+
+	http://www.youtube.com/watch?v=p6qaN4NbmtY
+
+	http://www.youtube.com/watch?v=ZvVpbz-Nwxo
+
+	http://www.youtube.com/watch?v=Gb_WSoiB9Ak
+
+	http://www.youtube.com/watch?v=vKsp9ku2UlA
+
+	http://www.youtube.com/watch?v=h1Xa0o2mz5s
+
+	http://www.youtube.com/watch?v=yzn89hMSiMs
+
+
+
+2010 THE RAVEN(MOVIE)
+
+	http://www.youtube.com/watch?v=ikJc456pi3g
+
+
+
+
+
+Grab and Drop Objects
+
+
+
+
+
+
+

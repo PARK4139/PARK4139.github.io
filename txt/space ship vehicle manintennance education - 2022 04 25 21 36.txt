@@ -1,0 +1,140 @@
+Space Vehicle 정비사 교육 게임 프로토타입
+
+
+
+
+
+1. RFP
+
+1.1 UNREAL ENGINE 5
+
+
+
+
+
+
+
+객체 식별 및 묘사
+
+식별 류
+
+식별 TBD 류
+
+미식별 류
+
+구동 류
+
+	: 외관상의 시각적 변화를 하는 것.
+
+	ex) 스위치가 달린 LRU, 
+
+
+
+미구동 류
+
+	: 외관상의 시각적 변화를 하지 않는 것.
+
+	ex) 점검판 류, CB 류, 매트릭스 류
+
+
+
+
+
+
+
+정비사 교육용 보드
+
+응시를 하면 전원이 켜지고
+
+응시하지 않으면 전력 보존 모드로
+
+
+
+
+
+
+
+인터렉션 식별 및 묘사
+
+button interactive
+
+hand interactive
+
+fingers interactive
+
+foot interactive
+
+driver interactive
+
+
+
+
+
+
+
+10만 여개 강의
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+식별불가 류
+
+미식별 류
+
+
+
+
+
+
+
+
+
+
+
+2. 좌우측 있으면 하나만 남김.
+
+3. 전후방 있으면 하나만 남김.
+
+4. 상하부 있으면 하나만 남김.
+
+
+
+
+
+if you did not have maintennace ackenoledge ,  you will die
+
+
+
+
+
+
+
+00. COCKPIT LRU
+
+
+
+
+
+
+
+
+
+
+

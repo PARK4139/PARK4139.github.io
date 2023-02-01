@@ -1,0 +1,1105 @@
+check procedure of fuel servicing
+
+	1.fuel quantity
+
+		Fuel Quantity Indicating system(FQI system) 
+
+			fuel level에 따른 capacitance를 측정하여 fuel quantity을 지속적으로 측정 monitoring 한다.
+
+			position of Fuel probe that is fuel level sensor in fuel tank
+
+				the LH and RH outer tanks
+
+				the LH and RH inner tanks, 
+
+				the LH and RH outer collector cells, 
+
+				the LH and RH inner collector cells, 
+
+				the center tank, 
+
+				the trim tank.
+
+		Manual Magnetic Indicators(MMI)
+
+			fuel quantity를 계산할 때 사용하는 secondary direct-reading system
+
+				position
+
+					the inner tanks, 
+
+					the center tank, 
+
+					the outer tanks
+
+				MMI를 사용하는데 있어서 electric power은 필요하지 않는다.
+
+				각각의 MMI에는 Magnetic Level-Indicator(MLI)가 있다.
+
+			Magnetic Level-Indicator(MLI)
+
+				MLI에는 fuel level이 mark 되어 있는 glass-reinforced plastic rod가 있다.
+
+				tank하부에서 rod를 뽑아낸 후 fuel 면과 일치 하는 rod의 눈금을 읽고 환산표를 이용하여 fuel의 무게를 산출한다
+
+				환산할 때는 항공기의 자세 및 density of fuel나 specific gravity(비중) of fuel 값을 대입하여야 한다.
+
+			NOTE : 위 절차는 trim tank에서는 적용할 수 없다.
+
+
+
+					tank inlet valve
+
+					transfer pump
+
+					trim tank
+
+
+
+check list that it is procedure of servicing about fuel
+
+	at first 		3point ground
+
+	at secont		20Kg 이상의 CO2 또는 40Kg 이상의 분말소화기 비치
+
+	at third		감시요원
+
+	at forth		15m 이내에서 금연 ,인화성물질 취급금지
+
+	at fifth		탑승 중 급여 시는 안전 조치후
+
+	at sixth		fuel 차는 항공기와 충분한 거리를 두고 번개 칠 때는 급유, 배유금지
+
+	at senventh	항공기 무선설비가 작동 시는 100M이내에서는 급유, 배유금지
+
+
+
+
+
+
+
+Refuel
+
+DeFuel
+
+
+
+Electric Circuit은 complete
+
+Landing Gear가 cooling
+
+Ground point에 3point ground
+
+
+
+Refuel / DeFuel시 불필요한 장비나 자재들은 Safety area로 이동
+
+
+
+Fuel 무게로 인해 갑자기 L/G와 항공기 하부에 하중을 받을 수 있으므로	항공기에 손상을 유발시키는 장비는 치운다.
+
+
+
+ a fuelling supervisor or fuelling safety person
+
+ the correct fire-fighting equipment
+
+- approved persons to use the fire-fighting equipment.
+
+
+
+select fuel that is proper to aircraft
+
+Fuel Tanker (or Hydrant)는 정확한 position에 있어야 한다.
+
+Emergency 상황 발생시 Fuel Tanker는 재빠르게 안전한 곳으로 이동할 수 있어야 한다.
+
+Main Engine은 off
+
+APU Start는 Refuel / DeFuel시 허용
+
+
+
+
+
+ spark를 유발 시키는 electric equipment는 사용하지 않는다.
+
+천둥 / 번개가 치는 기상 상태에서 하지 않는다.
+
+항공기 external lighting을 작동하지 않는다.
+
+Oxygen SYS을 fill하거나 Oxygen Bottle을 교환하지 않는다.
+
+spark를 유발하지 않는 정비 작업만이 허용된다.
+
+
+
+fueling 중에는 허용된 radio, radar, electric equipment의 교환이나 경정비만 할 수 있다.
+
+안전을 위하여 기본적으로 전파,정전기,spark,번개,마찰,열 을 제한한다
+
+
+
+
+
+
+
+
+
+fuel
+
+	터빈 Engine fuel
+
+		-Kerosene(등유) Type + 첨가제
+
+		(=> ANTI-ICING, ANTI-STATIC, ANTI-COROSSION)
+
+		- 방빙성이 좋아야 한다.
+
+		- 안전한 연소성
+
+		-발열량이 클 것
+
+		? JET A : Kerosene Type, 결빙점 -40℃
+
+		? JET A-1 : Kerosene Type, 결빙점 -47℃ (대한항공에서 사용)
+
+		? JET B : Kerosene과 Gasoline이 혼합, JP-4와 비슷하며
+
+		일반적인 군용기에쓰임. 결빙점 -50℃
+
+	왕복 Engine fuel
+
+		?- Gasoline + 4Ethyn
+
+		?- 휘발성이 좋다.
+
+		?- 가속성이 좋다.
+
+		?- 옥탄가가 높다(Anti-Knock성이 우수)
+
+		?- 옥탄가의 등급에 따라 115~145가 항공기용이며 자색으로 착색해서 식별이 용이하다.
+
+
+
+
+
+fuel tank
+
+	it is installed in wing and fuselage
+
+
+
+
+
+kinds of fuel tank
+
+	integral fuel tank
+
+		it is wing fuel tank
+
+		it is made cell that can contain fuel by using space between rib ,front spar and rear spar
+
+		it is sealed by useing special sealant
+
+		it can reduce wegiht of aircraft (별도의 fuel tank를 장착하지 않고 기본 항공 구조를 이용하여 사용하기 때문에)
+
+	Bladder type fuel tank(REMOVEABLE CELL TYPE)
+
+		나일론천이나 고무 주머니 형태로 떼어 낼 수 있도록 제작된 TYPE
+
+		상업용 민간 항공기에 일부 항공기의 CENTER WING TANK에 사용
+
+	main tank
+
+		engine에 feed
+
+	aux tank
+
+		main tank에 cross feed
+
+	trim tank
+
+		control CG
+
+	VENT SURGE TANK
+
+		- fuel를 저장하지는 않으며 venting 유출되는 fuel를 일시 보관하는 목적으로 사용.
+
+
+
+
+
+		
+
+	fuel tank leak 시 수리방법
+
+		leakage location
+
+		stain
+
+		seep
+
+		heavy seep
+
+		running leak
+
+	fuel tank 정비 시 안전 주의사항
+
+		Pre-Entry Checklist를 작성
+
+		dump
+
+		Purging(Fuel Tank 내부 Gas를 뽑아냄)
+
+		protective clothing을 착용
+
+		산소마스크를 착용해야 한다.
+
+		Work Area는 깨끗하고 공기에 개방되어 있어야 한다.
+
+		Fuel Tank 안의 작업자와 Fuel Tank 밖의 작업자(Safety Person)는 다음 사항을 준수해야 한다.
+
+			- Fuel Tank 안에 작업자가 있을 때는 깨끗한 공기가 지속적으로 공급되어야 한다.
+
+			- 가능하다면 Safety Person은 Fuel Tank 안의 작업자가 안전한지 지속적으로 지켜봐야 한다.
+
+		⑥ Fuel이 눈에 들어갔을 때
+
+			- 깨끗한 물로 씻어낸다. ( 눈꺼풀을 들어 올려 충분히 씻는다 ) 
+
+			- 의사의 치료를 받는다. 
+
+		⑦ Fuel Tank 내에서 사용하는 모든 장비는 깨끗한 상태를 유지하여야 한다. 
+
+		⑧ Tank Work Area의 Location과 Dimension을 알기 전까지는 Tank 안으로 들어가지 않는다. 
+
+			NOTE : Outer Wing Area 일부는 당신의 신체 일부만이 들어갈 수 있다. 
+
+		⑨ Magnetic Level Indicator와 FQI(Fuel Quantity Indicator)를 건들 거나 누르게 되면 손상을 유발 시키므로 주의해야 한다. 
+
+		⑩ 정비 중 Internal Structure, Sealant, Electric Cable, Conduit 등의 손상을 유발시키지 말아야 한다. 
+
+		⑪ Fuel Tank Structure와 작업자 부상 방지를 위해 Fuel Tank Floor에 Mat를 깔아야 한다. 
+
+		⑫ Fuel Tank 내에서는 인가된 Spark-proof lamp와 Torch를 사용해야 한다. Sealed vapor-lamp 사용하면 안 된다. 
+
+		⑬ Fuel Tank내에서는 인가된 Lint-free cloth를 착용해야 한다.
+
+
+
+
+
+
+
+
+
+(오일,먼지,오물 등은 Tank의 오염을 유발시킨다. )
+
+crossfeed valve
+
+
+
+
+
+	fuel tank
+
+		integral tank
+
+			box beam(front spar,rear spar,rib,upper surface,lower surface)를 fuel tank로 이용
+
+			sealant or sealing compoud 로 sealing 한 것
+
+		replaceable cell tank
+
+			bladder type
+
+				합성고무
+
+			metal type
+
+				metal tank
+
+
+
+
+
+
+
+
+
+				1) INTEGRAL FUEL TANKS
+
+					explanations
+
+						Integral fuel tanks are formed within the aircraft structure
+
+						 by sealing compartments like wing sections during	 manufacture.
+
+						Internal diaphragms both divide the wing into a number of tanks, 
+
+						and also prevent ‘surge’, external or internal pipes connect the tanks to the fuel system.
+
+					Sealant
+
+						A number of methods are used for sealing the structure, 
+
+						including the use of sealant as a‘faying compound’
+
+						 between mating surfaces and the use of ‘filleting 
+
+						compound’ at the edges.  The interior of the tank is 
+
+						then further protected by flexible sealant coatings,
+
+						 which may be applied by spreading, brushing or 
+
+						spraying.  All the above methods may be used to
+
+						 seal the tank which may also be accompanied by
+
+						 special paint schemes, which are designed to
+
+						 minimize microbiological attack.  A suitable 
+
+						number of large access panels, hand holds and
+
+						 tank connections, are included within the structure.
+
+						  The access panels are normally made fuel
+
+						 tight by using seals and sealant at the 
+
+						mating surfaces.
+
+				2) FLEXIBLE FUEL TANKS
+
+					EXPLANATIONS
+
+						Flexible fuel tanks are reinforced rubberised bag
+
+						 type fuel tanks placed in a non fuel tight compartment.
+
+					EXPLANATIONS
+
+						The tank incorporates all the components as 
+
+						required for the rigid removable fuel tank such
+
+						 as a vent, drain and fuel quantity indicator etc. 
+
+						 The airframe compartment for the tank is used 
+
+						completely, with a small opening provided for
+
+						 the insertion of the tank.  When inserted into the
+
+						 compartment the tank is held in place
+
+						 by several ‘buttons’ or ‘
+
+						snaps’ which attach the tank 
+
+						to the compartment. These tanks are found on 
+
+						many medium sized aircraft.
+
+				3) RIGID REMOVABLE FUEL TANKS
+
+					EXPLANATIONS
+
+						is installed in a compartment designed to hold 
+
+						the tank.  The tank must be fuel-tight but the 
+
+						compartment in which it fits is not fuel tight.
+
+						The tank is usually constructed of aluminium
+
+						 components welded together.  A baffle or baffles 
+
+						may be installed inside the tank to reduce the
+
+						 free movement of fuel called ‘surge’.  The baffles 
+
+						are attached to the tank structure with apertures 
+
+						to allow a flow of fuel but reducing the 
+
+						‘surge’ action of the fuel.
+
+					EXPLANATIONS
+
+						The tank must be smaller than the tank compartment
+
+						 to fit into the compartment and therefore the best 
+
+						use of the available space is not utilized.
+
+						The rigid removable tank may be held in position
+
+						 by straps and/or screws.  An access panel is
+
+						 used to cover the fuel tank.  The tank has a
+
+						 fuel feed line located near to the lowest inboard
+
+						 point to ensure that most of the fuel load is utilized.
+
+						A fuel drain point is situated at the lowest
+
+						 point of the tank when the aircraft is in a landed
+
+						 and stationary mode.
+
+						A fuel filler cap and vent tube are fitted near the
+
+						 top of the tank and provision made for a fuel 
+
+						quantity indicator.  This type of fuel tank is found 
+
+						on light aircraft.
+
+		
+
+		
+
+		
+
+		fuel의 중량/항공기 총 중량=소형기 약 I0%,대형 제트 항공기 약 40%
+
+		비행 하중
+
+		지상 하강 및 착륙 하중
+
+		
+
+		
+
+		?
+
+			Colors of the various grades and types of fuel and marking and color code
+
+			Precautions
+
+		
+
+		fuel 오염
+
+			Strainer 또는 Filter를 막히게 하고 엔진으로 공급되는 fuel를 차단하며, fuel내의 물이 fuel Metering 계통으로 유입되어 엔진을 정지시킨다. 
+
+			Turbine fuel 계통에서는 고 고도에서 fuel 온도가 저하되면 fuel내의 미세한 수분이 필터에서 얼음을 형성하여 fuel흐름을 막는다.
+
+		
+
+		
+
+		
+
+		fuel
+
+			Wide Cut Type fuel
+
+				끓는점의 범위가 35˚C 에서 315˚C 사이에서 증류되는 가솔린과 케로신의 혼합물
+
+				민간기 : Jet B(결빙점 -50°C)
+
+				군용기 : JP-4(Jet Propulsion or Petrolum)
+
+			Kerosene Type fuel
+
+				끓는점의 범위가 165˚C 에서 290˚C사이에서 증류되는 fuel
+
+				민간기 : Jet A-1(결빙점 -47°C), Jet A(결빙점 -40°C)
+
+				군용기 : JP-8, JP-5
+
+			Aviation Gasoline(AV-GAS)
+
+				왕복기관의 fuel)
+
+				끓는점이 35˚C에서 165˚C 범위에서 증류되는 fuel로서 케로신 타입 fuel와 비교할 때 윤활 특성이 약하여 터보 프롭 엔진에 다량 사용할 수 없으며
+
+				납이 함유되어 있어 가스 터빈 엔진에 사용할 경우 역효과를 미친다.
+
+		Aviation Gasoline의 구비조건
+
+			발열량이 커야 한다.
+
+			기화성이 좋아야 한다.
+
+			(Vaper-Lock)를 잘 일으키지 않아야 한다.
+
+			(Anti Knocking Value)이 커야 한다.
+
+			안전성이 커야 한다.
+
+			부식성이 작아야 한다.
+
+			내한성이 커야 한다.
+
+			
+
+		
+
+		터빈 엔진 fuel의 구비 조건
+
+			가스 터빈 기관의 fuel는 원유를 가열하여 분류, 정제한 후 사용한다. 
+
+			가스 터빈기관에서 fuel의 연소는 공기의 속도가 빠르고, 공기-fuel비가 희박한 조건에서 연소되기 때문에 가스 터빈 기관의 특성에 맞는 fuel가 필요하다.
+
+			가스 터빈 기관에서는 이와 같은 제한이 없기 때문에 이론적으로는 어떤 fuel를 사용하더라도 기관의 작동이 가능하다. 
+
+			그러나 항공기용 가스 터빈 기관에 사용하기 위해서는 다음과 같은 조건을 갖추어야 한다.
+
+				항공기는 상승률이 크고 고 고도에서는 대기압이 낮아지기 때문에 증기폐쇄(Vapor Lock)의 위험성이 항상 존재하므로 fuel의 증기압이 낮아야 한다.
+
+				가스 터빈 기관을 장착한 항공기는 고 고도 비행을 하기 때문에 성층권과 같이 대기 온도가 -56.5。C인 고공에서도 얼지 않아야 한다. 그러므로 fuel는 어는점이 낮아야 한다.
+
+				사고 등에 따른 화재 발생을 방지하기 위하여 인화점이 높아야 한다.
+
+				가스 터빈 기관은 왕복 기관에 비하여 출력이 커서 fuel의 소비량이 많으므로, 대량 생산이 가능한 fuel이어야 하고, 가격도 싸야 한다.
+
+				그밖에 단위 무게 당 발열량이 커야 하며, fuel 탱크와 다른 fuel 계통 안의 부품들을 부식시키지 말아야 한다. 
+
+				그리고 fuel 조정 장치 등은 매우 정밀하게 작동되기 때문에, 점성이 낮고 깨끗한, 균질의 fuel를 필요로 한다.
+
+		fuel를 선택할 때에 고려할 사항들은 다음과 같다.
+
+			첫째, fuel의 이용도, 
+
+			둘째, 연소실 효율, 고도 한계, 기관 회전수, 탄소 찌꺼기 및 연소실과 후기 연소기의 공중 재시동 특성 등과 같은 기관의 성능, 
+
+			셋째, 항공기 fuel 계통의 증기 및 액체 손실, 증기폐쇄(Vapor Lock), fuel의 청결성 등을 고려해야 한다.
+
+		
+
+		
+
+		fuel system
+
+			Tank
+
+				fuel를 저장하고 Engine Feed 계통 및 APU Feed 계통까지 fuel를 공급하는 구성품 및 기체 구조를 포함하고 있다.
+
+			Vent
+
+				fuel Tank내외의 차압에 의한 Tank 구조의 손상을 방지하고 Engine Feed, APU Feed 및 Jettison 계통에 충분한 Heat Pressure를 제공키 위한 구성폼 및 기체 구조를 포함하고 있다.
+
+			Fueling
+
+				fuel를 보급하기 위한 배관 및 관련 구성품과 정비 목적으로 필요시 fuel를 배유(Defueling)하거나 Tank간의 fuel의 이송을 위한 구성품이 포함 됨.
+
+			ENG Feed
+
+				Tank에서 Engine까지 그리고 Tank에서 APU까지의 fuel 공급 기능을 말하며 Booster pump에 의한 fuel Tank의 수분을 제거(Scavenge)하는 기능도 있다.
+
+			Defueling & Transfer
+
+				지상에서 정비 또는 기타 목적으로 Tank내의 fuel를 배유(Defueling) 또는 이송(Transfer)하는 절차.
+
+			Indicating
+
+				Fuel Quantity Indicating system
+
+				Fuel Temperature Indicating system
+
+			Jettison(Dump)
+
+				비행 중 fuel를 기체 밖으로 배출시켜 항공기 무게를 급속히 감소시키는 장치.
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+			
+
+			
+
+		B747-400 aircraft fuel Tank
+
+			Reserve Tank 또는 Auxiliary Tank
+
+				통상 Wing의 바깥쪽에 position하고 있으며 이 Tank의 fuel는 Main Tank로 이송시킨 후 Engine으로 공급할 수 있도록 설계되어 있다.
+
+			Horizontal Stabilizer Tank
+
+				최신 항공기에는 Horizontal Stabilizer의 구조 일부에 fuel를 적재하여 항속거리를 연장하고, 비행 중 Center of Gravity를 조절한다.
+
+			Vent Surge Tank
+
+				fuel를 저장하지는 않으며 Venting중에 유출되는 fuel를 일시 보관하는 목적으로 사용되는 Tank이다.
+
+		
+
+		fuel Tank 용량
+
+			Useable Capacity : 사용 가능한 fuel 용량
+
+			Unuseable Capacity : 사용 불가능한 fuel 용량
+
+			Nominal Capacity : fuel의 열팽창에 따른 Volume의 증가로 인한 Tank의 손상을 막기 위해 Nominal Capacity는 Useable Capacity보다 2% 크게 설계된다. 이 2%의 공간을 Expansion Space라고 한다.
+
+		fuel Tank Component
+
+			Tank Access Door
+
+				Tank 내부의 정비 작업을 위해 접근 할 수 있도록 Wing의 상면이나 하면에는 Tank Access Door가 있다. 
+
+				Door는 Screw로 장착하며 Rubber Seal이 Molding되어 있다.     Tank Unit나 Drip Stick이 장착된 Access Door도 있다.
+
+			Baffle Check Valve
+
+				비행 자재의 변화에 따른 Tank 내의 fuel 유동을 제한하기 위해 일부 Rib의 하부에는 Flapper Type Check Valve가 장착되어 있다.
+
+				이 Valve 들은 Booster Pump가 있는 안쪽으로 열리게 되어 있다.
+
+			Water Drain Valve(Sump Drain Valve)
+
+				Tank 의 최하부에 있으며 수분이나 잔류 fuel를 제거하는데 사용된다. Valve에는 이중 Seal이 장착되어 있으며 Screw Driver나 Drain Tool을 이용하여 Drain한다.
+
+				Water Drain은 매 배행전 점검시 및 fuel 보급 후 수행한다. fuel보급 후는 fuel 속의 수분이 가라앉을 수 있는 시간 (Water Setting Period)으로 약 30분 기다린 후 Drain한다.
+
+				또한 저온(-5℃이하)에서 fuel Tank 바닥의 수분이 결빙되어 Drain Valve가 Jamming될 우려가 있기 때문에 이런 상태에서는 Drain을 금지하고 있다.
+
+			Measuring Stick
+
+				Drip Stick 또는 Magnetic Level Indicator라고도 하며 Magnet와 Float. Fiber Glass Stick으로 구성된다.
+
+				Tank 하부에서 Stick을 뽑아낸 후 fuel면과 일치하는 Stick의 눈금을 읽고 환산표률 이용하여 무게를 산출한다. 
+
+				환산할 때는 항공기의 자세 몇 fuel의 Density나 Specific Gravity 값을 대입하여야 한다.
+
+			Over Wing Filler
+
+				Tank의 상면에는 Dispenser(fuel보급장비)의 Nozzle을 이용하여 수동으로 fuel를 보급할 수 있는 fuel 보급구가 마련되어 있다. 
+
+				Cover나 Cap으로 채워져 있으며 여기에는Tank 용량이나 Fuel Grade등이 표시되어 있다.
+
+			Fuel Vent System
+
+				Tank의 상부는 Tank 외부와 공기 통로가 마련되어 있어 Tank 내부를 항상 대기압으로 유지하여 준다. 
+
+				이는 fuel 보급 중 Tank 내부에 걸리는 정압(Positive Pressure)이나 fuel가 Engine에서 소모될 때 걸리는 부압(Negative Pressure)을 제거시켜 Tank Structure를 보호하기 위함이다.
+
+			Fuelling 계통(fuel 공급)
+
+				RefueIing과 Defueling은 Wing 하부에 마련된 Fueling Receptacle을 통해 이루어진다. 
+
+				보급하고자 하는 fuel량을 미리 Set하고 보급량이 이 Level에 이르면 자동으로 급유가 정지되도록 설계되어 있으며 
+
+				해당 Tank의 Quantity Indicator를 주시하고 요구량에 이르면 수동으로 정지시키도록 되어 있는 항공기도 있다.
+
+				항공 fuel는 인화성이 높고 휘발성이 있기 때문에 Fueling 작업시는 화재에 대한 특별한 주의가 요구된다. 
+
+				Fuel Line을 통해 fuel가 흐르면 정전기가 발생하여 축적되므로 Fueling 작업시는 정전기를 배출시킬 수 있도록 반드시 삼점 접지가 이루어져야 한다.
+
+				삼점 접지는 fuel차-지상, 항공기-지상, fuel차-항공기의 순서로 하며 fuel 보급 중에는 항공기의 Weather Radar나 HF Radio를 작동하면 안 된다.
+
+				FueIing 계통은 Fueling Station, Fueling Valve, FueIing & Jettison Manifold로 구성되어 있다.
+
+
+
+		FueIing 계통 component
+
+			1) Fueling Station
+
+				주로 Wing 하부에 마련되어 있으며 Access Door로 씌워져 있다.
+
+				Fueling Receptacle과 Fueling Control Panel로 구성되어 있다. 
+
+				Fueling Control Panel은 Preselect SW와 Preselect Indicator, Tank별 Quantity Indicator와 Fueling Shut off Valve Control Switch 및 Valve Position Light가 있다. 
+
+				또한. 어떤 항공기는 Grounding Point 및 Service Interphone Jack도 장착되어 있다. A300-600 항공기에는 Fueling Control Panel이 동체 하부에 장치되어 있다.
+
+			2) FueIing Receptacle
+
+				Dispenser(fuel 급유 차량)에서 오는 Hose와 연결되는 부분이며 Manual Shut off Valve를 열면 Fueling Manifold와 통하게 된다.
+
+			3) Fueling Manifold
+
+				Receptacle을 통해 Dispenser로부터 공급된 fuel는 Fueling Manifold로 모이게 되며, 이 Manifold에 장착된 Tank별 Shut off Valve를 통해 각 Tank로 보내진다.
+
+				Fueling Manifold는 Defueling, Dumping 및 Tank간의 fuel 이송에도 이용된다.
+
+
+
+
+
+		Engine Feed System(fuel 이송)
+
+				이 계통은 Main Tank의 fuel를 Engine의 fuel 계통에 연결해주는 역할을 한다. 타Engine으로의 fuel 공급은 Tank내에 설치되어 있는 Boost Pump에 의한 Pressure Feed 방식을 채택하고 있다. 어				느 한 개 Tank의 fuel는 해당 Engine으로 공급되며 다른 Engine으로 Cross Feed될 수 있다.
+
+				Engine Feed System은 Cockpit의 Fuel Control Panel에서 조작한다.
+
+			Defueling & Transfer(fuel 배출 및 이송)
+
+				Tank의 fuel는 정비목적으로 필요시  Defueling & Transfer를 통해 특정 fuel Tank를 비우거나 Tank간에 Fuel Load의 Balance를 유지한다.
+
+				1) Defueling
+
+					Tank간의 fuel를 Fueling Receptacle을 통해 fuel차로 빼내는 절차로서 2가지로 나눌 수 있다.
+
+					① Suction Defueling : fuel차에서 Tank의 fuel를 Suction 해내는 방법
+
+					② Pressure Defueling : Tank 내의 Boost Pump를 이용하여 fuel차로 배출해내는 방법
+
+				2) Transfer
+
+					Fueling Receptacle에 fuel차 Hose는 연결하지 않은채 Pressure Defueling 절차와 Pressure Fueling 절차를 동시에 수행하므로서 어느 한 Tank에서 다른 Tank로 fuel를 이송하는 방법
+
+					이 절차 수행시는 특히 Wing의 Outboard에 있는 Tank로 fuel를 이송하고자 할 때는 기체의 Balance에 유의해야 한다.
+
+		Indicating System
+
+			Quantity Indicating 계통
+
+				Quantity Indicating 계통 Component
+
+					(1) Tank Unit
+
+						Tank Unit는 가변 Capacitor들로써 중심부에 절연 분리된 2개의 전극으로 구성되어 있으며 Unit의 끝부분이 개방되어 Tank내의 fuel면과 같은 높이로 전국을 통해 fuel가 채						워지도록 되어 있으며 이 부분이 Indicator 내부에 있는 Capacitance Bridge 회로의 가변 저항이 된다.
+
+						fuel 유면이 변하게 되면 Tank Unit의 Capacitance치가 변하여 Bridge Circuit를 Unbalance시켜 계기의 Needle을 돌려 유량을 지시토록 한다.
+
+						Tank Unit는 Tank의 크기나 position에 따라 여러 개가 장착되어 있다.
+
+					(2) Compensator
+
+						fuel의 체적은 온도에 따라 변화한다. Tank Unit에 의해 측정된 fuel의 체적은 Compensator에 의해 밀도가 보상되어 무게로 지시하게 된다. 민간 대형 항공기에서는 파운드 단위를 채택하고 있다.
+
+					(3) Fuel Quantity Indicator
+
+						Cockpit의 Fuel Control Panel에는 각 Tank별로 1개씩의 Master Fuel Quantity Indicator가 Tank의 position대로 배치되어 있다. 각개의 Master Indicator로부터 Signal을 받아서 작동하는 Repeater Indicator는 Fueling Control Panel에 장착되어 있다. 또한 Cockpit에는 모든 Tank의 fuel량을 모아서 지시하는 Total Quantity Indicator가 있다. 이 Indicator는 항공기의 총중량을 지시하는 Gross Weight Indicator와 일체로 되어 있다. 신형 항공기의 fuel계기는 대부분 Digital Indicator이다.
+
+			    	Fuel Temperature Indicating
+
+				Fuel Temperature Indicating 계통은 Resistance Element Type의 Sensor와 Indicator로 구성되어 있다. Tank내의 fuel온도 및 Engine으로 공급되기 직전의 fuel 온도를 감지하여 조종사에게 지시하여 주므로서 Engine Oil의 냉각, 수분에 의한 Engine Fuel Filter의 결빙, Fuel Heater의 작동 등에 대비하여 참고하도록 하여 준다.
+
+			Fuel Jettison System
+
+				Dump System이라고도 하며, 비행 중 항공기 중량을 최대착륙중량 이내로 감소시키기 위해 fuel의 일부를 대기중으로 방출시키는 계통이다. fuel를 단시간 내에 방출할 수 있도록 설계되어 있으며. Tank의 잔류 fuel량은 Jettison Pump의 Inlet position나 Fuel Quantity Indicating System에 의해 남게되며, 규정상 10,000ft 상공에서 45분간 비행 및 1회의 이착륙을 수행할 수 있는 fuel량을 남기게 된다.
+
+				1) 계통 Component
+
+					가) Jettison Pump
+
+						비행중 fuel의 Dumping은 급속히 이루어져야 하므로 Tank의 fuel는 Pump에 의해 가압되는 것이 효과적이다. B-747 항공기에는 각 Tank마다 2개의 Jettison Pump가 장착되어 있으며 fuel를 Jettison Manifold로 압송하여 Jettison Nozzle을 통해 빠른 속도로 방출되게 한다. Pump의 조작은 조종석의 Jettison Control Panel에서 이루어진다.
+
+					나) Jettison Manifold, Valve, Nozzle
+
+						Jettison Manifold는 Tank 내부에서 Tank와 Tank를 가로질러 설치되어 있으며 Jettison Pump와 Jettison Valve를 연결하여 준다. Valve의 Down Stream에는 Jettison Nozzle이 장착되어 있다.
+
+					다) Jettison Control Panel
+
+						Jettison 계통의 Control Switch와 Indicating Light들은 한 군데 모아서 Flight Crew의 손이 쉽게 며칠 수 있는 곳에 배치되어 있다. 붉은색 Cover로 씌워져 있으며 동선으로 Safety Wire 되어 있다.
+
+			fuel 누설 상태의 분류
+
+				fuel가 누설되어 30분 사이에 적셔진 표면의 크기를 누설 상태 분류의 기준으로 삼는다. 누설 부위를 깨끗한 면 걸레로 닦아내고 건조시킨 후 30분 경과시의 누설 상태를 4종류로 구분한다.
+
+				1) Stain : 젖어 있는 부위의 크기가 누설 근원지 주위를 따라 측정 3/4 Inch를 넘지 않는 상태
+
+				2) Seep : 젖어 있는 부위의 크기가 누설 근원지 주위를 따라 직경 3/4～1 1/2 Inch 사이
+
+				3) Heavy Seep : 젖어 있는 부위의 크기가 누설 근원지 주위를 따라 직경1 1/2 ～ 4 Inch 사이
+
+				4) Running Leak : fuel가 누설되어 표면에서 떨어지거나 수직으로 흐르거나 손가락이 닿았을 때 타고 흐르는 상태이며, 매우 위험한 상태로 비행을 중단하고 수리를 해야 한다.
+
+				Stain, Seep, Heavy Seep 상태의 항공기를 수리할 시기를 판정할 때는 해당 기종의 Maintenance Manual을 참조하여야 한다. 
+
+				누설 position에 따라 이 판정은 바뀌어지며 일정 장소의 누설 부위의 수도 판정 요소가 된다. Running Leak는 누설 position에 관계없이 비행을 중단하고 수리하여야 한다.
+
+			fuel 누설 부위의 수리
+
+				Integral Fuel Tank의 누설 근원지를 탐지하려면 Tank로 들어가 예상되는 누설 부위에 대해 Fillet의 Crack이나 접착력의 약화, Pinhole의 발생, Fastener의 헐거워짐 등을 육안 검사한다. 잘 보이지 않는 부위는 거울을 이용한다.
+
+				Fillet으로부터 I/2“ 떨어진 position에 Nozzle을 대고 100 PSIG 이내의 공기압을 가하여 누설 부위를 찾아낸다.
+
+				이때는 Tank 외부 Skin의 예상되는 부위에 비눗물을 발라주면 효과적이다. 접착력이 약화된 Fillet은 즉시 제거되어야 한다. 들고일어난 부위의 Fillet은 Hard Plastic이나 목제 칼로 자르고 끊어져 분리될 때까지 한쪽 끝을 잡고 Structure로부터 잡아당겨 떼어댄다.
+
+				Sealant가 제거된 부위는 Al Wool로 문질러 Sealant 흔적을 완전히 없앤다.
+
+				Vacuum Source를 이용하여 부스러기를 빨아내고 MEK나 Acetone으로 적신 천으로 닦아낸다.  깨끗하고 완전히 건조되었을 때만 Sealant를 바르게 되며 Sealant의 혼합과 Sealing 작업은 생산자나 항공기 제작사가 권고하는 절차에 따른다.
+
+			fuel누설 근원지의 탐지 Blowout Method
+
+			Fuel Tank Entry(Tank 내부 작업)
+
+				정비작업을 위해 Fuel Tank 안에 들어갈 때는 반드시 Tank 내부를 Purging 해야한다.
+
+				Fuel Tank내의 Vapor는 매우 위험하다. 이 Gag는 인체에는 유독성이 있으며. 쉽게 폭발을 야기할 수 있다.
+
+				Fuel Tank로 들어갈 때는 Respirator(마스크)를 착용해야 하며 Tank 외부에는 안전을 위해 한사람이 반드시 대기해야 한다.
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		3point ground
+
+			항공기와 fuel차을 
+
+			fuel차와 지면을 Earth(접지)
+
+			항공기와 지면을 Earth(접지)
+
+		Cross Feed
+
+			fuel tank에서 engine으로 fuel를 공급하는 것으로 Cross Feed Valve를 통해 작동
+
+		 Fuel Supply
+
+			Cross feed : Tank → ENG
+
+			Transfer : Tank → Tank
+
+		Dump Sys
+
+			비행 중 일부의 fuel를 신속히 대기 중으로 방출시켜 항공기 중량을 최대착륙 중량 이내로 감소시키기 위함
+
+		fuel계통에서 볼 수 있는 Indicating의 종류
+
+			Elect' Capacitance Type, Master, Repeater Ind'
+
+		Fuel Drain 하는 이유
+
+			Skin 부식과 부정확한 fuel량을 지시하는 원인이 되는 Tank 하면의 수분을 제거
+
+		Fuel Tank Sump Drain Valve 의 목적
+
+			Fuel Sample 채취, Tank 내 수분이나 오염물질 제거, Defuel 후에 남아있는 fuel 제거
+
+
+
+		fuel 사용 순서
+
+			Center Tank → Inboard Tank → Outboard Tank 순으로 함
+
+		Boost Pump 기능 및 고장 시 Fuel Flow 계통 설명
+
+			기능 : Press에 의해 탱크로부터 엔진으로 fuel를 공급하고 Defueling, Transfer 시에도 사용.
+
+			Flow  :  Pump ⇒ Discharge Check Valve ⇒ Eng Fuel S/O/V ⇒ Eng Pump
+
+		Boost Pump의 Type과 역할에 대하여 설명하시오.
+
+			115V AC Motor에 의해 구동되는 Centrifugal Type Pump로서 Tank Fuel을 Press로 엔진계통에 연결시킴
+
+		항공fuel의 종류는 ?
+
+			왕복엔진fuel : AV Gas 115-145, 제트엔진fuel : JET A, JET A-1, JP-8
+
+		Fuel Performance Numbering 에 대해서 설명하라.
+
+			Fuel 의 Anti-Knock성(제폭성)을 나타내는 Octane가 100을 퍼포먼스가 100 으로 정하고 여기에 4 Ethyl Lead를 첨가하여 제폭성능을 향상시킨 값
+
+		Fuel Pump 구성품.
+
+			Impeller, Motor, Pump Housing
+
+		Fuel Pump 중 원심력 Pump 의 장점은 ?
+
+			Positive Displacement Pump 가 아니므로 Relief V/V가 불필요. 
+
+		Fuel Tank Sump Drain Valve 의 목적은 ?
+
+			Fuel Sample 채취, Tank 내 수분이나 오염물질 제거, Defuel 후에 남아있는 모든 fuel 제거.
+
+		Jet Engine Fuel 의 첨가제 는 ?
+
+			방빙제, 미생물 성장 억제제, 
+
+		Max T/O Weight 가 Max L/D Weight 보다 105% 크다면 fuel장치에서 요구되는 것은 ?
+
+			Fuel Jettision(Dump) System
+
+		Mesuring Stick을 이용하여 Fuel QTY Check 시 참고하여야할 AMM 의 Chapter는?
+
+			ATA 12
+
+			
+
+		
+
+		
+
+		
+
+		fuel supply
+
+			Cross feed : Tank → ENG
+
+			Transfer : Tank → Tank
+
+		
+
+		fuel 사용 순서
+
+			Center Tank → Inboard Tank → Outboard Tank
+
+		
+
+		
+
+		
+
+		fuel system fueling	
+
+			1.fuel량 확인
+
+			2.fuel 보급
+
+		
+
+		
+
+		fuel system maintenance
+
+			1.manual의 지침서대로 행동할것
+
+			탱크 작업시 안전 주의사항
+
+			leak시 처리 및 수리방법
+
+
+
+
+
+
+
+	Fuel SYSTEM 질의 응답
+
+		Cross Feed
+
+		- fuel 탱크에서 다른 엔진으로 fuel를 공급하는 것으로 Cross Feed Valve를 통해 이루어진다
+
+		
+
+		Dump Sys의 필요성
+
+		- 비행 중 일부의 fuel를 신속히 대기 중으로 방출시켜 항공기 중량을 최대착륙 중량 이내로 감소시키기 위함
+
+		
+
+		fuel계통에서 볼 수 있는 Indicating의 종류
+
+		- Elect' Capacitance Type, Master, Repeater Ind'
+
+		
+
+		Fuel Drain 하는 이유
+
+		- Skin 부식과 부정확한 fuel량을 지시하는 원인이 되는 Tank 하면의 수분을 제거
+
+		
+
+		Fuel Tank Sump Drain Valve 의 목적
+
+		- Fuel Sample 채취, Tank 내 수분이나 오염물질 제거, Defuel 후에 남아있는 모든 fuel 제거
+
+
+
+
+
+fuel탱크 용량
+
+	제작자가 정한다
+
+	fuel 용량과 등급은 Filler Cap이나 그 부근에 명시한다.
+
+
+
+
+
+
+
+
+
+
+
+Max T/O Weight 가 Max L/D Weight 보다 105% 크다면 fuel장치에서 요구되는 것은 ?
+
+	   답 : Fuel Jettision(Dump) System
+
+
+
+Mesuring Stick을 이용하여 Fuel QTY Check 시 참고하여야할 AMM 의 Chapter는?
+
+	   답 : ATA 12
+
+
+
+Fuel Flow의 단위는?
+
+	   답 : PPH(Pound Per Hour)
+
+
+
+fuel 량 측정방법은?
+
+	경항공기 - 1) Sight Glass Gage, 2) Dip Stick, 3) Float Type
+
+	대형항공기 - 원격지시 방식 사용
+
+	                   1) Electric Telegage, 2) Desyn 식 액량계, 3) Electric Capacitance 식 액량계
+
+
+
+
+
+
+
+fuel tank->booster pump->shut off valve->heater->filter->fuel pump->FCU->fuel flow transmitter->fuel oil cooler->P and D valve->fuel nozzle->fuel manifold->combustion camber
+
+
+
+
+
+
+
+
+
+Balancing Diaphram식 fuel압력계의 Vent가 막혔을 때는?
+
+	   답 : 고도가 높아짐에 따라 기체 팽창으로 Fuel Pressure가 점차 증가한다.
+
+
+
+
+
+
+
+
+
+fuel탱크의 Cap에는 무엇이 있는가?
+
+	   답 : fuel 탱크의 Cap에는 fuel의 등급 및 용량이 적혀있다.
+
+
+
+
+
+Water Drain Fuel Strainer의 position는?
+
+	   fuel Tank의 최하단부

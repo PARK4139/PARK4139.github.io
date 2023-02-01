@@ -1,0 +1,124 @@
+______________________________________________________________________________________  <  coding policy  >
+코드작성정책의 필요성.
+코드를 작성하는 데
+나만의 코드작성정책을 작성하고 따르자
+when we write code, 처음부터 for문 작성하지 말고 hardcoding을 먼저 해보자, 그리고 패턴이 보이면 for문으로 묶자.
+2중 for문에 대한 생각이 들때, 처음부터 for문 작성하지 말고 hardcoding을 먼저 해보자, 그리고 패턴이 보이면 for문으로 묶자.
+code 작성 시간이 길어지는 게 싫더라도, 디테일한 주석처리가 되어 있는 정상구동코드를 만드는 데 집중을 하자. refactoring은 나중에 해도 괜찮다.
+어떤 사업은 빠르게 개발하는 것에 비중을 더 둘수도 있지만, 사업에 따라서 유지보수가 가능한 체계가 있는 프로그램을 개발하는 것이 나을 때가 있다.
+class 생성 시에 constructor를 기본으로 생성이 되더라도 basic constructor를 작성하는 것을 우선할 것.
+코딩을 조금 하면 실수를 작게한다.
+코딩을 많이 하면 실수가 증가한다.
+실수를 할때 해결책을 대부분 마련할 것.
+같은 맥락을 가진 프로젝트를 작성한 후 다른이들의 코드와 비교하여 벤치마킹할 것.
+use postfix operator
+do not use prefix operator
+abstractClass의 유용성, class 설계 시, method 설계 제약을 줄 때 사용할 수 있다. method의 class name, method name, paramter name, field name 등에 제약을 둘 수 있다.
+abstract를 사용한 method 설계 제한, 부모 class를 abstract를 하고 부모 class member에 abstract method를 작성하여 사용할 수 있다.
+interface Class의 유용성, interface의 하위 class는 추후에 설계완료되었을 때, interface를 지워서 사용하는 경우가 있기도 한 것 같다.
+
+______________________________________________________________________________________  <  debugging policy  >
+작성된코드의 문법적 오류를 의심하라
+______________________________________________________________________________________  <  wording policy >
+______________________________________________________________________________________  <  wording priority policy  >
+specific>target
+get>collect
+create>generate>
+check>inspect>
+rule>policy>
+shortest code>shortest
+option>optionA
+생성>generation
+(event)>( event )
+
+
+______________________________________________________________________________________  <  project development policy >
+
+
+
+______________________________________________________________________________________  <  Java  project  명명  policy   >
+명명  policy
+corparation   name 이나 혹은  domain 등은 유니크하기 때문에 사이트명으로 많이 구분하여 표기
+ web 사이트 주소를 반대로 기재한 모양으로  package   name 을 부여합니다.
+명칭 소문자 사용(대문자 사용 X 권고)
+0.					명명 way 							example
+com. corparation  name . program  name 			com.companyname.appanme
+com. corparation  name .플랫폼. program  name 	com.companyname.java.appname
+kr.co. corparation  name . program  name 		kr.co.companyname.appname
+kr.co. corparation  name .플랫폼. program  name 	kr.co.companyname.java.appname
+1. Project  
+- 대/소문자 구분없이 시작 가능
+- 대문자 사용을 권장함
+2. Package  
+- 소문자로 시작 
+- 모두 소문자 사용을 권장
+- 가급적 한 단어 사용을 권장
+- 여러사람과 협업하는 경우  standard  패턴을 따름
+-  standard  패턴: com. corparation  name (혹은 개인 name ). project 명.상위 package .하위 package . class 
+3. Class  
+- 대문자로 시작
+-  noun 로 시작
+- 두번째 단어부터 소문자도 가능하나 대문자 시작을 권장함
+- ex) CastingTest , ValueTest , ThreadTest 등
+4. Interface  
+- 대문자로 시작
+- 형용사
+- ex) Runnable , Remote 등
+5. Methods  
+- 소문자로 시작
+- 동사로 시작
+- 두번째 단어부터 소문자도 가능하나 대문자 시작을 권장함
+- ex) computeAge( ) , printName( ) 등
+6. Variable  
+- 소문자로 시작
+- 보통 카멜케이스  policy  따름
+- ex) firstName , lastName , birthday 등
+7. Constant  
+- 전부 대문자
+- '_'를 사용하여 구분 (스네이크케이스 명명  policy  따름)
+- ex) MAX_PRIORITY , LIFESPAN 등
+android studio 
+
+
+
+______________________________________________________________________________________  <  htmlCodeWritingPolicy  >
+______________________________________________________________________________________  <  html 선택 우선순위  >
+class로 부여하여 선택한다.
+id로 부여하여 선택한다.
+node로 선택한다.
+
+
+
+
+
+______________________________________________________________________________________  <  수업 정책  >
+모든 학생들에게     서로다른 답을 가지는 다른 문제를   주고    풀지 못하면 넘어가지 않는다.  비슷한 수준에서 문제를 제공하고 , 다 푼 친구에게는 비슷한 다른 문제를 준다.
+
+
+
+
+
+
+
+
+______________________________________________________________________________________  <    >
+
+아무리 아는척을 해도     이해하고 연습한만큼만 할 수 있으니
+검색능력 함양.
+
+
+배성원 :  dev 자는 암기가 아닌 찾아서 이해를 하는 직군
+
+______________________________________________________________________________________  <  문제 풀기 정책  >
+문제를 풀때 뒤에서 부터 푸는 것을 먼저 시도해볼 것.
+문제를 풀때 쉬운 것 먼저 시도해볼 것.
+
+
+
+______________________________________________________________________________________  <  debugging 정책  >
+------------ debugger
+	//chrome developer tool
+	//visual studio code 2022
+	//notepad++
+우리는  prediction 을 해야한다.  code  실행 전에   predicted value 을 항상 writing 하여 보자.
+  predicted value  // prediction  표현

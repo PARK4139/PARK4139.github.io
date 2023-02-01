@@ -1,0 +1,287 @@
+
+
+rem logoff
+
+%windir%\System32\Shutdown.exe /l
+
+
+
+
+
+
+
+
+
+REM C:\Users\박 정 훈\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+start chrome -start-fullscreen -new-window "https://www.google.com/search?q=eng+to+kor&sxsrf=ALiCzsapsT0ZsQvhVg0MWwFJDRhs2jyAVg%3A1652320993883&ei=4Wp8YrPHNYz1sAfxo7uQBg&ved=0ahUKEwjzu5Sv79j3AhWMOuwKHfHRDmIQ4dUDCA4&uact=5&oq=eng+to+kor&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAELADEENKBAhBGABKBAhGGABQAFgAYJQBaAFwAXgAgAEAiAEAkgEAmAEAyAEKwAEB&sclient=gws-wiz"
+
+start chrome -start-fullscreen "https://www.google.com/search?q=kor+to+eng&sxsrf=ALiCzsaAzycTn-tARg2XLSNXzoy-k0bRPQ%3A1652322067084&ei=E298YtzNBMbSkwWP9JjABQ&ved=0ahUKEwico_Ou89j3AhVG6aQKHQ86BlgQ4dUDCA4&uact=5&oq=kor+to+eng&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyEgguEMcBENEDEMgDELADEEMYATISCC4QxwEQ0QMQyAMQsAMQQxgBSgQIQRgASgQIRhgAUABYAGCmAmgBcAF4AIABAIgBAJIBAJgBAMgBC8ABAdoBBAgBGAg&sclient=gws-wiz"
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________  directory handling
+
+_____________________________________________________________________________  etc
+
+
+
+_____________________________________________________________________________  file.bat
+
+xcopy <SOURCE> <DEST> /e /d /y /h /r /c
+
+xcopy flags meanings
+
+/e: Include directories and sub directories even if empty
+
+/d: Only copy files which have changed on SOURCE more recently than DEST
+
+/y: Suppress prompts
+
+/h: Also copy hidden and system files
+
+/r: Override read-only files (e.g. ignore Read Only flag)
+
+/c: Continue even if there are errors
+
+xcopy /a /q /-y
+
+
+
+
+
+
+
+copy *.txt combined.txt
+
+copy *.txt fileThatCombined.txt
+
+copy *.smi fileThatCombined.smi
+
+
+
+
+
+where /r c:\windows *.exe *.dll *.bat
+
+where /r c:\windows *.exe
+
+where /f /t *.bat
+
+where "c:\windows;c:\windows\system32:*.bat"
+
+
+
+
+
+_____________________________________________________________________________  remove_empty_directory
+
+for /f "usebackq delims=" %i in (`"dir /s /b /ad | sort /r"`) do rd "%i" 2>NUL
+
+
+
+_____________________________________________________________________________  IP address of specific URL address
+
+cmd
+
+nslookup www.naver.com
+
+
+
+_____________________________________________________________________________  
+
+(cmd.exe)
+
+	start /max "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Notepad++.lnk" "temp.txt"
+
+	​​start /max Iexplore.exe  "www.naver.com"
+
+	​start /max Iexplore http://www.naver.com/
+
+	timedate.cpl
+
+	taskmgr
+
+	start.				&&rem open working directory
+
+	start /max explorer.exe "http://www.naver.com/"
+
+	start /max explorer.exe "C:\Users\%username%\Desktop\"
+
+	start /max explorer.exe "C:\Users\%username%\Desktop"
+
+	start /max /w "" "C:\Users\hangil01\Desktop\test.txt"			&&rem start /w  test.txt을 시작하고 끝날때 까지 기다립니다.
+
+	start /max /w "" "C:\Users\hangil01\Desktop\test.mp4"
+
+	start /max /w "" "C:\Users\hangil01\Desktop\test.mp3"
+
+	start /max /w "" "C:\Users\hangil01\Desktop\test.jpg"
+
+	start /max /w "" "C:\Users\hangil01\Desktop\Docker Desktop Installer.exe" install
+
+	start /max /i "" "C:\Users\hangil01\Desktop\test.bat"			&&rem 이건 테스트 해보긴 해야하는데 새로연 bat파일에게     시작 환경을 전달한다    call 명령어랑 좀 공부좀 해보자.
+
+	start /max "cmd.exe"
+
+	start /max "C:Program Files\Internet Explorer\Iexplore.exe" "www.naver.com"
+
+	start /max "C:Program Files\Internet Explorer\notepad++.exe" "www.naver.com"
+
+	
+
+	diskpart
+
+
+
+(useful)
+
+	control admintools
+
+	control		&&rem (제어판)
+
+	mstsc		&&rem (원격데스크탑 실행)
+
+	fsmgmt.msc	&&rem (공유폴더)
+
+	devmgmt.msc
+
+	dxdiag		&&rem (show(computer 성능)
+
+	diskmgmt.msc
+
+	compmgmt.msc
+
+	desk.cpl	&&rem (display 설정)
+
+	bthprops.cpl		&&rem (bluetooth
+
+	appwiz.cpl			&&rem (프로그램 추가제거)
+
+	control userpasswords
+
+	control folders
+
+
+
+(low frequency)
+
+	msconfig
+
+	services.msc
+
+	secpol.msc
+
+	rsop.msc
+
+	mmc
+
+	regedit
+
+	perfmon.msc
+
+	lusrmgr.msc	&&rem local user
+
+	gpedit.msc
+
+
+
+	
+
+	.msc &&rem (명령어 를 찾아보면 유용한게 많을 듯하다.
+
+	.cpl &&rem (명령어
+
+	
+
+	
+
+	GMT(UTC)
+
+
+
+
+
+_____________________________________________________________________________  cmd.exe
+
+
+
+REM get GMT:
+
+for /f %%a in ('wmic Path Win32_UTCTime get Year^,Month^,Day^,Hour^,Minute^,Second /Format:List ^| findstr "="') do (set %%a)
+
+Set Second=0%Second%
+
+Set Second=%Second:~-2%
+
+Set Minute=0%Minute%
+
+Set Minute=%Minute:~-2%
+
+Set Hour=0%Hour%
+
+Set Hour=%Hour:~-2%
+
+Set Day=0%Day%
+
+Set Day=%Day:~-2%
+
+Set Month=0%Month%
+
+Set Month=%Month:~-2%
+
+set UTCTIME=%Hour%:%Minute%:%Second%
+
+set UTCDATE=%Year%%Month%%Day%
+
+
+
+_____________________________________________________________________________  
+
+rem alternative1togetGMT
+
+for /f %%x in ('wmic path win32_utctime get /format:list ^| findstr "="') do set %%x
+
+
+
+
+
+
+
+rem explorer
+
+rem explorer ""
+
+rem explorer "C:\Users\박 정 훈\Desktop"
+
+rem explorer "C:\Users\박 정 훈\Desktop"
+
+
+
+
+
+_____________________________________________________________________________  windwos 10 disconnect external HDD safely
+
+diskpart
+
+listdisk
+
+select disk1
+
+offline disk1
+
+exit
+
+
+
+
+
+
+
+shutdown-s-t 0

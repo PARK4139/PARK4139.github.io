@@ -1,0 +1,424 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+무인항공기조종자격
+
+
+
+
+
+정비업무? 종류 한정
+
+	비행기 면장
+
+	회전익 면장
+
+정비업무범위 한정
+
+	기체
+
+	왕복발동기	
+
+	터빈발동기
+
+	프로펠러
+
+	전자전기계기
+
+
+
+
+
+
+
+전자전기계기 공장정비사 제출서류
+
+	군경력증명서
+
+	국토해양부 전문기관이수자:전문기관이수증명서
+
+	
+
+
+
+
+
+국외의 항공관련기관
+
+한국의 항공관련기관
+
+IATA
+
+ICAO
+
+
+
+Definition of maintenance by FAA
+
+	Maintenance is inspection,overhaul,repair,preservation and replacement of parts
+
+
+
+aircraft character
+
+	신뢰성
+
+	안정성
+
+	감항성
+
+
+
+
+
+항공정비학
+
+
+
+
+
+
+
+structure
+
+power plant
+
+component장비품
+
+
+
+kinds of maintenances(refenence is type)
+
+	regular maintenance
+
+		scheduled maintenance	//overnight maintenance(일일점검),A check,B check,C check,D check, H check, calendar check,internal structure inspection(ISI)
+
+			line maintenance
+
+				transit check(중간점검)
+
+				pre flight check
+
+				post flight check
+
+				weekly check
+
+			base maintenance
+
+			shop/hanger maintenance
+
+			depot maintenance
+
+		unscheduled maintenance
+
+	project work maintenance(특별정비)
+
+
+
+kinds of maintenance(reference is 정비방식)
+
+	hard time maintenance
+
+	on condition maintenance
+
+	condition monitoring maintenance
+
+	신뢰성 관리 maintenance
+
+	
+
+TCTO	
+
+성능개량
+
+
+
+repair
+
+	minor repair
+
+	major repair
+
+
+
+
+
+
+
+Maintenance Steering group(MSG)
+
+		이것은 maintenance에 적용하는 program이다
+
+		항공기를 zonal로 구분하여 각각의 maintenance requirement(정비 요목)으로 구분하여 maintenance task를 정하여 실행
+
+	MSG-2
+
+		maintenance requirement(정비 요목))
+
+			structure(include frame)
+
+			system and component
+
+			power plant and APU			
+
+		maintenance task(정비 작업)
+
+			overhaul
+
+			operational check
+
+			functional check
+
+			상태점검
+
+			bench check
+
+			중량점검
+
+			누수
+
+			서비스
+
+			calibration test
+
+			inspection
+
+			rubricate윤활
+
+	MSG-3
+
+		maintenance requirement
+
+			system and power plant
+
+			structure(include frame)
+
+		maintenance task
+
+			lubricate and service
+
+			operational check
+
+			visual check
+
+			inspection
+
+			functional check
+
+			restore(환원정비)
+
+			DS(폐기)
+
+
+
+
+
+painting
+
+	전면도장
+
+	부분도장
+
+engineering
+
+페인팅
+
+시운전
+
+battey
+
+bottle
+
+warranty
+
+certify
+
+일치성
+
+적합성
+
+
+
+airworthiness verification(감항인증)
+
+	
+
+airworthiness verification system
+
+	type certification(형식승인)
+
+		production certification,airworthiness certification보다 항상 선행되는 것
+
+		aircraft가 안전운항조건,안전/환경 기준에 적합함을 증명
+
+	production certification(제조 승인)
+
+		형식승인될 수 있는 제품의 양산능력 증명
+
+		형식승인과의 일치성 입증
+
+		품질보증 적합성 입증
+
+		aircraft 부품에 대한 인증
+
+		aircraft 재료에 대한 인증
+
+		aircraft 공정에 대한 인증
+
+		aircraft 장비품 제조에 대한 인증
+
+	airworthiness certification(감항증명)
+
+		type certification의 기준에 적합한지 인증
+
+		개별 aircraft에 대해 비행승인
+
+
+
+
+
+human factor of maintenance
+
+	maintenance는  자동화가 불가능한 기능 산업의 특성상 mechanic의 human error를 예방하는 것이 관건
+
+	technical causes보다 human causes가 크다
+
+human error factor
+
+	정비작업 수요의 불규칙성
+
+		성수기,비수기
+
+		비 계획적 스케줄
+
+		불시정비
+
+	열악한 작업환경에 의한 피로
+
+		옥외/노천
+
+		혹한/혹서
+
+		분진/조명/유해물질/소음
+
+	정비작업의 다양성
+
+		위험 장비 취급
+
+		위험 물질 취급
+
+		주야교대 및 높은 노동강도
+
+		신기종 기술습득의 스트레스
+
+
+
+human error 유발에 대한 유형 
+
+	5 model	
+
+		james reason의 인적사고 원인 모델
+
+			error의 사전 차단벽 모델을 설정하여 사고를 미연에 방지
+
+		the dirty dozen of human error
+
+			12가지 사고유발 요인 모델
+
+				lack of communication
+
+				lack of teamwork
+
+				lack of assertiveness
+
+				lack of knowledge
+
+				lack of resource
+
+				lack of awareness
+
+				complacency
+
+				fatigue
+
+				stress
+
+				distraction
+
+				pressure
+
+				norms
+
+		PEAR model	
+
+			people
+
+			environment
+
+			action
+
+			resource
+
+		Maintenance error decision aid(MEDA)
+
+			정비오류를 확인하고 처리
+
+		SHELL model
+
+			
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

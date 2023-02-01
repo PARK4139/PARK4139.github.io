@@ -1,0 +1,7 @@
+study library
+
+	transmit=송신하다
+
+	radio 전파
+
+	Radiation방사

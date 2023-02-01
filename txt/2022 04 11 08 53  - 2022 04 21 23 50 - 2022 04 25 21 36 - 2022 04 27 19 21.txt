@@ -1,0 +1,726 @@
+i should go to meet dentist
+
+
+
+
+
+AI framework
+
+AIfES
+
+	it is AI/ML framework
+
+	it is written in C
+
+	it is for the smallest microcontrollers
+
+	it is standalone AI framework
+
+	it is Open Source
+
+	it is Free Open Source Software (FOSS
+
+	it is compatible with well-known Python ML frameworks
+
+	it can be imported trained ANN*artificial neural network
+
+	we can import ANNs From Other ML Frameworks to AIfes
+
+
+
+
+
+
+
+if we configure AIfES functions in library, we can do ANN calculation
+
+		
+
+Arduino AI Framework Library
+
+
+
+
+
+
+
+
+
+Python ML frameworks
+
+
+
+
+
+TensorFlow Lite
+
+
+
+
+
+Arduino AI apple/banana/orange Image recognition project
+
+
+
+
+
+정보처리기사 자격증
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# resignation submittion
+
+
+
+
+
+
+
+
+
+
+
+
+
+arduino nano(relay(raspberry pi power)
+
+RAS(samba(NAS(external 1TB)
+
+jetson(samba(NAS(external 2TB)
+
+python3로 동안구 미세먼지 정보 띄우기 웹스크레핑하여 웹크롤링
+
+
+
+
+
+smart mirror(pi 4(하늘이 정보 게시판(2022년 먹이는 날짜 DB화 시키기)))
+
+전자 액자 만들기
+
+하늘이 구충제 알람 system
+
+디스플레이
+
+# 하늘이 정보 현황 게시판
+
+넥스가드 급여완료일
+
+	2022 04 10
+
+scheduled date DB
+
+did u give nexgard spectra
+
+did u gaggle with water
+
+그냥 .jpg, .png, .bmp 등등을 이미지로 시현하면 될것 같다.
+
+power button
+
+
+
+
+
+
+
+
+
+# 박정훈 body daily plan board
+
+did u something eat?
+
+did u gaggle with water
+
+
+
+
+
+
+
+# lighting system
+
+unreal engine
+
+wall clock
+
+celing clock
+
+daily git blog
+
+
+
+
+
+
+
+# recruit
+
+전산입력
+
+https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=yes&rec_idx=42667873&recommend_ids=eJxNzskRAzEIRNFofG%2BapeHsQJx%2FFtZMeSQffz0BCobXhH3a6qV3IMdq9KTBIK3kXEm3KnKp3Vnq0pW4U24CVs5PiZ49m0lknsdwGp5DzA40HkU24X40UYxzF5rJndGAa29Ocq3fs75Yf5r07q0yTtbRQam2llX7%2FecvNS8%2F%2Bg%3D%3D&view_type=mail_landing&gz=1&utm_source=regular_tailor_member&utm_campaign=20220411case2&utm_medium=mail&utm_term=customized_recruit#seq=0
+
+https://mail.naver.com/read/7238
+
+
+
+
+
+
+
+고객의 요구되어 지는 다양한 소프트웨어 운용 환경에서 소프트웨어 기능 시험을 수행하는 것
+
+
+
+
+
+
+
+
+
+#한화인hanwhain.com
+
+석사...준비
+
+pjh4139
+
+pjh4139PJH
+
+한화솔루션 큐셀부문 신입 채용( 지원 DDL : 2022 04 22 15 00)
+
+채용 연계형 인턴 모집 data engineering 부문
+
+	IT
+
+		data engineering (에너지 데이터 분석 업무)
+
+			아무래도 python으로 데이터 전처리    ML, AI 공부하자,  전력 공부(유효...)        SQL(structured query Language)
+
+		embedded SW engineering
+
+			Energy  Manangement System(EMS) 개발, Embedded Linux Application 개발
+
+			외부 interface 설계 및 API 개발(CAN, Modbus TCP/RTU, Restful API, MQTT protocol, Energy Data Monitoring/control function 개발
+
+			C, C++, Node.js, Python, Java ...및 알고리즘 문제해결 역량, Embedded System 및 ARM architecture, OS, ubuntu, linux ..., ML에 대한 이해 필요.
+
+한화시스템/방산
+
+	전기전자 (항공)
+
+		▶ 계약기간 : 2년
+
+		판교
+
+		계약직
+
+		[직무 내용]
+
+		□ 항공기 성능개량(개조장착) 전기계통 통합업무 및 전기부하분석
+
+		□ 항공기 전기계통 도면 규격화/표준화/기술변경 관리
+
+		□ 항공기 장착부품 식별 및 공급 관리
+
+		[자격 요건]
+
+		□ 전공 : 전기/전자/컴퓨터/제어/항공 분야 학사 이상
+
+		□ 경력 : 관련 직무 유경험자
+
+		[우대 요건]
+
+		□ 항공기 체계 관련 지식/경험 보유자
+
+		□ 감항인증 유경험자
+
+한화시스템/방산
+
+	위성 AIT
+
+		용인
+
+		▶ 계약기간 : 입사시 ~ 2025.09.26(변동가능)
+
+		[직무 내용]
+
+		□ 레이다/SAR AIT(조립/통합/시험)
+
+		□ 위성 전기지상시험지원장비(EGSE) 운용, ETB/EM/QM/FM 시험
+
+		[자격 요건]
+
+		□ 전공 : 전기/전자공학 학사 이상
+
+		□ 경력 : 시험평가/분석 경험 보유 및 디지털회로 개발 경험
+
+		[우대 요건]
+
+		□ C++/Matlab/계측기 사용 숙련자
+
+		□ 영어 숙련자(OPIc IM3 이상)
+
+		강주형
+
+한화시스템/방산		
+
+	HW (항공)
+
+		판교
+
+		▶ 계약기간 : 2년
+
+		[직무 내용]
+
+		□ 항공전자 탑재 장비 개발
+
+		□ 항공기 인터컴 개발
+
+		□ 항공기 탑재 컴퓨터 개발(고속 임베디드 시스템)
+
+		[자격 요건]
+
+		□ 전공 : 전기/전자/컴퓨터/제어/항공/분야 학사 이상
+
+		□ 경력 : 관련 직무 유경험자
+
+		[우대 요건]
+
+		□ 항공기 탑재 장비 개발 유경험자
+
+		□ 군/민간용 항공기 탑재 구성품 환경/EMI 시험 유경험자
+
+		□ 고속 PCB 설계 경험자
+
+		□ 아날로그 회로 설계 및 시뮬레이션 수행 유 겅험자
+
+		□ Digital 회로 설계 및 영상처리 Logic 설계 유겅험자
+
+	전원설계
+
+		▶ 계약기간 : 입사시 ~ 2025.07.31 (변동가능)
+
+		[직무 내용]
+
+		□ 전원장치(발전기, 인버터 등) 개발
+
+		[자격 요건]
+
+		□ 전공 : 전기전자/전력전자 분야 학사 이상
+
+		□ 경력 : 전력장치(인버터/컨버터) 개발, 알터네이터 설계 경험
+
+		[우대 요건]
+
+		□ 발전기조립체(엔진/동체) 설계/제작/시험 경험
+
+		□ 어학(영어) 능력 우수자
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rem (homework)인재 DB 등록
+
+https://www.hanwhain.com/web/apply/notification/view.do?rtSeq=7109
+
+먼저 추가해야한다....에어온, 뉴빛테크놀러지
+
+박정훈
+
+01063924139
+
+940405
+
+pjh4139@gmail.com
+
+
+
+rem (homework)  regist my resuem, upload my resuem
+
+서울 송파구 송파대로 201 송파테라타워2 다이얼로그디자인에이전시
+
+https://www.jobkorea.co.kr/Recruit/GI_Read/37910581?Oem_Code=C1
+
+
+
+인턴
+
+
+
+
+
+
+
+
+
+
+
+이 로그에서 확인하고 싶은 내용은, com.kou.something 와 관련된 내용입니다. 특히 dalvikvm에서 모든 내용은 지워버리고 싶습니다. 이럴 때는 어떻게 해야 할까요?
+
+펄이나 파이썬에 익숙하다면, 해당 부분을 제거하는 스크립트를 만들어 파일을 재처리할 수 있겠습니다.
+
+아니면 at notepad++ by using macro
+
+
+
+
+
+# idea
+
+only use remove
+
+not use add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rem IT 기술용어
+
+IT
+
+	Information Technology
+
+
+
+	
+
+IT Strategy	
+
+Technology Strategy
+
+SI
+
+	System Integration
+
+
+
+DT 
+
+	digital Transformation
+
+DT Consulting
+
+
+
+
+
+디시인사이드
+
+미소녀 맘마통 모유 먹고 싶다 응애 ㅇㅅㅇ	류류
+
+2098067	나도 밤 새서 몇시간 자야겠다
+
+
+
+
+
+
+
+rem rattepanda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// GPL
+
+// opensource
+
+// license cost zero.
+
+
+
+
+
+
+
+
+
+도깨비 아가
+
+도깨비 아이
+
+아가리튜닝
+
+도깨비 알
+
+공유폴더
+
+공유공간
+
+도깨비의 이력서
+
+플릿카
+
+도깨비 머릿 속	
+
+도깨비 머릿 속 정보
+
+도깨비 머릿 속의 공유 공간
+
+
+
+웹 여행자
+
+
+
+넷 여행자의 ctrl C
+
+넷 여행자의 ctrl v
+
+
+
+blog for ctrl c
+
+
+
+shortcut mania blogger
+
+
+
+희망적인
+
+희망 단축키
+
+
+
+
+
+
+
+시간 구원자
+
+time saver
+
+희망적 사용자 지정 단축키
+
+희망적인 단축키
+
+
+
+
+
+희망적
+
+단계적 대안
+
+a_hopeful_balancer
+
+life_balancer
+
+
+
+
+
+colorful cameleon
+
+dark cameleon
+
+
+
+dark mode
+
+	it is for reducing light quantity
+
+	it is for saving energy
+
+	it is for reducing eye fatigue
+
+	
+
+	
+
+proper blue light is good for our eye?
+
+어두운 빛을 보다가 밝은 빛을 갑자기 보는 "급격한 light 양 변화"를 줄일 필요가 있다.
+
+
+
+
+
+
+
+
+
+웹 공간 전망대
+
+기술 전망대
+
+
+
+
+
+
+
+웹에서 스크립트와 숨바꼭질하기
+
+도깨비의 숨바꼭질
+
+	
+
+	
+
+
+
+family creature
+
+다크사이드 오브 다크모드
+
+
+
+
+
+채용자
+
+파일 정리 규칙 룰       파일정리능력   파일색인속도
+
+파일 기록 능력
+
+open book experience
+
+open book test
+
+open book memo
+
+open book work
+
+
+
+
+
+운동 매일 한동한 하자
+
+
+
+
+
+# portpolio
+
+batch file debugging experience
+
+excel VBA debugging experience
+
+word VBA debugging experience
+
+
+
+
+
+
+
+# blender
+
+냄비받침
+
+보물상자
+
+폐광
+
+폐허
+
+황금 보물상자
+
+
+
+
+
+카르노 플릿
+
+	마네킹 모델링
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ATmega328P
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

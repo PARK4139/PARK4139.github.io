@@ -1,0 +1,10 @@
+REM NINA-W102
+
+Wi-Fi 802.11 b/g/n
+
+2.4 Hz ISM band
+
+Bluetooth® v4.2 (Bluetooth® BR/EDR and Bluetooth® low energy
+
+it seems like mounted at arduino nano 33
+

@@ -1,0 +1,22 @@
+rem ESP8266
+
+Wifi 
+
+with arduino
+
+
+
+
+
+rem ternimals
+
+rx
+
+tx
+
+3.3v
+
+gnd
+
+
+

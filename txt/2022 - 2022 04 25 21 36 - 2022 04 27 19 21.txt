@@ -1,0 +1,1067 @@
+i will quit work friday
+
+i should hand over my work to someone...
+
+i should take over 
+
+
+
+
+
+
+
+
+
+money = True
+
+money = False
+
+if money:
+
+    print("go by taxi")
+
+else:
+
+    print("go by walk")
+
+
+
+
+
+
+
+x=3
+
+y=3
+
+if  x == y:
+
+    print("x equals y")
+
+elif x != y:
+
+    print("x doesn't equal y")
+
+else
+
+    print("unpredicted cases exist, here\ncheck this paragraph")
+
+
+
+
+
+
+
+
+
+
+
+money = 5000
+
+if money == 5000 :
+
+    print("go by taxi")
+
+else:
+
+    print("go by walk")
+
+
+
+
+
+
+
+
+
+
+
+
+
+money = 5000
+
+card = 1
+
+if money >= 3000 or card == 1:
+
+    print("go by taxi")
+
+else:
+
+    print("go by walk")
+
+
+
+
+
+
+
+
+
+
+
+# 군집자료형 데이터 핸들링
+
+1 in [1, 2, 3]
+
+1 not in [1, 2, 3]
+
+'a' in ('a', 'b', 'c')
+
+'j' not in 'python'
+
+
+
+
+
+
+
+
+
+
+
+
+
+# if something in something
+
+pocket = ['paper', 'cellphone', 'money']
+
+if 'money' in pocket:
+
+    print("go by taxi")
+
+else:
+
+    print("go by walk")
+
+
+
+
+
+
+
+
+
+pocket = ['money', 'cellphone']
+
+card = True
+
+if 'money' in pocket:
+
+     print("go by taxi")
+
+elif card: 
+
+     print("go by walk")
+
+else:
+
+     pass
+
+
+
+
+
+
+
+pocket = ['paper', 'money', 'cellphone']
+
+card = True
+
+if 'money' in pocket:
+
+     print("go by taxi")
+
+elif card: 
+
+     print("go by walk")
+
+else:
+
+     pass
+
+
+
+모든 경우를 아울러라 (2,2**2)
+
+모든 경우를 아울러라 (3,2**3)
+
+
+
+
+
+
+
+
+
+
+
+if score >= 60:
+
+    data = "success"
+
+else:
+
+    data = "failure"
+
+
+
+
+
+
+
+
+
+# infinite loop(true 이면 반복수행, false면 종료)
+
+treeHit = 0
+
+while treeHit < 10:
+
+    treeHit = treeHit +1
+
+    print("나무를 %d번 찍었습니다." %treeHit)
+
+    if treeHit == 10:
+
+        print("나무 넘어갑니다.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+x = 0
+
+while x != 4:
+
+    print(prompt)
+
+    number = int(input())
+
+
+
+
+
+
+
+# input()  이거 파이썬에서 어떻게 쓰는건지 documentation 찾아보자
+
+number = int(input())   이런식으로 많이 쓰는 것 같다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DeepLearning·AI Data Training
+
+	TBD : 여기까지 오느라 수고했다.
+
+
+
+
+
+AI ROS based Robot
+
+AI ROS air vehicles
+
+
+
+
+
+지식이 많을 수록
+
+	MIT 커리큘럼 스터디
+
+	많은 지식을 내것으로 만들어
+
+	공부는 스스로 하는 것이다.
+
+대안이 많을 수록 돈을 많이 벌 확률이 높아지기도 한다.
+
+돈을 많이 버는 일을 하고 싶다.
+
+	blender 알바
+
+	프리랜서
+
+즐기고자 하는 것과
+
+
+
+
+
+사악한 가격
+
+사악한 얼굴
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+도저히 참기가 힘들어서 내 기분을 자유로이 분출할 수 있는 욕을 활 수 있는 공간이 필요하다
+
+
+
+그냥 좋게 나갈라했는데 코로나 때문에 참을 수 없어  ㅆㅂ
+
+직원들 편의를 봐주는 것 좋겠지 아주 ㅋㅋㅋㅋㅋㅋㅋ 
+
+이 얼마나 놀라운가 이곳
+
+형평성, 규칙이라곤 찾아 볼 수 없는 이곳 ㅋㅋㅋㅋㅋㅋㅋㅋ
+
+실내흡연
+
+컴퓨터로 게임 해대는 몇 직원
+
+하루 근무시간의 3/1 정도 일하는 몇 직원
+
+집에 가는 직원
+
+그냥 병원가는 직원
+
+점심에 차에 가서 자다 오는 직원
+
+무엇보다 코로나 시국에 물론 사람들이 코로나에 지쳐 안일한 마음과 국가 정책에 with corona 가 시작되려고 한다지만 아직 시작 안했느데 ㅅㅂ
+
+코로나 확진자를 바로 보내지 않고  회의를 하고 가라는 놀라운 회사
+
+나중에 그 사람 가족 다 확진됬다고 얼핏 들었는데 ㅅㅂ
+
+오늘 보니 기침 계속하면서 여기 나왔네  ㅅㅂ 기침 계속하는 데 ㅆㅂ 개같다
+
+어쩌자는 거냐 이 회사는?
+
+확진자 나왔는데 옆 사무실 인원한테 전파 똑바로 안하고 ㅆㅂ 뭐냐 대책이 없는 회사 ㅋㅋㅋㅋㅋ 코로나 확진을 소문으로 들어야 하냐 
+
+ㅆㅂ   이렇게 욕해대고 있지만   ㅅㅂ   스스로 되돌이켜 보면    나도 정의롭지도 않고 뒤에서 씨부려되는 그냥 그냥 나쁜 새끼라고 깨닫는 게 거지 같다.
+
+    사실  그래서 내 스스로 자존감이 무너지고 있어서 좆갖다
+
+질서, 형평성 없는 곳은 앞으로 가고 싶지 않다
+
+질서, 형평성 이것은 내게 아주 중요한 회사선정 포인트인다.
+
+이 곳의 멍청이들 정도는 가볍게 넘어서야지 ㅋㅋㅋㅋㅋ 라는 마음으로 오늘도 공부시작!
+
+고맙다 ㅆㅂ 3개월 동안 아주 크게 공부에 대한 동기부여 시켜줘서 새끼들아.
+
+ㅃㅃ2 난 더 좋은 곳으로 간다.
+
+오늘은 여기까지    아오     기분이 좀 가라앉네 ㅎㅎㅎㅎ
+
+
+
+
+
+
+
+
+
+# 안티 롤모델
+
+44에 아직도 부족하고 대한민국의 주축으로써 한창 열심히 일해야할 나이라고 생각되는데
+
+자기개발을 포기해 보인 듯한 차장의 모습은 매우 별로 였다.
+
+안티 롤모델 추가해야겠다.
+
+처음에 아무것도 프로그래밍에 대해 모를 때는 잘 하는 사람처럼 보였는데, 이제는 별로 능력있어 보이지도 않는다
+
+그리고 이 사람은 안되는 방법에 대해서는 늘어놀수 있지만 구체적인 솔루션을 설계할 수 있는 사람은 아니다.  이 사람의 한계이다. 닮지 말자. 되지 말자.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+주관적 코딩교육 vs 중립적 코딩교육     장단점이 있다고 생각이 든다
+
+주관적 코딩교육은 교육이 빠르다. 언어의 본질, 문화, 언어 커뮤니티 속 생각의 경향을 학습 할 수 없다.
+
+중립적 코딩교육은 언어의 본질, 문화, 커뮤니티의 생각의 경향을 학습할 수 있게 돕는다. 단, 너무 오래걸린다.
+
+무엇이 좋은가?..
+
+
+
+
+
+
+
+
+
+프로그래밍의 실습으로 부터 얻는 것은 매우 크다      그 장벽을 넘어서니 하나 둘 이해가가는 문법해설이 보인다. 
+
+
+
+
+
+
+
+
+
+더 이상 욕을 하는데 투자하는 시간과 노력이 아까워서 다시 돌아올지도 모르지만 이제 그만 졸업하고자 한다. 
+
+그동안 고마웠다 "욕 게시판"아   
+
+
+
+
+
+
+
+
+
+게임 프로그래머...
+
+그로기 상태가 된다.
+
+
+
+
+
+
+
+유니티 엔진은 C++
+
+유니티 API는 C#을 스크립팅 언어로 활용하여 작성한 형태를 띄고 있다.
+
+Python을 사용할 수 있게 해주는 플러그인도 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AI
+
+
+
+
+
+
+
+ML
+
+	machine에게 learning 할 수 있도록 teach 해야한다.
+
+	코드로 정의하지 않은 동작을 실행하는 능력	- Arthur Samuel
+
+	대량의 data를 주면 거기서 Leaning을 한다   비교, 분석, 분류하고 처리방법을 만들고 그에 대한 스크립트를 만들고 결과물을 인간에게 반환한는 게 일반적인것 같다.
+
+
+
+
+
+ANN algorizm type ML
+
+DL algorizm type ML
+
+지도 자율학습 algorizm type ML
+
+	supervised learning
+
+		정답지로 학습(예측모델 등에 사용)
+
+		실제 출력값과 정확한 출력값을 서로 비교하여 오류를 검출하면서 알고리즘 학습
+
+	unsupervised learning
+
+		정답없이 학습(군집화 등에 사용)
+
+		데이터 간 유사성을 근거로 
+
+	reinforcement learning
+
+		시뮬레이션 반복 학습(성능 강화 등에 사용)
+
+		시행착오를 거쳐 보상을 극대화할 수 있는 행동을 찾아낸다.
+
+		이게 아마 자율학습 같은데
+
+
+
+
+
+ML technology example
+
+	Amazon의 맞춤식 제품 추천
+
+	Facebook의 안면 인식
+
+	Google Maps의 빠른 경로 추천
+
+	smart factory's ML
+
+		vision sensing technology
+
+		temp sensing technology
+
+		
+
+	재무,(금융
+
+	의료
+
+	마케팅 영업
+
+	Government
+
+	운송(합리적 이동경로를 추적     비용, 거리, 시간에 가중치를 줘서 합리적 이동경로를 추적한다.)
+
+	
+
+	
+
+
+
+themal vision camera
+
+
+
+
+
+AI place tag
+
+	AI 가 link 되어 환경 data를 축적하는 공간의 입구에 흔히 부착되는 태그
+
+	이 태그가 있는 공간에 있으면 사람들은 자신의 신체정보까지도 유출될 것을 각오해야 한다.
+
+	그러나 AI place의 사람들은 Non-AI place의 사람들보다 핀의, 치안에 대한 경쟁력을 가질 수 있다.
+
+	※이 곳에서는 모든 사람들의 신체정보, 행위를 Public AI 간에 공유하게 됩니다.
+
+	
+
+private AI
+
+
+
+data mining 
+
+	다양한 영역의 분석 기법
+
+	데이터 마이닝은 다양한 영역의 기법을 적용하여 이전에 데이터에서 발견하지 못한 패턴을 찾아낼 수 있는데, 여기에는 통계적 알고리즘, 머신러닝, 텍스트 분석, 시계열 분석 등 
+
+AI
+
+
+
+ML
+
+	머신러닝은 반복적인 접근 방식으로 데이터를 통해 학습하기 때문에 손쉽게 자동화
+
+	이미지에서 객체를 식별하는 기술
+
+	사운드에서 단어를 식별하는 최첨단 기술
+
+	연구기관들도 자동 언어 번역, 의학적 진단, 그 밖에 중요한 사회 및 비즈니스 문제 등 복잡한 과제에 적용하려는 기술
+
+	얼굴합성 영상기술
+
+	한국기업 액션파워 다글로  약 95% 정확도를 자랑하는 녹취타이핑 서비스(기자부터 애널리스트, 속기사, 일반 회사원들   엄청난 도움을 받을 것)
+
+	네이버 에버노트
+
+	60~70%의 정확도를 가진 구글 음성인식 텍스트 변환 서비스
+
+	배터리 효율   관리 (iOS 13에서 적용됨.)  평소 배터리 잔량을 40-80% 수준으로 유지하면 더 오래 사용할 수 있다. 이에 iOS 13에 탑재된 ‘최적화된 배터리 충전’ 옵션은 머신러닝을 통해 사용자의 사용 습관을 학습하고 충전 용량을 결정한다. 전에는 충전 케이블 연결 시, 무조건 100% 충전이 되었던 반면에 옵션이 활성화되면 일단 80%까지 충전이 되고 나머지는 사용자가 아이폰을 사용할 때 충전이 되는 방식이다.
+
+
+
+
+
+DL
+
+	복잡한 패턴을 학습
+
+
+
+
+
+
+
+성공적인 패턴 인식 기술
+
+인사이트, 패턴 및 관계를 도출->의사결정
+
+데이터를 통해서 강력한 패턴을 발견해야 한다.
+
+
+
+
+
+
+
+
+
+“ 일반적으로 사람이 1주일에 생성할 수 있는 양질의 모델은 1~2개에 불과하지만 머신러닝은 같은 기간에 수천 개의 모델을 생성할 수 있습니다.” - Thomas H. Davenport
+
+
+
+
+
+
+
+AI 데이터 분야
+
+	모든 산업군에서 머신러닝의 활용도와 중요도는 높아지고 있다
+
+
+
+
+
+networking technologies
+
+sensing technologies
+
+interface technologies
+
+
+
+
+
+
+
+
+
+raw text column data
+
+현재 스마트 에너지(Smart Energy), 
+
+스마트 팩토리(Smart Factory), 
+
+스마트 헬스(Smart Health), 
+
+스마트 교통(Smart Transportation)
+
+raw text column data에서 한글을 모조리 제거하고 ,를 없애라, () 밖의 띄어쓰기를 모조리 지워라.
+
+
+
+
+
+
+
+
+
+My house custom by using IoT
+
+security system
+
+	입력전원을 차단하여도 괜찮은 것을 차단한다.
+
+	냉장고는 IOT 필요없는 것 같다.
+
+	
+
+
+
+All platform   connection IOT
+
+	LG TV와 연결
+
+	SAMSUNG 제품과 연결
+
+
+
+
+
+
+
+
+
+DL 개발 환경 구축
+
+ML framework 001
+
+	technical stack that i use
+
+		Window10 64-bit
+
+		Python 3.7 (아나콘다 conda 4.7.12)
+
+		TensorFlow GPU 2.0
+
+		CUDA Toolkit 10.1 update2
+
+		NVIDIA GPU drivers 418.x or higher.
+
+		Visual Studio 2019
+
+		cuDNN v7.6.5
+
+		LightGBM
+
+		XGBoost
+
+		pipenv
+
+		packages that i use
+
+			Numpy
+
+			Pandas
+
+			Jupyter notebook
+
+			scikit-learn
+
+			matplotlib
+
+			seaborn
+
+			nltk
+
+			tensorflow		#  구글이 2015년에 공개한 머신 러닝 오픈소스 라이브러리
+
+			keras
+
+	
+
+	
+
+	pip install pipenv
+
+	pyenv virtualenv ML_development_env_001
+
+	pyenv activate ENV_NAME
+
+	
+
+	pip install tensorflow
+
+	import tensorflow as tf 	# tensorflow는 tf로서 import되는 것은 일종의 tensorflow documentation, tensorflow developers, tensorflow communities의 관례이며 이는 관례의 사용에 대한 이해가 필요하다.
+
+	pip install jupiter
+
+	pip install conda
+
+	deep learning frameworks comparision
+
+	
+
+
+
+	install anaconda prompt
+
+	
+
+	
+
+	check NVIDIA GPU drivers installation normal or abnormal
+
+	cmd.exe
+
+	nvidia-smi
+
+	record CUDA version. (check compatibility with python version)
+
+	install CUDA
+
+	intstall cuDNN
+
+	단, NVIDIA에 회원가입을 하여야 합니다. Google 계정으로 로그인도 가능합니다.
+
+	download cuDNN into 임의의 폴더
+
+	임의의 폴더에서 cnDNN을 압축해지합니다.
+
+	다음과 같이 bin, include, lib 폴더가 생성됩니다.
+
+	.\bin 내부 파일  ==> C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\bin
+
+	.\include 내부 파일 ==> C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include
+
+	.\lib\x64 내부 파일 ==> C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\lib\x64
+
+	사용자 환경변수 편집
+
+	CUDA_PATH
+
+	%CUDA_PATH%\bin
+
+	%CUDA_PATH%\lib
+
+	%CUDA_PATH%\include
+
+	cmd.exe(as 관리자 권한)
+
+	pip install tensorflow-gpu
+
+	
+
+	
+
+	pip install NLTK 			# NLTK for 자연어 처리
+
+	import nltk
+
+	nltk.__version__			# version check NLTK
+
+	nltk.download()				# NLTK 쓰려면 설치 해야한다.
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+지식은 절대적인게 아니라 상대적으로 학습해야 하는 것 같다.
+
+
+
+
+
+
+
+serch world latest technologies trend
+
+serch korea latest technologies trend
+
+SAMSUNG 주요 개발 현황
+
+LG 주요 개발 현황
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+early adopter
+
+
+
+
+
+
+
+
+
+
+
+
+
+prompt = """
+
+1. Add
+
+2. Del
+
+3. List
+
+4. Quit
+
+Enter number: """
+
+number = 0
+
+while number != 4:
+
+    print(prompt)
+
+    number = int(input())
+
+
+
+
+
+
+
+
+
+download
+
+https://youtu.be/acnWy-tl3ng
+
+https://www.youtube.com/watch?v=MyQzt2TYWJk
+
+https://youtu.be/YR1fjQFS5_4
+
+
+
+
+
+
+
+
+
+
+
+water_bottle = 10
+
+money = 300
+
+while money:
+
+    print("돈을 받았으니 커피를 줍니다.")
+
+    water_bottle = water_bottle -1
+
+    print("남은 커피의 양은 %d개입니다." % water_bottle)
+
+    if water_bottle == 0:
+
+        print("커피가 다 떨어졌습니다. 판매를 중지합니다.")
+
+        break

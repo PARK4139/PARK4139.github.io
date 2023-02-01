@@ -1,0 +1,356 @@
+explorer Shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}
+
+explorer C:\Users\박 정 훈\AppData\Roaming\uTorrent
+
+explorer "C:\Windows\System32"
+
+explorer "C:\Users\박 정 훈\AppData\Local\Temp"
+
+explorer "C:\Program Files (x86)\Notepad++\plugins"
+
+explorer "C:\Program Files\alpha\categories\tools"
+
+explorer "C:\Program Files"explorer.exe shell:RecycleBinFolder
+
+explorer "C:\Program Files\alpha\categories\tools\data"
+
+
+
+
+
+
+
+echo %0	rem 배치파일 자기자신을 의미합니다.
+
+echo %~0
+
+echo %~d0
+
+echo %~p0
+
+echo %~n0
+
+echo %~x0
+
+echo %~dp0
+
+echo %userprofile%
+
+echo %cd%
+
+
+
+dir /w
+
+dir /b
+
+dir *.* /b
+
+dir /b /s /a:d
+
+dir /b /s /a-d
+
+
+
+dir /b /s /a:d|find "test"
+
+dir /b /o /a:d|find "test"
+
+
+
+
+
+
+
+
+
+for /d %a in (*) do ( echo "%a")
+
+for /d %a in (*.*) do ( echo "%a")
+
+for /r %a in (*) do ( echo "%a")
+
+for /r %a in (*.*) do ( echo "%a")
+
+
+
+
+
+
+
+
+
+pushd \windows\system32
+
+popd   rem     \windows\system32로 가기전 디렉토리로 돌아갈 수 있다. it seems like advanced cd
+
+
+
+
+
+
+
+if %errorlevel% equ 0 (echo "processed successfully.") else ( echo "else" )
+
+if %errorlevel% neq 0 (echo "error occurs") else ( echo "else" )
+
+if %errorlevel% LSS 0 (echo " ") else ( echo "it is not expected" )
+
+if %errorlevel% LEQ 0 (echo "less than or equal") else ( echo "it is not expected" )
+
+if %errorlevel% GTR 0 (echo "greater than %errorlevel%") else ( echo "it is not expected" )
+
+if %errorlevel% GEQ 0 (echo "greater than or equal") else ( echo "it is not expected" )
+
+
+
+
+
+
+
+case=2^3
+
+case=o||x
+
+ooo
+
+oxx
+
+oox
+
+oxo
+
+xxx
+
+xoo
+
+xxo
+
+xox
+
+if exist case1 (
+
+          if exist case2 (
+
+                    if exist case3 (
+
+                              o o o
+
+                    ) else (
+
+                              o o x
+
+                    )
+
+          ) else (
+
+                   if exist case3 (
+
+                              o x o
+
+                   ) else (
+
+                              o x x
+
+                   )
+
+          )
+
+)
+
+ooo
+
+oxx
+
+oox
+
+oxo
+
+if not exist case1 (
+
+          if not exist case2 (
+
+                    if not exist case3 (
+
+                              o o o
+
+                    ) else (
+
+                              o o x
+
+                    )
+
+          ) else (
+
+                   if not exist case3 (
+
+                              o x o
+
+                   ) else (
+
+                              o x x
+
+                   )
+
+          )
+
+)
+
+xxx
+
+xoo
+
+xxo
+
+xox
+
+
+
+
+
+set B=5
+
+set /a B+=3          =>   B에 3을 더해서 새로운 B 값을 할당          => 8
+
+set /a B-=3          =>   B에 3을 빼서 새로운 B 값을 할당          => 2
+
+set /a B*=3          =>   B에 3을 곱해서 새로운 B 값을 할당          => 15
+
+set /a B/=3          =>   B를 3으로 나눈 몫을 새로운 B 값에 할당          => 1
+
+set /a B%=3   
+
+
+
+
+
+
+
+
+
+set i=0
+
+for /l %%a in (1,1,100) do (
+
+     set /a i += %%a
+
+)
+
+echo %i%
+
+
+
+
+
+
+
+for %%a in (C: D: E: F: G: H: I: J: K: L: M: N: O: P: Q: R: S: T: U: V: W: X: Y: Z:) do (
+
+     set b=%%a
+
+     echo !b!
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rem PuranUtilitiesSetup  이거 무료 복구로 좋다고 추천하더라
+
+REM echo "jungHoonParkDailyRoutine entryTryResult" 
+
+REM echo "target back up completed"
+
+
+
+REM call "C:\Program Files\alpha\categories\tools\cwd_backUpBatchPrograms.bat"
+
+REM call "C:\Program Files\alpha\categories\tools\cwd_backUpAlphaSystem.bat"
+
+
+
+REM echo d | xcopy "C:\Users\박 정 훈\AppData\Roaming\Notepad++\shortcuts.xml" "C:\Users\박 정 훈\3D Objects\alpha\categories\RPA\src\categories\notepad++" /e /h /k
+
+
+
+rem 뭔가 해커처럼 내가 인지하는 모든 데이터를 가지고 오는 것.
+
+REM USB를 꼿고     windows r을 클릭하고      모두저장   을 입력 및 엔터를 하면           usb로 모두 저장     날짜별로
+
+REM e: 에 저장해야하나       f:에 저장해야하나
+
+REM "e:로 모두저장"
+
+REM "f:로 모두저장"
+
+REM edrive 모두저장
+
+REM fdrive 모두저장
+
+REM 이드라이브로 모두저장
+
+REM 이드라이브에 모두저장
+
+REM 에프드라이브로 모두저장
+
+REM 에프드라이브에 모두저장REM // ______________________________________________________________ run.exe 로 추정되는데...아닐 수 있다. _________________________________________________________________
+
+
+
+
+
+
+
+
+
+REM echo "jungHoonParkDailyRoutine entryTryResult" 
+
+REM echo "completed"
+
+REM echo ""
+
+REM echo ""
+
+REM echo ""
+
+REM enter console art       junghoonparkroutine Helper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+REM call "C:\Program Files\alpha\categories\tools\cwd_backUpBatchPrograms.bat"
+
+REM call "C:\Program Files\alpha\categories\tools\cwd_backUpAlphaSystem.bat"
+
+REM _____________________________________________________________________________  [    ] 
+
+REM c:
+
+REM setlocal
+
+REM echo d | xcopy "C:\Users\박 정 훈\AppData\Roaming\Notepad++\shortcuts.xml" "C:\Users\박 정 훈\3D Objects\alpha\categories\RPA\src\categories\notepad++" /e /h /k
+

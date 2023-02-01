@@ -1,0 +1,24 @@
+project_spring_framework tech_version_record updated at 2022 08 20 18 45
+
+spring boot 2.7.3
+
+java 17.0.4
+
+
+
+
+
+
+
+
+
+generate gradle project via spring initializer of https://start.spring.io/
+
+gradle 7.3.3 compatiblity with jdk version
+
+
+
+
+
+
+

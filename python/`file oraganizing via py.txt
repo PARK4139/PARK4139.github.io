@@ -1,0 +1,80 @@
+#파일 분류
+
+py
+
+import os
+
+import requests
+
+os.system('cls')
+
+data = os.listdir(r'e:\2022 03 26 12 22\sorted by categories\videoes\ii\.avi')
+
+data = sorted(data)
+
+data = '#jhp'.join(data)
+
+data = data.replace('.avi','_')
+
+data = data.replace('_.','_')
+
+data = data.replace('(','_[')
+
+data = data.replace(')',']_')
+
+data = data.replace('__','_')
+
+data = data.split("_")
+
+data = sorted(data)
+
+
+
+data = '#jhp'.join(data)
+
+data = data.replace('[DVD]','')
+
+data = data.replace('[#jhp]','')
+
+data = data.replace('[DVD x FLAC]','')
+
+data = data.replace('[FFF]','')
+
+data = data.replace('[]','')
+
+data = data.replace('[x DivX..]','')
+
+data = data.replace('[x.x.DivX..]','')
+
+data = data.replace('[x.x.fps]','')
+
+data = data.replace('[x]','')
+
+data = data.replace('[アニメ]','')
+
+data = data.replace('Xvid','')
+
+data = data.lower()
+
+data = data.split('#jhp')
+
+data = sorted(data)
+
+
+
+
+
+data = set(data)
+
+data = list(data)
+
+data = sorted(data)
+
+
+
+
+
+return list(data) #결과 리턴
+
+print(result)
+

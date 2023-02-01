@@ -1,0 +1,48 @@
+rc aircraft design    by using blender, and enreal engine 5
+
+
+
+
+
+it can propotionally works
+
+received modulated wave
+
+proportionally controlled servo
+
+scale airplane
+
+trainer airplane
+
+sports airplace(역시 여럿이서 경주하는 것이 재미)
+
+acrobatic airplane(기술전)
+
+racer airplane(속도전)
+
+
+
+
+
+fugelage structure
+
+	semi-monocoque structure 
+
+wing structure
+
+	semi-monocoque structure 
+
+	sandwitch struture
+
+
+
+material : FRP
+
+material : carbon
+
+material : balsa wood
+
+material : foam
+
+
+
