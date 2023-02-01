@@ -1,0 +1,17 @@
+# melon 1위에서 100위 크롤링
+py
+import requests
+url = "https://www.melon.com/chart/index.htm"
+headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+foo = requests.get(url, headers=headers)
+foo = foo.text
+foo = foo.split('<div class="wrap_song_info">')
+song_info = [ song_info.split('재생">')[1] for song_info in foo if song_info.find('재생">') != -1]
+for i in range(0,100):
+    title = song_info[i].split('</a>')[0]
+    singer = song_info[i].split('</a>')[1].split('이동" >')[1]
+    print("> {0:2d} 위 : {1} - {2}".format(i+1,title,singer))
+	
+
+ 
+	
