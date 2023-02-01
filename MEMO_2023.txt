@@ -1,14 +1,4698 @@
-com eclipse error
-    Server Tomcat v8.0 jadorm was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
-    Servers>Tomcat v8.0 jadorm >double click>timeout>45>135
-    https://ndb796.tistory.com/99
-    
-  
-ja web server error 
-    호호호....
-    내가 손댄 페이지에 */ 가 있었다. 내가 실수한건지...확인을 하려면 기존 이력을 확인해야한다. 항상 back up 용 *.zip 을 만들어 두자.
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  policyMgr
+/**
+ * description
+ * 변수 작성 정책
+ * 변수는 각각 collector storage 와 같은 사람이나 기계의 명칭을 부여 하도록
+ * 객체 작성 정책
+ * 객체를 만들다 보니 가능한 모든 설정 값은 객체 내 필드에 저장하고 getter를 만들도록
+ * 객체제어는 객체외부에서, 연산제어는 객체내부에서 할수있도록 만들도록
+ * String[] 를 사용하는 경우에는 왠만하면 ArrayList<String > 를 사용 하도록
+ * String을 사용하는 경우에는 StringBuffer를 사용 하도록
+ * 로깅코드 작성 정책
+ * 나만의 로깅용 객체를 만들어 볼 사용 하도록
+ * 개발점검용코드 는 빠른 점검용으로 사용 하도록
+ * 개발점검용코드 는 운영코드에서는 반드시 delete 하고 배포 하도록
+ * 보안에 강한/데이터유출로 부터 안전한 로깅용 코드를 공부하고 운영코드에 들어가도록
+ * 디버깅 코드 작성 정책
+ * 시작마크와 종료마크로 서 console 에서 용이해지도록 이렇게 작성해주세요
+ * 그리고 디버깅용으로 중간에 최대한 많은 임시변수를 만듭니다.임시변수는 tmp prefix를 붙여서 만들어 주세요
+ * 추후에 정상작동이 확인 배포가 되면 임시변수는 제거하거나 지역변수로 바꾸거나 리팩토링 과정을 거칩니다.
+ * 주석 작성 정책
+ * 주석이 필요한 이유는 코드가 가장 구현체이긴하나 코드는 다양한 패턴을 지니는 경우가 많습니다
+ * 따라서 분석시간이 소요되는데 이를 줄이기 위해서는 신뢰도가 높은 주석이 작성되면 좋습니다.
+ * 전치사, 조사는 최대한 작성을 하자 맥락상 생략이 되어도 되는 경우가 많지만 이또한 명시적으로  하도록
+ * 은,는,이,가,을,를,에,에게,의 다음은 최대한 띄어쓰기를 하여 작성하여 클릭하여 복사할 구분되어 앞 단어만 복사 되도록
+ * 한글단어의 조합의 합성어는 최대한 띄어쓰기 없이 작성하여 클릭하여 복사할 구분되어 앞 단어만 복사 되도록
+ * DEVELOPMENT NAMING/WORDING/PARAPHRASING POLICY (DICTIONARY)
+ * TBD : TO BE DETERMINED : 추후결정
+ * description
+ * intellij 를 통하여 작업을 하면서 얻은 여러 기능들의 통찰을 통해 intellij 를 활용한 메모장입니다.
+ * collapse all 기능
+ * fold하면 일반화 되어서 한번에 보이니 index page 필요 없어질듯 하다..
+ * 현재 이곳으로 메모를 마이그레이션 하는 중입니다.
+ * 처음부터 이곳에 작성하는 것이 마이그레이션 하는 것보다 낳을 것 같습니다.
+ * 오늘 부터는 이곳에 작성
+ * 모든 것의 시작은 문제를 만나는 것부터 시작을 하도록
+ * description
+ * 두둥....내가 개발하였는데 ....내가 사용법을 해메는 바보같은 일이.....생겼다.....무조건 코드에 주석을 달고 설명을 할 수 있을 정도로 반드시
+ * 잘 정돈하여 기록을 해두자...
+ * eclipse running issue>eclipse.ini  -Xml512m->-Xml256m
+ * eclipse language display issue>eclipse/window/preferences encoding UTF-8*
+ * chrome browser language display issue><meta charset="UTF-8">
+ * db access issue>외부 환경 access 불가능이면서, DBeaver로는 access 가능하다면>라우터/공유기 포트포워드 방화벽 policy  점검
+ * css_issue_discription
+ * --부트스트랩의 issue가 아니라 darkreader에 의한 css변화였습니다. darkreader를 끄니 css가 돌아왔습니다
+ * --css_issue_insight
+ * --copied msg가 배수로 실행이 되는 것이 보였습니다.
+ * -- 실수와 실험으로 부터 얻는 통찰(==
+ * -- debugging을 하면서 1번 깜박여야 되는 것이 아니 왜 2번이 깜박이지?
+ * --	js 함수가 두번 실행되더라...동일한 script tag를 2번 넣어서....
+ * --	어딘가에 유용할만한 방법입니다. 아마도 실수로 제가 ctrl d를 눌러 line이 duplicated 된 것 같습니다.
+ * --	아니 onclick event function을 한 script에 2번 넣으면 클릭 한번에 onclick function 2개가 순서대로 호출이 됩니다!
+ * --	아니 이 얼마나 반가운 일입니까? 앞으로 뭔가 시각적으로 여러번 깜박거리는 것을 구현할 때 for문 작성이 귀찮으면 이런 방법도 있습니다! )
+ * VARCHAR ISSUE
+ * VARCHAR VS VARCHAR2 둘의 차이점.두 데이터 타입이 synoymous, 즉 동의어 - 오라클 공식 문서 -
+ * varchar2 사용 추천. 왜냐하면 varchar는 나중에 다른 방식의 데이터 타입으로 변경될 수 있기 때문입니다.
+ * varchar로 프로그램을 만들고 운영 중인데 나중에 다 varchar2로 바꿔야 한다면 상당히 귀찮아지는 일이라고 합니다.
+
+
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  dbeaver
+ * 믿을 수 없겠지만 DBeaver에서는
+ * 오라클 프로시저 디버그를 지원하지 않기 때문에
+ * DBeaver에서는 펑션(Function), 프로시저(Procedure) 디버그가 불가능하다
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ideaMgr
+ * 문득 든 생각인데 file.html, file.jsp 또한 controller  이다....   user controller 인... btn 도 달린..
+ * model   view   controller  이라는 개념이 로직을 분리를 해두었습니다는 것인 것 같다... 무척이나 관점에 따라 해석이 달라지는
+ * 상대적인 개념일 수 있을 것 같다.. 아니면 관용적인 무언가가 있는데 내가 이해를 못하고 있거나...
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  woodWorkingMgr
+ * 나무 조립
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  galaxy on 7
+ * 역시 들고다니는 portable device 가 가장 재미 지겠지 ?
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ZetsonBoard
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  DESKTOP-I25VIFM
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  raspi4ModelB
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  arduino uno
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  WSLMgr
+ * WSL에 와서는 정말로 윈도우즈가 docker를 품은 형상이 되어버렸는데,
+ * docker보다 빠르고 요긴하게 쓸 수 있습니다는 장점이 있습니다.
+ * 더구나 그 안에서 docker를 쓸 수 있어서 구태여 docker desktop을 설치할 필요도 없다.
+ * 어차피 docker 라는 게 linux 안에서 다른 배포판의 linux를 쓰려고 할 때 진가를 발휘하는 것이니까 말이다.
+ * WSL(Windows Subsystem for Linux)
+ * Windows 10 Bash 로 Ubuntu 개발환경 구성>ubuntu user name>pjh4139>symetrical pw
+ * #clear
+ * #ls
+ * #sudo apt get pip
+ * #brew #이거 유용한가 봅니다 공부하도록
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MealMgr
+ * 이마트||홈프러스 들려 음식 구매
+ * 집 냉장고 넣기
+ * 리코타치즈 블루베리 딸기 샐러드
+ * 짙은녹색붉은대의잎사귀
+ * MealMgr.makeMeal1();
+ * MealMgr.steam("닭가슴살")
+ * MealMgr.slice("닭가슴살")
+ * 편스토랑
+ * 밀프랩
+ * 밀키트
+ * 누룽지
+ * 유산균
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  WindowsMgr
+ * 우리나라는 아직도 CS(Desktop Application) 환경에서 프로그램은 윈도우 기반이 대부분이다. 특히 닷넷으로 윈도우 애플리케이션을 개발하려면 윈도우 운영체제가 현재까지는 필수적이다.
+ windows 10 시작메뉴 등록
+ * C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  linuxMgr
+ ubunto
+ almost free OS!!!!!
+ opensource OS!
+ 리눅스는 다중 작업과 다중 사용자, 다중 스레드를 지원하는 운영체제 입니다. 다시 이야기 하면 리눅스는 하나의 PC에 여러명이 접속 하여 여러개의 프로그램을 동시에 실행하거나 작업 할 수 있는 장점이 있습니다. 그래서 인지 리눅스는 서버로 사용이 많이 되고 있습니다
+ 개발자의 커스터마이징의 제한이 매우 적다는 것 같다.
+ C언어 에 의해서 많은 개발이 되었음.
+ C언어를 잘하는 개발자라면 리눅스를 사용하면서 어지간한 리눅스의 구성요소들을 직접 들여다보고 수정하고 개발 할 수 있는 장점이 있습니다.
+ 리눅스는 다른 운영체제들과는 다르게 상대적으로 하드웨어의 사양이 그렇게 높지 않아도 운영하는데 큰 어려움이 없습니다.
+ 전 세계적으로도 어려운 사람이나 국가에 PC를 보급 할때보면 운영체제는 리눅스로 보급을 하고 있습니다.
+ 그만큼 낮은 사양에서도 최대한의 성능을 끌어올려 사용 할수 있게 하는게 리눅스 OS의 큰 장점이 아닐까 합니다.
+ 스마트폰의 OS는 무엇일까요? 전 세계에 보급된 스마트 폰의 7~80% 이상은 리눅스 커널을 사용하는 안드로이드가 운영 OS로 사용 하고 있습니다는 사실 입니다.
+ 뭐 사실 개발자가 리눅스를 사용하는 이유와는 거리가 좀 먼 이야기 일수 있으나, 리눅스는 이렇게나 다양하고 많이 우리 실생활에 근접해 있습니다는 이야기를 드립니다.
+ 복잡하게 여러군데를 뒤지지 않고 단 한줄의 커멘드로 복잡한 작업을 한번에 해치울수도 있습니다.
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  newPcMgr
+ * .transferBranch("from","to");
+ * jhp.thinck(PC){
+ * 정책 배경
+ * 나이 30 이니까
+ * 나이 40 까지는 당연히 프로그래머 할꺼고
+ * 나이 50 까지도 프로그래머 할껀데
+ * 10년 600만원
+ * 1년에 60만원
+ * 확 당겨서
+ * 36개월
+ * 무엇보다 가장 고민해야할 것은 가격의 합리성
+ * 예산 정책
+ * 무이자 가능한 길게    2년 무이자    3년 무이자
+ * 내가 할 작업 목록
+ * open world 게임 개발 (feat 언리얼엔진5)
+ * 그래픽 아트 쪽 개발(feat. blender, VFX 관련 프로그램, )
+ * 고사양 게임 플레이(feat. 호라이즌,)
+ * 회사 문서작업(feat. MS office)
+ * 소스빌드(feat. intelliJ, Eclipse, android studio, pycharm, visual studio code)
+ * 데이터용량관점
+ * 데이터속도관점
+ * 그래픽처리속도
+ * 조립관점
+ * graphic
+ * geforce 4080 rtx 는 가성비가 별로인가 보다.
+ * geforce 3080ti
+ * CPU
+ * RAM
+ * SDD
+ * HDD
+ * main board
+ * cooling fan
+ * PC case
+ * power supply 이것은 가장 나중에 결정 하는 것으로 보인다.
+ * win 10 pro
+ * }
+ * cpu
+ * ryzen 5900x
+ * VGA
+ * nvidia Gforce RTX A6000
+ * nvidia Gforce RTX A4000
+ * nvidia Gforce RTX 3090
+ * nvidia Gforce RTX 3060 EAGLE OC V2 D6 12GB PC-DIRECT 55:PRICE
+ * VRAM 이 넉넉한걸 써라
+ * nvidia Gforce RTX 3070 Ti 8GB
+ * nvidia Gforce RTX 3090 Ti 24GB
+ * RAM
+ * RAM 32GB DDR4
+ * RAM 128GB DDR4 ECC
+ * SOLID DRIVE
+ * SSD 1.5TB Gen4
+ * 씨게이트 파이어쿠다 530 4TB SSD
+
+
+
+ 흉악한 가격
+ * PSU
+ * evga PSU 1000W gold
+ * 시소닉 PSU 1500W
+ * 마이크로닉스 PSU 1000W silver
+ * GPU-DIRECT
+ * GPU 랑 VRAM 를 바로 직결(DIRECT) 를 시켜나서 굉장히 빠르다
+ * 시네벤치점수
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   DESKTOP-I25VIFM_mgr
+ * 172.30.1.58
+ * DESKTOP-I25VIFM
+ * 프로세서	AMD Ryzen 5 5625U with Radeon Graphics, 2301Mhz, 6 코어, 12 논리 프로세서
+ * RAM 16 GB
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MAC pc perchasing Mgr
+ * m1
+ * m2
+ * 일반 프로 맥스 울트라
+ * https://www.itworld.co.kr/news/241394#:~:text=M2%20vs.%20M1%20%EB%A7%A5%EC%8A%A4&text=%EB%94%B0%EB%9D%BC%EC%84%9C%20M1%20%EB%A7%A5%EC%8A%A4%EC%9D%98%20CPU,M2%EC%9D%98%20%EC%95%BD%202.5%EB%B0%B0%EB%8B%A4.
+ * 반면 최고 사양으로 구성한 맥북 프로 혹은 더 좋은 기기를 고려하고 있습니다면 아직 M2를 선택지에 포함할 때가 아니다.
+ * M2 프로/맥스/울트라가 등장했을 때나 고려할 가치가 있겠지만,
+ * 최소 6개월 이상은 기다려야 할 것이다.
+ * editor@itworld.co.kr
+ * https://www.itworld.co.kr/news/241394#csidxccef6cd680bfb2ca75a622a17402241
+ * 원문보기:
+ * https://www.ciokorea.com/news/241434
+ * https://suzxc2468.tistory.com/210
+ * 마침 회사에 PC교체대상자에 내가 걸려서... 도대체 왜 개발자들은 맥북에 열광하는지, 직접 사용해보기로 했다.
+ * 그리고는... 일년이 지났다.
+ * 솔직히 결론부터 말하면 굳이 맥북을 사용해야할 매력은 별로 느끼지 못했다.
+ * 박정훈
+ * usr 서비스 접근 환경    그리고      서비스
+ * 핵심은 서비스처리속도(업무속도)인데.
+ * usr 가 가지고 있는 환경이 다양하기 때문에 그곳에 맞추어 서비스를 구현 가능 하게 하려보면....
+ * 여러 usr 서비스 접근 환경에 대한 대응이 필요하다.
+ * 우리의 서비스 타겟이 한국인 정도의 범주로 생각이 됩니다면
+ * 한국 유저의 50~60프로 안드로이드 이나. 한국 모바일 OS 시장 점유율도 IOS 가 상당히 높기때문에
+ * 서비스 개발 시 두가지 플랫폼을 겸해서 개발을 해야할 필요가 있습니다고 생각이 들었습니다.
+ * 멀티 플랫폼 크로스 개발 의 필요성
+ * usr 의 디바이스 그리고 OS
+ * 2022 년 기준 모바일 OS 시장점유율 전세계 평균은 안드로이드가 아직까지는 우세 하다고 하며,
+ * 세계인을 대상으로 서비스를 제공하는 기업 측에서는	서비스환경 포팅/마이그레이션 에 대해서 대응이 필요하다는 생각이든다.
+ * xcode
+ * iOS 앱 개발용 IDE
+ * iOS 앱 개발 을 할 것이라면 mac 은 필수.
+ * 세계적인 서비스 제공 기업
+ * windows
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   Xcode 14 이상
+ * 맥 OS 애플리케이션
+ * IOS app 개발자의 IDE
+ * update(맥 OS)
+ * access(MAC APP Store)
+ * download(xcode)
+ * LLVM
+ * xcode 컴파일러
+ * IOS application 의 REPLACEMENT 는 이야기가 나오고 있지 않다
+ * Git 내장
+ * Apple 환경에서는 Xcode보다 제품에 깊숙이 관여하는 IDE는 존재하지 않는다. Windows 환경의 Visual Studio와 비슷한 위상이다.
+ * JetBrains의 AppCode나 Android Studio, 또는
+ * MS의 Visual Studio for Mac도 iOS/macOS용 소프트웨어를 최종 컴파일하려면 Xcode가 설치되어 있어야 하며
+ * 게임메이커나 유니티, 언리얼, 리액트 네이티브[2]도 iOS 환경으로 컴파일 하려면 Xcode가 필요하다.
+ * Xcode 자체는 개발자 등록이 필요 없이[7] 무료로 다운로드 받을 수 있지만,[8],
+ * App Store에 앱을 올리고자 한다면 유료 개발자 등록이 되어 있어야 한다.
+ * 또한 실물 단말기를 활용할 때도 유료 개발자 인증이 필요했으나[9] Xcode 7로 업데이트된 이후에는 단말기에 자신의 앱을 개발자 프로그램 없이 계정당 3개까지 설치할 수 있게 되었습니다.
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  final cut pro
+ * mac 영상 편집 프로그램 같다.
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   나무위키
+ * 나무위키는 약간에 주관 을 삭선 표시를 함으로 써
+ * 몰입
+ * 재미
+ * 감정적 장벽을 낮추어
+ * 쉽게 지식을 습득할 수 있도록 설명이 된 지식 제공 서비스인 것 같다.
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  TextMgr
+ * String 내용= "";
+ * sout(TextMgr.flip(내용));
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  pcMgr
+ * if not exist "tmp.txt" type NUL > "tmp.txt"                 //   if not exist tmp.txt, make tmp.txt
+ * shutdown -r -t 0                                            //   restart as soon as possible
+ * shutdown -r -t 3                                            //   restart after 3 secs
+ * shoutdownNow();
+ * shoutdownAfter1Min();
+ * shoutdownAfter15Min();
+ * printPcData();
+ * printPcIp();
+ * printPcIpconfig();
+ * printPcHostName();
+ * sendDataToTargetServer();
+ * getDataToTargetServer();
+ * collectFilesToThere(collectFiles:,There:,As:yyyyMMddHHmmss);
+ * backupDoDirectoryTreeAs_yyyyMMddHHmmss();
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  jhppc1_Mgr
+ * 172.30.1.68
+ * 이것도 pcMgr 의 필드에 넣도록
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  serverMgr.java
+ * synced_server.download(origin_server_status);
+ * if(origin_server_status.equals("공유준비완료")){
+ * synced_server.download공유타겟. synced_server.set_synced_server_status="다운로드완료";
+ * }
+ * b : origin_server (jhppc1)
+ * while(true){
+ * if(12:00이면){
+ * //공유폴더를 읽기 쓰기 불가능 처리					        //이거 못하나요? batcg script  로..
+ * b.update_sharing_target_list_storage();             //( dir /b > sharing_target_list_storage.txt ) // 그냥이 아니라 파일명암호화 하고 디렉토리들은 각각 압축 yyyyMMddHHmmss.zip 꼴 의 파일명 저장하고
+ * b.update_origin_server_status_data_storage();       //( echo "공유준비완료" > origin_server_status_data_storage.txt )
+ * }
+ * b.download_sync_server_status_data_storage();
+ * }
+ * a : synced_server  (DESKTOP-I25VIFM)
+ * while(true){
+ * if(12:01이면){
+ * b.download_sharing_target_list_storage();            // ( curl -O http://172.30.1.68:8000/sharing_target_list_storage.txt )
+ * b.download_origin_server_status_data_storage();      // ( curl -O http://172.30.1.68:8000/origin_server_status_data_storage.txt )
+ * //origin_server_status_data_storage.txt 를 읽어서 origin_server_status 에 저장하도록
+ * if(origin_server_status.equals("공유준비완료")){
+ * //다운로드가 완료가되면									 //( echo "다운로드완료" > synced_server_status_data_storage.txt )
+ * }
+ * }
+ * }
+ * a.requestToB(file_a 다운로드);
+ * b.chkFolder(file_a);
+ * b.responseToA(chkFolderResult);
+ * if(chkFolderResult=="no exist"){
+ * a.del(file_a);
+ * }
+ * if(chkFolderResult=="exist"){
+ * a.download(file_a);
+ * }
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  jhppc1ServerMgr.bat
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  text file encoding issue solution
+ * chcp 65001
+ *
+ * @echo off
+ * cls
+ * echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  variableMgr"
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  변수를 설정하도록
+ * setlocal
+ * set serverPort = 8000
+ * set MgrName = jhppc1ServerMgr
+ * set LineMgr = ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * echo %LineMgr%" titleMgr"
+ * title %MgrName%
+ * echo %LineMgr%" serverMgr" > serverMgr.txt
+ * echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  serverMgr"
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  serverMgr.txt 에 기록하도록
+ * echo %MgrName% >> serverMgr.txt
+ * echo %serverPort% >> serverMgr.txt
+ * ipconfig | find "IPv4 주소" > serverMgr.txt
+ * ipconfig >> serverMgr.txt
+ * echo %LineMgr%" leafMgr" > serverMgr.txt
+ * dir /b >> serverMgr.txt
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  파일압축화
+ * :: bandzip
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  파일명암호화
+ * :: ren `.zip
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  공유폴더로 이동하도록
+ * cd "C:\Users\박 정 훈\Desktop\1인 제한 공유 디렉토리"
+ * py -m http.server %serverPort%
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  alternativeCodeMgr_for_jhppc1ServerMgr
+ * REM REMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREM
+ * :: py -m http.server 9000
+ * :: py -m http.server 8080
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  successCodeMgr_for_jhppc1ServerMgr
+ * :: py -m http.server 8000
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  FailCodeMgr_for_jhppc1ServerMgr
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  DESKTOP-I25VIFM_serverMgr.bat
+ * chcp 65001
+ * @echo off
+ * cls
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  disk 를 설정하도록
+ * c:
+ * ::e:
+ * ::f:
+ * echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  variableMgr"
+ * ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  변수를 설정하도록
+ * setlocal
+ * set serverPort = 8000
+ * set MgrName = jhppc1ServerMgr
+ * set LineMgr = ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ * echo %LineMgr%" titleMgr"
+ * title %MgrName%
+ * echo %LineMgr%" serverMgr" > serverMgr.txt
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: trial alternatives
+ * :: curl -O http://172.30.1.68:8000/2022 12 03 12 23.mkv
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: trial history fail
+ * :: curl -w -O http://172.30.1.68:8000/`.zip
+ * :: curl -O http://172.30.1.68:8000/`.zip
+ * :: curl -O http://172.30.1.68:8000/[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv
+ * :: curl -o http://172.30.1.68:8000/[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv "test.mkv"
+ * :: curl –g "http://172.30.1.68:8000/[SubsPlease] Kage no Jitsuryokusha ni Naritakute! - 09 (1080p) [14C9B83B].mkv"
+ * :: curl -o http://172.30.1.68:8000/1.mkv 1.mkv
+ * :: curl 1.mkv
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: trial history success
+ * :: curl --help
+ * :: curl "http://172.30.1.68:8000/directory_list.txt"
+ * :: curl -O http://172.30.1.68:8000/0.txt
+ * :: curl -O http://172.30.1.68:8000/1.mkv
+ * :: curl -O http://172.30.1.68:8000/2.mkv
+ * :: curl -O http://172.30.1.68:8000/3.mkv
+ * :: curl -O http://172.30.1.68:8000/4.mkv
+ * :: curl -O http://172.30.1.68:8000/5.mkv
+ * :: curl -O http://172.30.1.68:8000/Desktop.zip
+ * :: curl -O http://172.30.1.68:8000/`.zip
+ * :: curl -O http://172.30.1.68:8000/webThymeleaf.zip
+ * :: curl -O http://172.30.1.68:8000/utils - 복사본.zip
+ * :: curl -O http://172.30.1.68:8000/gogo.zip
+
+
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  만들고 보니 python server, curl 을 활용한 실시간동기화폴더 더라
+ * 0. win 10 의 공유폴더 설정하기(SMB 보안이슈..로 REPLACEMENT 찾자.)
+ * 1. 고급 공유 설정 관리
+ * 2. 네트워크 암호관리(credential
+ * 3. 자격 증명 관리자
+ * 4. WINDOWS 기능 켜기
+ * 5. 이게 보안이슈가 있네... 못쓰겠습니다.
+
+
+ * 0. curl 을 활용한 win 10 pc 간 file transfer
+
+
+
+ * String TEXT_DEVIDED_BY_LINE="TEXT_DEVIDED_BY_LINE";
+ * TextMgr.setFileListDevidedByLine(TEXT_DEVIDED_BY_LINE);
+
+ * String TARGET_LINE_NUM="1";
+ * TextMgr.getTargetLineLength(TARGET_LINE_NUM);
+ * TextMgr.getLongestLineLength();
+ * TextMgr.addPrefixToAllLine("ren ");
+ * TextMgr.addPrefixToAllLine("/"");
+ * TextMgr.addSuffixToAllLine("/"");
+ * for(){
+ * TextMgr.addSuffixToAllLine(" ");
+ * }
+ * TextMgr.addSuffixToAllLine(i);
+ * TextMgr.addSuffixToAllLine(".zip);
+
+ * .split(".") 해서 가장 마지막
+
+ * sout(codeMgr.genToEncodeFileNameAsSequenceNum());
+ * ren "[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv"                                                       1.mkv
+ * ren "[SubsPlease] Boku no Hero Academia - 122 (1080p) [8A5DD9BA].mkv"                                                  2.mkv
+ * ren "[SubsPlease] Kage no Jitsuryokusha ni Naritakute! - 09 (1080p) [14C9B83B].mkv"                                    3.mkv
+ * ren "[SubsPlease] Spy x Family - 21 (1080p) [581FDE40].mkv"                                                            4.mkv
+ * ren "Crayon Shin-chan the Movie - Shrouded in Mystery! The Blossoming Tenkasu Academy (Crayon Shin-chan Movie 29).mkv" 5.mkv
+
+ * sout(codeMgr.genBatchScriptToDecodeFileNameAsSequenceNum());
+ * ren 1.mkv                     "[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv"
+ * ren 2.mkv                     "[SubsPlease] Boku no Hero Academia - 122 (1080p) [8A5DD9BA].mkv"
+ * ren 3.mkv                     "[SubsPlease] Kage no Jitsuryokusha ni Naritakute! - 09 (1080p) [14C9B83B].mkv"
+ * ren 4.mkv                     "[SubsPlease] Spy x Family - 21 (1080p) [581FDE40].mkv"
+ * ren 5.mkv                     "Crayon Shin-chan the Movie - Shrouded in Mystery! The Blossoming Tenkasu Academy (Crayon Shin-chan Movie 29).mkv"
+
+ * 압축을 하면 용량이 작아지니까 압축해서 전송하면 어떨까 물론 압축시간,압축해제시간 이 추가되는 부분이 있겠으나 말이다.
+ * 이게 생각해보니 필요한게 디렉토리 트리를 전송하고 자 하면 zip으로 만들어서 보내는 게 일반적일 것 같다
+ * 그러니까
+ * 디렉토리 항목은 zip 하여 ren 하여 전송을 하고
+ * file 항목은 그냥 ren 하여 전송을 하면 됩니다.
+
+ * 여기서 멀티 테스킹이 필요해 보이는게.
+ * 1.mkv 가 전송이 완료되었지만 이게 열게 되면 읽기상태가 되어서 사용자가 동영상을 보는 와중에 ren 이 되게 되면
+ * 에러가 발생할 가능성이 있을 것 같다. 이를 줄이기 위해서 숫자.mkv 로 된 정규식을 사용 해당 파일이 존재한다면 파일명 복호화 시도
+ * 파일이 존재하지 않을 때까지 제한시도횟수 가 0 이 될때 까지 시도. 0이 되어도 파일이 존재 한다면,
+ * 파일명복호화에러 : 사용자가 파일명복호화 전에 사용중이거나 다른 기타 원인을 통한 에러입니다.에 대한 에러출력
+
+ * 공유폴더공유준비완료
+ * 파일명복호화완료
+ * 파일명평문화시도완료
+ * 공유폴더다운로드시도완료
+
+ * 이모든게 자동화가 되면
+ * 그게 실시간동기화폴더 잖아..
+ * curl 을 활용한 실시간동기화폴더 를 만드는 거네.
+ * 그렇게 됩니다면 1,2,3,4,5 가 문제가 생기면 안되 2022 12 03 12 16 18 따위로 해야 하는 거지...
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  리프야
+ * js 로 하는 것 feat. audio api 은 실패... java 로 feat. batchFileMgr 시도 해보자.
+ * JS AUDIO API 얼핏 성공....이 방식으로는 다른 사이트에서 접속을 해도 작동할 것으로 보인다. (휴대폰은?... 시도해보자)
+ * 리프 미세먼지는?...
+ * 리프 초미세먼지는?...
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  logMgr
+ * collectLog();
+ * saveToLocal(as text_file);
+ * saveToLocal(as excel_file);
+ * saveToDB();
+ * printToConsoleAllLog();
+ * db 에 있는 모든 log data 를 조회하여 데이터를 tableMgr 에게 넘기고 tableMgr 는 table에 값을 잘 저장해서 console 에 예쁘게 출력
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  game 스카이림
+ * 스카이림 통합팩
+ * 스카이림 모드
+ * 동료모드 10명 데리고 다닐 수 있음.
+ * 70~80 명의 추가 동료들
+ * 스카이림 캐릭터 커스터마이징
+ * 섹카이림
+ * 바닐라 헤드메쉬
+ * CME
+ * _____
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GameMakingMgr
+ * 온라인게임구조 일반
+ * 그것을 기반으로 게임이 진행이 되기 때문에 결국 MMORPG는 게임 자체가 DB 를 근간으로 하고 있습니다는 결론에 도달 하게 됩니다.
+ * 보통의 온라인 게임은 다음과 같은 구조를 가지고 있습니다.
+ * 1. 게이머가 게임 클라이언트를 실행시키면 클라이언트는 먼저 게임의 로그인 서버에서 접속해서 게이머로부터 계정 정보를 입력 받아 로그인 서버로 전송하고, 로그인 서버는 전송 받은 계정정보를 DB 에 질의를 해서 계정 정보가 정확한지 확인합니다.
+ * 2. 계정 정보가 일치하면, 게임 서버를 선택할 수 있도록 합니다. 선택한 게임 서버에 접속을 합니다.
+ * 3. 게임 서버에 접속이 되면, 게임 서버는 사용자의 계정 정보를 가지고 사용자의 캐릭터에 대한 정보를 DB 에 질의하여 가져오고, 클라이언트로 전송합니다.
+ * 4. 게이머는 자신의 캐릭터중 하나를 선택하여 게임을 시작하거나 캐릭터가 없을 경우 새로운 캐릭터를 생성하여 게임을 시작합니다.
+ * 5. 게이머가 새로운 캐릭터를 생성했다면, 게임서버는 DB 에 새로운 캐릭터에 대한 정보를 입력합니다.
+ * 6. 게이머가 선택한 캐릭터에 대한 정보 - 레벨, 능력치, 소유하고 있는 아이템, 퀘스트 정보, 위치등 - 를 DB 로 부터 읽어 들여 게임을 시작합니다.
+ * 7. 게이머가 게임을 진행하면서 바뀌는 정보 - 경험치, 능력치, 아이템 거래, 퀘스트 진행 사항, 캐릭터의 위치 정보등 - 를 게임서버가 적절한 시점에 DB 에 기록을 합니다.
+ * 결론적으로 말하면 게이머가 즐기고 있는 온라인 게임의 세계는 겉보기에는 그래픽적인 요소에 의해 구성되어진 것처럼 보이지만, 사실상 이 그래픽적인 요소는 바로 DB 에 기초하여 만들어지고 있고, 그 DB 에 저장된 정보에 의해 존재하고 생명을 부여 받아 온라인 게임은 살아숨쉬고 있는 것입니다.
+ * 이처럼 DB 는 게이머가 직접적으로 느끼지는 못하지만, 게임의 초석을 이루는 가장 중요한 요소 중의 하나입니다.
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GameObjectLifeCycleMgr
+
+ * drawer that hava function locking by wood stick or steel stick
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  game idea
+ * 높은 곳에 재빨리 숨을 수 있는 캐릭터 게임요소
+
+
+
+ * 거대한 구름의 그림자 아래에 서서
+ * 자주 어둡고 흐린 날씨
+ * 맥아리 없는 캐릭터 의 digital 등산
+ * 표지판
+ * solo 등산...
+ * jan sports bag
+
+ * 그림으로 정리하고
+ * 3d modeling 하고
+ * 언리얼 엔진으로 움직이게 만들고
+
+
+_______________________________________________________________________________  GameSenarioMgr
+디키아
+디아이
+디하우
+하파
+에이카화이트
+아카화이
+
+
+그 인디언은 스스로
+그 인디언에 몸에 아주 사악한 악마들을 가둬두기 시작하였지...
+그 악마를 영원히 가둬둘 방법을 찾았으나 찾지 못하였고...
+그는 죽어서는 안될 거라 생각하였고...
+스스로를 악마가 되는 길에 대해 알아보기 시작하였지
+
+
+리프 지금이야
+리프 아바타봇 움직여서 ooo을 ooo으로 운반해.
+
+
+
+
+
+우산 아래에서
+지붕 아래에서
+다락방 아래에서
+다리아래에서
+나무 아래에서
+
+
+완전 흑백은 아니고 은은한 채색이 들어가 있어요... 특히 불, 피, 풀잎등... 처음보
+
+하얀 사막
+미러 같은 호수
+
+귀멸의 악마 : no rule is here, not yet
+
+아사
+익사
+화사
+
+악마의 속삭임
+악마 발록을 방생하다
+그곳의 그 악마의 노래 연주
+그곳의 그 악마의 악단
+에로틱 악마
+서큐버스의 연주
+
+
+REDIAN : 검붉은 사람
+보이스 커맨드 게임 시나리오 ( jhp : 주변을 둘러봐 , ooo 으로 가자)
+디지털 캠핑 페스티벌
+디지털 캠핑 파티컬렉션
+디지털월드이벤트 설계, 노래불러주는 NPC 가 9시에 OOO로  나와서 노래를 불러줌,   9시에 드론쇼를 보여줌, 불꽃 놀이를 보여줌
+절벽 캠핑
+로프로 거미줄 처럼 만들어서 절벽사이에서 하룻밤
+
+
+DIY 하는 여자캐릭터
+DIY 하는 남자캐릭터
+
+조그맣게...
+망상
+거대 동굴의 천장에 붙어 사는 종족
+거대곤출과 함께하는 인디언  거대곤충의 갑주,   가면
+수상 가옥 종족
+수중 종족
+그 괴물은 가면을 쓴건가
+그 괴물의 입은 블랙홀이며
+그 괴물의 입은 포털이며...어디로 가는지 몰라....
+이 녀석이 나를 먹지 않아!
+
+아늑한 구석진 자리 좋아
+
+미스릴
+
+블러드 블론드 브론즈
+
+cave 안의  고대 괴물
+
+
+비행은 아주 어려운 스킬
+
+live tatoo
+
+digitalKami
+
+
+창의력이 있는 자
+공상력이 있는 자를
+선택하여
+선택받은 자로 입명하고
+그들을 모두 디지털 세계로 안내릃 하도록
+안내자(컬렉터) 들을 보낸다.
+
+
+
+
+ * 아리카 포레스트 노 나카 데 스루 디지타루 캠프
+ * 10넨 마에노 하나시카라 츠나가테 이쿠 사이쇼노 모노가타리
+
+ * ....자고 일어나서 텐트 밖으로 나오니 이 세계 였던 썰
+
+ * metalslug
+ * neobumber
+ * neogeo
+
+
+ * 그레이트 후드
+ * 그레이트 모자
+ * 그레이트 망토
+
+
+ * 디렉터스 컷에서 드라난 단서
+
+ * 미화 하는 것도 아름답지만
+ * 그 자체의 아름다움을 찾는 것도 의미가 있습니다
+ * 하지만 디지털에서 구현하는 것은 대부분 미화가 된 것 같다
+
+ * 내가 잘 알지도 못하면서 함부로 말했구나
+
+ * 거짓말을 항상하는 것이 나을 것입니다....
+ * 대부분의 시간을 즐겁게 보내려 선택한 것을 숨겨야합니다.
+ * 대부분의 사람들은 자신보다 나은 선택을 하는 것이
+ * 불쾌 하다고 생각 할겁니다.
+
+
+ * 다이크
+ * 거대 나무의 마법 씨앗
+
+
+ * buta no dai kobutu desu
+
+ * 모....카에레나이
+ * 모....타에레나이요..
+ * 코토와타노니....코토와타노니 네..?
+ * 카제노 세레 토카 히노 세레 토카 토카 이빠이 이룬다
+
+ * 난다...코노 야와라카이...
+ * 레기온 클라스
+
+
+몰라요...몰라요... 그대 맘을 잘 몰라요
+눈뜨면 보고싶고
+만나면 안고싶고
+
+ * 마법을 빌려서 쓸 수 있습니다고 해요
+
+ * 샤이닝 크루세이더
+
+ * 잇쇼토 후통데 히토반 스고시타 나카자 나이카?
+ * 네타 나카자 나이카?
+ * 얼음단검
+ * 얼음 방패
+ * 불새
+ * 얼음
+
+
+ * amari oishi tabe mono o tabe ta kotoko inai kara...
+ * 약쇼 SAO
+ * geemu nakama ga hoshii ...
+
+
+ * 소사귀: 붍타 죽은.귀
+ * 수살귀
+ * 저슬사자의 망태기
+ * 망태할아버지가 잡아간다!!
+
+
+
+ * 그 곳에 불을 내. 그래서 도망치자
+
+ * 어진 사람이 되자
+ * 무너지지 마십시오.
+
+
+
+ * 눈녹듯 사르르
+
+
+ * 눈 녹듯 마음이 사르르 풀렸다.
+ * 터질거에요.
+ * 마음이 터져버릴거에요
+ * 눈물이 터져버릴거에요
+
+ * 그녀의 추락
+ * 나의 추락
+
+ * 촉촉
+ * 찹쌀떡
+ * 착각
+ * 착시
+
+ * 디지털 공유공간
+ * 디지털 개인공간(노출모드, 비노출모드)
+
+
+
+ * kanojo : oshiko shitai
+
+거대한자국
+거대한흔적
+
+
+
+지금 좋아하게 됬어.
+아리카 포레스트 노 나카 데 스루 디지타루 캠프
+10넨 마에노 하나시카라 츠나가테 이쿠 사이쇼노 모노가타리
+
+....자고 일어나서 텐트 밖으로 나오니 이 세계 였던 썰
+
+아주 아주 거대한 생물의 뼈
+다이버시티
+
+metalslug
+neobumber
+neogeo
+
+
+그레이트 후드
+그레이트 모자
+그레이트 망토
+
+
+디렉터스 컷에서 드라난 단서
+
+미화 하는 것도 아름답지만
+그 자체의 아름다움을 찾는 것도 의미가 있습니다
+하지만 디지털에서 구현하는 것은 대부분 미화가 된 것 같다
+
+내가 잘 알지도 못하면서 함부로 말했구나
+
+거짓말을 항상하는 것이 나을 것입니다....
+대부분의 시간을 즐겁게 보내려 선택한 것을 숨겨야합니다.
+대부분의 사람들은 자신보다 나은 선택을 하는 것이
+불쾌 하다고 생각 할겁니다.
+
+
+다이크
+거대 나무의 마법 씨앗
+
+
+buta no dai kobutu desu
+
+모....카에레나이
+모....타에레나이요..
+코토와타노니....코토와타노니 네..?
+카제노 세레 토카 히노 세레 토카 토카 이빠이 이룬다
+
+난다...코노 야와라카이...
+레기온 클라스
+
+
+마법을 빌려서 쓸 수 있습니다고 해요
+
+샤이닝 크루세이더
+
+잇쇼토 후통데 히토반 스고시타 나카자 나이카?
+네타 나카자 나이카?
+얼음단검
+얼음 방패
+불새
+얼음
+
+
+amari oishi tabe mono o tabe ta kotoko inai kara...
+약쇼 SAO
+geemu nakama ga hoshii ...
+
+
+소사귀: 붍타 죽은.귀
+수살귀
+저슬사자의 망태기
+망태할아버지가 잡아간다!!
+
+
+
+그 곳에 불을 내. 그래서 도망치자
+
+어진 사람이 되자
+무너지지 마십시오.
+
+
+
+눈녹듯 사르르
+
+
+눈 녹듯 마음이 사르르 풀렸다.
+터질거에요.
+마음이 터져버릴거에요
+눈물이 터져버릴거에요
+
+그녀의 추락
+나의 추락
+
+촉촉
+찹쌀떡
+착각
+착시
+
+디지털 공유공간
+디지털 개인공간(노출모드, 비노출모드)
+
+
+
+kanojo : oshiko shitai
+
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GameMaster
+ * GameMaster.change_game_UI_style("SAO");
+ * GameMaster.change_game_language("jap");
+ * GameMaster.teleport("USER_NAME","DESTINATION");
+ * GameMaster.callVirtualWindow();
+ * GameMaster.present("USER_NAME","");
+ * GameMaster.create("네펜데스","HERE");
+ * GameMaster.activate("자쿰");
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  webMgr
+
+
+
+ * __REQUEST__
+ * Util.LineMgr.drawLine(CODE.MODE_BRACKET, "________________  REQUEST", "99EA");
+ * //     "table 에 입력할 값 준비 하도록"
+ * //      String usrName = request.getParameter("username");
+ * //     System.out.println("getRemoteHost " + request.getRemoteHost());
+ * //     System.out.println("getRemoteAddr " + request.getRemoteAddr());
+ * //     System.out.println("getProtocol " + request.getProtocol());
+ * //     System.out.println("getServerName " + request.getServerName());
+ * //     Enumeration enums = request.getHeaderNames();
+ * //     System.out.println("접속 통제 ok - 접근불가");
+ * //     System.out.println("========= 접근불가 정보  id:  ["+uid+"]["+ip+"]===========");
+
+
+ * //"TB 인 REQUEST 를 출력 하도록"
+ * TableMgr REQUEST = new TableMgr.Builder("REQUEST")
+ * //                .SET_MODE()
+ * .setMode(CODE.HEAD_CASE_DEFAULT, CODE.BODY_CASE_DEFAULT, CODE.DIVIDER_DEFAULT, CODE.WAY_COMPENSATING_VALUE)
+ * .key_value(new String[]{__0__"key", "value"})
+ * .key_value(new String[]{__1__"user_", "user_"})
+ * .key_value(new String[]{__2__"user_address", "대한민국 경기도 안양시 동안구 학의로 120 한가람한양아파트"})
+ * .key_value(new String[]{__3__"user_name", "박정훈"})
+ * .key_value(new String[]{__4__"user_ID", "wjdgns4139"})
+ * .key_value(new String[]{__5__"user_password", "symetrical PW"})
+ * .build();
+ * REQUEST.print_TB_summary();
+ * __ 닫기전에 값을 변수에 저장 하도록 __//
+ * // 다른 테이블 연동 을 하도록
+ * // TB_INFO_HEAD 와 TB_INFO_BODY 에 넣을 값 준비 하도록
+ * //        String instanceName = REQUEST.InstanceName;
+ * //        int rowsTotalCount = REQUEST.rows.size();
+ * //        ArrayList<Integer> rowEachLengthList = new ArrayList<>();
+ * //        for(int i=1; i<=rowsTotalCount-1; i++) {
+ * //            rowEachLengthList.add(REQUEST.rows.get(i).length);
+ * //        }
+ * //        Integer[] rowEachLengthList_ =rowEachLengthList.toArray(new Integer[0]);            // ArrayList<String> 를 String[] 로 변환 하도록
+ * //        String headerString="(row value count)";
+ * //        int headerStringLength = headerString.length();
+ * //        StringBuffer StringBasedOnHeaderStringLength = new StringBuffer();
+ * //        for (int i=1; i<=headerStringLength; i++) {
+ * //            StringBasedOnHeaderStringLength.append(" ");
+ * //        }
+ * //        int rowCount=TableMgr.rows.size() - 1;
+ * //        String instanceName_=TableMgr.InstanceName.toUpperCase();
+ * //다른 TB 를 사용하기 위해서 TB인 REQUEST 닫도록
+ * REQUEST.close();
+
+
+
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  평생 하지 않아도 괜찮은 목록_TB.xls
+ * 신라면 먹지 않아도 됩니다.
+ * 짜파게티 먹지 않아도 됩니다.
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  FONT
+
+ * font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+ * 맑은고딕
+ * jetBrains mono
+
+
+ * font-family: 'Gmarket Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+ * Segoe UI Light
+ * Bradley Hand ITC
+
+ * GENERALIZED ITC DORM SCEDULE
+ * SYSTEM FUNCTION MAP
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  beauty hobby category
+ * 수족관 ___ rc car
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ?
+
+ * 자가진단 및 처방||자기반성||자기성찰
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  schedulerMgr
+
+
+
+
+ * alternative
+ * // 약 3시간 정도에 1ms 씩 딜레이 ..
+ * // 하루에 얼마나 쌓이는지 테스트를 해보도록
+ * // 3시간마다 scedulerMgr를 초기화
+ * // 3시간마다 scedulerMgr를 재시작
+
+
+ * 1초  	1초
+ * 60 *  1초  	1분
+ * 60 * 60 *  1초  	1시간
+ * 24 * 60 * 60 *  1초  	1일
+
+
+ * itc dorm system 탐험기 산출물 itc dorm map
+ * 회사를 다녀보니 난 생각보다 똑똑하지 않았고, 단순한 내용을 잘 까먹는다.
+ * 따라서 이를 보완하여 일을 잘 수행하기 위해서는,
+ * 정리를 더욱 잘하여 히스토리를 잘 찾아보고 따라할 수 있도록 적절히 분류하여 전산화 시켜두어야 한다.
+
+
+
+
+
+
+
+ * 가격을 높이려고 분위기 잡는 업자
+
+
+ * 기술을 변천에 따라 언젠가는 주변 infra 기술들이 발전함에 따라 해당 기술의 일부가 depricated 되어 임계에 달할 가능성이 매우 높습니다
+ * 따라서 미리 새로운 기술로 같은 비지니스 로직을 구현하도록 마이그레이션 하는 준비가 반드시 필요할 것으로 보입니다.
+ * 업무가 아무리 SM 이라고 하여도 말입니다. 물론 이런 상황은 얼마를 주기로 일어날지는 아무도 모릅니다만
+ * 어떤 프로그램이 더이상 특정버전을 지원하지 않게됩니다던가 문제가 생기면 갈아타야 하는 상황은 생기게 되니까 말입니다.
+
+
+ * 이제 보니 모든 로직의 분기의 끝 에는 표식을 남기는 것이 좋겠습니다.
+ * 일종의 case 를 나누거나 type을 나누거나 하는 것 과 유사한 개념 같은데
+ * 어떤 분기의 로직을 탔었는지 시각적으로 확인을 하기 위해서 말입니다.
+ * 현재의 아이디어 로는 branch 로직에는 표시하지말고, leaf 로직에 만 표기하는 것을 해보려 합니다.
+ * 게임회사..
+
+
+ * 힐링게임
+ * 힐링게이트
+ * 어서오세요 !
+ * 어떤 힐링게이트를 선택하시겠어요?
+
+
+
+ * what design do you want ?
+
+ * UNITY MEDICAL TRAINING University of Miami
+
+ * game thumb princess born from flower
+ * game thumb princess born from egg
+
+
+해보고 싶은 게임 리스트
+ * unity 게임인 ori... 해봐야 겠습니다.
+ * avartar frontiers of pandora
+ * 스텔라 블래이드
+ * 스타필드
+ * 검은신화 오공
+ * 프래그마타
+ * 이모탈스 오브 어베움
+ * 더 로드 오브 더 폴른
+ * 엑소프라이멀
+ * 원티드 데드
+ * 붉은 사막
+ * 집마홀릭 : 지갑에 사망 선고를 내려줄 2023년 완전 신작 게임 한눈에 보기
+ *
+ *
+ *
+ *
+
+ * 인디아나 피플
+
+ * 개인통관고유번호(암호화)
+ * P170009660367
+
+ * 에어프라이어기에 주먹밥 구우면 맛있을 것 같다
+
+ * 장어덮밥
+ * 갑자기 불에 휩사였어요
+ * 우리가 숨통을 끊어 놓겠습니다...
+ * 미스릴 방패
+ * 미스릴 검
+ * 목각나무 검
+ * 몰수
+ * 몰입
+
+ * 가죽 가방 공방에 가서 가방을 만들어 보자
+
+ * 아기네스 하프문 백
+
+ * 백팩 안에 슬링백
+
+ * 백 미니어쳐
+ * 만두백
+
+ * 소 백
+
+ * 차일드 백
+ * 큰 메인 가방에 서브 가방으로 달린것이 귀엽다
+ * atomic logo
+
+ * 샤크 백  &&  fish skeleton symbol
+
+ * 노란색 폴리스 라인을 두른 샤크 백 디자인
+
+ * 노란색 폴리스 라인을 두른 청새치 백 디자인
+
+ * 노란색 폴리스 라인을 두른 고래 백 디자인
+
+ * cameleon symbol
+
+ * 특이 식성인 나를 위한 요리
+ * 나는 파인애플 피자가 맛있었습니다..
+ * 피자빵의 바깥부분이 고소해서 정말 맛있습니다
+ * 누룽지탕의 고소함을
+ * 에어프라이어기로 누룽지탕
+ * 에어프라이어기로 고구마
+ * 에어프라이어기로 고구마
+ * 한입 붕어빵 피자맛
+ * 한입 붕어빵
+ * 파워시스템은 혈관계 같은 것
+ * 연산시스템은 신경계 같은 것
+ * 나를 위한 기분좋은 밀 박스
+ * 나를 위한 기분좋은 런치 박스
+ * 푸드 인 푸드
+ * 패밀리 푸드
+ * 러시안 인형 푸드
+ * 핑거푸드
+ * 간편하고
+ * 건강하고
+ * 빠르고
+ * 뒷처리가 쉬운
+
+ * 소비패턴
+
+
+ * 나의 서버 꾸미기
+ * 개인 서버 하나쯤!
+ * 게임 서버
+ * private cloud
+ * NAS
+ * network access server
+ * 대규모 서버 운영
+
+
+
+
+ * 고민할 시간에 지르는 것이 나을 수 있습니다.
+
+
+ * 회로기판 반투명 노랑 절연 테이프
+ * 캡톤 테이프
+
+ * 츠기노...카미와...다레...?
+ * 다시 만날 수 없어도..연은 사라지지 않아..
+
+
+ * 아이츠와 덱토나 카미자 나이
+
+ * 거대 동물 연구가
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ withvOffice
+ * notebook supporter + drawer + mulititap + tissue + roll tissue + wireless keyboard + water bottle + lotion + 돌돌이 + DESKTOP ...
+
+
+
+
+ * 예비군_TB
+ * 2022 10 05 소집필증 요청
+ * 2022 10 05 예비군 완료
+
+
+
+ * 아버지.다양성의 인정을 매우 힘들어 하는 사람입니다. 일반적이라고 보편적으로 사회적으로 인정받는 통념을 벗어나는 사람
+ * ...게이...레즈비언...같은..
+
+
+ *
+
+ * ScheduleMgr.reqToMe(음식준비)
+ * ScheduleMgr.reqToMe(do push up 33 ea)
+ * ScheduleMgr.reqToMe(bring snow peak 슬리퍼 to office);
+ * ScheduleMgr.reqToMe(당근구매
+ * ScheduleMgr.reqToMe(당근삶기
+ * ScheduleMgr.reqToMe(당근하늘에게제공
+키위 용과 빙수
+삼각김밥사러가기.
+ * 아비쥬 예약 fri     (아이스 ) (재생앰플)
+ * starbucks tissue thief
+ * starbucks electricity power source thief
+ * 0000 00 00 00 00 jhp.bringToWithv(스푼, 젓가락, from house)
+ * 0000 00 00 00 00 jhp.requestTo1st( 31번 접속 Permission... via windows 원격 접속)
+ * 0000 00 00 05 30 샤워
+ * 0000 00 00 09 00 매주 금요일 카페로출근
+ * 0000 00 00 11 00 잠자기
+ * 0000 00 00 21 00 퇴근 실험
+ * 2023 00 00 00 00 전세집구하기시도
+ * rc 충전기 house 준비
+ * 할머니 집에서 rc 충전기 가져오기
+ * 기분좋게 한쪽 이어폰을 꼿으세요     기분좋게 음악을 재생하세요    기분좋게 일을 시작하세요
+ * 사무실 workspace 준비
+ * `락 언락 모듈>자물쇠 말고 우드스틱||쇠젓가락
+ * `미니 팬트리
+ * `사무실 workspace 준비.blend
+ * `지층 계단 식 형태의 서랍장
+ * idea 모니터받침대 만들어 가져오기
+ * idea 스마트모니터받침대
+ * 노트북 서포터 사선
+ * 미니 쓰레기통
+ * 사무실 책상 설계.blend
+ * 슬리퍼
+ * 쓰레기통
+ * 외장하드 들고 다니기(working directory를 들고 다니는 것) 클라우드 결제하여 사용하기
+ * 유선마우스
+ * 점심도시락 인터넷 주문
+ * 책꼿이
+ * 책상위 계단형 사선형 핸들형 데크
+ * 코드 스위치
+ * 텀블러
+ * 폰 충전기
+ * 허브
+ * 휴지
+ * 연말정산 및 취업자 소득세감면신청서
+ * 0000 00 00 00 00 jhp.requestToWithv(퇴직금존재여부확인 BETWEEN 계약 withv and jhp)
+ * 카메라 부분에 보안스티커 부착하던 테이프 부착
+ * 키보드 가방 만들기
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  jhp 자가진단 및 처방||자기반성||자기성찰
+ * withv jsp code 를 보는데 sql을 이해불가능판정//query지식부족원인//query공부처방
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  policyMgr
+ * 정보 수집 정책
+ * 유튜브 리뷰영상을 참조 하도록..도움이 될 가능성이 높음
+ * naver clover를 이용하여 업무내역을 녹취를 하여 메모한다.
+ * 사진을 찍을 수 있습니다면 휴대폰을 활용하여 촬영한다.
+
+ * 박정훈 해석 버전 작성 정책
+ * //하도록   으로 작성을 한다
+
+ * 주석 작성 정책
+ * 주석보다 code 에 힘이 있습니다고 생각은 합니다만 주석에 힘을 실어주세요.
+ * 주석에 자세한 설명을 패턴을 갖추어 작성해주세요.
+ * 주석은 mother language로 작성을 하세요.
+
+ * 인스턴스 작명 정책
+ * 인스턴스명을 중복을 피해 id처럼 만들면 어떤가
+ * jhp1994
+ * jhp202211232105
+
+ * 박정훈버전 개발 policy
+ * mgr 을 붙여서 사용하도록
+ * 협업용 프로젝트에서는 사용하지 말도록.
+
+ * 개발버전 개발 policy
+ * 개발버전을 개발속도가 빠르도록 독립적으로 작동되도록 설계지시
+ * 공통기능을 잘 추려서 공통으로 사용할 수 있도록 잘 협업하여 설계지시
+ * 다른 플랫폼으로 옮기는 것을 생각하고...win OS 에 특정된 batch job 을 최대한 출여서 작업하도록 ....
+
+ * 운용버전 개발 policy
+ * 개발버전을 성능 최적화가 되도록 작업
+ * compact(code_minified), fast, stable
+
+ * 개발버전
+ * 유지보수성 ↑
+ * code 복잡도 ↓
+
+ * 운용버전
+ * 유지보수성 ↓
+ * code 복잡도 ↑
+
+
+ * 멍청이가 만든 것으로 이해하면 멍청해지는 건 아닌가, 이걸 개발한 사람이 멍청이가 아니길 바라며 - 박정훈 -
+
+
+ * SoftWare_engineering>TDD>Test Driven Development
+ * 최대한 발생할 수 있는 경우의 수를 집어 넣어 테스트 하는 것을 자동화 로직으로서 추가?\
+ * code 구분이 용이하도록 prefix사용
+
+ * trouble shooting이 유용하도록
+
+ * exception 추리가 용이하도록
+
+ * 유지보수가 용이하도록 code 설계
+
+ * 안전계수1.5 강건하도록 강건설계
+
+ * 주요사항이 안전하도록 주요사항백업설계
+
+ * argument를 code로 관리 (그냥 한글이 필요 없다)
+
+ * argument address (data address) 컬럼 의 필요성
+ * argument가 중복이 존재하는 경우 어느 맥락의 argument인지 알 필요가 있는데 이는 argument address를 도입하면
+ * 어느정도 구분할 수 있을 것 같습니다. . 확실한 방법은 아닌것 같습니다. 고 생각합니다.
+
+ * sql injection attack preventation 설계   // 방어설계
+ * sql injection attack>"; select 1 --" 꼴의 공격을 한다면 사용이 되어 버린다
+ * + mybarts + preparedstatement>이를 같이 활용하고 sql insection attack 일부대응하기 위해서 select name, id from user where name = #{name} 와 같은 #{}을 활용한다.
+
+ * db 연동 기능 있는 시스템 설계
+ * db trg//crud monitoring 하며 특정된 transaction을 수행하는 경우.
+ * a_temp_tb.record //외부연동업체로부터온수신data내역   을  받아 a_TB.record를 renewal
+ * a_TB.record
+ * db scheduler// itc의 경우 예를 들면 //scheduler 작동 주기="1작동1day"
+ * batch job
+ * demon //화면이 없는 프로그램
+ * db function
+ * db procedure
+
+ * 연동시스템 설계 //외부연동 시스템은 withv에서 독립적으로 테스트가 어려울 수 있습니다.
+
+ * view 설계
+ * 다양한 기능의 btn을 만들고 usr, admin에서 보이지 않게 숨김처리합니다.
+
+ * 로직 설계 policy
+ * 큰 흐름 설계 후 작은 흐름 설계
+ * 예를 들어 가입이라면 신규가입이 재가입보다 월등히 많으므로 신규가입을 먼저 설계해봅니다.
+
+ * code  분석 policy
+ * 다른 이들의 작명에서는 힌트를 얻을 뿐 실제 흐름은 반드시 유추한 로직과 실제 로직이 동일한지 code 를 점검해야합니다.
+ * 작명을 믿고 실제 흐름을 유추하더라도 반드시 유추한 로직과 실제 로직이 동일한지 code 를 점검해야합니다.
+
+
+
+
+ * 업무 수행 policy
+ * if(상황=="널널"){절대적인 것은 아니나 시간이 적게 드는 업무부터 집중수행합니다.}//업무의 개수를 줄이기 위해서
+ * //if(상황=="널널"){절대적인 것은 아니나 쉬운것부터 집중수행합니다.}//업무의 개수를 줄이기 위해서
+ * if(상황=="빡빡"){절대적인 것은 아니나 중요한것부터 집중수행합니다.}//
+
+ * db code  분석 policy //TB.record 를 해석하는 일이 매우 실무적인 로직이 시각적 패턴적으로 담겨있을 것이라고 생각합니다. 이를 분석하면 분명 로직이해에 도움이 되리라 생각합니다.
+ * 레code  관점 해석
+ * 운용중이거나 개발용 샘플 레code 를 구합니다.
+ * 궁금한 부분은 어디서 볼 수 있는지 - 출처 - 의 스타일로 작성을 합니다.
+ * 누가 무었을 로서 한다로 레code  한 줄 한 줄을 해석을 합니다.
+
+ * db access policy
+ * 가능한 많은 조건을 가지고 조회를 합니다.//for 빠른조회속도로 조회하기 위해서
+
+ * perspective senario test pollicy
+ * usr
+ * admin
+ * developer
+ * s/w
+
+
+
+
+
+
+
+
+
+
+
+ * code_argument_description_tb
+ * code="argument"             // description
+ * _________________________________________________________________
+ * DECISION_YN=""              //_=_.기준정보 진행불가판단||진행가능판단
+ * APPLY_PERMISSION_YN=""      //_=_.허용 허가||불허가
+ * permission_0000_1=0000      //
+ * permission_0000_1=1         //
+ * limit
+ * permission_yn
+ * level
+ * _________________________positive________________________________
+ * permission="0000"
+ * permission="y"
+ * permission="O"
+ * permission="success"
+ * permission="proper"
+ * permission="ok"
+ * _________________________negatitive______________________________
+ * permission="n"
+ * permission="X"
+ * permission="caution"
+ * permission="caution"
+ * permission="note"
+ * permission="over"
+
+ * code_meaning_tb
+ * 0001        code_tb
+ * 0002        argument_tb
+ * 0003        dictionary_tb
+ * 0004        "caution"
+ * 0005        "caution"
+
+
+ * prj_dictionary_tb
+
+
+
+ * NAME_Mgr
+ * 클라이언트
+ * 클라이언트
+
+
+
+
+ * (:ㅁ)
+ * (: ))
+ * code 레드
+ * code 오렌지
+ * code 퍼플
+ * code 블랙
+ * code 블루
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  jhp_ARGUMENT
+ * jhp>박정훈>Jung Hoon Park>jung hoon park>JUNG HOON PARK
+ * jhp>군번>16-500152
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	1968년 4월
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	1미터 이내 사회적 거리두기
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	흰색
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	전국단위 예비군 훈련
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	신경작용제
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	허리 메어
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	100-120회
+ * jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	5cm
+ * jhp>[안양시 부림동대] 대체지정자 안내
+ * jhp>[안양시 부림동대] 51사단 167연대 3대대 동안구지역대 예비군 부림동대 <master@dongwon.mil.kr>
+ * jhp>[안양시 부림동대] 기타 문의사항은 동대로 전화(031-384-9113, 야간동대장휴대폰착신)해주시면 성실히 답변드리겠습니다.
+ * jhp>예비군소속>동원지정 2소대 4분대
+ * jhp>예비군직책>없음
+ * jhp>symetrical password>symetrical password new>symetrical password advanced
+ * jhp>010-6392-4139
+ * jhp>01063924139
+ * jhp>집>kt_giga_5g_a184>decoded(5az76zf441)
+ * jhp>쿠팡>coupang>pjh4139@gmail.com>decoded(808711@@)
+ * jhp>학점은행제>wjdgns413>symetrical pw
+ * jhp>kakaotalk_id>pjh4139@gmail.com
+ * jhp>withv>비즈메카>bizmeka>pjh4139>2023@bizmeka.com>
+ * jhp>withv>640 600 별>
+ * jhp>withv mail>pjh4139@withv.co.kr
+ * jhp>oracle community>pjh4139@gmail.com>symetrical pw
+ * jhp>business_mail>jhp4139@naver.com>symetrical pw
+ * jhp>https://github.com/PARK4139
+ * jhp>https://github.com/PARK4139/ing-to-do.git
+ * withv_jhp_laptop_serial_no>206nzbx066461
+ * withv_jhp_laptop_MAC_address>50-84-92-46-16-49
+ * withv_jhp_laptop_external_ip_address>211.197.19.227>trial_solution>chrome/my ip address
+ * withv_jhp_laptop_internal_ip_address>192.168.0.127>trial_solution>ipconfig
+ * withv_jhp_laptop_office_2019_certification_completion_date>2022 11 01 twe>trial_solution>________
+ * withv_jhp_laptop_office_2019_serial>DQ2VN-YDWPX-X38WJ-YPX2P-CKD2T>trial_solution>________
+ * withv_jhp_laptop_win_10_pro_retail_serial>N4B9G-BTM2F-6QFMJ-Q9DMQ-4F9VC>trial_solution>________
+ * withv_jhp_laptop_Microsoft_ID>withVisionSystem202210311730@gmail.com>trial_solution>________
+ * withv>서울특별시 금천구 가산동 691 대륭테크노타운 20차 1112호
+ *
+ * withv>TEL. +02-6952-0133
+ * dbeavber>연결>연결유형>auto commit>able(dev server 셋업)
+ * dbeavber>연결>연결유형>auto commit>disable(op server 셋업)
+ * 구글연동기기제거>chrome``https://myaccount.google.com/device-activity``계정제거
+ * 구글원격access>chrome remote access> https://remotedesktop.google.com/access>jhppc01>202399
+ * 윈도우10프로원격access설정>controller>remote desktop connection
+ * 윈도우10프로원격access설정``setting``target_contrlled>
+ * 윈도우10프로시스템이름바꾸기> 시작 > 설정 > 시스템 > 정보>이 PC 이름 바꾸기> > 새 이름을 입력하고 다음을 선택합니다. 로그인하라는 메시지가 표시될 수 있습니다.
+ * 기분 나쁜일이 있으면>쇼핑과 언박싱으로>기분이 다운되어 있으면 쿠팡쇼핑!맛있는 것 먹기!
+ * 필요하면 사도록,     사면 좋은 것 사도록,     가성비를 챙기도록
+ * 좋은 옷 몇 벌>잘 차려입고 고객을 만나야 고객이 신뢰를 할 수 있겠지 않겠는가
+ * 빌드>실행불가능한프로젝트를 실행가능한 프로젝트로 만드는 작업>java application관점에서는 file.java를 file.class로 바꾸는 과정을 포함한다.
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>__________________________  acknoledge
+ * 전부 db trigger 를 사용하면 될 것도 같은데 그러지 않는 이유
+ * 퍼포먼스 문제
+ * 가정)SMS 연동 시스템(db시스템 과 SMS시스템 연동)
+ * db시스템msg처리속도=1000개/1s
+ * SMS시스템msg발송처리속도=10개/1s
+ * 해석)만약 이렇다면 db시스템 는 엄청 일을 많이 하거나 기다려야 하는 상황이 생길 수 있습니다.
+ * 적절한 db trigger 적용 모범사례와 적용이유가 궁금하다
+
+
+
+ * exec : db procedure 호출 명령어
+ * call : db procedure 호출 명령어
+
+
+
+ * db procedure 는 void 함수 와 유사하게 작동
+ * db function 은 return 함수 와 유사하게 작동
+
+
+ * spring annotation
+ * @Spring.
+ * @Component
+ * @Component("dao")
+ * @Autowired lombok annotaion
+ * @Getter : 사용하는 것을 선호
+ * @Setter : 사용하는 것을 선호
+ * @Data : 사용하는 것을 선호
+ * @NoArgsConstructor
+ * @AllArgsConstructor
+ * @RequriedArgsConstructor : 이것을 사용하는 것보다는 명시적으로 작성하는 것을 선호
+ * @NonNull : annotation 기반으로 한 java 에서 validation 을 할 때 사용.....js 에서 validation 을 하거나 ..... db 에서 validation 을 해도 되죠?..
+
+
+ * op db server에 insert 나 update sql을 보낼때 해당 테이블들을 hang 시키더라도 반드시 db transaction을 수행후 commit 이나 roll back 을 하도록 하자.
+
+
+ * parameter 는 arg 가 이동할 수 있는 사람이 arg 라면 지도에 표시된 발자취는 parameter 같은 것
+ * parameter 는 arg 가 이동할 수 있는 캐릭터가 arg 라면 게임의 포탈은 parameter 같은 것
+
+
+ * line by line process
+
+
+ * ?
+ * was jvm javaEE, javaSE spring, jsp
+ * java jvm
+
+
+ * see 백견불여일타 jsp & servlet/53 at next time
+
+ * TCP-IP/internet/Web/w3/W3C
+
+ * domain perchasing>ip addres & domain mappiing>DNS 에 등록해주는 업체>perchase domain by using yearly payment
+
+ * port forwarding>public ip & private ip mapping
+
+ * MVC 패턴
+ * Model과 View, Controller로 나누어 작업하는 패턴을 말한다.
+
+ * iframe>jsp 안에 jsp를 넣는 방법으로 <%@include file="/corp/jsp/file.jsp>%>와 비슷한 느낌이 든다.
+
+ * Spring 이 태어난 이유
+ * 비즈니스 로직, 뷰 렌더링을 모두 맡으면서 code 가 방대해, 유지보수가 굉장히 어렵다
+ * 하나의 단일거대관리code 에 부담을 덜어주는 역할을 해주기 위해 여기서 MVC 패턴 도입.
+ * Model 에서 백엔드 데이터를 Controller 에 보내주고,
+ * Controller 에서 url & view address mapping
+ * 비즈니스 로직은 as Servlet,
+ * 뷰 렌더링은 as JSP,
+
+
+
+ * 쿠키: 웹 브라우저에 정보(value)를 남겨 놓은 채 (인증, 개인화, 방문자의 상태 체크)를 하는 방법
+ * 세션: 웹 서버에만 정보(value)를 남기면서 안전하게 (인증, 개인화, 방문자의 상태 체크)를 하는 방법
+
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  withv.req(IDE_installation_log_recording)
+ * withv project IDE C
+ * windows : 10
+ * jdk :
+ * java EE :
+ * eclipse :
+ * tomcat :
+ * db :  dbeaber, sqldeveloper
+ * Spring :
+ * app model type : model 1
+ * java objects : req, response, out, session, application
+ * jdbc(dao/dto) : ?
+ * file types : js, html, css, jsp
+ * project workspace address:
+ * setting type
+ * based on xml
+ * based on java config
+ * based on application properties
+ * intellij community version( free version)
+ * night mode able
+ * chrome
+ * Material Dark Theme - Dark Chocolate
+ * project web server src copy
+ * everything ( free version)
+ * git and intellij 연동
+ * intelliJ
+ * eclipse
+ * visual studio code
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  IDE Training DCUR log
+
+ * os:version=windows : 10
+ * app model type : model 2(MVC)
+ * intelliJ : community 2022.02
+ * + thymeleaf
+ * jdk :
+ * java SE
+ * build tool : gradle
+ * server : spring boot embedded tomcat
+ * + spring
+ * + spring boot
+ * file types : js, html, css, jsp
+ * jdbc(dao/dto) : ?
+ * + JPA / mybatis
+
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  jhp 인수인계
+ * 인수인계.java
+ * ♥if(newbee.lv==1){
+ * quest_name=입퇴실신청
+ * quest_name=입실신청
+ * quest_name=퇴실신청
+ * 접근권한=R;
+ * 전체 R training
+ * 일괄 R training
+ * 단일 R training
+ * }
+ * ♥절대 op web에 access해서 admin 로그인하여 정보를 함부로 DCU하지 마세요
+ * ♥차이를 알기전엔 사용하지 마세요.
+
+ * ___________________________________________________________________________________ codeMgr  .... TextMgr
+ * CodeMgr.encode0(""")
+ * CodeMgr.encode1(""")
+ * CodeMgr.encode0(""")
+ * CodeMgr.encode6(""")
+ * CodeMgr.encode3(""")
+ * CodeMgr.encode9(""")
+ * CodeMgr.encode2(""")
+ * CodeMgr.encode4(""")
+ * CodeMgr.encode1(""")
+ * CodeMgr.encode3(""")
+ * CodeMgr.encode9(""")
+ * //몇 중으로 암호화 해서 사용하면 어떤가 단계별로 암호화를 다르게  하도록
+ * Util.encode(String decodedStr)
+ * Util.decode(String encodedStr)
+ * Util.encodeAs(
+ * encode(project tenki dorobo)
+ * String을 거꾸로 나열만 해도 꽤 쓸만하게 가독속도 떨어짐..
+ * 거꾸로 string을 나열만 해도 일단 가독속도 만 해도 엄청 떨어뜨릴 할 수 있습니다.
+ * String 평문 = "평문"
+ * Util.encode(,CODE.MODE_REVERSE)
+ * Util.Encoder.
+ * Util.Decoder.
+ * Encoder
+ * Decoder
+ * 객체를 접근하기 어렵도록 hiding을  하도록 private ,
+ * private final coder = "박정훈";
+ * if(coder.equals(CODE."박정훈");
+ * CODE.객체도 연결시켜 놓고
+ * 수십개의 객체를 연결시키면...보안은 좋아지겠지만...
+ * 수십개의 객체를 외부연결을 시킨다.
+ * 자주 수십개의 암호문을 난수로 설정한다.
+ * 완전 시스템과 독립적인 시스템에서 난수를 얻고 기록을 해둔다.
+ * 해당 key를 잘 기록해둔다.
+ * 가 나오는 수 대로 변경.
+ * Door(String key){
+ * //입력된 key를  수십개의 객체를 통해서 해독한다.
+ * Gate(String key){
+ * //입력된
+ * }
+ * //key를 넣으면 처음문자열그룹 중간문자열그룹 마지막문자열그룹 이 뒤적박죽 섞여 나누어 나오도록
+ * String ToggleDoor(String key){
+ * if(key.length%2=0){
+ * 2     /2
+ * }else{
+ * 3      /3
+ * }
+ * };
+ * String key="사랑합니다 고객님";
+ * Util.Encoder1(key)          //String으로 반환
+ * Util.Encoder6(key)          //String으로 반환
+ * Util.Encoder_(key)          //String으로 반환
+ * Util.Encoder5(key)          //String으로 반환
+ * Util.Encoder0(key)          //String으로 반환
+ * Util.Encoder0(key)          //String으로 반환
+ * Util.Encoder1(key)          //String으로 반환
+ * Util.Encoder6(key)          //String으로 반환
+ * Util.Encoder2(key)          //String으로 반환
+ * sout(key);
+ * String을 배열화 시킨다.
+ * 문자열안에서 PASSWORD를 앞에서 부터 두글자마다 나눠서 삽입 삽입할때 뒤쪽에
+ * --------------------------------------------------------------------------------------------- Unreal engine 5
+ * --------------------------------------------------------------------------------------------- pycharm community version
+ * --------------------------------------------------------------------------------------------- arduino
+ * arduino nano 33
+
+
+
+
+ * pending transaction
+ * 트랜잭션 보류하기
+
+
+ * 내 미래를 위해서 집기생충이 되기로 결심.
+ * 기생충
+
+ * PC 부품 드래곤볼을 시작
+
+
+ * 모레를 눈에 뿌리고 도망가는 게임 캐릭터
+
+ * 비겁한 악당들
+
+ * 비겁한 평범한 악당들
+
+ * 비범한 악당
+
+ * 노 히어로
+
+ * 말이 었는 캐릭터들
+
+ * 미스릴 방패
+
+
+ * noah
+
+ * 이로오 우바우 세카이
+ * 색을 찾아주세요..
+
+ * 세상은
+
+ * 기리기리 마데...
+ * 아슬아슬 한데까지..
+ * 아주아주 높은 탑과 구름 digital 공중 캠핑
+
+
+
+ * 코드가 체득화 되는 것...
+ * 하나 둘 셋 넷
+
+
+ * 한스미디어 초록의 집
+
+
+
+ * battery charger output power
+ * 19v 3.42
+
+
+
+
+
+
+
+
+
+ * if(para1==null){
+ * System.out.println("validation fail id = 2022 12 13 10 21");
+ * }
+ * if(para1 의 데이터타입 == "String"){
+ * System.out.println("validation fail id = 2022 12 13 10 23");
+ * }
+
+
+
+
+ * // 인터넷 검색하여 관련 정보를 얻고 실험을 해서 관찰을 해 통찰을 얻은 바로는
+ * // 정규식은 /가 하나 두개 세개 를 붙이면 문자로 인식이 되는 것이 대부분이며 아주 특수한 경우에 []로 묶어야 문자로 인식이 되는 것이 있습니다.
+ * // 이제 꽤 잘 수행 할 수 있을 것 같다.
+ * // /n  과  //n 이 있습니다고 하면  // 이 먼저 우선 인식이 되는 것으로 확인되어 진다.
+
+
+
+
+ * 필수인수인계항목
+ * 운영서버 db client progrmam access
+
+
+할일
+ * 페이퍼 정리
+ * 동계방학 재학생1명 ( member_tb 등록~객실배정 작업속도 ) = 18분/1명
+ * 유보 미유보 관련 소스 확인할것
+ * SM 히스토리 역순으로 유사 시나리오 환경 개발서버 에 포팅 후 진행
+
+
+
+ * 아파치 서버 셋팅 공부
+ * iterater
+ * hasNext()
+ * next()
+ * forEach()
+ * resultSet 공부
+ * jsonMgr 제작
+ * via objectMapper
+ * via jsonObejct
+ * via jsonArray
+ * jsonStr
+ * ajax
+
+
+
+
+
+
+ * if(____Mgr.scanRecycleBinCapacity>=10gb){
+ * mp3 재생 "현재 휴지통의 10gb를 이상입니다."
+ * mp3 재생 "현재 휴지통을 비울까요?"
+ * }
+
+
+
+
+ * IntelliJ 실행 에러 2022 12 14 09 15
+ * IntelliJ 실행 에러 솔루션 2022 12 14 09 15
+ * run cmd as admin
+ * netsh int ipv4 set dynamicport tcp start=49152 num=16383
+ * netsh int ipv4 set dynamicport udp start=49152 num=16383
+ * net stop winnat
+ * net start winnat
+
+
+
+
+ * if(high sierra<=mac OS ){
+ * set(fileSystem,APFS);
+ * }
+ * if(disk size <= 32GB){
+ * set(fileSystem,MS-DOS(FAT));
+ * }
+ * if(32GB <= disk size){
+ * set(fileSystem,MS-DOS(ExFAT));
+ * }
+
+
+
+
+ * 애완돼지를 키우며 돼지요리를 먹고 있는 우리
+ * 인간 세상이 이렇게 되어있으니까요..
+ * 인간 세상은 아이러니 한 일들이 가득차있죠.
+ * 다양성이 공존하죠.
+
+
+
+네임
+ * 오디르바나
+ * 슈퍼패스
+ * superslides
+ * 볼레린온오카탄툴
+ * 리발레리야
+ * 마드레에샤흐
+
+ * organizing name     nick name
+ * _______________     ________
+ * gate_super          super_gate
+ * gate_hyper_sonic    hyper_sonic_gate
+
+
+
+
+
+ * pc web     : www.naver.com
+ * mobile web : m.naver.com
+ * 동적인 데이터 가 큰 비중을 차지하고, 기존의 pc web 이 존재한다면 고려
+ * responsive web  : ?
+ * 정적인 데이터 가 큰 비중을 차지하고, 기존의 pc web 이 없는 경우라면 고려, 오히려 저렴한 개발비용.
+
+
+
+
+
+ * 관리자가 데이터를 누르지 않았던 것처럼 데이터를 복구!
+ * update 의 원복은 update 로 ( 원복 작업이 어렵지만 복구 가 상대적으로 용이.)
+ * delete 의 원복은 insert 로 ( 원복 작업이 어렵지만 복구 가 상대적으로 용이.)
+ * insert 의 원복은 delete 로 ( 원복 작업이 쉽지만 복구 어렵.)
+ * create 의 원복은 delete 로 ( 원복 작업이 쉽지만 복구 어렵.)
+
+
+ * css
+ * box-shadow: rgb(34 37 38) 1px 1px 35px 0px;
+
+
+
+ * revoke. 뜻 : 철회하다, 취소하다.
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  ing [ing.txt 에서 class ing 로 마이그레이션 중]
+/** TOGGLE_SW
+ intellij 를 통하여 작업을 하면서 얻은 여러 기능들의 통찰을 통해 intellij 를 활용한 메모장입니다.
+ collapse all 기능
+ fold하면 일반화 되어서 한번에 보이니 index page 필요 없어질듯 하다..
+ 현재 이곳으로 메모를 마이그레이션 하는 중입니다.
+ 처음부터 이곳에 작성하는 것이 마이그레이션 하는 것보다 낳을 것 같습니다.
+ 오늘 부터는 이곳에 작성
+ 모든 것의 시작은 문제를 만나는 것부터 시작을 하도록
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  DEVELOPMENT_INSIGHT
+/** TOGGLE_SW
+ 두둥....내가 개발하였는데 ....내가 사용법을 해메는 바보같은 일이.....생겼다.....무조건 코드에 주석을 달고 설명을 할 수 있을 정도로 반드시
+ 잘 정돈하여 기록을 해두자...
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  ideaMgr
+/** TOGGLE_SW
+ 분기문 분석 아이디어
+ if(){sout IF_SYNTAX_ID="2022 12 06 21 50 01"
+ }
+ if(){sout IF_SYNTAX_ID="2022 12 06 21 50 02"
+ }
+ if(){sout IF_SYNTAX_ID="2022 12 06 21 50 03"
+ if(){sout IF_SYNTAX_ID="2022 12 06 21 50 04"
+ if(){sout IF_SYNTAX_ID="2022 12 06 21 50 05"
+ }
+ }
+ }
+ ...
+ 이 코드들을 if문 분기마다 삽입하여 console에 출력되게 한다.     IF_SYNTAX_ID          JSP_QUERY_ID  :  분기에 대해서
+ 콘솔에 출력된 결과 패턴을 기록 하고 비교분석 한다.
+ 특정 상황에서의 그러면 타는 마다 라인을 알 수 있을 것 같다.
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  itcAdministrativeRoomMember 가 시킨일
+/** TOGGLE_SW
+ itcAdministrativeRoomMember.req("db_procedure 수행")
+ //해당 주소의 jsp 안에 strSql.append("exec dorm.BATCH_GET_MEMBER") 를
+ //작성 및 배치 해서 admin 이 control 할 때 작동되도록 시도하도록
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  videoContentsMgr       download 다운로드
+/** TOGGLE_SW
+ 다운로드
+ * https://youtu.be/6ooHhiQCL38?list=TLGGf2kcYeQNG5AwNTEyMjAyMg
+ * https://youtu.be/vp62SMLkJfw
+ * 햄식이 네셔널그래픽 장수를 위해서
+ * https://youtu.be/GDAHjupksR0
+ * https://youtu.be/UER1m3E0At8
+ * https://youtu.be/v1CP04sTG0A
+ * https://youtu.be/nY908VTBPos
+ * https://youtu.be/aa1zQZ078Yw
+ * https://youtu.be/1__Ys71FOMo
+ * https://youtu.be/zQ20WqNtQ1s
+ * https://youtu.be/7eVG4o8mS_I
+ * 극장판 Fate/Grand Order -신성원탁영역 카멜롯-
+ * 사카모토 마야    노래 모음
+ * https://www.youtube.com/watch?v=2X7HqSNgwQk&ab_channel=%EA%B5%89%EC%9E%A5%ED%95%9C%EC%8B%A4%ED%97%98%EC%8B%A4
+ * https://youtu.be/SBoD7snY85w
+ * 타카기 극장판
+ https://www.youtube.com/watch?v=fI2Oq9caWkM&ab_channel=%ED%80%98%EC%9D%B4%EC%82%AC%EC%A1%B4QUASARZONE
+ https://www.youtube.com/watch?v=Spng18nJJUo&ab_channel=%EA%B7%80%EA%B3%B0
+ https://youtu.be/omAu6do-gMY
+ https://www.youtube.com/watch?v=TDqh3jpvybg&ab_channel=%ED%95%B4%EC%88%98%EC%9D%B8tvHesuinBADA
+ https://youtu.be/ANOsrpq6ToI
+ https://www.youtube.com/watch?v=cOmEzt9n-mw&ab_channel=%ED%85%8C%ED%81%AC%EA%B8%B0%EC%96%B4%EC%BA%90%EC%8A%A4%ED%8A%B8TechGearCast
+ https://www.youtube.com/watch?v=497yyhcvsaQ&ab_channel=ITSub%EC%9E%87%EC%84%AD
+ https://youtu.be/HTksBJeoa1A
+ https://youtu.be/HTksBJeoa1A
+ 이 영상의 bat UI 부분 ㅕㅑ  2분 53초
+ https://youtu.be/z1lB1wNakho
+ 재벌집막내아들
+ 데시벨
+ 샤잠2
+ 던전 앤 드래곤 아너 어몽 시브즈
+ the super mario bros movie
+ quantummaina
+ magic mike 3 last dance
+ elemental
+ extraction 2
+ inside movie
+ indiana johns 5
+ strange world
+ the last of us movie
+ troll
+ avartar2
+
+ 넷플릭스뤼팽 시즌1 (Lupin, 2021)
+ 햄식이 네셔널그래픽 장수를 위해서
+ https://youtu.be/vp62SMLkJfw
+ https://youtu.be/GDAHjupksR0
+ https://youtu.be/UER1m3E0At8
+ https://youtu.be/v1CP04sTG0A
+ https://youtu.be/nY908VTBPos
+ https://youtu.be/aa1zQZ078Yw
+ https://youtu.be/1__Ys71FOMo
+ https://youtu.be/zQ20WqNtQ1s
+ https://youtu.be/7eVG4o8mS_I
+ disney the littel mermaid movie
+ 극장판 Fate/Grand Order -신성원탁영역 카멜롯-
+ 사카모토 마야    노래 모음
+ https://www.youtube.com/watch?v=2X7HqSNgwQk&ab_channel=%EA%B5%89%EC%9E%A5%ED%95%9C%EC%8B%A4%ED%97%98%EC%8B%A4
+ 타카기 극장판
+ 애플 TV 영화 해방 [링컨, 흑인노예 그 잔혹한 문화와 시간들]
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  alternativeMgr 이슈 문제 트러블 TROUBLE
+/** TOGGLE_SW
+ IntellJ Community Edition>Database 관련 기능 미지원>시도대안 : database navigator plug in을 설치
+
+
+ //DB connection issue>convert oracle to sql server...(i did set as oracle..i should set as sql server...)
+
+
+
+ dbeaver issue>insert db record issue
+ -- ALTER DATABASE `webthymeleafdb`
+ -- DEFAULT CHARACTER SET utf8mb4
+ -- DEFAULT COLLATE utf8mb4_bin;
+ -- alter table ________TB convent to character set utf8;
+
+ eclipse running issue>eclipse.ini  -Xml512m->-Xml256m
+ eclipse language display issue>eclipse/window/preferences encoding UTF-8
+ chrome browser language display issue><meta charset="UTF-8">
+
+ db access issue>외부 환경 access 불가능이면서, DBeaver로는 access 가능하다면>라우터/공유기 포트포워드 방화벽 policy  점검 try
+
+
+
+ DB DATATYPE SIZE ISSUE
+ VARCHAR2(60000) -- TRY TEST
+ VARCHAR2(4000) -- TRY TEST
+ VARCHAR2(9) 의 9은 bytes 를 의미하며 UTF-8 기준으로 한글은 3글자밖에 들어갈 수 없다.
+ ORACLE 의 권장 character set 은 UTF-8 이며, UTF-8 은 문자 하나에 최대 4bytes.
+ UTF-8 에서 3bytes/1한글문자,
+ EUC-KR 에서 2bytes/1한글문자
+ ※ DB charset 점검하는 방법
+
+ 1) 설정점검(권장)
+ SELECT name, value$
+ FROM sys.props$
+ WHERE name = 'NLS_CHARACTERSET';
+
+
+ 2) 문자를 조회하여 점검
+ SELECT LENGTHB('일') FROM DUAL;
+ 결과로 리턴되는 BYTES 크기 점검
+ * LENGTHB 는 BYTES 크기 반환
+
+
+ 트랜젝션 ISSUE
+ : commit, rollback, savepoint
+
+ 데이타 제어 ISSUE(데이타 제어어(DCL : Data Control Language))
+ : grant, revoke
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  script 태그 위치 동작 실험
+/** TOGGLE_SW
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+ <meta charset="UTF-8">
+ <title>DOMContentLoaded</title>
+ </head>
+ <body>
+ <div id="test">test</div>
+
+ <script>
+ window.onload = function(){
+ console.log("1");
+ var target = document.querySelector("#test");
+ console.log(target);
+ }
+ document.addEventListener("DOMContentLoaded", function() {
+ console.log("2");
+ var target = document.querySelector('#test');
+ console.log(target);
+ });
+ console.log("3")
+ var target = document.querySelector('#test');
+ console.log(target);
+ </script>
+ </body>
+ </html>
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  유튜브 아이디어
+/** TOGGLE_SW
+ 유머감각....
+ #프로그래밍#커스텀을 할 수 있다.#기계처럼#내방식#그들방식##결벽#강박
+ 엄마의 방은 있는가?
+ 무감각하였다. 무려 20년 가까이 엄마의 방은 없었다는 사실을 말이다.
+ 엄마에게 취미를
+ 다이소 다용도 청소솔 롤러가 두개 들어있다
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  _____________
+/** TOGGLE_SW
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  _____________
+/** TOGGLE_SW
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  _____________
+/** TOGGLE_SW
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  yyyyMmdd_OOO_itc_퇴관복구용 쿼리 템플릿
+/** TOGGLE_SW
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_
+ itcStudentMember.std_no                  =    202113178
+ itcStudentMember.id_no                   =    0108081024993
+ itcStudentMember.virtual_account         =    foo
+ itcStudentMember.recruit_year            =    foo
+ itcStudentMember.recruit_code            =    foo
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 셀렉트 member_tb
+ select * from member_tb where std_no ='202113178';
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 셀렉트 dorm_apply_tb
+ select * from dorm_apply_tb where id_no='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 셀렉트 in_amt_tb
+ select * from in_amt_tb where id_no ='0108081024993' order by seq_no asc;
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 업데이트 dorm_apply_tb
+ select * from dorm_apply_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ -- update dorm_apply_tb set del_yn='N',move_out_date ='0',move_out_code=null,move_out_memo=null   where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ select * from dorm_apply_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 업데이트 roomchange_hist_tb
+ select * from roomchange_hist_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ -- update  roomchange_hist_tb set out_date =null where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ select * from roomchange_hist_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 델리트 moveout_apply_tb
+ select * from moveout_apply_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ -- delete moveout_apply_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ select * from moveout_apply_tb where id_no ='0108081024993' and recruit_year ='2022'and recruit_code='2602000';
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 업데이트 account_tb
+ select * from account_tb where virtual_account = '27981652218190';
+ -- update account_tb set use_yn = 'y'  where virtual_account = '27981652218190';
+ select * from account_tb where virtual_account = '27981652218190';
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 끝
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  건국대학교 기숙사 시스템  KUL
+/** TOGGLE_SW
+ IIS
+
+ eclipse issue[
+ 묘사 : tomcat v8.0 intatc[변수] access 시도 중
+ 원인 : 80[변수]포트가 IIS에서 점유
+ trial solution 1[
+ 1 : remove IIS를 종료 후 PID 4[변수]
+ 2 : check IIS를 종료 후 PID 4 제거
+ 3 : retry "tomcat v8.0 intatc access"
+ ]
+ ]
+
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____ 건대
+/** TOGGLE_SW
+
+ KUL>IIS>80 점유
+ KUL>IIS>8080 점유
+
+
+ window>IIS>>로깅>로그 파일 보기...>W3SVC2>u_exyyMMdd.log
+
+ func.asp>set db
+
+ 사용자 동의>expense.asp>expense_next.asp>aap>allat_receive.asp
+
+ 신용카드 외부연동은 건대만 사용
+ non active method
+ shop = 상점 = 기숙사 ≒ withv
+ shop id 는 기숙사별할당 ( VA를 조회하여 특정은행 code 를 확인하는 로직이 들어 있음.?)
+ aap(all at pay)(카드결제중계업체)
+ 신용카드 외부연동은  VA 외부연동과 다르게 관리자가 결제취소를 할 수 있습니다.
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>sg dorm [ gonzaga ]
+/** TOGGLE_SW
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 홈페이지 테스트 S
+ withvision
+ 6952!gon
+
+ we lost tony stark
+
+
+ sg dorm의 경우에 관리자 메뉴, 기준관리 메뉴 만 설정하면 되는게 아니라, 식단관리 메뉴>식단가 관리 메뉴 에서 자동등록 해줘야 한다.
+
+ sg dorm의 경우에 식당입금예정처리...해줘야하는 객실배정이 가능한 것 같다
+
+ //2023 01 06 13 50 배정 e
+ //2023 01 06 13 55 홈페이지 mypage 테스트 e
+
+ //2023 01 06 15 39 홈페이지 mypage 테스트 ing
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 홈페이지 mypage 테스트 E
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  sg dorm system edge 환경 불능기능 색인 s
+ sg dorm system edge 환경 불능기능 판단 기준=explorer 환경 과 edge 환경 에서의 동일 프로세스 수행 및 비교하여 explorer 환경과 동일하게 작동하지 않는다면 불능 으로 판단
+
+ https://localhost/supervisor_login.jsp
+
+ 이름T61.std_no=G20211061
+ 이름T61.ID_no=8001120013692
+ 이름T61.pw=6952!gon
+ 이름T61.생년월일=800112
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  sg dorm system edge 환경 불능기능 색인 e
+ withvision
+ withv
+ !
+ dgi
+ jan
+ gon
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  digital plant
+/** TOGGLE_SW
+ 몬스테라 같은
+
+
+
+
+ 프로젝트 플랜츠 하스피털
+
+ 아스파라거스 미리오클라두스
+
+ 디지털 하우스
+
+
+ 오두막 짓고 싶어요
+ 취미로 오두막을 짓는 사람들
+
+
+ 작은 산장 컨셉
+
+
+
+
+ 캡톤 테이브로 붙이면 있어보인다
+
+
+
+ 우드크라프트
+
+
+ 쇠망치
+ 쇠도끼
+ 쇠삽
+ 쇠톱
+ 나무망치
+ 양동이
+ 넘버패드
+ 키패드
+
+
+ 나무쐐기
+ 끈
+
+
+ 등산에 가서 나뭇가지를 주워온다
+ 나뭇가지를 살균한다
+ 마이크로 우드크라프트를 한다
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  식물
+/** TOGGLE_SW
+ 대나무의 뿌리 때문에 지진대비용으로 대나무를 심기도 한다고 한다
+ 우물
+ 비딘아끼로 식물을 감싼다
+ 지피펠렛 소재 지피포트
+ 수태 소재 ( 가쓰오 부시 같은)
+ 세린데(푸른새우꽃)
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  NAME
+/** TOGGLE_SW
+ 니아블
+
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  INTEREST 관심 물품, 구매
+/** TOGGLE_SW
+ ann pro 2 [예쁜데]
+ 레오폴드 적축 을 구매를...
+ 허먼밀러 의자
+ LG 32UN650      55..
+ sony wh-1000xm5 headphone
+ 모니터암
+ 코린 flexpack pro 백팩 138950
+ MOD time timer and google
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  정우
+/** TOGGLE_SW
+
+ //정우
+ 이케아 데카드 알람시계 0.59
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  산행준비
+/** TOGGLE_SW
+
+ //산행준비
+ 이케아 프락타 보냉가방 0.29 가격혜자
+ 이케아 베쉬다 반사클립
+ 휴대폰
+ 보조배터리
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  //방
+/** TOGGLE_SW
+
+
+
+ //무늬 스파티필름 센세이션 [대형종]
+ //무늬 스파티필름 도미노 [하얀색, 연두색 예쁘다    ]
+ //보스턴 고사리
+ //후타마 고사리
+ //실로 다육이 미니 행잉하기
+ //필로덴드롬 실버메탈
+ //아스파라거스 나누스
+ //모스폴 (이끼 봉 , 안에 수태를 넣는다)
+ 키보드 롱 트레이 (마우스까지)
+ seojun 전기요금측정기
+ //강아지 이름  소금, 설탕
+ 멀티탭   4000Watt
+ 프로젝트 둔탁
+ 프로젝트 둔감
+
+
+
+
+
+ */
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____   //사무실
+/** TOGGLE_SW
+
+
+ //데스크 플렌테리어
+ 발헤먹
+ 호르테 19900 작업등
+ 가방걸이....책상밑에 거는게 딱인데
+ 스크발라 0.39 책상패드
+ 디시디아 버튼
+ 조인폴리아 가보고 싶다.
+
+
+
+ */
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____  NOT_ORGANIZED_TEXT_STORAGE
+/** ing
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  dbeaver
+ 믿을 수 없겠지만 DBeaver에서는
+ 오라클 프로시저 디버그를 지원하지 않기 때문에
+ DBeaver에서는 펑션(Function), 프로시저(Procedure) 디버그가 불가능하다
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ideaMgr
+ 문득 든 생각인데 file.html, file.jsp 또한 controller  이다....   user controller 인... btn 도 달린..
+ model   view   controller  이라는 개념이 로직을 분리를 해두었습니다는 것인 것 같다... 무척이나 관점에 따라 해석이 달라지는
+ 상대적인 개념일 수 있을 것 같다.. 아니면 관용적인 무언가가 있는데 내가 이해를 못하고 있거나...
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  woodWorkingMgr
+
+ 나무 조립
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  JHPPC1
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  galaxy on 7
+ 역시 들고다니는 portable device 가 가장 재미 지겠지 ?
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ZetsonBoard
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  DESKTOP-I25VIFM
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  raspi4ModelB
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  arduino uno
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  WSLMgr
+ WSL에 와서는 정말로 윈도우즈가 docker를 품은 형상이 되어버렸는데,
+ docker보다 빠르고 요긴하게 쓸 수 있습니다는 장점이 있습니다.
+ 더구나 그 안에서 docker를 쓸 수 있어서 구태여 docker desktop을 설치할 필요도 없다.
+ 어차피 docker라는 게 linux 안에서 다른 배포판의 linux를 쓰려고 할 때 진가를 발휘하는 것이니까 말이다.
+
+
+ WSL(Windows Subsystem for Linux)
+ Windows 10 Bash 로 Ubuntu 개발환경 구성>ubuntu user name>pjh4139>symetrical pw
+ #clear
+ #ls
+ #sudo apt get pip
+ #brew #이거 유용한가 봅니다 공부하도록
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MealMgr
+ 이마트||홈프러스 들려 음식 구매
+ 집 냉장고 넣기
+
+
+ 리코타치즈 블루베리 딸기 샐러드
+ 짙은녹색붉은대의잎사귀
+
+
+ MealMgr.makeMeal1();
+ MealMgr.steam("닭가슴살")
+ MealMgr.slice("닭가슴살")
+ 편스토랑
+ 밀프랩
+ 밀키트
+ 누룽지
+ 유산균
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  WindowsMgr
+ 우리나라는 아직도 CS(Desktop Application) 환경에서 프로그램은 윈도우 기반이 대부분이다. 특히 닷넷으로 윈도우 애플리케이션을 개발하려면 윈도우 운영체제가 현재까지는 필수적이다.
+
+
+ windows 10 시작메뉴 등록
+ C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  linuxMgr
+ ubunto
+ almost free OS!!!!!
+ opensource OS!
+ 리눅스는 다중 작업과 다중 사용자, 다중 스레드를 지원하는 운영체제 입니다. 다시 이야기 하면 리눅스는 하나의 PC에 여러명이 접속 하여 여러개의 프로그램을 동시에 실행하거나 작업 할 수 있는 장점이 있습니다. 그래서 인지 리눅스는 서버로 사용이 많이 되고 있습니다
+ 개발자의 커스터마이징의 제한이 매우 적다는 것 같다.
+ C언어 에 의해서 많은 개발이 되었음.
+ C언어를 잘하는 개발자라면 리눅스를 사용하면서 어지간한 리눅스의 구성요소들을 직접 들여다보고 수정하고 개발 할 수 있는 장점이 있습니다.
+ 리눅스는 다른 운영체제들과는 다르게 상대적으로 하드웨어의 사양이 그렇게 높지 않아도 운영하는데 큰 어려움이 없습니다.
+ 전 세계적으로도 어려운 사람이나 국가에 PC를 보급 할때보면 운영체제는 리눅스로 보급을 하고 있습니다.
+ 그만큼 낮은 사양에서도 최대한의 성능을 끌어올려 사용 할수 있게 하는게 리눅스 OS의 큰 장점이 아닐까 합니다.
+ 스마트폰의 OS는 무엇일까요? 전 세계에 보급된 스마트 폰의 7~80% 이상은 리눅스 커널을 사용하는 안드로이드가 운영 OS로 사용 하고 있습니다는 사실 입니다.
+ 뭐 사실 개발자가 리눅스를 사용하는 이유와는 거리가 좀 먼 이야기 일수 있으나, 리눅스는 이렇게나 다양하고 많이 우리 실생활에 근접해 있습니다는 이야기를 드립니다.
+ 복잡하게 여러군데를 뒤지지 않고 단 한줄의 커멘드로 복잡한 작업을 한번에 해치울수도 있습니다.
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  FileMgr
+ FileMgr.transfer("from","to");
+ PCmgr 에게 넘기는게..어떤가..
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  newPcMgr
+ jhp.thinck(PC){
+ 정책 배경
+ 나이 30 이니까
+ 나이 40 까지는 당연히 프로그래머 할꺼고
+ 나이 50 까지도 프로그래머 할껀데
+ 10년 600만원
+ 1년에 60만원
+ 확 당겨서
+ 36개월
+ 무엇보다 가장 고민해야할 것은 가격의 합리성
+ 예산 정책
+ 무이자 가능한 길게    2년 무이자    3년 무이자
+
+ 내가 할 작업 목록
+ 업무관점
+ open world 게임 개발 (feat 언리얼엔진5)
+ 그래픽 아트 쪽 개발(feat. blender, VFX 관련 프로그램, )
+ 고사양 게임 플레이(feat. 호라이즌,)
+ 회사 문서작업(feat. MS office)
+ 소스빌드(feat. intelliJ, Eclipse, android studio, pycharm, visual studio code)
+ 데이터용량관점
+
+ 데이터속도관점
+ 그래픽처리속도
+
+ 조립관점
+ graphic
+ geforce 4080 rtx 는 가성비가 별로인가 보다.
+ geforce 3080ti
+ CPU
+ RAM
+ SDD
+ HDD
+ main board
+ cooling fan
+ PC case
+ power supply 이것은 가장 나중에 결정 하는 것으로 보인다.
+ win 10 pro
+ }
+
+
+
+
+
+ cpu
+ ryzen 5900x
+ VGA
+ nvidia Gforce RTX A6000
+ nvidia Gforce RTX A4000
+ nvidia Gforce RTX 3090
+ nvidia Gforce RTX 3060 EAGLE OC V2 D6 12GB PC-DIRECT 55:PRICE
+ RTX : RAY TRACING
+ OC  : OVER CLOCKED
+ LHR : Lower Hash Rate
+
+
+ nvidia Gforce EVGA RTX 3060 EAGLE XC 12GB
+ samsung 8nm GA 106 chipset
+ VRAM 이 넉넉한걸 써라
+ nvidia Gforce RTX 3070 Ti 8GB
+ nvidia Gforce RTX 3090 Ti 24GB
+ RAM
+ RAM 32GB DDR4
+ RAM 128GB DDR4 ECC
+ SOLID DRIVE
+ SSD 1.5TB Gen4
+ 씨게이트 파이어쿠다 530 4TB SSD
+ PSU
+ 마이크로닉스 PSU 1000W
+ 시소닉 PSU
+
+
+ GPU-DIRECT
+ GPU 랑 VRAM 를 바로 직결(DIRECT) 를 시켜나서 굉장히 빠르다
+
+ 시네벤치점수
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   DESKTOP-I25VIFM_mgr
+ 172.30.1.58
+
+
+ DESKTOP-I25VIFM
+ 프로세서	AMD Ryzen 5 5625U with Radeon Graphics, 2301Mhz, 6 코어, 12 논리 프로세서
+ RAM 16 GB
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MAC pc perchasing Mgr
+ m1
+ m2
+ 일반 프로 맥스 울트라
+ https://www.itworld.co.kr/news/241394#:~:text=M2%20vs.%20M1%20%EB%A7%A5%EC%8A%A4&text=%EB%94%B0%EB%9D%BC%EC%84%9C%20M1%20%EB%A7%A5%EC%8A%A4%EC%9D%98%20CPU,M2%EC%9D%98%20%EC%95%BD%202.5%EB%B0%B0%EB%8B%A4.
+ 반면 최고 사양으로 구성한 맥북 프로 혹은 더 좋은 기기를 고려하고 있습니다면 아직 M2를 선택지에 포함할 때가 아니다.
+ M2 프로/맥스/울트라가 등장했을 때나 고려할 가치가 있겠지만,
+ 최소 6개월 이상은 기다려야 할 것이다.
+ editor@itworld.co.kr
+
+ https://www.itworld.co.kr/news/241394#csidxccef6cd680bfb2ca75a622a17402241
+ 원문보기:
+ https://www.ciokorea.com/news/241434
+
+
+ https://suzxc2468.tistory.com/210
+ 마침 회사에 PC교체대상자에 내가 걸려서... 도대체 왜 개발자들은 맥북에 열광하는지, 직접 사용해보기로 했다.
+ 그리고는... 일년이 지났다.
+ 솔직히 결론부터 말하면 굳이 맥북을 사용해야할 매력은 별로 느끼지 못했다.
+
+ 박정훈
+ usr 서비스 접근 환경    그리고      서비스
+ 핵심은 서비스처리속도(업무속도)인데.
+ usr 가 가지고 있는 환경이 다양하기 때문에 그곳에 맞추어 서비스를 구현 가능 하게 하려보면....
+ 여러 usr 서비스 접근 환경에 대한 대응이 필요하다.
+ 우리의 서비스 타겟이 한국인 정도의 범주로 생각이 됩니다면
+ 한국 유저의 50~60프로 안드로이드 이나. 한국 모바일 OS 시장 점유율도 IOS 가 상당히 높기때문에
+ 서비스 개발 시 두가지 플랫폼을 겸해서 개발을 해야할 필요가 있습니다고 생각이 들었습니다.
+ 멀티 플랫폼 크로스 개발 의 필요성
+
+ usr 의 디바이스 그리고 OS
+
+ 2022 년 기준 모바일 OS 시장점유율 전세계 평균은 안드로이드가 아직까지는 우세 하다고 하며,
+ 세계인을 대상으로 서비스를 제공하는 기업 측에서는	서비스환경 포팅/마이그레이션 에 대해서 대응이 필요하다는 생각이든다.
+
+ xcode
+ iOS 앱 개발용 IDE
+
+ iOS 앱 개발 을 할 것이라면 mac 은 필수.
+
+ 세계적인 서비스 제공 기업
+ windows
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   Xcode 14 이상
+ 맥 OS 애플리케이션
+
+ IOS app 개발자의 IDE
+
+ update(맥 OS)
+ access(MAC APP Store)
+ download(xcode)
+
+ LLVM
+ xcode 컴파일러
+
+ IOS application 의 REPLACEMENT 는 이야기가 나오고 있지 않다
+
+
+ Git 내장
+ Apple 환경에서는 Xcode보다 제품에 깊숙이 관여하는 IDE는 존재하지 않는다. Windows 환경의 Visual Studio와 비슷한 위상이다.
+
+ JetBrains의 AppCode나 Android Studio, 또는
+ MS의 Visual Studio for Mac도 iOS/macOS용 소프트웨어를 최종 컴파일하려면 Xcode가 설치되어 있어야 하며
+ 게임메이커나 유니티, 언리얼, 리액트 네이티브[2]도 iOS 환경으로 컴파일 하려면 Xcode가 필요하다.
+
+
+ Xcode 자체는 개발자 등록이 필요 없이[7] 무료로 download 받을 수 있지만,[8],
+ App Store에 앱을 올리고자 한다면 유료 개발자 등록이 되어 있어야 한다.
+ 또한 실물 단말기를 활용할 때도 유료 개발자 인증이 필요했으나[9] Xcode 7로 업데이트된 이후에는 단말기에 자신의 앱을 개발자 프로그램 없이 계정당 3개까지 설치할 수 있게 되었습니다.
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  final cut pro
+ 아마 mac 영상 편집 프로그램 같다.
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   나무위키
+ 나무위키는 약간에 주관 을 삭선 표시를 함으로 써
+ 몰입
+ 재미
+ 감정적 장벽을 낮추어
+ 쉽게 지식을 습득할 수 있도록 설명이 된 지식 제공 서비스인 것 같다.
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  memo 메모
+ db data 를 접근 하여 조작하는 방법
+ db client program 을 이용한다.
+ web 에 있는 기능이 있습니다면 그것을 이용한다.
+ databaseProgrammming
+
+
+ dictionary
+ //REPLACEMENT 는 대체품
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  TextMgr
+ String 내용= "";
+ sout(TextMgr.flip(내용));
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  pcMgr
+ if not exist "tmp.txt" type NUL > "tmp.txt"                 //   if not exist tmp.txt, make tmp.txt
+ shutdown -r -t 0                                            //   restart as soon as possible
+ shutdown -r -t 3                                            //   restart after 3 secs
+ shoutdownNow();
+ shoutdownAfter1Min();
+ shoutdownAfter15Min();
+ printPcData();
+ printPcIp();
+ printPcIpconfig();
+ printPcHostName();
+ sendDataToTargetServer();
+ getDataToTargetServer();
+ collectFilesToThere(collectFiles:,There:,As:yyyyMMddHHmmss);
+ backupDoDirectoryTreeAs_yyyyMMddHHmmss();
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  jhppc1_pcMgr
+ 172.30.1.68
+
+ 이것도 pcMgr 의 필드에 넣도록
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  serverMgr.java
+ synced_server.download(origin_server_status);
+ if(origin_server_status.equals("공유준비완료")){
+ synced_server.download공유타겟. synced_server.set_synced_server_status="다운로드완료";
+ }
+
+
+ b : origin_server (jhppc1)
+ while(true){
+ if(12:00이면){
+ //공유폴더를 읽기 쓰기 불가능 처리					        //이거 못하나요? batcg script  로..
+ b.update_sharing_target_list_storage();             //( dir /b > sharing_target_list_storage.txt ) // 그냥이 아니라 파일명암호화 하고 디렉토리들은 각각 압축 yyyyMMddHHmmss.zip 꼴 의 파일명 저장하고
+ b.update_origin_server_status_data_storage();       //( echo "공유준비완료" > origin_server_status_data_storage.txt )
+ }
+ b.download_sync_server_status_data_storage();
+ }
+ a : synced_server  (DESKTOP-I25VIFM)
+ while(true){
+ if(12:01이면){
+ b.download_sharing_target_list_storage();            // ( curl -O http://172.30.1.68:8000/sharing_target_list_storage.txt )
+ b.download_origin_server_status_data_storage();      // ( curl -O http://172.30.1.68:8000/origin_server_status_data_storage.txt )
+ //origin_server_status_data_storage.txt 를 읽어서 origin_server_status 에 저장하도록
+ if(origin_server_status.equals("공유준비완료")){
+ //다운로드가 완료가되면									 //( echo "다운로드완료" > synced_server_status_data_storage.txt )
+ }
+ }
+ }
+
+
+
+ a.requestToB(file_a 다운로드);
+ b.chkFolder(file_a);
+ b.responseToA(chkFolderResult);
+ if(chkFolderResult=="no exist"){
+ a.del(file_a);
+ }
+ if(chkFolderResult=="exist"){
+ a.download(file_a);
+ }
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  jhppc1ServerMgr.bat
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  text file encoding issue solution
+ chcp 65001
+ @echo off
+ cls
+ echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  variableMgr"
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  변수를 설정하도록
+ setlocal
+ set serverPort = 8000
+ set MgrName = jhppc1ServerMgr
+ set LineMgr = ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ echo %LineMgr%" titleMgr"
+ title %MgrName%
+ echo %LineMgr%" serverMgr" > serverMgr.txt
+ echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  serverMgr"
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  serverMgr.txt 에 기록하도록
+ echo %MgrName% >> serverMgr.txt
+ echo %serverPort% >> serverMgr.txt
+ ipconfig | find "IPv4 주소" > serverMgr.txt
+ ipconfig >> serverMgr.txt
+ echo %LineMgr%" leafMgr" > serverMgr.txt
+ dir /b >> serverMgr.txt
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  파일압축화
+ :: bandzip
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  파일명암호화
+ :: ren `.zip
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  공유폴더로 이동하도록
+ cd "C:\Users\박 정 훈\Desktop\1인 제한 공유 디렉토리"
+ py -m http.server %serverPort%
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  alternativeCodeMgr_for_jhppc1ServerMgr
+ REM REMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREMREM
+ :: py -m http.server 9000
+ :: py -m http.server 8080
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  successCodeMgr_for_jhppc1ServerMgr
+ :: py -m http.server 8000
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  FailCodeMgr_for_jhppc1ServerMgr
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  DESKTOP-I25VIFM_serverMgr.bat
+ chcp 65001
+ @echo off
+ cls
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  disk 를 설정하도록
+ c:
+ ::e:
+ ::f:
+ echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  variableMgr"
+ ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  변수를 설정하도록
+ setlocal
+ set serverPort = 8000
+ set MgrName = jhppc1ServerMgr
+ set LineMgr = ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ echo %LineMgr%" titleMgr"
+ title %MgrName%
+ echo %LineMgr%" serverMgr" > serverMgr.txt
+ :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: trial alternatives
+ :: curl -O http://172.30.1.68:8000/2022 12 03 12 23.mkv
+ :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: trial history fail
+ :: curl -w -O http://172.30.1.68:8000/`.zip
+ :: curl -O http://172.30.1.68:8000/`.zip
+ :: curl -O http://172.30.1.68:8000/[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv
+ :: curl -o http://172.30.1.68:8000/[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv "test.mkv"
+ :: curl –g "http://172.30.1.68:8000/[SubsPlease] Kage no Jitsuryokusha ni Naritakute! - 09 (1080p) [14C9B83B].mkv"
+ :: curl -o http://172.30.1.68:8000/1.mkv 1.mkv
+ :: curl 1.mkv
+ :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: trial history success
+ :: curl --help
+ :: curl "http://172.30.1.68:8000/directory_list.txt"
+ :: curl -O http://172.30.1.68:8000/0.txt
+ :: curl -O http://172.30.1.68:8000/1.mkv
+ :: curl -O http://172.30.1.68:8000/2.mkv
+ :: curl -O http://172.30.1.68:8000/3.mkv
+ :: curl -O http://172.30.1.68:8000/4.mkv
+ :: curl -O http://172.30.1.68:8000/5.mkv
+ :: curl -O http://172.30.1.68:8000/Desktop.zip
+ :: curl -O http://172.30.1.68:8000/`.zip
+ :: curl -O http://172.30.1.68:8000/webThymeleaf.zip
+ :: curl -O http://172.30.1.68:8000/utils - 복사본.zip
+ :: curl -O http://172.30.1.68:8000/gogo.zip
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  만들고 보니 python server, curl 을 활용한 실시간동기화폴더 더라
+ 0. win 10 의 공유폴더 설정하기(SMB 보안이슈..로 REPLACEMENT 찾자.)
+ 1. 고급 공유 설정 관리
+ 2. 네트워크 암호관리(credential
+ 3. 자격 증명 관리자
+ 4. WINDOWS 기능 켜기
+ 5. 이게 보안이슈가 있네... 못쓰겠습니다.
+
+
+ 0. curl 을 활용한 win 10 pc 간 file transfer
+
+
+
+ String TEXT_DEVIDED_BY_LINE="TEXT_DEVIDED_BY_LINE";
+ TextMgr.setFileListDevidedByLine(TEXT_DEVIDED_BY_LINE);
+
+ String TARGET_LINE_NUM="1";
+ TextMgr.getTargetLineLength(TARGET_LINE_NUM);
+ TextMgr.getLongestLineLength();
+ TextMgr.addPrefixToAllLine("ren ");
+ TextMgr.addPrefixToAllLine("/"");
+ TextMgr.addSuffixToAllLine("/"");
+ for(){
+ TextMgr.addSuffixToAllLine(" ");
+ }
+ TextMgr.addSuffixToAllLine(i);
+ TextMgr.addSuffixToAllLine(".zip);
+
+ .split(".") 해서 가장 마지막
+
+ sout(codeMgr.genToEncodeFileNameAsSequenceNum());
+ ren "[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv"                                                       1.mkv
+ ren "[SubsPlease] Boku no Hero Academia - 122 (1080p) [8A5DD9BA].mkv"                                                  2.mkv
+ ren "[SubsPlease] Kage no Jitsuryokusha ni Naritakute! - 09 (1080p) [14C9B83B].mkv"                                    3.mkv
+ ren "[SubsPlease] Spy x Family - 21 (1080p) [581FDE40].mkv"                                                            4.mkv
+ ren "Crayon Shin-chan the Movie - Shrouded in Mystery! The Blossoming Tenkasu Academy (Crayon Shin-chan Movie 29).mkv" 5.mkv
+
+ sout(codeMgr.genBatchScriptToDecodeFileNameAsSequenceNum());
+ ren 1.mkv                     "[SubsPlease] Akiba Maid Sensou - 09 (1080p) [F631311F].mkv"
+ ren 2.mkv                     "[SubsPlease] Boku no Hero Academia - 122 (1080p) [8A5DD9BA].mkv"
+ ren 3.mkv                     "[SubsPlease] Kage no Jitsuryokusha ni Naritakute! - 09 (1080p) [14C9B83B].mkv"
+ ren 4.mkv                     "[SubsPlease] Spy x Family - 21 (1080p) [581FDE40].mkv"
+ ren 5.mkv                     "Crayon Shin-chan the Movie - Shrouded in Mystery! The Blossoming Tenkasu Academy (Crayon Shin-chan Movie 29).mkv"
+
+ 압축을 하면 용량이 작아지니까 압축해서 전송하면 어떨까 물론 압축시간,압축해제시간 이 추가되는 부분이 있겠으나 말이다.
+ 이게 생각해보니 필요한게 디렉토리 트리를 전송하고 자 하면 zip으로 만들어서 보내는 게 일반적일 것 같다
+ 그러니까
+ 디렉토리 항목은 zip 하여 ren 하여 전송을 하고
+ file 항목은 그냥 ren 하여 전송을 하면 됩니다.
+
+ 여기서 멀티 테스킹이 필요해 보이는게.
+ 1.mkv 가 전송이 완료되었지만 이게 열게 되면 읽기상태가 되어서 사용자가 동영상을 보는 와중에 ren 이 되게 되면
+ 에러가 발생할 가능성이 있을 것 같다. 이를 줄이기 위해서 숫자.mkv 로 된 정규식을 사용 해당 파일이 존재한다면 파일명 복호화 시도
+ 파일이 존재하지 않을 때까지 제한시도횟수 가 0 이 될때 까지 시도. 0이 되어도 파일이 존재 한다면,
+ 파일명복호화에러 : 사용자가 파일명복호화 전에 사용중이거나 다른 기타 원인을 통한 에러입니다.에 대한 에러출력
+
+ 공유폴더공유준비완료
+ 파일명복호화완료
+ 파일명평문화시도완료
+ 공유폴더다운로드시도완료
+
+ 이모든게 자동화가 되면
+ 그게 실시간동기화폴더 잖아..
+ curl 을 활용한 실시간동기화폴더 를 만드는 거네.
+ 그렇게 됩니다면 1,2,3,4,5 가 문제가 생기면 안되 2022 12 03 12 16 18 따위로 해야 하는 거지...
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  리프야
+ js 로 하는 것 feat. audio api 은 실패... java 로 feat. batchFileMgr 시도 해보자.
+ 리프 도와줘....
+ 리프 날씨는?...
+ 리프 미세먼지는?...
+ 리프 초미세먼지는?...
+ 리프 시간은?...
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  TextMgr
+ TextMgr
+ TextMgr.drawTimeStamp
+ TextMgr.drawIdStamp
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  logMgr
+ collectLog();
+ saveToLocal(as text_file);
+ saveToLocal(as excel_file);
+ saveToDB();
+ printToConsoleAllLog();
+ db 에 있는 모든 log data 를 조회하여 데이터를 tableMgr 에게 넘기고 tableMgr 는 table에 값을 잘 저장해서 console 에 예쁘게 출력
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  game 스카이림
+ 스카이림 통합팩
+ 스카이림 모드
+ 동료모드 10명 데리고 다닐 수 있음.
+ 70~80 명의 추가 동료들
+ 스카이림 캐릭터 커스터마이징
+ 섹카이림
+ 바닐라 헤드메쉬
+ CME
+ _____
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GameMakingMgr
+ 온라인게임구조 일반
+ 그것을 기반으로 게임이 진행이 되기 때문에 결국 MMORPG는 게임 자체가 DB 를 근간으로 하고 있습니다는 결론에 도달 하게 됩니다.
+ 보통의 온라인 게임은 다음과 같은 구조를 가지고 있습니다.
+ 1. 게이머가 게임 클라이언트를 실행시키면 클라이언트는 먼저 게임의 로그인 서버에서 접속해서 게이머로부터 계정 정보를 입력 받아 로그인 서버로 전송하고, 로그인 서버는 전송 받은 계정정보를 DB 에 질의를 해서 계정 정보가 정확한지 확인합니다.
+ 2. 계정 정보가 일치하면, 게임 서버를 선택할 수 있도록 합니다. 선택한 게임 서버에 접속을 합니다.
+ 3. 게임 서버에 접속이 되면, 게임 서버는 사용자의 계정 정보를 가지고 사용자의 캐릭터에 대한 정보를 DB 에 질의하여 가져오고, 클라이언트로 전송합니다.
+ 4. 게이머는 자신의 캐릭터중 하나를 선택하여 게임을 시작하거나 캐릭터가 없을 경우 새로운 캐릭터를 생성하여 게임을 시작합니다.
+ 5. 게이머가 새로운 캐릭터를 생성했다면, 게임서버는 DB 에 새로운 캐릭터에 대한 정보를 입력합니다.
+ 6. 게이머가 선택한 캐릭터에 대한 정보 - 레벨, 능력치, 소유하고 있는 아이템, 퀘스트 정보, 위치등 - 를 DB 로 부터 읽어 들여 게임을 시작합니다.
+ 7. 게이머가 게임을 진행하면서 바뀌는 정보 - 경험치, 능력치, 아이템 거래, 퀘스트 진행 사항, 캐릭터의 위치 정보등 - 를 게임서버가 적절한 시점에 DB 에 기록을 합니다.
+ 결론적으로 말하면 게이머가 즐기고 있는 온라인 게임의 세계는 겉보기에는 그래픽적인 요소에 의해 구성되어진 것처럼 보이지만, 사실상 이 그래픽적인 요소는 바로 DB 에 기초하여 만들어지고 있고, 그 DB 에 저장된 정보에 의해 존재하고 생명을 부여 받아 온라인 게임은 살아숨쉬고 있는 것입니다.
+ 이처럼 DB 는 게이머가 직접적으로 느끼지는 못하지만, 게임의 초석을 이루는 가장 중요한 요소 중의 하나입니다.
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GameObjectLifeCycleMgr
+
+ drawer that hava function locking by wood stick or steel stick
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  game idea
+ 높은 곳에 재빨리 숨을 수 있는 캐릭터 게임요소
+
+
+
+ 거대한 구름의 그림자 아래에 서서
+ 자주 어둡고 흐린 날씨
+ 맥아리 없는 캐릭터 의 digital 등산
+ 표지판
+ solo 등산...
+ jan sports bag
+
+ 그림으로 정리하고
+ 3d modeling 하고
+ 언리얼 엔진으로 움직이게 만들고
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GameMaster
+
+ GameMaster.change_game_UI_style("SAO");
+ GameMaster.change_game_language("jap");
+ GameMaster.teleport("USER_NAME","DESTINATION");
+ GameMaster.callVirtualWindow();
+ GameMaster.present("USER_NAME","");
+ GameMaster.create("네펜데스","HERE");
+ GameMaster.activate("자쿰");
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  webMgr
+
+
+
+ __REQUEST__
+ Util.LineMgr.drawLine(CODE.MODE_BRACKET, "________________  REQUEST", "99EA");
+ //     "table 에 입력할 값 준비 하도록"
+ //      String usrName = request.getParameter("username");
+ //     System.out.println("getRemoteHost " + request.getRemoteHost());
+ //     System.out.println("getRemoteAddr " + request.getRemoteAddr());
+ //     System.out.println("getProtocol " + request.getProtocol());
+ //     System.out.println("getServerName " + request.getServerName());
+ //     Enumeration enums = request.getHeaderNames();
+ //     System.out.println("접속 통제 ok - 접근불가");
+ //     System.out.println("========= 접근불가 정보  id:  ["+uid+"]["+ip+"]===========");
+
+
+ //"TB 인 REQUEST 를 출력 하도록"
+ TableMgr REQUEST = new TableMgr.Builder("REQUEST")
+ //                .SET_MODE()
+ .setMode(CODE.HEAD_CASE_DEFAULT, CODE.BODY_CASE_DEFAULT, CODE.DIVIDER_DEFAULT, CODE.WAY_COMPENSATING_VALUE)
+ .key_value(new String[]{__0__"key", "value"})
+ .key_value(new String[]{__1__"user_", "user_"})
+ .key_value(new String[]{__2__"user_address", "대한민국 경기도 안양시 동안구 학의로 120 한가람한양아파트"})
+ .key_value(new String[]{__3__"user_name", "박정훈"})
+ .key_value(new String[]{__4__"user_ID", "wjdgns4139"})
+ .key_value(new String[]{__5__"user_password", "symetrical PW"})
+ .build();
+ REQUEST.print_TB_summary();
+ __ 닫기전에 값을 변수에 저장 하도록 __//
+ // 다른 테이블 연동 을 하도록
+ // TB_INFO_HEAD 와 TB_INFO_BODY 에 넣을 값 준비 하도록
+ //        String instanceName = REQUEST.InstanceName;
+ //        int rowsTotalCount = REQUEST.rows.size();
+ //        ArrayList<Integer> rowEachLengthList = new ArrayList<>();
+ //        for(int i=1; i<=rowsTotalCount-1; i++) {
+ //            rowEachLengthList.add(REQUEST.rows.get(i).length);
+ //        }
+ //        Integer[] rowEachLengthList_ =rowEachLengthList.toArray(new Integer[0]);            // ArrayList<String> 를 String[] 로 변환 하도록
+ //        String headerString="(row value count)";
+ //        int headerStringLength = headerString.length();
+ //        StringBuffer StringBasedOnHeaderStringLength = new StringBuffer();
+ //        for (int i=1; i<=headerStringLength; i++) {
+ //            StringBasedOnHeaderStringLength.append(" ");
+ //        }
+ //        int rowCount=TableMgr.rows.size() - 1;
+ //        String instanceName_=TableMgr.InstanceName.toUpperCase();
+ //다른 TB 를 사용하기 위해서 TB인 REQUEST 닫도록
+ REQUEST.close();
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  평생 하지 않아도 괜찮은 목록_TB.xls
+ 신라면 먹지 않아도 됩니다.
+ 짜파게티 먹지 않아도 됩니다.
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  FONT
+
+ font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+ 맑은고딕
+ jetBrains mono
+
+
+ font-family: 'Gmarket Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+ Segoe UI Light
+ Bradley Hand ITC
+
+ GENERALIZED ITC DORM SCEDULE
+ SYSTEM FUNCTION MAP
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  beauty hobby category
+ 수족관 ___ rc car
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ?
+
+
+ 자가진단 및 처방||자기반성||자기성찰
+
+ 
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  schedulerMgr
+
+ alternative
+ // 약 3시간 정도에 1ms 씩 딜레이 ..
+ // 하루에 얼마나 쌓이는지 테스트를 해보도록
+ // 3시간마다 scedulerMgr를 초기화
+ // 3시간마다 scedulerMgr를 재시작
+
+
+ 1초  	1초
+ 60 *  1초  	1분
+ 60 * 60 *  1초  	1시간
+ 24 * 60 * 60 *  1초  	1일
+
+
+
+
+
+
+ itc dorm system 탐험기 산출물 itc dorm map
+ 회사를 다녀보니 난 생각보다 똑똑하지 않았고, 단순한 내용을 잘 까먹는다.
+ 따라서 이를 보완하여 일을 잘 수행하기 위해서는,
+ 정리를 더욱 잘하여 히스토리를 잘 찾아보고 따라할 수 있도록 적절히 분류하여 전산화 시켜두어야 한다.
+
+
+
+
+
+
+
+ 가격을 높이려고 분위기 잡는 업자
+
+
+ 기술을 변천에 따라 언젠가는 주변 infra 기술들이 발전함에 따라 해당 기술의 일부가 depricated 되어 임계에 달할 가능성이 매우 높습니다
+ 따라서 미리 새로운 기술로 같은 비지니스 로직을 구현하도록 마이그레이션 하는 준비가 반드시 필요할 것으로 보입니다.
+ 업무가 아무리 SM 이라고 하여도 말입니다. 물론 이런 상황은 얼마를 주기로 일어날지는 아무도 모릅니다만
+ 어떤 프로그램이 더이상 특정버전을 지원하지 않게됩니다던가 문제가 생기면 갈아타야 하는 상황은 생기게 되니까 말입니다.
+
+
+ 이제 보니 모든 로직의 분기의 끝 에는 표식을 남기는 것이 좋겠습니다.
+ 일종의 case 를 나누거나 type을 나누거나 하는 것 과 유사한 개념 같은데
+ 어떤 분기의 로직을 탔었는지 시각적으로 확인을 하기 위해서 말입니다.
+ 현재의 아이디어 로는 branch 로직에는 표시하지말고, leaf 로직에 만 표기하는 것을 해보려 합니다.
+
+
+
+
+
+
+ 게임회사..
+
+
+ 힐링게임
+
+ 힐링게이트
+
+ what design do you want ?
+
+ UNITY MEDICAL TRAINING University of Miami
+
+ game thumb princess born from flower
+ game thumb princess born from egg
+
+ unity 게임인 ori... 해봐야 겠습니다.
+
+ 인디아나 피플
+
+ 개인통관고유번호(암호화)
+ P170009660367
+
+ 에어프라이어기에 주먹밥 구우면 맛있을 것 같다
+
+ 장어덮밥
+ 갑자기 불에 휩사였어요
+ 우리가 숨통을 끊어 놓겠습니다...
+ 미스릴 방패
+ 미스릴 검
+ 목각나무 검
+ 몰수
+ 몰입
+
+ 가죽 가방 공방에 가서 가방을 만들어 보자
+
+ 아기네스 하프문 백
+
+ 백팩 안에 슬링백
+
+ 백 미니어쳐
+ 만두백
+
+ 소 백
+
+ 차일드 백
+ 큰 메인 가방에 서브 가방으로 달린것이 귀엽다
+ atomic logo
+
+ 샤크 백  &&  fish skeleton symbol
+
+ 노란색 폴리스 라인을 두른 샤크 백 디자인
+
+ 노란색 폴리스 라인을 두른 청새치 백 디자인
+
+ 노란색 폴리스 라인을 두른 고래 백 디자인
+
+ cameleon symbol
+
+ 특이 식성인 나를 위한 요리
+ 나는 파인애플 피자가 맛있었습니다..
+ 피자빵의 바깥부분이 고소해서 정말 맛있습니다
+ 누룽지탕의 고소함을
+ 에어프라이어기로 누룽지탕
+ 에어프라이어기로 고구마
+ 에어프라이어기로 고구마
+ 한입 붕어빵 피자맛
+ 한입 붕어빵
+ 파워시스템은 혈관계 같은 것
+ 연산시스템은 신경계 같은 것
+ 나를 위한 기분좋은 밀 박스
+ 나를 위한 기분좋은 런치 박스
+ 푸드 인 푸드
+ 패밀리 푸드
+ 러시안 인형 푸드
+ 핑거푸드
+ 간편하고
+ 건강하고
+ 빠르고
+ 뒷처리가 쉬운
+
+ 소비패턴
+
+
+ 나의 서버 꾸미기
+ 개인 서버 하나쯤!
+ 게임 서버
+ private cloud
+ NAS
+ network access server
+ 대규모 서버 운영
+
+
+
+
+ 고민할 시간에 지르는 것이 나을 수 있습니다.
+
+
+ 회로기판 반투명 노랑 절연 테이프
+ 캡톤 테이프
+
+ 츠기노...카미와...다레...?
+ 다시 만날 수 없어도..연은 사라지지 않아..
+
+
+ 아이츠와 덱토나 카미자 나이
+
+ 거대 동물 연구가
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ withvOffice
+ notebook supporter + drawer + mulititap + tissue + roll tissue + wireless keyboard + water bottle + lotion + 돌돌이 + DESKTOP ...
+
+
+ FORBIDDEN_TB
+ 금지목록      롯데 정통 팥빙수 재구매금지 syso(read me  맛이 별로 이므로 지난번에 후회했었습니다. 사지마세요);
+
+
+
+
+
+
+ 아버지.다양성의 인정을 매우 힘들어 하는 사람입니다. 일반적이라고 보편적으로 사회적으로 인정받는 통념을 벗어나는 사람
+ ...게이...레즈비언...같은..
+
+
+ ScheduleMgr.reqToMe(음식준비)
+ ScheduleMgr.reqToMe(do push up 33 ea)
+ ScheduleMgr.reqToMe(bring snow peak 슬리퍼 to office);
+ ScheduleMgr.reqToMe(당근구매
+ ScheduleMgr.reqToMe(당근삶기
+ ScheduleMgr.reqToMe(당근하늘에게제공
+
+ 아비쥬 예약 fri     (아이스 ) (재생앰플)
+ starbucks tissue thief
+ starbucks electricity power source thief
+ 0000 00 00 00 00 jhp.bringToWithv(스푼, 젓가락, from house)
+ 0000 00 00 00 00 jhp.requestTo1st( 31번 접속 Permission... via windows 원격 접속)
+ 0000 00 00 05 30 샤워
+ 0000 00 00 09 00 매주 금요일 카페로출근
+ 0000 00 00 11 00 잠자기
+ 0000 00 00 21 00 퇴근 실험
+ 2023 00 00 00 00 전세집구하기시도
+ rc 충전기 house 준비
+ 할머니 집에서 rc 충전기 가져오기
+ 기분좋게 한쪽 이어폰을 꼿으세요     기분좋게 음악을 재생하세요    기분좋게 일을 시작하세요
+ 사무실 workspace 준비
+ `락 언락 모듈>자물쇠 말고 우드스틱||쇠젓가락
+ `미니 팬트리
+ `사무실 workspace 준비.blend
+ `지층 계단 식 형태의 서랍장
+ idea 모니터받침대 만들어 가져오기
+ idea 스마트모니터받침대
+ 노트북 서포터 사선
+ 미니 쓰레기통
+ 사무실 책상 설계.blend
+ 슬리퍼
+ 쓰레기통
+ 외장하드 들고 다니기(working directory를 들고 다니는 것) 클라우드 결제하여 사용하기
+ 유선마우스
+ 점심도시락 인터넷 주문
+ 책꼿이
+ 책상위 계단형 사선형 핸들형 데크
+ 코드 스위치
+ 텀블러
+ 폰 충전기
+ 허브
+ 휴지
+ 연말정산 및 취업자 소득세감면신청서
+ 0000 00 00 00 00 jhp.requestToWithv(퇴직금존재여부확인 BETWEEN 계약 withv and jhp)
+ 카메라 부분에 보안스티커 부착하던 테이프 부착
+ 키보드 가방 만들기
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  jhp 자가진단 및 처방||자기반성||자기성찰
+ withv jsp code 를 보는데 sql을 이해불가능판정//query지식부족원인//query공부처방
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  policyMgr
+ 정보 수집 정책
+ 유튜브 리뷰영상을 참조 하도록..도움이 될 가능성이 높음
+ naver clover를 이용하여 업무내역을 녹취를 하여 메모한다.
+ 사진을 찍을 수 있습니다면 휴대폰을 활용하여 촬영한다.
+
+ 박정훈 해석 버전 작성 정책
+ //하도록   으로 작성을 한다
+
+ 주석 작성 정책
+ 주석보다 code 에 힘이 있습니다고 생각은 합니다만 주석에 힘을 실어주세요.
+ 주석에 자세한 설명을 패턴을 갖추어 작성해주세요.
+ 주석은 mother language로 작성을 하세요.
+
+ 인스턴스 작명 정책
+ 인스턴스명을 중복을 피해 id처럼 만들면 어떤가
+ jhp1994
+ jhp202211232105
+
+ 박정훈버전 개발 policy
+ mgr 을 붙여서 사용하도록
+ 협업용 프로젝트에서는 사용하지 말도록.
+
+ 개발버전 개발 policy
+ 개발버전을 개발속도가 빠르도록 독립적으로 작동되도록 설계지시
+ 공통기능을 잘 추려서 공통으로 사용할 수 있도록 잘 협업하여 설계지시
+ 다른 플랫폼으로 옮기는 것을 생각하고...win OS 에 특정된 batch job 을 최대한 출여서 작업하도록 ....
+
+ 운용버전 개발 policy
+ 개발버전을 성능 최적화가 되도록 작업
+ compact(code_minified), fast, stable
+
+ 개발버전
+ 유지보수성 ↑
+ code 복잡도 ↓
+
+ 운용버전
+ 유지보수성 ↓
+ code 복잡도 ↑
+
+
+ 멍청이가 만든 것으로 이해하면 멍청해지는 건 아닌가, 이걸 개발한 사람이 멍청이가 아니길 바라며 - 박정훈 -
+
+
+ SoftWare_engineering>TDD>Test Driven Development
+ 최대한 발생할 수 있는 경우의 수를 집어 넣어 테스트 하는 것을 자동화 로직으로서 추가?\
+ code 구분이 용이하도록 prefix사용
+
+ trouble shooting이 유용하도록
+
+ exception 추리가 용이하도록
+
+ 유지보수가 용이하도록 code 설계
+
+ 안전계수1.5 강건하도록 강건설계
+
+ 주요사항이 안전하도록 주요사항백업설계
+
+ argument를 code로 관리 (그냥 한글이 필요 없다)
+
+ argument address (data address) 컬럼 의 필요성
+ argument가 중복이 존재하는 경우 어느 맥락의 argument인지 알 필요가 있는데 이는 argument address를 도입하면
+ 어느정도 구분할 수 있을 것 같습니다. . 확실한 방법은 아닌것 같습니다. 고 생각합니다.
+
+ sql injection attack preventation 설계   // 방어설계
+ sql injection attack>"; select 1 --" 꼴의 공격을 한다면 사용이 되어 버린다
+ + mybarts + preparedstatement>이를 같이 활용하고 sql insection attack 일부대응하기 위해서 select name, id from user where name = #{name} 와 같은 #{}을 활용한다.
+
+ db 연동 기능 있는 시스템 설계
+ db trg//crud monitoring 하며 특정된 transaction을 수행하는 경우.
+ a_temp_tb.record //외부연동업체로부터온수신data내역   을  받아 a_TB.record를 renewal
+ a_TB.record
+ db scheduler// itc의 경우 예를 들면 //scheduler 작동 주기="1작동1day"
+ batch job
+ demon //화면이 없는 프로그램
+ db function
+ db procedure
+
+ 연동시스템 설계 //외부연동 시스템은 withv에서 독립적으로 테스트가 어려울 수 있습니다.
+
+ view 설계
+ 다양한 기능의 btn을 만들고 usr, admin에서 보이지 않게 숨김처리합니다.
+
+ 로직 설계 policy
+ 큰 흐름 설계 후 작은 흐름 설계
+ 예를 들어 가입이라면 신규가입이 재가입보다 월등히 많으므로 신규가입을 먼저 설계해봅니다.
+
+ code  분석 policy
+ 다른 이들의 작명에서는 힌트를 얻을 뿐 실제 흐름은 반드시 유추한 로직과 실제 로직이 동일한지 code 를 점검해야합니다.
+ 작명을 믿고 실제 흐름을 유추하더라도 반드시 유추한 로직과 실제 로직이 동일한지 code 를 점검해야합니다.
+
+
+
+
+ 업무 수행 policy
+ if(상황=="널널"){절대적인 것은 아니나 시간이 적게 드는 업무부터 집중수행합니다.}//업무의 개수를 줄이기 위해서
+ //if(상황=="널널"){절대적인 것은 아니나 쉬운것부터 집중수행합니다.}//업무의 개수를 줄이기 위해서
+ if(상황=="빡빡"){절대적인 것은 아니나 중요한것부터 집중수행합니다.}//
+
+ db code  분석 policy //TB.record 를 해석하는 일이 매우 실무적인 로직이 시각적 패턴적으로 담겨있을 것이라고 생각합니다. 이를 분석하면 분명 로직이해에 도움이 되리라 생각합니다.
+ 레code  관점 해석
+ 운용중이거나 개발용 샘플 레code 를 구합니다.
+ 궁금한 부분은 어디서 볼 수 있는지 - 출처 - 의 스타일로 작성을 합니다.
+ 누가 무었을 로서 한다로 레code  한 줄 한 줄을 해석을 합니다.
+
+ db access policy
+ 가능한 많은 조건을 가지고 조회를 합니다.//for 빠른조회속도로 조회하기 위해서
+
+ perspective senario test pollicy
+ usr
+ admin
+ developer
+ s/w
+
+ batch file programming policy
+ setlocal
+ set this_title=routine oracle 11g express edition connection.bat
+ title %this_title%
+ echo installation db 진행시도요청
+ pause > null
+ cd c:\db\oracle
+ echo 이곳에 db을 설치를 하세요(db설치 정보를 기록필요). 마다진행을 위해 아무키를 누르세요.
+ pause
+ echo C:\db\oracle 에서 listener.ora 에서 db 설치정보를 점검하세요.마다진행을 위해 아무키를 누르세요.
+ pause
+ echo C:\db\oracle 에서 tnsnames.ora 에서 db 설치정보를 점검하세요.마다진행을 위해 아무키를 누르세요.
+ pause
+ echo db 설치정상여부를 점검하세요.마다진행을 위해 아무키를 누르세요.
+ sqlplus
+ system
+ 202399
+ exit
+ ::create schema
+ echo schema를 이곳에 만드세요. 마다진행을 위해 아무키를 누르세요.
+ del null
+
+ :: remove files in subfolders that have extension as foo.bat
+ del /s /a /f /q *.foo
+ del /s /a /f /q *.png
+ del /s /a /f /q *.txt
+
+ :: remove files in subfolders that have name as foo.bat
+ for /f %i in ('dir /s /b / a:d foo') do rd /s /q %i
+
+ :: remove files with keeping directory tree.bat
+ del /s /f /q "c:\desktop\test"
+
+ :: remove files with keeping directory tree.bat
+ del /s /f /q *.* ::현재폴더에서 적용, 아주 조심히 사용하세요. 지난번에.d드라이브 통체로 날린적 있습니다.
+ del /s /f /q "E:\foo> ::foo폴더에서 적용
+ del /s /f /q "E:\foo\*> ::foo폴더에서 적용
+ del /s /f /q D:\*  ::사람을 죽상으로 만들 수 있는 명령어입니다.
+ file.bat 으로는 안되게 아무래도 win10에서 막아둔 것 같습니다. . 보안을 위해서 말입니다.
+
+
+ code_argument_description_tb
+ code="argument"             // description
+ _________________________________________________________________
+ DECISION_YN=""              //_=_.기준정보 진행불가판단||진행가능판단
+ APPLY_PERMISSION_YN=""      //_=_.허용 허가||불허가
+ permission_0000_1=0000      //
+ permission_0000_1=1         //
+ limit
+ permission_yn
+ level
+ _________________________positive________________________________
+ permission="0000"
+ permission="y"
+ permission="O"
+ permission="success"
+ permission="proper"
+ permission="ok"
+ _________________________negatitive______________________________
+ permission="n"
+ permission="X"
+ permission="caution"
+ permission="caution"
+ permission="note"
+ permission="over"
+
+ code_meaning_tb
+ 0001        code_tb
+ 0002        argument_tb
+ 0003        dictionary_tb
+ 0004        "caution"
+ 0005        "caution"
+
+
+ prj_dictionary_tb
+
+
+
+ NAME_Mgr
+ 클라이언트
+ 클라이언트
+
+
+
+
+ (:ㅁ)
+ (: ))
+ code 레드
+ code 오렌지
+ code 퍼플
+ code 블랙
+ code 블루
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  jhp_ARGUMENT
+ jhp>박정훈>Jung Hoon Park>jung hoon park>JUNG HOON PARK
+ jhp>군번>16-500152
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	1968년 4월
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	1미터 이내 사회적 거리두기
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	흰색
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	전국단위 예비군 훈련
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	신경작용제
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	허리 메어
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	100-120회
+ jhp>2021 02 15 1년차 예비군 훈련 원격 교육 퀴즈 정답	5cm
+ jhp>[안양시 부림동대] 대체지정자 안내
+ jhp>[안양시 부림동대] 51사단 167연대 3대대 동안구지역대 예비군 부림동대 <master@dongwon.mil.kr>
+ jhp>[안양시 부림동대] 기타 문의사항은 동대로 전화(031-384-9113, 야간동대장휴대폰착신)해주시면 성실히 답변드리겠습니다.
+ jhp>예비군소속>동원지정 2소대 4분대
+ jhp>예비군직책>없음
+ jhp>symetrical password>symetrical password new>symetrical password advanced
+ jhp>010-6392-4139
+ jhp>01063924139
+ jhp>집>kt_giga_5g_a184>decoded(5az76zf441)
+ jhp>쿠팡>coupang>pjh4139@gmail.com>decoded(808711@@)
+ jhp>학점은행제>wjdgns413>symetrical pw
+ jhp>kakaotalk_id>pjh4139@gmail.com
+ jhp>withv>비즈메카>bizmeka>pjh4139>2023@bizmeka.com>
+ jhp>withv>640 600 별>
+ jhp>withv mail>pjh4139@withv.co.kr
+ jhp>oracle community>pjh4139@gmail.com>symetrical pw
+ jhp>business_mail>jhp4139@naver.com>symetrical pw
+ jhp>https://github.com/PARK4139
+ jhp>https://github.com/PARK4139/ing-to-do.git
+ withv_jhp_laptop_serial_no>206nzbx066461
+ withv_jhp_laptop_MAC_address>50-84-92-46-16-49
+ withv_jhp_laptop_external_ip_address>211.197.19.227>trial_solution>chrome/my ip address
+ withv_jhp_laptop_internal_ip_address>192.168.0.127>trial_solution>ipconfig
+ withv_jhp_laptop_office_2019_certification_completion_date>2022 11 01 twe>trial_solution>________
+ withv_jhp_laptop_office_2019_serial>DQ2VN-YDWPX-X38WJ-YPX2P-CKD2T>trial_solution>________
+ withv_jhp_laptop_win_10_pro_retail_serial>N4B9G-BTM2F-6QFMJ-Q9DMQ-4F9VC>trial_solution>________
+ withv_jhp_laptop_Microsoft_ID>withVisionSystem202210311730@gmail.com>trial_solution>________
+ withv>서울특별시 금천구 가산동 691 대륭테크노타운 20차 1112호
+ withv>TEL. +82-2-6053-0133 | FAX. +82-504-016-7112
+ withv>http://www.withv.co.kr
+ withv wifi password access>withvision-2.4G>withv!0133
+ withv wifi password access>withvision-5G-1>withv!0133
+ withv prjs svn access>withvpjh4139>withvpjh4139
+
+
+ 2023 0 131 with0131 set up win pro OS > windows 업데이트 > 정품 인증 > 4B4CW-B7TQ2-74QRQ-7YB2W-HHWMK
+ 2023 0 131 with0131 set up 365office id > C8846@365k.me
+ 2023 0 131 with0131 set up 365office Xod16371
+ mkr
+
+
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>__________________________  acknoledge
+
+ exec : db procedure 호출 명령어
+ call : db procedure 호출 명령어
+
+
+
+ db procedure 는 void 함수 와 유사하게 작동
+ db function 은 return 함수 와 유사하게 작동
+
+
+ spring annotation
+ @Spring.
+ @Component
+ @Component("dao")
+ @Autowired lombok annotaion
+ @Getter : 사용하는 것을 선호
+ @Setter : 사용하는 것을 선호
+ @Data   : 사용하는 것을 선호
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @RequriedArgsConstructor : 이것을 사용하는 것보다는 명시적으로 작성하는 것을 선호
+ @NonNull : annotation 기반으로 한 java 에서 validation 을 할 때 사용.....js 에서 validation 을 하거나 ..... db 에서 validation 을 해도 되죠?..
+
+
+ op db server에 insert 나 update sql을 보낼때 해당 테이블들을 hang 시키더라도 반드시 db transaction을 수행후 commit 이나 roll back 을 하도록 하자.
+
+
+ parameter 는 arg 가 이동할 수 있는 사람이 arg 라면 지도에 표시된 발자취는 parameter 같은 것
+ parameter 는 arg 가 이동할 수 있는 캐릭터가 arg 라면 게임의 포탈은 parameter 같은 것
+
+
+ line by line process
+
+
+ ?
+ was jvm javaEE, javaSE spring, jsp
+ java jvm
+
+
+ see 백견불여일타 jsp & servlet/53 at next time
+
+ TCP-IP/internet/Web/w3/W3C
+
+ domain perchasing>ip addres & domain mappiing>DNS 에 등록해주는 업체>perchase domain by using yearly payment
+
+ port forwarding>public ip & private ip mapping
+
+ MVC 패턴
+ Model과 View, Controller로 나누어 작업하는 패턴을 말한다.
+
+ iframe>jsp 안에 jsp를 넣는 방법으로 <%@include file="/corp/jsp/file.jsp>%>와 비슷한 느낌이 든다.
+
+ Spring 이 태어난 이유
+ 비즈니스 로직, 뷰 렌더링을 모두 맡으면서 code 가 방대해, 유지보수가 굉장히 어렵다
+ 하나의 단일거대관리code 에 부담을 덜어주는 역할을 해주기 위해 여기서 MVC 패턴 도입.
+ Model 에서 백엔드 데이터를 Controller 에 보내주고,
+ Controller 에서 url & view address mapping
+ 비즈니스 로직은 as Servlet,
+ 뷰 렌더링은 as JSP,
+
+
+
+ 쿠키: 웹 브라우저에 정보(value)를 남겨 놓은 채 (인증, 개인화, 방문자의 상태 체크)를 하는 방법
+ 세션: 웹 서버에만 정보(value)를 남기면서 안전하게 (인증, 개인화, 방문자의 상태 체크)를 하는 방법
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  withv.req(IDE_installation_log_recording)
+ withv project IDE C
+ windows : 10
+ jdk :
+ java EE :
+ eclipse :
+ tomcat :
+ db :  dbeaber, sqldeveloper
+ Spring :
+ app model type : model 1
+ java objects : req, response, out, session, application
+ jdbc(dao/dto) : ?
+ file types : js, html, css, jsp
+ project workspace address:
+ setting type
+ based on xml
+ based on java config
+ based on application properties
+ intellij community version( free version)
+ night mode able
+ chrome
+ Material Dark Theme - Dark Chocolate
+ project web server src copy
+ everything ( free version)
+ git and intellij 연동
+ intelliJ
+ eclipse
+ visual studio code
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  IDE Training DCUR log
+
+ os:version=windows : 10
+ app model type : model 2(MVC)
+ intelliJ : community 2022.02
+ + thymeleaf
+ jdk :
+ java SE
+ build tool : gradle
+ server : spring boot embedded tomcat
+ + spring
+ + spring boot
+ file types : js, html, css, jsp
+ jdbc(dao/dto) : ?
+ + JPA / mybatis
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_  jhp 인수인계
+ 인수인계.java
+ ♥if(newbee.lv==1){
+ quest_name=입퇴실신청
+ quest_name=입실신청
+ quest_name=퇴실신청
+ 접근권한=R;
+ 전체 R training
+ 일괄 R training
+ 단일 R training
+ }
+ ♥절대 op web에 access해서 admin 로그인하여 정보를 함부로 DCU하지 마세요
+ ♥차이를 알기전엔 사용하지 마세요.
+
+ ___________________________________________________________________________________ codeMgr  .... TextMgr
+ CodeMgr.encode0(""")
+ CodeMgr.encode1(""")
+ CodeMgr.encode0(""")
+ CodeMgr.encode6(""")
+ CodeMgr.encode3(""")
+ CodeMgr.encode9(""")
+ CodeMgr.encode2(""")
+ CodeMgr.encode4(""")
+ CodeMgr.encode1(""")
+ CodeMgr.encode3(""")
+ CodeMgr.encode9(""")
+ //몇 중으로 암호화 해서 사용하면 어떤가 단계별로 암호화를 다르게  하도록
+ Util.encode(String decodedStr)
+ Util.decode(String encodedStr)
+ Util.encodeAs(
+ encode(project tenki dorobo)
+ String을 거꾸로 나열만 해도 꽤 쓸만하게 가독속도 떨어짐..
+ 거꾸로 string을 나열만 해도 일단 가독속도 만 해도 엄청 떨어뜨릴 할 수 있습니다.
+ String 평문 = "평문"
+ Util.encode(,CODE.MODE_REVERSE)
+ Util.Encoder.
+ Util.Decoder.
+ Encoder
+ Decoder
+ 객체를 접근하기 어렵도록 hiding을  하도록 private ,
+ private final coder = "박정훈";
+ if(coder.equals(CODE."박정훈");
+ CODE.객체도 연결시켜 놓고
+ 수십개의 객체를 연결시키면...보안은 좋아지겠지만...
+ 수십개의 객체를 외부연결을 시킨다.
+ 자주 수십개의 암호문을 난수로 설정한다.
+ 완전 시스템과 독립적인 시스템에서 난수를 얻고 기록을 해둔다.
+ 해당 key를 잘 기록해둔다.
+ 가 나오는 수 대로 변경.
+ Door(String key){
+ //입력된 key를  수십개의 객체를 통해서 해독한다.
+ Gate(String key){
+ //입력된
+ }
+ //key를 넣으면 처음문자열그룹 중간문자열그룹 마지막문자열그룹 이 뒤적박죽 섞여 나누어 나오도록
+ String ToggleDoor(String key){
+ if(key.length%2=0){
+ 2     /2
+ }else{
+ 3      /3
+ }
+ };
+ String key="사랑합니다 고객님";
+ Util.Encoder1(key)          //String으로 반환
+ Util.Encoder6(key)          //String으로 반환
+ Util.Encoder_(key)          //String으로 반환
+ Util.Encoder5(key)          //String으로 반환
+ Util.Encoder0(key)          //String으로 반환
+ Util.Encoder0(key)          //String으로 반환
+ Util.Encoder1(key)          //String으로 반환
+ Util.Encoder6(key)          //String으로 반환
+ Util.Encoder2(key)          //String으로 반환
+ sout(key);
+ String을 배열화 시킨다.
+ 문자열안에서 PASSWORD를 앞에서 부터 두글자마다 나눠서 삽입 삽입할때 뒤쪽에
+ --------------------------------------------------------------------------------------------- Unreal engine 5
+ --------------------------------------------------------------------------------------------- pycharm community version
+ --------------------------------------------------------------------------------------------- arduino
+ arduino nano 33
+
+
+
+
+ pending transaction
+ 트랜잭션 보류하기
+
+
+ 내 미래를 위해서 집기생충이 되기로 결심.
+ 기생충....지금 생각해보니 표현이 좀 그렇긴 하다
+
+
+ PC 부품 드래곤볼을 시작
+
+
+ 모레를 눈에 뿌리고 도망가는 게임 캐릭터
+
+ 비겁한 악당들
+
+ 비겁한 평범한 악당들
+
+ 비범한 악당
+
+ 노 히어로
+
+ 말이 었는 캐릭터들
+
+ 미스릴 방패
+
+
+ noah
+
+ 이로오 우바우 세카이
+ 색을 찾아주세요..
+
+ 세상은
+
+ 기리기리 마데...
+ 아슬아슬 한데까지..
+ 아주아주 높은 탑과 구름 digital 공중 캠핑
+
+
+
+ 코드가 체득화 되는 것...
+ 하나 둘 셋 넷
+
+
+ 한스미디어 초록의 집
+
+
+
+
+ battery charger output power
+ 19v 3.42
+
+
+
+
+
+ if(para1==null){
+ System.out.println("validation fail id = 2022 12 13 10 21");
+ }
+ if(para1 의 데이터타입 == "String"){
+ System.out.println("validation fail id = 2022 12 13 10 23");
+ }
+
+
+
+
+ // 인터넷 검색하여 관련 정보를 얻고 실험을 해서 관찰을 해 통찰을 얻은 바로는
+ // 정규식은 /가 하나 두개 세개 를 붙이면 문자로 인식이 되는 것이 대부분이며 아주 특수한 경우에 []로 묶어야 문자로 인식이 되는 것이 있습니다.
+ // 이제 꽤 잘 수행 할 수 있을 것 같다.
+ // /n  과  //n 이 있습니다고 하면  // 이 먼저 우선 인식이 되는 것으로 확인되어 진다.
+
+
+
+
+ 필수인수인계항목
+
+
+
+  유보 미유보 
+
+
+
+ 아파치 서버 셋팅 공부
+ iterater
+ hasNext()
+ next()
+ forEach()
+ resultSet 공부
+ jsonMgr 제작
+ via objectMapper
+ via jsonObejct
+ via jsonArray
+ jsonStr
+ ajax
+
+
+
+
+
+
+ if(____Mgr.scanRecycleBinCapacity>=10gb){
+ mp3 재생 "현재 휴지통의 10gb를 이상입니다."
+ mp3 재생 "현재 휴지통을 비울까요?"
+ }
+
+
+
+
+ IntelliJ 실행 에러 2022 12 14 09 15
+ IntelliJ 실행 에러 솔루션 2022 12 14 09 15
+ run cmd as admin
+ netsh int ipv4 set dynamicport tcp start=49152 num=16383
+ netsh int ipv4 set dynamicport udp start=49152 num=16383
+ net stop winnat
+ net start winnat
+
+
+
+
+ if(high sierra<=mac OS ){
+ set(fileSystem,APFS);
+ }
+ if(disk size <= 32GB){
+ set(fileSystem,MS-DOS(FAT));
+ }
+ if(32GB <= disk size){
+ set(fileSystem,MS-DOS(ExFAT));
+ }
+
+
+
+
+ 애완돼지를 키우며 돼지요리를 먹고 있는 우리
+ 인간 세상이 이렇게 되어있으니까요..
+ 인간 세상은 아이러니 한 일들이 가득차있죠.
+ 다양성이 공존하죠.
+
+
+
+
+ 오디르바나
+ 슈퍼패스
+ superslides
+ 볼레린온오카탄툴
+ 리발레리야
+ 마드레에샤흐
+
+ organizing name     nick name
+ _______________     ________
+ gate_super          super_gate
+ gate_hyper_sonic    hyper_sonic_gate
+
+
+
+
+
+ pc web     : www.naver.com
+ mobile web : m.naver.com
+ 동적인 데이터 가 큰 비중을 차지하고, 기존의 pc web 이 존재한다면 고려
+ responsive web  : ?
+ 정적인 데이터 가 큰 비중을 차지하고, 기존의 pc web 이 없는 경우라면 고려, 오히려 저렴한 개발비용.
+
+
+
+
+ 관리자가 데이터를 누르지 않았던 것처럼 데이터를 복구!
+ update 의 원복은 update 로 ( 원복 작업이 어렵지만 복구 가 상대적으로 용이.)
+ delete 의 원복은 insert 로 ( 원복 작업이 어렵지만 복구 가 상대적으로 용이.)
+ insert 의 원복은 delete 로 ( 원복 작업이 쉽지만 복구 어렵.)
+ create 의 원복은 delete 로 ( 원복 작업이 쉽지만 복구 어렵.)
+
+
+ css
+ box-shadow: rgb(34 37 38) 1px 1px 35px 0px;
+ 이뻐
+
+
+ revoke. 뜻 : 철회하다, 취소하다.
+
+
+ 
+ oracle db 에서 argument wildcard 로 검색하는 방법
+ select * from member_tb where id_no like '940405%'
+ select * from member_tb where id_no like '%1042'
+ select * from member_tb where name like '%박정훈'
+ oracle db 에서 like 는 %를 이용해 argument를 검색할 수 있는 아주아주 편리한 기능!
+ %는 wildcard 의 * 처럼 작동한다.
+ 혹시 정규식도 되는지 찾아보자
+
+
+ 
+ group by 집계 하는 방법1 : colume 의 argument 별로
+ select acl_cd2, count(*) from member_tb where std_no like '2022%' group by acl_cd2
+ 자주 애용하는 ount(*) 과 같이 쓸 수 있는 group by!
+
+
+ oracle db 에서 집계 하는 방법2 : colume 의 argument 별로 그리고 그중 특정 argument 만!
+ select * from (select acl_cd2, count(*) from member_tb where std_no like '2022%' group by acl_cd2)
+ select * from (select acl_cd2, count(*) from member_tb where std_no like '2022%' group by acl_cd2) where acl_cd2='1901001'
+
+
+ oracle db 에서 집계 하는 방법3 : oracle db 에서 집계 하는 방법2 을 예쁘게 출력
+ select complexTable.사용자소속성격코드, complexTable.집계수 from (select acl_cd2 as 사용자소속성격코드, count(*) as 집계수 from member_tb where std_no like '2022%' group by acl_cd2) complexTable
+ 2022 10 26 일 입사해서 오늘 2022 12 21 일 이정도의 오라클 db 의 쿼리는 쓸 수 있게 되었다.
+
+
+
+
+
+
+
+
+
+ 그 프로그래머의 발자취는 아름답다
+ 그 프로그래머의 발자취는 아름다울지도 몰라
+ 주석 매니아
+ 코드가 가장 명시적이고 구체적이고 가장 가치있는 수단이라고 생각하지만
+ 다수가 개발하는 비관례적이고 체계적으로 코드설계가 이루어지지 않은 시스템일 수록
+ 시스템을 유지보수 하는데 있어서 주석은 가치가 있어 질 수 있다고 생각합니다.
+
+
+
+ win10Pc1_Mgr 을 만들자.
+ win10Pc2_Mgr 을 만들자.
+ SierraPc1_Mgr 을 만들자.
+ HighSierraPc1_Mgr 을 만들자.
+
+
+
+ 단편적으로 나무를 보는 것과 전체적으로 숲을 보는 것
+ 이것은 상대적이며 두 개 다 필요하다.
+
+
+ 시스템파편화 되었습니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 모든 것을 해체
+ 모든 것을 파편화
+ 모든 것을 조립
+
+
+
+
+ 바위틈에 사는
+ 두꺼운 유리 수조 제작
+ 파우더 탱
+ 그레이색상의 탱
+
+
+
+
+
+
+
+
+
+ 다아
+ 다아야...
+
+
+ 감명깊게
+
+
+
+ 타즈메니아데빌
+
+
+
+ 고글 무는 웃는 김아랑 예쁘더라
+
+
+
+ 더워서 시작한 쇼트트랙 메달리스트 선수 준서
+
+
+
+ 예쁜 썬팅된 유리로 된 인테리어 (그 평촌역 일식 가게처럼)
+
+
+ 혜리의 군예능에서 힝 모먼트는 엄청난 임펙트가 있었다. !
+
+
+
+ 실험체
+ 실험쥐
+ 실험타즈메니아데빌
+ 실험타즈메니아쥐
+
+
+
+
+
+ 깊은 곳을 탐험하는 듯한.
+ 심험
+
+
+
+
+
+ 집쥐
+ 침입종
+ 외래종
+ 생태계교란종 유입 차단 메뉴얼
+ 천연보호구역
+ 독도의 집쥐유입
+ 생태계교란종 유입 유형별 대책 수립
+
+
+ 헬퍼독
+
+
+
+ 디지털시스템 탐험가
+ 텍스트 이동의 추적자
+
+
+
+ 히우라유리나
+ 나카오아야나
+ 미야모토안나
+
+
+
+ 연봉 년봉 사례
+ 웹 개발 SI 12년 5000
+
+
+ Spring Boot/JPA/Jira Confluence/AWS/git/React angular vue/자료구조/코테
+ CI? CD?
+ 3년차 웹개발자 저평가..
+ 업체에서 웹개발자 저평가 풍토
+ 2022 년 기준 웹개발자 신입 평균 연봉 2800 3500
+ 3500 학원에서 연습하고 바로 취업한 연습생 연봉.
+ 4500 ~ 5000 3년차 개발자
+
+ 
+ 1년차 나
+ 2022  07 국비지원 학원 s
+ 2022  09 학점은행제 4년제 e
+ 2022  10 국비지원 학원 e
+ 2022  10 26 위드비전시스템 취업 s     3100  1년차 웹개발자 복지비/상여금/명절떡값 없음     +   금요일 재택근무!!
+
+ 4년차 나랑 비슷한사람 국비지원
+ 2800
+ 3100
+ 3500
+ 4200
+
+ 7년차
+ 자바 풀스택 개발자 5천
+
+ 보통 신입으로 들어가 2년정도 근무후 이직하는것이 베스트입니다
+ 3년차이면 금액으로 따질떄 3400 정도 가능
+
+
+ 2년차 any case
+ 세후 360
+
+
+ 개발언어도 중요
+ 업무테크트리도 중요
+ 작은 회사 비전 없음
+ 자격증 취득
+ 자기개발 중요
+
+ 3년차면 이직하기 가장 좋은 년차
+
+
+ 경력 3년에 프리전향? 돈만 보고 나오면 다른 포지션에 민폐가 될 수 있다는걸 아시길..
+ 돈보다는 실력을 쌓고 나오세요.
+ 요즘 경력 적고 실력 안되는 3년이하 프리 때문에 개피 본게 한두번이 아닙니다.
+ - 11년차 PM - 
+
+
+
+ 인프라 설계
+ 배포전략
+ 네트워크
+ clouding network
+ network clouding
+
+
+ 프리전향
+ 6000
+
+ 고급
+ 8800
+
+
+ 소프트웨어 엔지니어
+ 소프트웨어 아키텍트
+ 소프트웨어 기초설계
+ embedded software developing
+ 모바일 웹개발
+ QA 5820 상위권
+ QA 3652 하위권
+
+
+ 5~7년차 가장 시장에서 인기가 많은 중니어 이직이 기회.
+
+ 모르는 것
+ 개발업계에서 티어의 의미
+ 스톱옵션? 스톡옵션?
+ 소프트웨어에서 infra 란
+
+
+ CTO : 실력좋은 개발자 5000 6000 만원이 든다.
+
+
+
+ 아는 만큼 보이는 경우가 대부분이며.. 전체적으로 알지 못하면 ..오판을 초래하기 쉽다...
+ 알이 먼저인지 공룡이 먼저인지 생각을 해보자.
+
+
+
+ 코드샘플링
+ 코드 샘플 매니아
+ 저는 샘플로 테스트 하며 사용방법에 대한 통찰을 얻는 방식을 좋아합니다.
+ 어려운 내용일 수록 샘플을 선호합니다.
+ TTS구현코드샘플
+ java
+ js
+
+
+ 어려운 말을 쓰는 것의 장점 과 단점
+ 장점
+ 많은 의미를 빠른 시간에 설명할 수 있다.
+ 단점
+
+ 듣는 이에게 의미 전달을 시키는 것을 목적으로
+ 이야기 할때
+ 상대 의 수준에 맞는 워딩을 하여 설명하는 것이 중요하다.
+
+
+
+
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ retina display serch
+ apple product display marketing name
+ 시력과 시청거리의 기준이 다소 Apple 멋대로 결정된다는 문제
+ retina display
+ past
+ super retina display
+ is used OLED panel supplied samsung display
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ sierra timeline
+ in converting me from user to developer...
+ opensource 를 진정으로 따르는 developer 들은 서로 돕고 더불어 사는 듯한 느낌을 주었습니다.
+ 감성코딩
+ 감코
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ macbook timeline
+
+
+ apple ID
+ mac os ID
+ hl1mhu@gmail.com
+ simeon
+ update Mac OS X Lion 10.7.5(11G63)
+ mac device info 를 수집해보자.
+
+
+ enter : 파일명 바꾸기 단축키
+
+
+ //xcode issue s
+ 를 쓰려면 mac OS 가
+ macOS Ventura	13.0.1
+ macOS Monterey	12.6.1
+ 이상은 되어야 하나보다....
+ 이거 못쓰면...않되는데...
+ //xcode issue e
+
+
+
+ shift alt command  r  :  feat. new latest version
+ command  r
+
+
+ dmg : 애플 맥 OS를 사용하시는 분들은 exe 파일이라고 보시면됩니다.
+
+
+
+
+ shift command 3   :     screen capture
+ command space    언어별입력기전환
+
+
+
+
+
+ control space terminal : open terminal
+
+
+
+ man ls
+ man pwd
+ man clear
+
+
+
+ clear
+ echo
+
+ cd
+ pwd
+ mkdir tmp
+ rmdir tmp
+ rm -r tmp
+ cp tmp tmp2
+
+
+
+
+
+
+ ls
+ touch tmp.txt # make file
+ cat tmp.txt # open file
+ rm tmp.txt
+ command a : select text all
+ command s : save tmp.txt
+ command c : copy tmp.txt
+ command v : paste tmp.txt
+
+
+
+ cd Desktop
+ touch tmp.sh
+ chmod 755 tmp.sh
+ ~/Desktop/tmp.sh # run tmp.sh
+ ./tmp.sh         # run tmp.sh
+ cd ~/tmp.sh      # run tmp.sh
+
+
+
+ sw_vers    # check Mac OS version
+
+
+
+
+ //macOS	최신 버전 s
+ macOS Ventura	13.0.1
+ macOS Monterey	12.6.1
+ macOS Big Sur	11.7.1
+ macOS Catalina
+ 10.15.7
+ macOS Mojave	10.14.6
+ macOS High Sierra	10.13.6
+ macOS Sierra	10.12.6
+ OS X El Capitan	10.11.6
+ OS X Yosemite	10.10.5
+ OS X Mavericks	10.9.5
+ OS X Mountain Lion	10.8.5
+ OS X Lion	10.7.5
+ Mac OS X Snow Leopard	10.6.8
+ Mac OS X Leopard	10.5.8
+ Mac OS X Tiger	10.4.11
+ Mac OS X Panther	10.3.9
+ Mac OS X Jaguar	10.2.8
+ Mac OS X Puma	10.1.5
+ Mac OS X Cheetah	10.0.4
+ //macOS	최신 버전 e
+
+
+
+
+ history
+
+
+ ipconfig getifaddren0
+ ifconfig
+ say i am leaf
+ logout  # exit
+
+
+
+
+
+
+
+
+ MAC teminal auto completion
+ nano~/.inputrc
+ set completion-ignore-case on set show-all-if ambiguous on TAB: menu-complete
+ ctrl o
+ enter
+ ctrl x
+ logout
+ ctrl w
+ say from now on we can use autocompletion on mac os terminal via tab key
+
+
+
+ //chrome issue s
+ so i found cause...
+ Chrome Mac OS 시스템 요구사항
+ macOS High Sierra 10.13 이상
+ //chrome issue e
+
+
+
+ chrome linux OS system requirement
+ 64비트 Ubuntu 18.04 이상,
+
+
+
+ Android에서 Chrome 브라우저를 사용하기 위해 필요한 시스템 요구사항은 다음과 같습니다.
+ Android 7.0 Nougat
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ Rasberry pi timeline
+ //pass s
+ Rasberry pi OS
+ Rasberry pi terminal apt
+ window IoT : WoR project
+ //pass e
+
+
+ //decide OS s
+ ubuntu
+ //decide OS e
+
+
+ magic mirror2
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ my blog with advertisement timeline
+ 광고 수입료는 초보개발자에게 매우 큰 힘이 됩니다, 한번만 눌러주라 제발 ㅜㅜ !
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ bad dream timeline
+ 전쟁이 나서 폭발을 피해 지하벙커로 이동하여 숨어있었다
+
+ 하늘이가 건너 아파트에서 이곳으로 뛰어서 이동하다가....높은 곳에서 추락했다... 너무 무서웠다.
+
+ 하늘이가 아파트에서....놀다가 높은 곳에서 추락했다... 너무 무서웠다...
+ 잠에서 소리를 지르면서 실제로 잠에서 깨었다.
+
+
+
+
+
+ itc   	인하공전기숙사 모바일 java 라이브러리 org.json (jsonObject, jsonArray) s.
+ itc   	인하공전기숙사 모바일 java 라이브러리 org.json (jsonObject, jsonArray) e
+ itc   	인하공전기숙사 모바일 js 라이브러리 jquery s
+ itc   	인하공전기숙사 모바일 js 라이브러리 jquery e
+ itc 	withv dorm sys 모바일 프로젝트 구조 s
+ itc 	withv dorm sys 모바일 프로젝트 구조 e
+
+
+
+ 우선순위
+ 홀수<짝수//내가 좋아서
+
+
+
+
+
+ 아이젠 주문해서 등산
+ 국내 산장 알아보기
+ 국내 캠핑장 알아보기
+
+
+
+ 박정우에게 기대하지 말자.
+ 난 내 길을 닦자..
+ 정우가 손뻗으면 잡아줄뿐
+ 먼저 내밀지 말자
+ 내 마음만 불쾌하고 힘들다
+ 설교가 많지...설교 듣기 싫지
+ ok....그만 말하자...
+ 쟤도 나도 하고 싶은 말만 많고
+ 말할 곳이 많지 않은 거겠지
+
+ 오늘도 설교를 늘어놨고....바로 손절 제스쳐를 정우가 했다.
+ 설교가 필요가 없는 정우이다
+ 더 이상 설교를 늘어놓는 다면 나 스스로도 불편한 상황을
+ 의도적으로 만드는 사람이 되는 것이니.
+ 그만 하자.
+ 내 생각도 정우에게 펼치지 말자.
+ 의미 없는 일이다.
+
+
+ VFX 에 관하여 하나씩
+ 하나씩
+ 하나씩
+
+
+ 오늘의 하나
+ 오늘의 둘
+ 오늘의 ....
+ 오늘의 백일
+
+
+
+
+
+
+
+
+
+
+ 히치하이커
+
+ 갑자기 모르는 사람이 내 차에 타는데...너무 무서웠어
+ 타려고 했어...
+ 목덜미 매혹적인
+ 자살귀..
+ 네가 본 그거
+ 영안.....이 열릴거야...
+ 영안이 닫힐거야...
+ 디바제시카 괴담러
+ 학살..
+ 귀목고개..
+ 살목지
+ 귀신 소굴인가봐...
+ 실제 있는 장소야
+ 수살귀
+ 자살귀
+ 악귀
+ 무당
+ 살목지 유튜버
+ 무궁화 꽃이 피었습니다. 귀신..
+ 밧줄 3개를 메달고 자살을 하려던.
+ 관음증은 관찰 사실을 모르고 있는 사람이 옷을 벗거나, 나체 상태이거나 성행위 중인 것을 보면서 성적인 흥분을 느끼는 것(엿보는)
+
+
+
+ BEGIN TRAN
+
+ ROLLBACK TRAN
+
+ COMMIT TRAN
+
+
+ rem rem rem rem rem rem rem rem rem rem rem rem rem rem  현재 디렉토리 address win 10 환경변수에 추가
+ ::환경변수가 일시적으로 추가
+ set path=%path%;%cd%;
+ ::환경변수가 영구적으로 추가
+ setx path "%PATH%;%cd%"
+ setx path "%PATH%;c:\java\bin"
+ ::등록된 모든 win 10 환경변수 확인
+ echo %path%
+
+
+ rem rem rem rem rem rem rem rem rem rem rem rem rem rem  유튜브 다운로드
+ py -m pip install --upgrade pip
+ pip install pytube
+
+
+
+ playlist =Playlist('https://www.youtube.com/watch?v=DN-Ur5reNpU&list=UU3zABYmTxp_MyEEvFmekrFQ&ab_channel=%EB%8B%8C%EC%A3%BC')
+
+ DOWNLOAD_FOLDER =
+ addressToDownload = "C:\\Users\\JungHoonPark\\Desktop\\videoes from youtube by pytube"
+ addressToDownload = r"C:\Users\JungHoonPark\Desktop\videoes from youtube by pytube"
+ videoURL ='https://www.youtube.com/watch?v=AbzNe6mrxyo&ab_channel=HeyNews'
+ videoURL='https://www.youtube.com/watch?v=sD9pB3W0DGc&ab_channel=JTBCEntertainment'
+ videoURL='https://www.youtube.com/watch?v=Gsbmo50GY7o&ab_channel=JTBCEntertainment'
+ videoURL='youtubeURL='https://www.youtube.com/watch?v=Gsbmo50GY7o&ab_channel=JTBCEntertainment'
+ videoesURL=''
+
+ _____________________ 단일 영상 저화질로 다운로드 (success) s
+ from pytube import YouTube
+ yt = YouTube(videoURL)
+ stream = yt.streams.get_highest_resolution()
+ stream.download(addressToDownload)
+ ____________________ 채널리스트 저화질로 다운로드 (partly success) s
+
+ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+ python get-pip.py
+ pip install pytube
+ ____________________ 채널리스트 다운로드 (success) s
+ from pytube import Playlist
+ playlist =Playlist(videoesURL)
+ print('Number of videos in playlist: %s' % len(playlist.video_urls))
+
+ # Loop through all videos in the playlist and download them
+ for video in playlist.videos:
+ try:
+ print(video.streams.filter(file_extension='mp4'))
+ stream = video.streams.get_by_itag(137) # 137 = 1080P30
+ stream.download()
+ except AttributeError:
+ stream = video.streams.get_by_itag(22) # 22, 136 = 720P30; if 22 still don't work, try 136
+ stream.download()
+ except:
+ print("Something went wrong.")
+
+ ____________________ 채널리스트 다운로드 (success) e
+
+ 대형채굴장
+ 튜링
+ 1ms 샘플링 기준
+
+ edge browser dark mode
+ //    edge://flags
+ //    #enable-force-dark
+ edge://flags/#enable-force-dark
+ set default to enable
+
+
+ 언리얼 크리에이터 되는법..
+ https://coloso.co.kr/products/3d-flipside3d?gclid=EAIaIQobChMI95OXg5Sb_AIVhC-WCh0X_gq8EAEYBCAAEgL6vPD_BwE
+
+
+
+
+ ai drawing
+ NAI
+ novel AI
+ 마스터피스, 하이퀄리티, 뷰리풀걸,
+ animation girl
+
+
+ pixiv
+ 일본 일러스트 공유 사이트
+ 키즈나 아이
+ 버튜버
+ 220만원 perception neuron 모션캡쳐 장비
+
+
+ 3d virtual model design
+ VRoid Studio
+ 모델링 지식 없이
+ 유료 저작권
+
+
+
+
+
+ 아키에이지2
+
+
+ 윈도우 11 입구컷
+ WINDOWS 11
+
+
+
+ 제이드가든 수목원
+
+
+
+ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 기숙사시스템 앱
+ 앱은 총 5개 있음. 안드로이드 앱 5개,  IOS 앱 5개
+
+ 장안대
+ 앱 안씀
+
+ 건대
+ 시설점검 앱
+ 웹 앱
+ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 운영서버접속
+ 시스템 운영서버 접근 정보 현황
+ gmail via jhp>>Juhyun Kim>>https://drive.google.com/drive/folders/0B3mGCXh5xByHcWhtYmVGbzhoTFk?resourcekey=0-tndLLQ8nO1Loj6bGm3i_Ww>>Google Drive
+ Google Drive>>공유_개발과제>>기숙사관리시스템>>기숙사 시스템 운영서버 현황.xlsx>withv!0133
+ Google Drive>>공유_개발과제>>기숙사관리시스템>>1_공통_건국대기숙사>>운영서버접속>>접근통제 메뉴얼_v1.pdf
+
+ 
+ sg dorm 운영 서버 접속
+ ip4
+ 프로그램..
+
+ 다른대 운영 서버 접속
+ vpn 프로그램
+ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 개발서버 접속
+
+
+ G:\.shortcut-targets-by-id\0B3mGCXh5xByHcWhtYmVGbzhoTFk\공유_개발과제\기숙사관리시스템\3_공통_sg dorm기숙사\2023년_시스템개선_관리자페이지Edge대응
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____ itc 학적연동 (수동)
+ DB SCHEDULER 에서 PROCEDURE 인 BATCH_GET_MEMBER 를 수행
+ -->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 히스토리 확인하고 수행할것. 시간도 가능하면 확인할것.
+ exec BATCH_GET_MEMBER
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____ itc 학적연동 (자동)
+ 22/23/4/42/5/62( op DB server 에 등록된 DB SCHEDULER )
+ DB SCHEDULER 에서 특정 호출 조건(늦은 밤시간(usr 사용빈도가 낮은 시간대)||create||insert...) 을 만족 시 호출
+
+ DB SCHEDULER 에서 PROCEDURE 인 BATCH_GET_MEMBER 를 수행
+ //BATCH_GET_MEMBER EXCUTION ELAPSED TIME = 약 1 MIN //너무 긴 처리 시간이라고 합니다.
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____ 장안대.학적연동
+ //db procedure start to end elapsed time = 1시간 // 엄청 오래걸리니 염두해서 수행해야한다.
+
+ //장안대 db procedure 실패 시 최초조치
+ db procedure.broken='Y' //db procedure 실행결과 ="실패"
+ click(name: 강제손상 해제됨, remark : 해당 프로시져)
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_____ itc VACS setting
+ server no 30>itc op server>/vacs/src/compile.sh>(VACS 컴파일용 파일)
+ server no 30>itc op server>/vacs/lib
+ server no 30>itc op server>/vacs/bin/server.sh>(VACS 실행용 파일)
+ server no 30>itc op server>/vacs/log
+ server no 30>itc op server>/vacs/conf/corpInfoFile.properties>corpInfoFile.properties은 시스템을 구동시키기 위해 제일 먼저 읽혀지는 설정 파일입니다.
+ server no 30>itc op server>/vacs/conf/corpInfoFile.properties>
+ //company : 기관 업체명
+ //if(COMNAME==oo){ooo을 삽입 하여 응답전문의 예금주에  넣어송신}
+ //if(VACS_VACT.cmf_nm=="박정훈"){박정훈 삽입 하여 응답전문의 예금주에  넣어송신}
+ //server_ip=127.0.0.1(업체 아이피)
+ //server_port: 소켓 리슨 포트번호
+ //key : 통신 암호화 키 16자리
+ //enc : 0  ||  1 (암호화여부 0:비암호화, 1:암호화)
+ //inpcond : 0(조건입금)  ||  1(무조건입금(Default))
+ if(inpcond==1){
+ 입금요구 전문수신 시 VA수취조건점검 없이 무조건입금 without 입금가능여부점검
+ }else if(inpcond==0){
+ 입금요구 전문수신 시 계좌수취조건점검 하여 조건입금
+ //VA수취조건점검
+ if(VACS_VACT.acct_st==1){입금PERMISSION="O"}
+ if(VACS_VACT.tramt_cond==1){입금PERMISSION="O"}
+ if(VACS_VACT.tramt_cond==0){입금PERMISSION="X"}
+ if(VACS_VACT.trbegin_il...
+ if(VACS_VACT.trbegin_si...
+ if(VACS_VACT.trend_il...
+ if(VACS_VACT.trend_si...
+ }
+ server no 30>itc op server>/vacs/conf/corpInfoFile.properties>INPCOND=0 이면 설정이면 VACS_VACT을 참조해 계좌조건에 맞춰서 조건입금 with 입금가능여부점검
+
+
+ //원거래점검(입금거래중복점검)
+ VACS_AHST.INP_ST=1//상태=입금(입금거래중복)
+
+
+ //itcDormSystem.거래내역삽입
+ itcDormSystem.insert(    VACS_AHST.record(거래내역)      )
+
+
+ //itcDormSystem.집계
+ if(VACS_AHST.record){
+ itcDormSystem.update(   VACS_TOTL.record(집계내역)  )
+ }else{
+ itcDormSystem.insert(   VACS_TOTL.record(집계내역)  )
+ }
+
+ //HF집계
+ 입금 시 집계합계와는 별도로 bank_cd가 00인 경우
+ HF.insert(   VACS_TOTL.RECORD(집계내역)   )
+
+
+ //집계처리내역비교처리(HF집계내역 vs itcDormSystem집계내역)
+
+
+ //VA수납횟수처리
+ VACS_VACT.seq_no+=1//거래원장.수납회수+=1로 update, VACS manual에는 1로 update 한다고 되어있는데 +=1이 맞을 거라고 생각하고 있습니다.  ? -
+
+
+ VA현금영수증처리(현금영수증 사용 모듈에서만 유효)
+ VACS_VACT.cash_gb=1//거래원장.현금영수증상태="현금영수증사용설정";
+ VACS_VACT.cash_gb=0//거래원장.현금영수증상태="현금영수증미사용설정";
+ VACS_VACT.VAT_GB=0//거래원장.현금영수증상태="소득공제용";
+ VACS_VACT.VAT_GB=0//거래원장.현금영수증상태="지출증빙용";
+
+
+ 입금취소처리
+ 원거래존재여부점검처리
+ 원거래계좌번호점검처리
+ 원거래거래금액점검처리
+
+
+ 원거래취소가능여부점검처리
+ VACS_AHST.inp_st=3//거래내역.상태="정산"(원거래 취소불가능상태)
+
+
+ 거래내역원장처리(입금거래처리내역update)
+ VACS_AHST.inp_st=2//거래내역.처리상태="취소"
+ VACS_AHST.caninp_si=현재시간//거래내역.취소처리시간="현재시간"
+
+
+ 기관내집계처리(update)
+ VACS_TOTL.caninp_cnt=?//집계내역.취소입금건수
+ VACS_TOTL.caninp_amt=?//집계내역.취소입금금액
+ VACS_TOTL.lst_il=?//집계내역.처리일자
+
+
+ VA수납횟수처리
+ VACS_VACT.seq_no=0//거래내역.수납횟수="수납한적없음"
+
+
+ itcDormSystem.resToHF(2000_____);//수취조회응답
+ itcDormSystem.resToHF(1000_____);//입금거래응답
+ itcDormSystem.resToHF(1001_____);//입금Retry거래응답
+ itcDormSystem.resToHF(3000_____);//입금이체거래응답
+ itcDormSystem.resToHF(3001_____);//입금이체Retry거래응답
+ itcDormSystem.resToHF(7000_____);//집계응답
+ itcDormSystem.resToHF(1010_____);//입금취소응답
+ itcDormSystem.resToHF(3010_____);//입금이체취소응답
+
+
+ vacs directory tree update  after procedure
+ 1. 현 VACS의 작동을 멈추고(어떻게?. windows 10 service에서 tomcat이랑 VACS(service name 까먹었음.확인필요) 다시 시작하면 되나요?.)
+ 2. /src 의 compile.sh 실행(VACS 컴파일)
+ 3. /bin 의 server.sh 실행(VACS 실행)
+
+
+
+
+ 개발서버 접속이 되지 않았다.
+ 동일 프로젝트 였고 동일하게 복제하였기 때문에 이었다.
+ 기존에 사용하던 URL로 접속을 하려고 해도 되지 않았다..
+ 다른 포트로 URL에 
+ 포트 충돌 문제로 포트를 변경을 했었던 것을 간과하였다.
+
+
+ 주말근무 시
+ 주말에 누군가 운영서버를 켜두어야 하는 이유, 현 운영 서버의 구조상 개발서버를 통해 운영서버로 들어가야 하는 케이스가 있으므로
+
+
+
+ 노트패드 다크모드끄고 메일 보내기....아놔....베이지색 글씨에 로 가독성....메일 잘못 보낸게 엄청 많다
+
+
+ transaction 사용 유의 사항
+ 점유하게 되고 다른 테이블을 select는 가능한데 update, insert 불가능 delete 는 모르겠다
+
+
+ 
+ 샘플 만들기 sg dorm, 건국대 한 20명 만들어보자
+
+ 
+
+
+
+ The TCP/IP connection to the host *****, port **** has failed Error
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>itc>백 오피스>정보공유>대시보드 메뉴 에러분석 및 해결과정 기록
+ //ITC의 개발 서버 관리자 페이지 접속 시 다음의 에러 발생
+ //java.sql.SQLException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+ //FROM 텍스트 검색해보니 다음의 테이블 사용 유추
+ from dorm_student_view
+ from member_Tb
+ from portal.v_covid19_qst_rslt
+ //스키마 명 분석
+ //intech.dorm_student_view
+ //dorm.member_Tb
+ //portal.v_covid19_qst_rsltDB에서 가져오는 것 같다
+
+
+
+
+
+
+ [입금처리>배정확정>노출여부변경>퇴사등록 ]
+ https://localhost/admin/application_dorm/application_moveout_pop.jsp
+ http://localhost:9090/admin/application_dorm/application_moveout_pop.jsp
+ 안된이유는 다른 DB의 IP 설정을 125로 하지 않았기 때무에 발생한 에러
+ common.properties 에서 port 125 로 바꾸니 정상작동
+ //해결하였음.
+
+
+
+[입금처리>배정확정>노출여부변경>퇴사등록 ]'
+ 이름이 [미정] 인	퇴사신청 학생으로 로그인해서 시도해보자
+ https://localhost/home/login/login.jsp
+ fake_std_no12
+ fakePw12@@
+ 위 서약에 동의합니다.(셀렉트 버튼명)을 클릭하여 v를 시현.
+ 서약서 및 정보활용 동의 제출(버튼명)을 클릭.
+ 홈페이지>마이페이지>퇴사신청  [https://localhost/home/sub06/sub06_12.jsp]
+ 페이지의 양식이 나와야 할 부분에 양식이 나오지 않음.
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SQL Error [942] [42000]: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+ echo "찾아보니 dorm_satis_text_tb 이 없었음.
+ // 안됬음.
+
+
+
+
+
+
+
+ 
+ 모학교에서 수험번호는 재활용을 하니 PK로 생각을 하덜덜 말자..
+ 김찬수 vs CEO  ...CEO win
+ 수험번호는 PK 가 아니다.
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>인하공전 기숙사 시스템 basic 로직 플로우
+ [개인정보 일괄등록 업로드>입사신청 일괄등록 업로드>합격자확정>노출여부변경>입금처리>배정확정>노출여부변경][best general pick]
+ [개인정보 일괄등록 업로드>입사신청 일괄등록 업로드>합격자확정>노출여부변경>입금처리>배정확정>노출여부변경>배정취소]
+ [개인정보 일괄등록 업로드>입사신청 일괄등록 업로드>합격자확정>노출여부변경>입금예정처리>배정확정>노출여부변경]
+ [개인정보 일괄등록 업로드>입사신청 일괄등록 업로드>합격자확정>노출여부변경>입금예정처리>배정확정>노출여부변경>배정취소]
+ [개인정보 일괄등록 업로드>입사신청 일괄등록 업로드>불합격처리]
+
+
+
+ 입금예정처리자는. 미입금자로 간주되어. 퇴사신청 진행 불가능.
+
+
+ 0<in_amt_tb.in_amt  인 것으로 보아  입금정보를 삽입한것으로 유추하였으나 확인필요
+ in_amt_tb.in_amt<0  인 것으로 보아  환불정보를 삽입한것으로 유추하였으나 확인필요
+
+
+
+ 객실배정 된 미입사자는 퇴관등록이 가능했다.
+ 객실배정 된 입사자는 퇴관등록이 가능할 것이다.
+
+
+ 운영서버접속설정 sg dorm, 건국대
+
+
+ 
+ 부장님께 질문을 하니..
+ getConnection() 메소드의 문제로 보셨는데,
+ DB server 의 port 변경 후 변경사실을 공유를 안해주셔서, 바꾸지 않아서였다.
+ 충분히 그럴 수 있다고 생각한다. 나는 회사에서 아직 일할 준비되지 않은 사람이니까...
+ ...그래도...좀 알려줬으면 하는 바람이 있다...불필요하게 헤메이지 않도록...
+
+
+ 질문의 어려움.
+
+
+
+
+ 거꾸로 플랭크 토탈 30초
+ 떡꼬치
+ 살사소스 재료
+ 아보카도 스프레드 ,  머스타드 구매
+ 우드벤치
+ 우리나라 금리인상 중일 때는 빨리 갚는 방향이 나은 것이 아닌가
+ 풀업 토탈 30개
+ 프록시서버 나 캐시서버로 사용
+
 
 
 
 PIE
 모든 텍스트 파일을 intellij 에서 열어서 한번에 검색해도 되고 잘 활용해 보자
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>_ 요청정보 Pseudo-code
+ */
+
+error 2023 01 31 eclipse
+Server Tomcat v8.0 jadorm was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+Servers>Tomcat v8.0 jadorm >double click>timeout>45>135
+https://ndb796.tistory.com/99
+
+  
+error 2023 01 31 [ ja web server error ]
+    web src에 내가 손댄 페이지에 */ 가 있었다. 내가 실수한건지...확인을 하려면 기존 이력을 확인해야한다. 항상 back up 용 *.zip 을 만들어 두자.
+
+
+done 2023 02 01 11 23
+1.notebook set up 
+1.1.암호용메일 kjlee@withv.co.kr
+1.2.win pw withv20230131
+1.3.1.보안프로그램 설치>AhnLab Office Security Center
+1.3.2.보안프로그램 설치>APPCHECKER
+1.4.etc>WITHV20230131@outlook.com>12qwaszx!@
+2.개발서버 접속 설정
+3.건대 환불취소 유지보수 이력 확인
+4.건대 환불취소 시나리오 개발서버 테스트.
+
+
+
