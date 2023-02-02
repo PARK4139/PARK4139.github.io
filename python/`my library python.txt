@@ -1,8 +1,0 @@
-#print current directory file list
-def dir():
-    import glob
-    files = glob.glob('*.*')
-    for i in files
-        print(i)
-
-dir()
