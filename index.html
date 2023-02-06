@@ -1,1106 +1,1106 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LainyZine: 프로그래머 가이드</title>
-<!-- <meta content="LainyZine: 프로그래머 가이드" property="og:title"> -->
-<link href="https://www.lainyzine.com/ko/" rel="canonical">
-<link rel="icon" href="/favicon.ico">
-<link href='/ko/feed.xml' rel='alternate' title='LainyZine Feed' type='application/rss+xml'>
-<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">
-<meta name="naver-site-verification" content="1aa94f31cdd9c69e3eec079643f25742246c52dc" />
-<meta content="unsafe-url" name="referrer">
-<meta content="follow,index" name="robots">
-<meta charset="utf-8">
-<meta content="LainyZine은 Git, GitHub, Python, JavaScript의 사용법을 소개하는 프로그래머 가이드입니다." name="description">
-<meta content="LainyZine은 Git, GitHub, Python, JavaScript의 사용법을 소개하는 프로그래머 가이드입니다." property="og:description">
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+<!-- <title>PARK4139: 프로그래머 가이드</title> -->
+<meta content="PARK4139: 프로그래머 가이드" property="og:title">
+<!-- <link href="https://www.PARK4139.com/ko/" rel="canonical"> -->
+<!-- <link rel="icon" href="/favicon.ico"> -->
+<!-- <link href='/ko/feed.xml' rel='alternate' title='PARK4139 Feed' type='application/rss+xml'> -->
+<!-- <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"> -->
+<!-- <meta name="naver-site-verification" content="1aa94f31cdd9c69e3eec079643f25742246c52dc" /> -->
+<!-- <meta content="unsafe-url" name="referrer"> -->
+<!-- <meta content="follow,index" name="robots"> -->
+<!-- <meta charset="utf-8"> -->
+<!-- <meta content="PARK4139은 Git, GitHub, Python, JavaScript의 사용법을 소개하는 프로그래머 가이드입니다." name="description"> -->
+<!-- <meta content="PARK4139은 Git, GitHub, Python, JavaScript의 사용법을 소개하는 프로그래머 가이드입니다." property="og:description"> -->
 
-<!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-<![endif]-->
- <style>
-body {
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 0;
-  font-size: 16.8px;
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-}
+<!-- <!--[if lt IE 9]> -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script> -->
+<!-- <![endif]--> -->
+ <!-- <style> -->
+<!-- body { -->
+  <!-- max-width: 1050px; -->
+  <!-- margin: 0 auto; -->
+  <!-- padding: 0; -->
+  <!-- font-size: 16.8px; -->
+  <!-- font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; -->
+<!-- } -->
 
-h1 {
-  font-family: helvetica;
-  font-weight: bold;
-  font-size: 2.2rem;
-  margin: 0rem;
-}
+<!-- h1 { -->
+  <!-- font-family: helvetica; -->
+  <!-- font-weight: bold; -->
+  <!-- font-size: 2.2rem; -->
+  <!-- margin: 0rem; -->
+<!-- } -->
 
-h2 {
-  font-size: 1.8rem;
-  margin: 0rem;
-}
+<!-- h2 { -->
+  <!-- font-size: 1.8rem; -->
+  <!-- margin: 0rem; -->
+<!-- } -->
 
-h3 {
-  margin-top: 4rem;
-  font-size: 1.5rem;
-}
+<!-- h3 { -->
+  <!-- margin-top: 4rem; -->
+  <!-- font-size: 1.5rem; -->
+<!-- } -->
 
-a {
-  color: #4682c1;
-  text-decoration: none;
-}
+<!-- a { -->
+  <!-- color: #4682c1; -->
+  <!-- text-decoration: none; -->
+<!-- } -->
 
-a:visited {
-  color: #8e62c1;
-  text-decoration: none;
-}
+<!-- a:visited { -->
+  <!-- color: #8e62c1; -->
+  <!-- text-decoration: none; -->
+<!-- } -->
 
-header .site-title {
-  padding: 2rem 1rem 3.6rem;
+<!-- header .site-title { -->
+  <!-- padding: 2rem 1rem 3.6rem; -->
 
-  word-break: keep-all;
+  <!-- word-break: keep-all; -->
 
-  font-family: helvetica;
-  font-weight: bold;
-  font-size: 1.65rem;
-}
+  <!-- font-family: helvetica; -->
+  <!-- font-weight: bold; -->
+  <!-- font-size: 1.65rem; -->
+<!-- } -->
 
-header .site-title a, header .site-title a:visited {
-  color: black;
-}
+<!-- header .site-title a, header .site-title a:visited { -->
+  <!-- color: black; -->
+<!-- } -->
 
-.index {
-  line-height: 2.5rem;
-  font-size: 1.25rem
-}
+<!-- .index { -->
+  <!-- line-height: 2.5rem; -->
+  <!-- font-size: 1.25rem -->
+<!-- } -->
 
-.index-list {
-  margin-bottom: 3rem;
-}
+<!-- .index-list { -->
+  <!-- margin-bottom: 3rem; -->
+<!-- } -->
 
-.index-list h2 a{
-  color: black;
-}
+<!-- .index-list h2 a{ -->
+  <!-- color: black; -->
+<!-- } -->
 
-.index .article-detail {
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-}
+<!-- .index .article-detail { -->
+  <!-- margin-top: 1rem; -->
+  <!-- margin-bottom: 1.5rem; -->
+<!-- } -->
 
-.index .article-detail .article-with-description .title {
-  font-weight: bold;
-}
+<!-- .index .article-detail .article-with-description .title { -->
+  <!-- font-weight: bold; -->
+<!-- } -->
 
-.index .article-detail .article-with-description .description {
-  font-size: 1.05rem;
-  line-height: 1.8rem;
-}
+<!-- .index .article-detail .article-with-description .description { -->
+  <!-- font-size: 1.05rem; -->
+  <!-- line-height: 1.8rem; -->
+<!-- } -->
 
-.index h2.subject {
-  margin-top: 0;
-}
+<!-- .index h2.subject { -->
+  <!-- margin-top: 0; -->
+<!-- } -->
 
-.index h2.subject a{
-  color: black;
-}
+<!-- .index h2.subject a{ -->
+  <!-- color: black; -->
+<!-- } -->
 
-.article-container {
-  display: flex;
-  justify-content: space-between
-}
+<!-- .article-container { -->
+  <!-- display: flex; -->
+  <!-- justify-content: space-between -->
+<!-- } -->
 
-#sidebar {
-  min-width: 300px;
-  width: 300px;
-  padding-left: 2rem;
-}
+<!-- #sidebar { -->
+  <!-- min-width: 300px; -->
+  <!-- width: 300px; -->
+  <!-- padding-left: 2rem; -->
+<!-- } -->
 
-#sidebar .title {
-  margin-bottom: 0.65rem;
-  border-bottom: 1px solid black;
-  font-weight: bold;
-}
+<!-- #sidebar .title { -->
+  <!-- margin-bottom: 0.65rem; -->
+  <!-- border-bottom: 1px solid black; -->
+  <!-- font-weight: bold; -->
+<!-- } -->
 
-#sidebar .title a{
-  color: black;
-}
+<!-- #sidebar .title a{ -->
+  <!-- color: black; -->
+<!-- } -->
 
-#sidebar .search-box {
-  height: 67px;
-}
+<!-- #sidebar .search-box { -->
+  <!-- height: 67px; -->
+<!-- } -->
 
-#sidebar .gcse-searchbox-only {
-  height: 29px;
-  width: 71%;
-  border: 1px solid #eee;
-}
+<!-- #sidebar .gcse-searchbox-only { -->
+  <!-- height: 29px; -->
+  <!-- width: 71%; -->
+  <!-- border: 1px solid #eee; -->
+<!-- } -->
 
-#sidebar .not-sticky {
+<!-- #sidebar .not-sticky { -->
   
-}
-
-#sidebar .sticky {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 20px;
-}
-
-#sidebar ul.subject-list-col-1 {
-  margin: 0 0 2rem;
-  padding: 0;
-  line-height: 1.85rem;
-}
-
-#sidebar ul.subject-list-col-2 {
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
-  margin: 0 0 2rem;
-  padding: 0;
-  line-height: 1.85rem;
-}
-
-#sidebar li {
-  line-height: 1.9rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#sidebar li a, #sidebar li a:visited {
-  color: #555;
-}
-
-#sidebar .promotion {
-  width: 100%;
-}
-
-#sidebar .promotion img {
-  width: 100%;
-}
-
-article {
-  padding: 0 1rem;
-  margin: 0rem 0 6rem;
-  word-break: keep-all;
-  max-width: 670px;
-}
-
-article h1{
-  margin: 0;
-  margin-bottom: 2rem;
-}
-
-article h2, aritcle h3, article h4, article h5, article h6{
-  margin-top: 3.4rem;
-}
-
-article p {
-  line-height: 2.05rem;
-}
-
-article blockquote {
-  border-left: 3px solid black;
-  padding-left: 2rem;
-  margin: 1rem;
-  background-color: aliceblue;
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-}
-
-article header {
-  margin-bottom: 3rem;
-}
-
-article header #breadcrumb {
-  margin-bottom: 3rem;
-}
-
-article header #breadcrumb a, article header #breadcrumb a:visited{
-  color: #666;
-}
-
-article .table-of-contents {
-  margin-top: 3.3rem;
-  margin-bottom: 4rem;
-}
-
-article .table-of-contents ul{
-  list-style: none;
-  margin-bottom: 0.6rem;
-  padding-left: 1.8rem;
-}
-
-article .table-of-contents ul li, article .table-of-contents ul li ul li{
-  margin-top: 0.6rem;
-  padding-left: 0rem;
-}
-
-article pre {
-  font-size: 0.95rem;
-  margin: 2.3rem 0;
-  padding: 1.5em 2rem 1rem;
-  border: 1px solid #ddd;
-  background-color: #efefef;
-  line-height: 1.8rem;
-  overflow-x: auto;
-}
-
-article pre code {
-  display: block;
-}
-
-article table {
-  width: 100%;
-  margin: 3.5rem 0;
-}
-
-article table th {
-  border-bottom: 1px solid black;
-  height: 2.4rem;
-}
-
-article table td {
-  border-bottom: 1px solid black;
-  height: 2.4rem;
-  text-align: center;
-}
-
-.article-main > ul {
-  margin: 2rem 0rem;
-}
-
-.article-main > ul li {
-  margin: 0.8rem 0;
-}
-
-article > ul {
-  line-height: 2rem;
-}
-
-.article-main > ul {
-  margin: 2rem 0rem;
-}
-
-.article-main > ul li {
-  margin: 0.8rem 0;
-}
-
-article figure {
-  margin: 2rem 0;
-}
-
-article figure img {
-  height: auto;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-article figure figcaption {
-  margin: 0.5rem 0 1.5rem;
-  font-size: 0.95rem;
-  color: #4477aa;
-  text-align: center
-}
-
-article .info {
-  margin: 5rem 0 2rem;
-}
-
-article .info .coupang{
-  font-weight: bold;
-  margin-top: 2rem;
-}
-
-article footer .byline {
-  margin: 3rem 0rem 2rem;
-  font-size: 0.92rem;
-}
-
-article h1 a, article h1 a:visited {
-  font-weight: normal;
-  color: black;
-}
-
-.footer {
-  font-family: helvetica;
-  font-weight: bold;
-  font-size: 2.1rem;
-  margin: 1rem;
-  padding: 5rem 0 5rem;
-  text-align: left;
-}
-
-.footer a {
-  color: black;
-  padding-right: 2rem;
-}
-
-@media screen and (max-width: 1050px) {
-  body {
-    width: 750px;
-  }
-
-  article {
-    width: 750px;
-    margin-bottom: 3.5rem;
-  }
-
-  .article-container {
-    flex-direction: column;
-  }
-
-  #sidebar {
-    min-width: 300px;
-    width: auto;
-    padding: 0 0.9rem;
-  }
-
-  #sidebar #side-search, #sidebar #side-promotion {
-    display: none;
-  }
-
-  #sidebar .title {
-    font-size: 1.8rem
-  }
-
-  #sidebar .sticky {
-    position: relative;
-  }
-}
-
-@media screen and (max-width:760px) {
-  body {
-    font-size: 15.4px;
-    width: auto;
-  }
-
-  article {
-    width: auto;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    margin-top: 4rem;
-    font-size: 1.3rem;
-  }
-  article {
-    word-break: normal;
-  }
-
-  article p {
-    line-height: 1.8rem;
-  }
-
-  article pre {
-    font-size: 0.9rem;
-    margin: 1.3rem 0;
-    padding: 0.8em 0.8rem 0.7rem;
-    border: 1px solid #ddd;
-    background-color: #efefef;
-    line-height: 1.6rem;
-    overflow-x: auto;
-  }
-
-  article pre code {
-    width: 250px;
-    display: block;
-  }
-
-  article .table-of-contents ul{
-    padding-left: 1rem;
-  }
-
-  article .table-of-contents ul li, article .table-of-contents ul li ul li{
-  }
-
-  .article-main > ul {
-    margin: 1.5rem 0rem;
-    margin-left: 0rem;
-    padding: 0 1.5rem;
-  }
-
-  .article-main > ul li {
-    margin: 0.7rem 0;
-  }
-
-  .footer a {
-    color: black;
-    padding-right: 2rem;
-    display: block;
-    font-size: 1.6rem;
-    line-height: 2.5rem;
-  }
-}
-
-</style>
-</head>
-<body>
-<noscript></noscript>
-<header>
-  <h1 class="site-title"><a href="https://www.lainyzine.com/ko/">LainyZine: 프로그래머 가이드 🐣</a></h1>
-</header>
-
-<div class="article-container">
-<article>
-  <div class="index">
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/index/">INDEX</a></h2>
-    <div class="article"><strong><a href="/ko/article/summary-of-how-to-use-docker/">개발자를 위한 Docker 사용법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/summary-of-linux-commands/">리눅스 주요 명령어 사용법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/summary-of-git-commands-and-subcommands/">git 명령어와 서브커맨드 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/summary-of-how-to-use-git-for-source-code-management/">소스 코드 관리를 위한 Git 사용법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/a-summary-of-windows-10-remote-desktop/">Windows 10 원격 데스크톱 설정 및 사용법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/a-summary-of-apple-silicon-development-environment-setup/">애플 실리콘(M1) 개발 환경 구축 방법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/a-summary-of-Windows-10-development-environment-setup/">윈도우 개발환경 구축 방법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/a-summary-of-git-installation-methods-by-operating-system/">운영체제 별 Git 설치 방법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/summary-of-how-to-use-github-for-developers/">개발자를 위한 GitHub 사용법 총 정리</a></strong></div>
-    <div class="article"><strong><a href="/ko/article/a-summary-of-docker-installation-methods-by-operating-system/">운영체제 별 Docker 설치 방법 총 정리</a></strong></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-maps/">Google Maps</a></h2>
-    <div class="article"><a href="/ko/article/how-to-add-a-place-to-google-maps/">구글 지도에 장소 추가하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-edit-business-hours-in-a-place-google-maps/">구글 지도에서 영업 시간 수정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-activate-google-map-timeline-on-iphone/">아이폰에서 구글 지도 타임라인(위치 기록) 활성화하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google/">Google</a></h2>
-    <div class="article"><a href="/ko/article/how-to-add-a-place-to-google-maps/">구글 지도에 장소 추가하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-edit-business-hours-in-a-place-google-maps/">구글 지도에서 영업 시간 수정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-google-account/">Google 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-activate-google-map-timeline-on-iphone/">아이폰에서 구글 지도 타임라인(위치 기록) 활성화하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-an-google-cloud-platform-account/">구글 클라우드 플랫폼(Google Cloud Pltafrom) 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-google-programmable-search-engine/">구글 커스텀 검색으로 사이트에 검색 기능 구현하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-activate-google-account-2-factor-authentication-otp/">Google 계정에서 2단계 인증(OTP) 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-the-language-of-your-google-account/">Google 계정의 언어 설정하는 방법(한국어)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/digitalocean/">DigitalOcean</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-digitalocean-account/">디지털오션(DigitalOcean) 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-and-delete-a-digital-ocean-server-with-cli/">DigitalOcean(디지털오션) 사용법: 서버 만들고 삭제하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/amazon-web-service/">Amazon Web Service</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-an-amazon-web-services-account/">아마존 웹 서비스(AWS) 계정 생성하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/docker/">Docker</a></h2>
-    <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div>
-    <div class="article"><a href="/ko/article/how-to-sign-in-to-docker-from-the-command-line/">docker login 사용법: Docker Hub 로그인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/understanding-docker-hub-and-docker-official-images/">Docker Hub와 Docker 공식 이미지의 이해</a></div>
-    <div class="article"><a href="/ko/article/a-complete-guide-to-how-to-install-docker-desktop-on-windows-10/">[Windows 10] Docker 설치 완벽 가이드(Home 포함)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-and-use-docker-on-your-synology-nas/">Synology NAS에 Docker 설치하고 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-docker-for-m1-apple-silicon/">애플 실리콘 M1 용 Docker 설치 방법</a></div>
-    <div class="article"><a href="/ko/article/docker-exec-executing-command-to-running-container/">docker exec 사용법: 실행중인 컨테이너에 명령어 실행하는 방법</a></div>
-    <div class="article"><a href="/ko/article/docker-prune-usage-remove-unused-docker-objects/">Docker의 prune 사용법: 사용하지 않는 Docker 오브젝트 일괄 삭제</a></div>
-    <div class="article"><a href="/ko/article/how-to-remove-all-docker-contaniers-and-images/">Docker 팁: 로컬 시스템의 모든 컨테이너와 이미지 삭제하기</a></div>
-    <div class="article"><a href="/ko/article/docker-rmi-removing-docker-images/">docker rmi 사용법: Docker 이미지를 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/docker-rm-removing-docker-containers/">docker rm 사용법: Docker 컨테이너를 삭제하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/docker-hub/">Docker Hub</a></h2>
-    <div class="article"><a href="/ko/article/how-to-sign-in-to-docker-from-the-command-line/">docker login 사용법: Docker Hub 로그인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/understanding-docker-hub-and-docker-official-images/">Docker Hub와 Docker 공식 이미지의 이해</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-cloud-platform/">Google Cloud Platform</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-an-google-cloud-platform-account/">구글 클라우드 플랫폼(Google Cloud Pltafrom) 계정 생성하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/linux/">Linux</a></h2>
-    <div class="article"><a href="/ko/article/linux-whoami-print-current-user-name/">[리눅스] whoami 명령어: 현재 사용자 이름 출력</a></div>
-    <div class="article"><a href="/ko/article/linux-tail-command-print-last-part-of-a-file/">[리눅스] tail 명령어: 파일의 마지막 부분 출력</a></div>
-    <div class="article"><a href="/ko/article/linux-which-command-printing-directory-of-executable-command/">[리눅스] which 명령어: 실행 파일 위치 출력</a></div>
-    <div class="article"><a href="/ko/article/ubuntu-release-cycle-and-codename-summary/">우분투(Ubuntu) 버전 코드명 총 정리</a></div>
-    <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div>
-    <div class="article"><a href="/ko/article/linux-pwd-command-print-current-working-directory/">[리눅스] pwd 명령어: 현재 디렉토리 위치 출력</a></div>
-    <div class="article"><a href="/ko/article/linux-nslookup-command-how-to-query-dns/">[리눅스] nslookup 명령어: DNS 쿼리하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/">[리눅스] uname 명령어: 시스템 및 커널 정보 출력</a></div>
-    <div class="article"><a href="/ko/article/linux-basics-root-directory-and-direcotry-structure/">리눅스 루트와 디렉토리 구조</a></div>
-    <div class="article"><a href="/ko/article/linux-cd-command-changing-working-directory/">[리눅스] cd 명령어: 작업 디렉토리 이동</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/java/">Java</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-windows-10/">[Windows 10] 자바 런타임 환경(JRE) 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-uninstall-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 설치하는 방법(인텔, 애플 실리콘 공통)</a></div>
-    <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows-10/">Windows 10</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-windows-10/">[Windows 10] 자바 런타임 환경(JRE) 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-where-exe-command/">Where.exe 사용법: 윈도우의 which 명령어</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-windows-10/">[Windosw 10] FFmpeg 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-connect-to-linux-server-with-ssh-on-windows-10/">[Windows 10] SSH로 리눅스 서버에 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-windows-10/">[Windows 10] Git 최신 버전 설치 및 사용 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-hide-the-recycle-bin-from-the-desktop-on-windows-10/">[Windows 10] 바탕화면에서 휴지통 제거하는 방법</a></div>
-    <div class="article"><a href="/ko/article/3-ways-to-find-the-disappeared-recycle-bin-on-windows-10/">[Windows 10] 바탕화면에서 제거한 휴지통을 찾는 3가지 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-vagrant-on-windows-10/">[Windows 10] Vagrant 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-the-ip-address-of-a-private-network/">[Windows 10] 컴퓨터 IP 주소 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-windows-terminal-powershell-wsl2/">윈도우 터미널(Windows Terminal) 설치 및 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-run-windows-terminal-and-powershell-in-administrator-mode/">윈도우 터미널 앱 관리자 모드로 실행하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-virtualbox-on-windows-10/">[Windows 10] VirtualBox 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-execute-visual-studio-code-from-terminal/">터미널에서 Visual Studio Code 실행하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-port-number-of-remote-desktop-on-windosw-10/">[Windows 10] 원격 데스크톱 포트(3389) 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/multiple-ways-to-restart-services-in-windows-10/">[Windows 10] 윈도우 서비스를 재시작하는 3가지 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-port-number-of-openssh-server-on-windosw-10/">[Windows 10] SSH 서버 포트(22) 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-google-chrome-on-windows-10/">[Windows 10] Google Chrome 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/">[Windows 10] OpenSSH 서버 실행하고 SSH로 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-mac/">맥에서 Windows 10 원격 데스크톱 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-another-windows-machine/">윈도우에서 Windows 10 원격 데스크톱 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-windows-10/">[Windows 10] Visual Studio Code 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-package-manager-chocolatey-on-windows-10/">[Windows 10] 패키지 매니저 Chocolatey를 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-home-with-rdp-wrapper/">Windows 10 Home에서 원격 데스크톱 사용하는 방법(RDP Wrapper)</a></div>
-    <div class="article"><a href="/ko/article/a-complete-guide-to-how-to-install-docker-desktop-on-windows-10/">[Windows 10] Docker 설치 완벽 가이드(Home 포함)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-winget-on-windows-10/">[Windows 10] winget(앱 설치 관리자)를 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-disable-hyper-v-in-windows-10/">[Windows 10] Hyper-V 비활성화하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-pro/">Windows 10 Pro에서 원격 데스크톱 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-windows-10-edition-version-build-information/">Windows 10 에디션, 버전, 빌드 정보 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-add-a-user-linked-microsoft-account/">[Windows 10] Microsoft 계정 연동 사용자 추가하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-the-powershell-version-in-windows-10/">[Windows 10] PowerShell 버전을 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-disable-windows-automatic-updates-on-windows-10/">[Windows 10] 윈도우 자동 업데이트를 비활성화(영구 중지)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/whoami/">whoami</a></h2>
-    <div class="article"><a href="/ko/article/linux-whoami-print-current-user-name/">[리눅스] whoami 명령어: 현재 사용자 이름 출력</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/macos/">macOS</a></h2>
-    <div class="article"><a href="/ko/article/how-to-uninstall-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 설치하는 방법(인텔, 애플 실리콘 공통)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-homebrew-for-m1-apple-silicon/">애플 실리콘 M1 용 Homebrew 설치</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-mac/">맥에서 ffmpeg 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-macos/">맥에서 Git 설치하는 방법(인텔, 애플 실리콘 공통)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-and-uninstall-vagrant-on-mac/">맥에서 Vagrant 설치 및 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div>
-    <div class="article"><a href="/ko/article/how-to-execute-visual-studio-code-from-terminal/">터미널에서 Visual Studio Code 실행하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-macos/">맥에서 Visual Studio Code 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-mac/">맥에서 Windows 10 원격 데스크톱 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-command-line-tools-on-macos/">맥에서 명령어 라인 도구(Command Line Tools) 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-package-manager-homebrew-on-mac/">맥에서 패키지 매니저 Homebrew 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-microsoft-edge-on-apple-silicon-mac/">애플 실리콘(M1) 맥에서 Microsoft Edge 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-docker-for-m1-apple-silicon/">애플 실리콘 M1 용 Docker 설치 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-a-screen-saver-on-mac/">맥에서 화면 보호기(Screen Saver) 설정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-google-go-language-for-apple-silicon-m1/">애플 실리콘 M1 용 Go 설치(Darwin/ARM64v8, 1.16 이상)</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-if-macos-app-support-apple-silicon/">macOS 앱의 애플 실리콘 지원 여부 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-migrate-from-intel-mac-to-apple-silicon-m1-mac/">Intel 맥에서 애플 실리콘 M1 맥으로 마이그레이션 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-google-chrome-for-m1-macbook/">애플 실리콘 M1 용 Chrome 설치 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-up-m1-macbook-air-big-sur/">애플 실리콘 M1 맥북 에어 Big Sur 초기 셋업</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/apple-silicon/">Apple Silicon</a></h2>
-    <div class="article"><a href="/ko/article/how-to-uninstall-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 설치하는 방법(인텔, 애플 실리콘 공통)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-homebrew-for-m1-apple-silicon/">애플 실리콘 M1 용 Homebrew 설치</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-macos/">맥에서 Git 설치하는 방법(인텔, 애플 실리콘 공통)</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-macos/">맥에서 Visual Studio Code 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-microsoft-edge-on-apple-silicon-mac/">애플 실리콘(M1) 맥에서 Microsoft Edge 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-docker-for-m1-apple-silicon/">애플 실리콘 M1 용 Docker 설치 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-google-go-language-for-apple-silicon-m1/">애플 실리콘 M1 용 Go 설치(Darwin/ARM64v8, 1.16 이상)</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-if-macos-app-support-apple-silicon/">macOS 앱의 애플 실리콘 지원 여부 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-migrate-from-intel-mac-to-apple-silicon-m1-mac/">Intel 맥에서 애플 실리콘 M1 맥으로 마이그레이션 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-google-chrome-for-m1-macbook/">애플 실리콘 M1 용 Chrome 설치 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-up-m1-macbook-air-big-sur/">애플 실리콘 M1 맥북 에어 Big Sur 초기 셋업</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/python/">Python</a></h2>
-    <div class="article"><a href="/ko/article/how-to-delete-elements-of-a-list-in-python/">[Python] 리스트(배열) 요소를 삭제 방법: clear, del, remove, pop</a></div>
-    <div class="article"><a href="/ko/article/python-variable-naming-conventions/">[Python] 변수 네이밍 규칙</a></div>
-    <div class="article"><a href="/ko/article/python-range-function-usage/">[Python] range 함수 사용법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/python-list/">Python list</a></h2>
-    <div class="article"><a href="/ko/article/how-to-delete-elements-of-a-list-in-python/">[Python] 리스트(배열) 요소를 삭제 방법: clear, del, remove, pop</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/git/">Git</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-windows-10/">[Windows 10] Git 최신 버전 설치 및 사용 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-macos/">맥에서 Git 설치하는 방법(인텔, 애플 실리콘 공통)</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-git-version/">git version 사용법: Git 버전 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-build-git-specific-version-on-linux-ubuntu/">리눅스 Ubuntu에서 Git 특정 버전 직접 빌드하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-delete-git-build-from-source-code-in-ubuntu/">Ubuntu에서 소스 코드 빌드한 Git 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-ubuntu/">리눅스 Ubuntu에서 Git 최신 버전 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/git-clone-command/">git clone 사용법: 원격 Git 저장소 복제</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-git-repository-username-and-email/">Git 최초 설정: 사용자 이름과 이메일 설정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/useful-git-settings-when-using-github-multi-account/">GitHub 멀티 어카운트를 사용할 때 유용한 Git 설정</a></div>
-    <div class="article"><a href="/ko/article/git-init-how-to-initialize-git-repository/">git init 사용법: Git 저장소를 생성(초기화)하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-link-github-remote-repository-and-local-git-repository/">GitHub 원격 저장소와 로컬 Git 저장소 연동하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-a-new-remote-git-repository-on-github/">GitHub에서 새로운 저장소 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-git-orphan-branch/">Git 저장소에서 빈 고아 브랜치를 만드는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-remove-git-repository-and-github-repository/">Git 저장소와 원격 GitHub 저장소를 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-a-different-username-and-email-for-each-git-repository/">Git 저장소 별로 사용자 이름과 이메일 다르게 설정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-cancle-git-add/">git add로 추가한 내용을 취소하는 방법</a></div>
-    <div class="article"><a href="/ko/article/git-revert-reverting-commit-in-git-repository/">git revert 사용법: 이미 커밋한 내용을 되돌리는 방법</a></div>
-    <div class="article"><a href="/ko/article/git-clean-removing-untracked-files-in-git-repository/">git clean 사용법: Git 저장소에 포함되지 않은 파일 삭제</a></div>
-    <div class="article"><a href="/ko/article/how-to-remove-local-git-repository-branch/">로컬 Git 저장소의 브랜치를 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-rename-local-github-branch/">GitHub 저장소의 브랜치 이름을 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/git-reset-and-git-revert-and-git-commit-amend/">Git 커밋 취소(reset), 커밋 되돌리기(revert), 덮어쓰기(amend)</a></div>
-    <div class="article"><a href="/ko/article/git-stash-usage-saving-changes-without-commit/">git stash 사용법: 커밋하지 않고 변경사항 저장하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/python-range/">Python range</a></h2>
-    <div class="article"><a href="/ko/article/python-range-function-usage/">[Python] range 함수 사용법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/tail/">tail</a></h2>
-    <div class="article"><a href="/ko/article/linux-tail-command-print-last-part-of-a-file/">[리눅스] tail 명령어: 파일의 마지막 부분 출력</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/homebrew/">Homebrew</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-homebrew-for-m1-apple-silicon/">애플 실리콘 M1 용 Homebrew 설치</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-package-manager-homebrew-on-mac/">맥에서 패키지 매니저 Homebrew 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ffmpeg/">FFmpeg</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-mac/">맥에서 ffmpeg 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-windows-10/">[Windosw 10] FFmpeg 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/powershell/">PowerShell</a></h2>
-    <div class="article"><a href="/ko/article/how-to-use-where-exe-command/">Where.exe 사용법: 윈도우의 which 명령어</a></div>
-    <div class="article"><a href="/ko/article/how-to-run-windows-terminal-and-powershell-in-administrator-mode/">윈도우 터미널 앱 관리자 모드로 실행하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-port-number-of-remote-desktop-on-windosw-10/">[Windows 10] 원격 데스크톱 포트(3389) 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-the-powershell-version-in-windows-10/">[Windows 10] PowerShell 버전을 확인하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ubuntu/">Ubuntu</a></h2>
-    <div class="article"><a href="/ko/article/ubuntu-release-cycle-and-codename-summary/">우분투(Ubuntu) 버전 코드명 총 정리</a></div>
-    <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-build-git-specific-version-on-linux-ubuntu/">리눅스 Ubuntu에서 Git 특정 버전 직접 빌드하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-delete-git-build-from-source-code-in-ubuntu/">Ubuntu에서 소스 코드 빌드한 Git 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-ubuntu/">리눅스 Ubuntu에서 Git 최신 버전 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/vagrant/">Vagrant</a></h2>
-    <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-and-uninstall-vagrant-on-mac/">맥에서 Vagrant 설치 및 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-vagrant-on-windows-10/">[Windows 10] Vagrant 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/kt/">KT</a></h2>
-    <div class="article"><a href="/ko/article/how-to-sign-up-for-kt-data-sharing/">KT 데이터 쉐어링 셀프 개통하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ipad/">iPad</a></h2>
-    <div class="article"><a href="/ko/article/how-to-sign-up-for-kt-data-sharing/">KT 데이터 쉐어링 셀프 개통하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/carrier/">carrier</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-whether-a-mobile-phone-carrier-is-registered/">휴대폰, 알뜰폰, 인터넷 개통여부 일괄 조회하는 방법(Msafer)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/mvno/">MVNO</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-whether-a-mobile-phone-carrier-is-registered/">휴대폰, 알뜰폰, 인터넷 개통여부 일괄 조회하는 방법(Msafer)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/security/">security</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-whether-a-mobile-phone-carrier-is-registered/">휴대폰, 알뜰폰, 인터넷 개통여부 일괄 조회하는 방법(Msafer)</a></div>
-    <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-activate-google-account-2-factor-authentication-otp/">Google 계정에서 2단계 인증(OTP) 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/github-activate-two-factor-authentication/">GitHub 2단계 인증(OTP) 활성화하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-up-two-step-verification-otp-for-your-microsoft-account/">Microsoft 계정에 2단계 인증 OTP 설정하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/github/">GitHub</a></h2>
-    <div class="article"><a href="/ko/article/how-to-delete-github-account/">GitHub 탈퇴 및 계정 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-github-account/">GitHub 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-an-organization-for-collaboration-on-github/">GitHub에서 협업 용 단체(Organization) 만드는 방법</a></div>
-    <div class="article"><a href="/ko/article/github-activate-two-factor-authentication/">GitHub 2단계 인증(OTP) 활성화하는 방법</a></div>
-    <div class="article"><a href="/ko/article/git-clone-command/">git clone 사용법: 원격 Git 저장소 복제</a></div>
-    <div class="article"><a href="/ko/article/creating-ssh-key-for-github/">GitHub 접속 용 SSH 키 만드는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-git-repository-username-and-email/">Git 최초 설정: 사용자 이름과 이메일 설정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/useful-git-settings-when-using-github-multi-account/">GitHub 멀티 어카운트를 사용할 때 유용한 Git 설정</a></div>
-    <div class="article"><a href="/ko/article/how-to-unsubscribe-to-the-pro-plan-in-your-github-personal-account/">GitHub 개인 계정의 Pro 플랜 구독 취소하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-the-github-account-used-by-the-development-environment/">개발 환경에서 사용중인 GitHub 계정 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-your-account-name-on-github/">GitHub의 계정 이름 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-subscribe-to-the-pro-plan-in-your-github-personal-account/">GitHub 개인 계정의 유료 Pro 플랜 구독하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-link-github-remote-repository-and-local-git-repository/">GitHub 원격 저장소와 로컬 Git 저장소 연동하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-github-outage-status/">GitHub 장애 상황을 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-a-new-remote-git-repository-on-github/">GitHub에서 새로운 저장소 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-disclose-whether-you-are-a-member-of-the-github-organization/">GitHub 단체(Organization) 멤버 여부 공개하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-remove-git-repository-and-github-repository/">Git 저장소와 원격 GitHub 저장소를 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-rename-local-github-branch/">GitHub 저장소의 브랜치 이름을 변경하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/android/">Android</a></h2>
-    <div class="article"><a href="/ko/article/how-to-turn-off-android-touch-and-keyboard-vibration/">안드로이드 터치 및 키보드 진동 끄는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/bmw/">BMW</a></h2>
-    <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-my-bmw-remote-camera-3d-view/">My BMW 리모트 카메라 3D 뷰 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-link-digital-key-with-driver-profile-in-bmw/">BMW 디지털 키와 운전자 프로필 연동하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/android-auto/">Android Auto</a></h2>
-    <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/idrive-7/">iDrive 7</a></h2>
-    <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-my-bmw-remote-camera-3d-view/">My BMW 리모트 카메라 3D 뷰 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-link-digital-key-with-driver-profile-in-bmw/">BMW 디지털 키와 운전자 프로필 연동하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/apple-carplay/">Apple Carplay</a></h2>
-    <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/iphone/">iPhone</a></h2>
-    <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/my-bmw/">My BMW</a></h2>
-    <div class="article"><a href="/ko/article/how-to-use-my-bmw-remote-camera-3d-view/">My BMW 리모트 카메라 3D 뷰 사용법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/network/">network</a></h2>
-    <div class="article"><a href="/ko/article/linux-nslookup-command-how-to-query-dns/">[리눅스] nslookup 명령어: DNS 쿼리하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-check-the-ip-address-of-a-private-network/">[Windows 10] 컴퓨터 IP 주소 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/dns/">DNS</a></h2>
-    <div class="article"><a href="/ko/article/linux-nslookup-command-how-to-query-dns/">[리눅스] nslookup 명령어: DNS 쿼리하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/wsl2/">WSL2</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div>
-    <div class="article"><a href="/ko/article/a-complete-guide-to-how-to-install-docker-desktop-on-windows-10/">[Windows 10] Docker 설치 완벽 가이드(Home 포함)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ssh/">SSH</a></h2>
-    <div class="article"><a href="/ko/article/how-to-connect-to-linux-server-with-ssh-on-windows-10/">[Windows 10] SSH로 리눅스 서버에 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-port-number-of-openssh-server-on-windosw-10/">[Windows 10] SSH 서버 포트(22) 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/">[Windows 10] OpenSSH 서버 실행하고 SSH로 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-enable-and-access-an-ssh-server-to-your-synology-nas/">Synology NAS에 SSH 서버 활성화하고 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/creating-ssh-key-for-github/">GitHub 접속 용 SSH 키 만드는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/alpine/">Alpine</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/uname/">uname</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/">[리눅스] uname 명령어: 시스템 및 커널 정보 출력</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/usim/">USIM</a></h2>
-    <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/apple-watch/">Apple Watch</a></h2>
-    <div class="article"><a href="/ko/article/how-to-turn-off-workout-start-notification-on-apple-watch/">애플워치의 운동 시작 알림 끄는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-take-a-screenshot-on-apple-watch/">애플워치에서 스크린샷 캡쳐하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/chocolatey/">Chocolatey</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-windows-10/">[Windows 10] Git 최신 버전 설치 및 사용 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-package-manager-chocolatey-on-windows-10/">[Windows 10] 패키지 매니저 Chocolatey를 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/recycle-bin/">Recycle Bin</a></h2>
-    <div class="article"><a href="/ko/article/how-to-hide-the-recycle-bin-from-the-desktop-on-windows-10/">[Windows 10] 바탕화면에서 휴지통 제거하는 방법</a></div>
-    <div class="article"><a href="/ko/article/3-ways-to-find-the-disappeared-recycle-bin-on-windows-10/">[Windows 10] 바탕화면에서 제거한 휴지통을 찾는 3가지 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/virtual-machine/">Virtual Machine</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-and-uninstall-vagrant-on-mac/">맥에서 Vagrant 설치 및 삭제하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-vagrant-on-windows-10/">[Windows 10] Vagrant 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-virtualbox-on-windows-10/">[Windows 10] VirtualBox 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ifttt/">IFTTT</a></h2>
-    <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-ifttt-account-and-subscribe-pro-plan/">IFTTT 계정 생성 방법 및 Pro 플랜</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/automation/">Automation</a></h2>
-    <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-ifttt-account-and-subscribe-pro-plan/">IFTTT 계정 생성 방법 및 Pro 플랜</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/rss/">RSS</a></h2>
-    <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/email/">Email</a></h2>
-    <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/remote-desktop/">Remote Desktop</a></h2>
-    <div class="article"><a href="/ko/article/how-to-change-port-number-of-remote-desktop-on-windosw-10/">[Windows 10] 원격 데스크톱 포트(3389) 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-mac/">맥에서 Windows 10 원격 데스크톱 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-another-windows-machine/">윈도우에서 Windows 10 원격 데스크톱 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-home-with-rdp-wrapper/">Windows 10 Home에서 원격 데스크톱 사용하는 방법(RDP Wrapper)</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-pro/">Windows 10 Pro에서 원격 데스크톱 사용하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/shattered-pixel-dungeon/">Shattered Pixel Dungeon</a></h2>
-    <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/gitlab/">GitLab</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-gitlab-account/">GitLab 계정 생성하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-programmable-serach-engine/">Google Programmable Serach Engine</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-google-programmable-search-engine/">구글 커스텀 검색으로 사이트에 검색 기능 구현하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/search/">Search</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-google-programmable-search-engine/">구글 커스텀 검색으로 사이트에 검색 기능 구현하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/credit-card/">Credit Card</a></h2>
-    <div class="article"><a href="/ko/article/how-to-input-your-english-billing-address-when-paying-by-credit-card/">영문 주소 변환 방법: 배송 주소, 카드 청구 주소 등</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/english/">English</a></h2>
-    <div class="article"><a href="/ko/article/how-to-input-your-english-billing-address-when-paying-by-credit-card/">영문 주소 변환 방법: 배송 주소, 카드 청구 주소 등</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows-terminal/">Windows Terminal</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-windows-terminal-powershell-wsl2/">윈도우 터미널(Windows Terminal) 설치 및 사용법</a></div>
-    <div class="article"><a href="/ko/article/how-to-run-windows-terminal-and-powershell-in-administrator-mode/">윈도우 터미널 앱 관리자 모드로 실행하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/virtualbox/">VirtualBox</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-virtualbox-on-windows-10/">[Windows 10] VirtualBox 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/visual-studio-code/">Visual Studio Code</a></h2>
-    <div class="article"><a href="/ko/article/how-to-execute-visual-studio-code-from-terminal/">터미널에서 Visual Studio Code 실행하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-macos/">맥에서 Visual Studio Code 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-language-setting-in-visual-studio-code/">VS Code 언어를 한국어(한글)로 설정하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-windows-10/">[Windows 10] Visual Studio Code 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-analytics/">Google Analytics</a></h2>
-    <div class="article"><a href="/ko/article/how-to-avoid-double-counting-of-google-analytics-pageviews/">구글 애널리틱스 페이지뷰 중복 집계 방지하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-tag-manager/">Google Tag Manager</a></h2>
-    <div class="article"><a href="/ko/article/how-to-avoid-double-counting-of-google-analytics-pageviews/">구글 애널리틱스 페이지뷰 중복 집계 방지하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-chrome/">Google Chrome</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-google-chrome-on-windows-10/">[Windows 10] Google Chrome 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/xcode/">Xcode</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-command-line-tools-on-macos/">맥에서 명령어 라인 도구(Command Line Tools) 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/firefox/">Firefox</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-package-manager-chocolatey-on-windows-10/">[Windows 10] 패키지 매니저 Chocolatey를 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows/">Windows</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/_net-framework/">.NET Framework</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ebook/">eBook</a></h2>
-    <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/book/">Book</a></h2>
-    <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/o'reilly/">O'Reilly</a></h2>
-    <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/amazon-kindle/">Amazon Kindle</a></h2>
-    <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/insight-book/">Insight Book</a></h2>
-    <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ridibooks/">RIDIBOOKS</a></h2>
-    <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/adobe/">Adobe</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-adobe-creative-cloud/">Adobe Creative Cloud 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/adobe-creative-cloud/">Adobe Creative Cloud</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-adobe-creative-cloud/">Adobe Creative Cloud 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/2-step-verification/">2-step verification</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-activate-google-account-2-factor-authentication-otp/">Google 계정에서 2단계 인증(OTP) 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/github-activate-two-factor-authentication/">GitHub 2단계 인증(OTP) 활성화하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-up-two-step-verification-otp-for-your-microsoft-account/">Microsoft 계정에 2단계 인증 OTP 설정하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/tailscale/">Tailscale</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/vpn/">VPN</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/synology-dsm/">Synology DSM</a></h2>
-    <div class="article"><a href="/ko/article/how-to-enable-and-access-an-ssh-server-to-your-synology-nas/">Synology NAS에 SSH 서버 활성화하고 접속하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-find-nas-on-your-home-network-with-synology-assistant/">Synology Assistant로 홈 네트워크의 NAS 찾는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-and-use-docker-on-your-synology-nas/">Synology NAS에 Docker 설치하고 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-upgrade-synology-from-dsm6-to-dsm7/">Synology DSM 6에서 DSM 7로 업그레이드하는 방법 </a></div>
-    <div class="article"><a href="/ko/article/how-to-update-synology-nas-operating-system-dsm/">Synology NAS 운영체제 DSM 업데이트 하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/winget/">winget</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-winget-on-windows-10/">[Windows 10] winget(앱 설치 관리자)를 설치하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/microsoft-edge/">Microsoft Edge</a></h2>
-    <div class="article"><a href="/ko/article/how-to-use-1password-extension-in-microsoft-edge/">Microsoft Edge에서 1Password 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-install-microsoft-edge-on-apple-silicon-mac/">애플 실리콘(M1) 맥에서 Microsoft Edge 설치하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-change-or-add-microsoft-edge-default-search-engine/">Microsoft Edge의 기본 검색 엔진을 변경하거나 추가하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-use-vertical-tabs-in-microsoft-edge/">Microsoft Edge 수직 탭(세로 탭) 사용하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-block-ads-with-tracking-prevention-in-microsoft-edge/">Microsoft Edge에서 추적 방지로 광고 차단하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/1password/">1Password</a></h2>
-    <div class="article"><a href="/ko/article/how-to-use-1password-extension-in-microsoft-edge/">Microsoft Edge에서 1Password 사용하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/hyper-v/">Hyper-V</a></h2>
-    <div class="article"><a href="/ko/article/how-to-disable-hyper-v-in-windows-10/">[Windows 10] Hyper-V 비활성화하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/microsoft/">Microsoft</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-if-windows-11-is-supported-by-whynotwin11/">WhyNotWin11: Windows 11 지원 여부 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/windows-11-minimum-hardware-requirements-overview/">Windows 11 설치 가능한 하드웨어 최소 사양</a></div>
-    <div class="article"><a href="/ko/article/how-to-create-a-microsoft-account/">Microsoft 통합 계정(Windows, Office 365 등) 생성하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-add-a-user-linked-microsoft-account/">[Windows 10] Microsoft 계정 연동 사용자 추가하는 방법</a></div>
-    <div class="article"><a href="/ko/article/how-to-set-up-two-step-verification-otp-for-your-microsoft-account/">Microsoft 계정에 2단계 인증 OTP 설정하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows-11/">Windows 11</a></h2>
-    <div class="article"><a href="/ko/article/how-to-check-if-windows-11-is-supported-by-whynotwin11/">WhyNotWin11: Windows 11 지원 여부 확인하는 방법</a></div>
-    <div class="article"><a href="/ko/article/windows-11-minimum-hardware-requirements-overview/">Windows 11 설치 가능한 하드웨어 최소 사양</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/mozilla-firefox/">Mozilla Firefox</a></h2>
-    <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/web-browser/">Web browser</a></h2>
-    <div class="article"><a href="/ko/article/how-to-use-vertical-tabs-in-microsoft-edge/">Microsoft Edge 수직 탭(세로 탭) 사용하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/youtube/">Youtube</a></h2>
-    <div class="article"><a href="/ko/article/how-to-set-the-language-of-your-google-account/">Google 계정의 언어 설정하는 방법(한국어)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-drive/">Google Drive</a></h2>
-    <div class="article"><a href="/ko/article/how-to-set-the-language-of-your-google-account/">Google 계정의 언어 설정하는 방법(한국어)</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ruby/">Ruby</a></h2>
-    <div class="article"><a href="/ko/article/how-to-deal-with-build-failure-when-installing-ruby-ffi-gem-on-mac-big-sur/">맥 Big Sur에서 Ruby ffi 젬 설치할 때 빌드 실패 대처 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-docs/">Google Docs</a></h2>
-    <div class="article"><a href="/ko/article/how-to-create-a-new-google-spreadsheet-document/">새로운 구글 스프레드시트 문서 생성하는 방법</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/directory/">Directory</a></h2>
-    <div class="article"><a href="/ko/article/linux-basics-root-directory-and-direcotry-structure/">리눅스 루트와 디렉토리 구조</a></div>
-  </div>
-  <div class="index-list">    <h2 class="subject"><a href="/ko/subject/go/">Go</a></h2>
-    <div class="article"><a href="/ko/article/how-to-install-google-go-language-for-apple-silicon-m1/">애플 실리콘 M1 용 Go 설치(Darwin/ARM64v8, 1.16 이상)</a></div>
-  </div>
-
-  </div>
-  <footer>
-    <div class="info">
-      <div class="coupang">LainyZine은 쿠팡 파트너스 활동에 따른 수수료를 제공받습니다.</div>
-    </div>
-  </footer>
-</article>
-<nav id="sidebar">
-  <div class="not-sticky">
-    <div id="side-search">
-      <div class="title">Search</div>
-      <div class="search-box">
-        <div class="gcse-searchbox-only"></div>
-      </div>
-    </div>
-    <div id="side-index">
-      <div class="title"><a href="/ko/subject/index/">INDEX</a></div>
-      <ul class="subject-list-col-1">
-      <li><a href="/ko/article/a-summary-of-windows-10-remote-desktop/">Windows 10 원격 데스크톱 설정 및 사용법 총 정리</a></li>
-      <li><a href="/ko/article/summary-of-git-commands-and-subcommands/">git 명령어와 서브커맨드 총 정리</a></li>
-      <li><a href="/ko/article/summary-of-how-to-use-docker/">개발자를 위한 Docker 사용법 총 정리</a></li>
-      <li><a href="/ko/article/summary-of-how-to-use-github-for-developers/">개발자를 위한 GitHub 사용법 총 정리</a></li>
-      <li><a href="/ko/article/summary-of-linux-commands/">리눅스 주요 명령어 사용법 총 정리</a></li>
-      <li><a href="/ko/article/summary-of-how-to-use-git-for-source-code-management/">소스 코드 관리를 위한 Git 사용법 총 정리</a></li>
-      <li><a href="/ko/article/a-summary-of-apple-silicon-development-environment-setup/">애플 실리콘(M1) 개발 환경 구축 방법 총 정리</a></li>
-      <li><a href="/ko/article/a-summary-of-docker-installation-methods-by-operating-system/">운영체제 별 Docker 설치 방법 총 정리</a></li>
-      <li><a href="/ko/article/a-summary-of-git-installation-methods-by-operating-system/">운영체제 별 Git 설치 방법 총 정리</a></li>
-      <li><a href="/ko/article/a-summary-of-Windows-10-development-environment-setup/">윈도우 개발환경 구축 방법 총 정리</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="sticky">
-    <div id="side-category">
-      <div class="title"><a href="/ko">카테고리</a></div>
-      <ul class="subject-list-col-2">
-      <li><a href="/ko/subject/apple-silicon/">Apple Silicon</a></li>
-      <li><a href="/ko/subject/docker/">Docker</a></li>
-      <li><a href="/ko/subject/git/">Git</a></li>
-      <li><a href="/ko/subject/github/">GitHub</a></li>
-      <li><a href="/ko/subject/google/">Google</a></li>
-      <li><a href="/ko/subject/linux/">Linux</a></li>
-      <li><a href="/ko/subject/microsoft/">Microsoft</a></li>
-      <li><a href="/ko/subject/microsoft-edge/">Microsoft Edge</a></li>
-      <li><a href="/ko/subject/powershell/">PowerShell</a></li>
-      <li><a href="/ko/subject/remote-desktop/">Remote Desktop</a></li>
-      <li><a href="/ko/subject/ssh/">SSH</a></li>
-      <li><a href="/ko/subject/synology-dsm/">Synology DSM</a></li>
-      <li><a href="/ko/subject/ubuntu/">Ubuntu</a></li>
-      <li><a href="/ko/subject/windows-10/">Windows 10</a></li>
-      <li><a href="/ko/subject/macos/">macOS</a></li>
-      <li><a href="/ko/subject/security/">security</a></li>
-      </ul>
-    </div>
-    <div id="side-promotion">
-      <div class="title">개발은 M1 맥북 에어!</div>
-      <div class="promotion">
-        <a href="https://coupa.ng/cbDKID">
-          <img src="/ko/images/m1_macbook.png" />
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-</div>
-
-<footer class="footer">
- <a href="https://www.lainyzine.com/ko/">
-    ©LainyZine
-  </a>
-  <a href="https://www.lainyzine.com/ko/feed.xml">
-    RSS
-  </a>
-</footer>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWR8QSSX5"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46785477-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-46785477-5', { 'send_page_view': false });
-  gtag('config', 'G-YXWR8QSSX5');
-</script>
-<script>
-(function(window, document) {
-  function main() {
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NW9WDTW');
-
-    var noscriptTag = document.getElementsByTagName('noscript')[0];
-    var gtm = document.createElement('iframe');
-    gtm.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NW9WDTW';
-    gtm.style = 'display:none;visibility:hidden';
-    gtm.hegiht = 0
-    gtm.width = 0
-    noscriptTag.appendChild(gtm, noscriptTag);
-
-    var googleAdsense = document.createElement('script');
-    var script = document.getElementsByTagName('script')[0];
-    googleAdsense.type = 'text/javascript';
-    googleAdsense.async = true;
-    googleAdsense.dataset.adClient = 'ca-pub-3577578367271413';
-    googleAdsense.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-    script.parentNode.insertBefore(googleAdsense, script);
-
-    var googleAdsense = document.createElement('script');
-    var script = document.getElementsByTagName('script')[0];
-    googleAdsense.type = 'text/javascript';
-    googleAdsense.async = true;
-    googleAdsense.src = 'https://cse.google.com/cse.js?cx=148fb9d70c8a80fe7';
-    script.parentNode.insertBefore(googleAdsense, script);
-  }
-
-  var lazyLoaded = false;
-  function onLazyLoad() {
-    if (lazyLoaded === false) {
-      lazyLoaded = true;
-      window.removeEventListener('scroll', onLazyLoad);
-      window.removeEventListener('mousedown', onLazyLoad);
-      window.removeEventListener('mousemove', onLazyLoad);
-      window.removeEventListener('touchstart', onLazyLoad);
-      window.removeEventListener('keydown', onLazyLoad);
-      main();
-    }
-  }
-  window.addEventListener('scroll', onLazyLoad);
-  window.addEventListener('mousedown', onLazyLoad);
-  window.removeEventListener('mousemove', onLazyLoad);
-  window.addEventListener('touchstart', onLazyLoad);
-  window.addEventListener('keydown', onLazyLoad);
-
-  // document.addEventListener("DOMContentLoaded", function(){
-  // });
-})(window, document);
-
-</script>
-</body>
-</html>
+<!-- } -->
+
+<!-- #sidebar .sticky { -->
+  <!-- position: sticky; -->
+  <!-- position: -webkit-sticky; -->
+  <!-- top: 20px; -->
+<!-- } -->
+
+<!-- #sidebar ul.subject-list-col-1 { -->
+  <!-- margin: 0 0 2rem; -->
+  <!-- padding: 0; -->
+  <!-- line-height: 1.85rem; -->
+<!-- } -->
+
+<!-- #sidebar ul.subject-list-col-2 { -->
+  <!-- -moz-column-count: 2; -->
+  <!-- -webkit-column-count: 2; -->
+  <!-- column-count: 2; -->
+  <!-- margin: 0 0 2rem; -->
+  <!-- padding: 0; -->
+  <!-- line-height: 1.85rem; -->
+<!-- } -->
+
+<!-- #sidebar li { -->
+  <!-- line-height: 1.9rem; -->
+  <!-- list-style: none; -->
+  <!-- margin: 0; -->
+  <!-- padding: 0; -->
+<!-- } -->
+
+<!-- #sidebar li a, #sidebar li a:visited { -->
+  <!-- color: #555; -->
+<!-- } -->
+
+<!-- #sidebar .promotion { -->
+  <!-- width: 100%; -->
+<!-- } -->
+
+<!-- #sidebar .promotion img { -->
+  <!-- width: 100%; -->
+<!-- } -->
+
+<!-- article { -->
+  <!-- padding: 0 1rem; -->
+  <!-- margin: 0rem 0 6rem; -->
+  <!-- word-break: keep-all; -->
+  <!-- max-width: 670px; -->
+<!-- } -->
+
+<!-- article h1{ -->
+  <!-- margin: 0; -->
+  <!-- margin-bottom: 2rem; -->
+<!-- } -->
+
+<!-- article h2, aritcle h3, article h4, article h5, article h6{ -->
+  <!-- margin-top: 3.4rem; -->
+<!-- } -->
+
+<!-- article p { -->
+  <!-- line-height: 2.05rem; -->
+<!-- } -->
+
+<!-- article blockquote { -->
+  <!-- border-left: 3px solid black; -->
+  <!-- padding-left: 2rem; -->
+  <!-- margin: 1rem; -->
+  <!-- background-color: aliceblue; -->
+  <!-- padding-top: 0.1rem; -->
+  <!-- padding-bottom: 0.1rem; -->
+<!-- } -->
+
+<!-- article header { -->
+  <!-- margin-bottom: 3rem; -->
+<!-- } -->
+
+<!-- article header #breadcrumb { -->
+  <!-- margin-bottom: 3rem; -->
+<!-- } -->
+
+<!-- article header #breadcrumb a, article header #breadcrumb a:visited{ -->
+  <!-- color: #666; -->
+<!-- } -->
+
+<!-- article .table-of-contents { -->
+  <!-- margin-top: 3.3rem; -->
+  <!-- margin-bottom: 4rem; -->
+<!-- } -->
+
+<!-- article .table-of-contents ul{ -->
+  <!-- list-style: none; -->
+  <!-- margin-bottom: 0.6rem; -->
+  <!-- padding-left: 1.8rem; -->
+<!-- } -->
+
+<!-- article .table-of-contents ul li, article .table-of-contents ul li ul li{ -->
+  <!-- margin-top: 0.6rem; -->
+  <!-- padding-left: 0rem; -->
+<!-- } -->
+
+<!-- article pre { -->
+  <!-- font-size: 0.95rem; -->
+  <!-- margin: 2.3rem 0; -->
+  <!-- padding: 1.5em 2rem 1rem; -->
+  <!-- border: 1px solid #ddd; -->
+  <!-- background-color: #efefef; -->
+  <!-- line-height: 1.8rem; -->
+  <!-- overflow-x: auto; -->
+<!-- } -->
+
+<!-- article pre code { -->
+  <!-- display: block; -->
+<!-- } -->
+
+<!-- article table { -->
+  <!-- width: 100%; -->
+  <!-- margin: 3.5rem 0; -->
+<!-- } -->
+
+<!-- article table th { -->
+  <!-- border-bottom: 1px solid black; -->
+  <!-- height: 2.4rem; -->
+<!-- } -->
+
+<!-- article table td { -->
+  <!-- border-bottom: 1px solid black; -->
+  <!-- height: 2.4rem; -->
+  <!-- text-align: center; -->
+<!-- } -->
+
+<!-- .article-main > ul { -->
+  <!-- margin: 2rem 0rem; -->
+<!-- } -->
+
+<!-- .article-main > ul li { -->
+  <!-- margin: 0.8rem 0; -->
+<!-- } -->
+
+<!-- article > ul { -->
+  <!-- line-height: 2rem; -->
+<!-- } -->
+
+<!-- .article-main > ul { -->
+  <!-- margin: 2rem 0rem; -->
+<!-- } -->
+
+<!-- .article-main > ul li { -->
+  <!-- margin: 0.8rem 0; -->
+<!-- } -->
+
+<!-- article figure { -->
+  <!-- margin: 2rem 0; -->
+<!-- } -->
+
+<!-- article figure img { -->
+  <!-- height: auto; -->
+  <!-- max-width: 100%; -->
+  <!-- margin: 0 auto; -->
+<!-- } -->
+
+<!-- article figure figcaption { -->
+  <!-- margin: 0.5rem 0 1.5rem; -->
+  <!-- font-size: 0.95rem; -->
+  <!-- color: #4477aa; -->
+  <!-- text-align: center -->
+<!-- } -->
+
+<!-- article .info { -->
+  <!-- margin: 5rem 0 2rem; -->
+<!-- } -->
+
+<!-- article .info .coupang{ -->
+  <!-- font-weight: bold; -->
+  <!-- margin-top: 2rem; -->
+<!-- } -->
+
+<!-- article footer .byline { -->
+  <!-- margin: 3rem 0rem 2rem; -->
+  <!-- font-size: 0.92rem; -->
+<!-- } -->
+
+<!-- article h1 a, article h1 a:visited { -->
+  <!-- font-weight: normal; -->
+  <!-- color: black; -->
+<!-- } -->
+
+<!-- .footer { -->
+  <!-- font-family: helvetica; -->
+  <!-- font-weight: bold; -->
+  <!-- font-size: 2.1rem; -->
+  <!-- margin: 1rem; -->
+  <!-- padding: 5rem 0 5rem; -->
+  <!-- text-align: left; -->
+<!-- } -->
+
+<!-- .footer a { -->
+  <!-- color: black; -->
+  <!-- padding-right: 2rem; -->
+<!-- } -->
+
+<!-- @media screen and (max-width: 1050px) { -->
+  <!-- body { -->
+    <!-- width: 750px; -->
+  <!-- } -->
+
+  <!-- article { -->
+    <!-- width: 750px; -->
+    <!-- margin-bottom: 3.5rem; -->
+  <!-- } -->
+
+  <!-- .article-container { -->
+    <!-- flex-direction: column; -->
+  <!-- } -->
+
+  <!-- #sidebar { -->
+    <!-- min-width: 300px; -->
+    <!-- width: auto; -->
+    <!-- padding: 0 0.9rem; -->
+  <!-- } -->
+
+  <!-- #sidebar #side-search, #sidebar #side-promotion { -->
+    <!-- display: none; -->
+  <!-- } -->
+
+  <!-- #sidebar .title { -->
+    <!-- font-size: 1.8rem -->
+  <!-- } -->
+
+  <!-- #sidebar .sticky { -->
+    <!-- position: relative; -->
+  <!-- } -->
+<!-- } -->
+
+<!-- @media screen and (max-width:760px) { -->
+  <!-- body { -->
+    <!-- font-size: 15.4px; -->
+    <!-- width: auto; -->
+  <!-- } -->
+
+  <!-- article { -->
+    <!-- width: auto; -->
+  <!-- } -->
+
+  <!-- h1 { -->
+    <!-- font-size: 1.8rem; -->
+  <!-- } -->
+
+  <!-- h2 { -->
+    <!-- font-size: 1.5rem; -->
+  <!-- } -->
+
+  <!-- h3 { -->
+    <!-- margin-top: 4rem; -->
+    <!-- font-size: 1.3rem; -->
+  <!-- } -->
+  <!-- article { -->
+    <!-- word-break: normal; -->
+  <!-- } -->
+
+  <!-- article p { -->
+    <!-- line-height: 1.8rem; -->
+  <!-- } -->
+
+  <!-- article pre { -->
+    <!-- font-size: 0.9rem; -->
+    <!-- margin: 1.3rem 0; -->
+    <!-- padding: 0.8em 0.8rem 0.7rem; -->
+    <!-- border: 1px solid #ddd; -->
+    <!-- background-color: #efefef; -->
+    <!-- line-height: 1.6rem; -->
+    <!-- overflow-x: auto; -->
+  <!-- } -->
+
+  <!-- article pre code { -->
+    <!-- width: 250px; -->
+    <!-- display: block; -->
+  <!-- } -->
+
+  <!-- article .table-of-contents ul{ -->
+    <!-- padding-left: 1rem; -->
+  <!-- } -->
+
+  <!-- article .table-of-contents ul li, article .table-of-contents ul li ul li{ -->
+  <!-- } -->
+
+  <!-- .article-main > ul { -->
+    <!-- margin: 1.5rem 0rem; -->
+    <!-- margin-left: 0rem; -->
+    <!-- padding: 0 1.5rem; -->
+  <!-- } -->
+
+  <!-- .article-main > ul li { -->
+    <!-- margin: 0.7rem 0; -->
+  <!-- } -->
+
+  <!-- .footer a { -->
+    <!-- color: black; -->
+    <!-- padding-right: 2rem; -->
+    <!-- display: block; -->
+    <!-- font-size: 1.6rem; -->
+    <!-- line-height: 2.5rem; -->
+  <!-- } -->
+<!-- } -->
+
+<!-- </style> -->
+<!-- </head> -->
+<!-- <body> -->
+<!-- <noscript></noscript> -->
+<!-- <header> -->
+  <!-- <h1 class="site-title"><a href="https://www.PARK4139.com/ko/">PARK4139: 프로그래머 가이드 🐣</a></h1> -->
+<!-- </header> -->
+
+<!-- <div class="article-container"> -->
+<!-- <article> -->
+  <!-- <div class="index"> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/index/">INDEX</a></h2> -->
+    <!-- <div class="article"><strong><a href="/ko/article/summary-of-how-to-use-docker/">개발자를 위한 Docker 사용법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/summary-of-linux-commands/">리눅스 주요 명령어 사용법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/summary-of-git-commands-and-subcommands/">git 명령어와 서브커맨드 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/summary-of-how-to-use-git-for-source-code-management/">소스 코드 관리를 위한 Git 사용법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/a-summary-of-windows-10-remote-desktop/">Windows 10 원격 데스크톱 설정 및 사용법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/a-summary-of-apple-silicon-development-environment-setup/">애플 실리콘(M1) 개발 환경 구축 방법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/a-summary-of-Windows-10-development-environment-setup/">윈도우 개발환경 구축 방법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/a-summary-of-git-installation-methods-by-operating-system/">운영체제 별 Git 설치 방법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/summary-of-how-to-use-github-for-developers/">개발자를 위한 GitHub 사용법 총 정리</a></strong></div> -->
+    <!-- <div class="article"><strong><a href="/ko/article/a-summary-of-docker-installation-methods-by-operating-system/">운영체제 별 Docker 설치 방법 총 정리</a></strong></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-maps/">Google Maps</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-add-a-place-to-google-maps/">구글 지도에 장소 추가하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-edit-business-hours-in-a-place-google-maps/">구글 지도에서 영업 시간 수정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-activate-google-map-timeline-on-iphone/">아이폰에서 구글 지도 타임라인(위치 기록) 활성화하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google/">Google</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-add-a-place-to-google-maps/">구글 지도에 장소 추가하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-edit-business-hours-in-a-place-google-maps/">구글 지도에서 영업 시간 수정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-google-account/">Google 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-activate-google-map-timeline-on-iphone/">아이폰에서 구글 지도 타임라인(위치 기록) 활성화하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-an-google-cloud-platform-account/">구글 클라우드 플랫폼(Google Cloud Pltafrom) 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-google-programmable-search-engine/">구글 커스텀 검색으로 사이트에 검색 기능 구현하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-activate-google-account-2-factor-authentication-otp/">Google 계정에서 2단계 인증(OTP) 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-the-language-of-your-google-account/">Google 계정의 언어 설정하는 방법(한국어)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/digitalocean/">DigitalOcean</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-digitalocean-account/">디지털오션(DigitalOcean) 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-and-delete-a-digital-ocean-server-with-cli/">DigitalOcean(디지털오션) 사용법: 서버 만들고 삭제하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/amazon-web-service/">Amazon Web Service</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-an-amazon-web-services-account/">아마존 웹 서비스(AWS) 계정 생성하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/docker/">Docker</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-sign-in-to-docker-from-the-command-line/">docker login 사용법: Docker Hub 로그인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/understanding-docker-hub-and-docker-official-images/">Docker Hub와 Docker 공식 이미지의 이해</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/a-complete-guide-to-how-to-install-docker-desktop-on-windows-10/">[Windows 10] Docker 설치 완벽 가이드(Home 포함)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-and-use-docker-on-your-synology-nas/">Synology NAS에 Docker 설치하고 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-docker-for-m1-apple-silicon/">애플 실리콘 M1 용 Docker 설치 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/docker-exec-executing-command-to-running-container/">docker exec 사용법: 실행중인 컨테이너에 명령어 실행하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/docker-prune-usage-remove-unused-docker-objects/">Docker의 prune 사용법: 사용하지 않는 Docker 오브젝트 일괄 삭제</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-remove-all-docker-contaniers-and-images/">Docker 팁: 로컬 시스템의 모든 컨테이너와 이미지 삭제하기</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/docker-rmi-removing-docker-images/">docker rmi 사용법: Docker 이미지를 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/docker-rm-removing-docker-containers/">docker rm 사용법: Docker 컨테이너를 삭제하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/docker-hub/">Docker Hub</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-sign-in-to-docker-from-the-command-line/">docker login 사용법: Docker Hub 로그인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/understanding-docker-hub-and-docker-official-images/">Docker Hub와 Docker 공식 이미지의 이해</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-cloud-platform/">Google Cloud Platform</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-an-google-cloud-platform-account/">구글 클라우드 플랫폼(Google Cloud Pltafrom) 계정 생성하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/linux/">Linux</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/linux-whoami-print-current-user-name/">[리눅스] whoami 명령어: 현재 사용자 이름 출력</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-tail-command-print-last-part-of-a-file/">[리눅스] tail 명령어: 파일의 마지막 부분 출력</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-which-command-printing-directory-of-executable-command/">[리눅스] which 명령어: 실행 파일 위치 출력</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/ubuntu-release-cycle-and-codename-summary/">우분투(Ubuntu) 버전 코드명 총 정리</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-pwd-command-print-current-working-directory/">[리눅스] pwd 명령어: 현재 디렉토리 위치 출력</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-nslookup-command-how-to-query-dns/">[리눅스] nslookup 명령어: DNS 쿼리하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/">[리눅스] uname 명령어: 시스템 및 커널 정보 출력</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-basics-root-directory-and-direcotry-structure/">리눅스 루트와 디렉토리 구조</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-cd-command-changing-working-directory/">[리눅스] cd 명령어: 작업 디렉토리 이동</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/java/">Java</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-windows-10/">[Windows 10] 자바 런타임 환경(JRE) 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-uninstall-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 설치하는 방법(인텔, 애플 실리콘 공통)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows-10/">Windows 10</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-windows-10/">[Windows 10] 자바 런타임 환경(JRE) 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-where-exe-command/">Where.exe 사용법: 윈도우의 which 명령어</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-windows-10/">[Windosw 10] FFmpeg 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-to-linux-server-with-ssh-on-windows-10/">[Windows 10] SSH로 리눅스 서버에 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-windows-10/">[Windows 10] Git 최신 버전 설치 및 사용 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-hide-the-recycle-bin-from-the-desktop-on-windows-10/">[Windows 10] 바탕화면에서 휴지통 제거하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/3-ways-to-find-the-disappeared-recycle-bin-on-windows-10/">[Windows 10] 바탕화면에서 제거한 휴지통을 찾는 3가지 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-vagrant-on-windows-10/">[Windows 10] Vagrant 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-the-ip-address-of-a-private-network/">[Windows 10] 컴퓨터 IP 주소 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-windows-terminal-powershell-wsl2/">윈도우 터미널(Windows Terminal) 설치 및 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-run-windows-terminal-and-powershell-in-administrator-mode/">윈도우 터미널 앱 관리자 모드로 실행하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-virtualbox-on-windows-10/">[Windows 10] VirtualBox 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-execute-visual-studio-code-from-terminal/">터미널에서 Visual Studio Code 실행하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-port-number-of-remote-desktop-on-windosw-10/">[Windows 10] 원격 데스크톱 포트(3389) 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/multiple-ways-to-restart-services-in-windows-10/">[Windows 10] 윈도우 서비스를 재시작하는 3가지 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-port-number-of-openssh-server-on-windosw-10/">[Windows 10] SSH 서버 포트(22) 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-chrome-on-windows-10/">[Windows 10] Google Chrome 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/">[Windows 10] OpenSSH 서버 실행하고 SSH로 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-mac/">맥에서 Windows 10 원격 데스크톱 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-another-windows-machine/">윈도우에서 Windows 10 원격 데스크톱 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-windows-10/">[Windows 10] Visual Studio Code 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-package-manager-chocolatey-on-windows-10/">[Windows 10] 패키지 매니저 Chocolatey를 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-home-with-rdp-wrapper/">Windows 10 Home에서 원격 데스크톱 사용하는 방법(RDP Wrapper)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/a-complete-guide-to-how-to-install-docker-desktop-on-windows-10/">[Windows 10] Docker 설치 완벽 가이드(Home 포함)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-winget-on-windows-10/">[Windows 10] winget(앱 설치 관리자)를 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-disable-hyper-v-in-windows-10/">[Windows 10] Hyper-V 비활성화하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-pro/">Windows 10 Pro에서 원격 데스크톱 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-windows-10-edition-version-build-information/">Windows 10 에디션, 버전, 빌드 정보 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-add-a-user-linked-microsoft-account/">[Windows 10] Microsoft 계정 연동 사용자 추가하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-the-powershell-version-in-windows-10/">[Windows 10] PowerShell 버전을 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-disable-windows-automatic-updates-on-windows-10/">[Windows 10] 윈도우 자동 업데이트를 비활성화(영구 중지)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/whoami/">whoami</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/linux-whoami-print-current-user-name/">[리눅스] whoami 명령어: 현재 사용자 이름 출력</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/macos/">macOS</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-uninstall-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 설치하는 방법(인텔, 애플 실리콘 공통)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-homebrew-for-m1-apple-silicon/">애플 실리콘 M1 용 Homebrew 설치</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-mac/">맥에서 ffmpeg 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-macos/">맥에서 Git 설치하는 방법(인텔, 애플 실리콘 공통)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-and-uninstall-vagrant-on-mac/">맥에서 Vagrant 설치 및 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-execute-visual-studio-code-from-terminal/">터미널에서 Visual Studio Code 실행하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-macos/">맥에서 Visual Studio Code 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-mac/">맥에서 Windows 10 원격 데스크톱 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-command-line-tools-on-macos/">맥에서 명령어 라인 도구(Command Line Tools) 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-package-manager-homebrew-on-mac/">맥에서 패키지 매니저 Homebrew 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-microsoft-edge-on-apple-silicon-mac/">애플 실리콘(M1) 맥에서 Microsoft Edge 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-docker-for-m1-apple-silicon/">애플 실리콘 M1 용 Docker 설치 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-a-screen-saver-on-mac/">맥에서 화면 보호기(Screen Saver) 설정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-go-language-for-apple-silicon-m1/">애플 실리콘 M1 용 Go 설치(Darwin/ARM64v8, 1.16 이상)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-if-macos-app-support-apple-silicon/">macOS 앱의 애플 실리콘 지원 여부 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-migrate-from-intel-mac-to-apple-silicon-m1-mac/">Intel 맥에서 애플 실리콘 M1 맥으로 마이그레이션 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-chrome-for-m1-macbook/">애플 실리콘 M1 용 Chrome 설치 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-up-m1-macbook-air-big-sur/">애플 실리콘 M1 맥북 에어 Big Sur 초기 셋업</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/apple-silicon/">Apple Silicon</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-uninstall-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-java-runtime-environment-on-macos/">맥에서 자바 런타임 환경(JRE) 설치하는 방법(인텔, 애플 실리콘 공통)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-homebrew-for-m1-apple-silicon/">애플 실리콘 M1 용 Homebrew 설치</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-macos/">맥에서 Git 설치하는 방법(인텔, 애플 실리콘 공통)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-macos/">맥에서 Visual Studio Code 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-microsoft-edge-on-apple-silicon-mac/">애플 실리콘(M1) 맥에서 Microsoft Edge 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-docker-for-m1-apple-silicon/">애플 실리콘 M1 용 Docker 설치 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-go-language-for-apple-silicon-m1/">애플 실리콘 M1 용 Go 설치(Darwin/ARM64v8, 1.16 이상)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-if-macos-app-support-apple-silicon/">macOS 앱의 애플 실리콘 지원 여부 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-migrate-from-intel-mac-to-apple-silicon-m1-mac/">Intel 맥에서 애플 실리콘 M1 맥으로 마이그레이션 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-chrome-for-m1-macbook/">애플 실리콘 M1 용 Chrome 설치 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-up-m1-macbook-air-big-sur/">애플 실리콘 M1 맥북 에어 Big Sur 초기 셋업</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/python/">Python</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-delete-elements-of-a-list-in-python/">[Python] 리스트(배열) 요소를 삭제 방법: clear, del, remove, pop</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/python-variable-naming-conventions/">[Python] 변수 네이밍 규칙</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/python-range-function-usage/">[Python] range 함수 사용법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/python-list/">Python list</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-delete-elements-of-a-list-in-python/">[Python] 리스트(배열) 요소를 삭제 방법: clear, del, remove, pop</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/git/">Git</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-windows-10/">[Windows 10] Git 최신 버전 설치 및 사용 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-macos/">맥에서 Git 설치하는 방법(인텔, 애플 실리콘 공통)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-git-version/">git version 사용법: Git 버전 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-build-git-specific-version-on-linux-ubuntu/">리눅스 Ubuntu에서 Git 특정 버전 직접 빌드하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-delete-git-build-from-source-code-in-ubuntu/">Ubuntu에서 소스 코드 빌드한 Git 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-ubuntu/">리눅스 Ubuntu에서 Git 최신 버전 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-clone-command/">git clone 사용법: 원격 Git 저장소 복제</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-git-repository-username-and-email/">Git 최초 설정: 사용자 이름과 이메일 설정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/useful-git-settings-when-using-github-multi-account/">GitHub 멀티 어카운트를 사용할 때 유용한 Git 설정</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-init-how-to-initialize-git-repository/">git init 사용법: Git 저장소를 생성(초기화)하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-link-github-remote-repository-and-local-git-repository/">GitHub 원격 저장소와 로컬 Git 저장소 연동하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-new-remote-git-repository-on-github/">GitHub에서 새로운 저장소 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-git-orphan-branch/">Git 저장소에서 빈 고아 브랜치를 만드는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-remove-git-repository-and-github-repository/">Git 저장소와 원격 GitHub 저장소를 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-a-different-username-and-email-for-each-git-repository/">Git 저장소 별로 사용자 이름과 이메일 다르게 설정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-cancle-git-add/">git add로 추가한 내용을 취소하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-revert-reverting-commit-in-git-repository/">git revert 사용법: 이미 커밋한 내용을 되돌리는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-clean-removing-untracked-files-in-git-repository/">git clean 사용법: Git 저장소에 포함되지 않은 파일 삭제</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-remove-local-git-repository-branch/">로컬 Git 저장소의 브랜치를 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-rename-local-github-branch/">GitHub 저장소의 브랜치 이름을 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-reset-and-git-revert-and-git-commit-amend/">Git 커밋 취소(reset), 커밋 되돌리기(revert), 덮어쓰기(amend)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-stash-usage-saving-changes-without-commit/">git stash 사용법: 커밋하지 않고 변경사항 저장하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/python-range/">Python range</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/python-range-function-usage/">[Python] range 함수 사용법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/tail/">tail</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/linux-tail-command-print-last-part-of-a-file/">[리눅스] tail 명령어: 파일의 마지막 부분 출력</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/homebrew/">Homebrew</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-homebrew-for-m1-apple-silicon/">애플 실리콘 M1 용 Homebrew 설치</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-package-manager-homebrew-on-mac/">맥에서 패키지 매니저 Homebrew 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ffmpeg/">FFmpeg</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-mac/">맥에서 ffmpeg 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-ffmpeg-on-windows-10/">[Windosw 10] FFmpeg 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/powershell/">PowerShell</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-where-exe-command/">Where.exe 사용법: 윈도우의 which 명령어</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-run-windows-terminal-and-powershell-in-administrator-mode/">윈도우 터미널 앱 관리자 모드로 실행하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-port-number-of-remote-desktop-on-windosw-10/">[Windows 10] 원격 데스크톱 포트(3389) 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-the-powershell-version-in-windows-10/">[Windows 10] PowerShell 버전을 확인하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ubuntu/">Ubuntu</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/ubuntu-release-cycle-and-codename-summary/">우분투(Ubuntu) 버전 코드명 총 정리</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-build-git-specific-version-on-linux-ubuntu/">리눅스 Ubuntu에서 Git 특정 버전 직접 빌드하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-delete-git-build-from-source-code-in-ubuntu/">Ubuntu에서 소스 코드 빌드한 Git 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-ubuntu/">리눅스 Ubuntu에서 Git 최신 버전 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/vagrant/">Vagrant</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/ubuntu-release-cycle/">우분투 릴리스 사이클과 Docker, Vagrant 지원 버전</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-and-uninstall-vagrant-on-mac/">맥에서 Vagrant 설치 및 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-vagrant-on-windows-10/">[Windows 10] Vagrant 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/kt/">KT</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-sign-up-for-kt-data-sharing/">KT 데이터 쉐어링 셀프 개통하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ipad/">iPad</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-sign-up-for-kt-data-sharing/">KT 데이터 쉐어링 셀프 개통하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/carrier/">carrier</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-whether-a-mobile-phone-carrier-is-registered/">휴대폰, 알뜰폰, 인터넷 개통여부 일괄 조회하는 방법(Msafer)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/mvno/">MVNO</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-whether-a-mobile-phone-carrier-is-registered/">휴대폰, 알뜰폰, 인터넷 개통여부 일괄 조회하는 방법(Msafer)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/security/">security</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-whether-a-mobile-phone-carrier-is-registered/">휴대폰, 알뜰폰, 인터넷 개통여부 일괄 조회하는 방법(Msafer)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-activate-google-account-2-factor-authentication-otp/">Google 계정에서 2단계 인증(OTP) 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/github-activate-two-factor-authentication/">GitHub 2단계 인증(OTP) 활성화하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-up-two-step-verification-otp-for-your-microsoft-account/">Microsoft 계정에 2단계 인증 OTP 설정하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/github/">GitHub</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-delete-github-account/">GitHub 탈퇴 및 계정 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-github-account/">GitHub 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-an-organization-for-collaboration-on-github/">GitHub에서 협업 용 단체(Organization) 만드는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/github-activate-two-factor-authentication/">GitHub 2단계 인증(OTP) 활성화하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/git-clone-command/">git clone 사용법: 원격 Git 저장소 복제</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/creating-ssh-key-for-github/">GitHub 접속 용 SSH 키 만드는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-git-repository-username-and-email/">Git 최초 설정: 사용자 이름과 이메일 설정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/useful-git-settings-when-using-github-multi-account/">GitHub 멀티 어카운트를 사용할 때 유용한 Git 설정</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-unsubscribe-to-the-pro-plan-in-your-github-personal-account/">GitHub 개인 계정의 Pro 플랜 구독 취소하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-the-github-account-used-by-the-development-environment/">개발 환경에서 사용중인 GitHub 계정 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-your-account-name-on-github/">GitHub의 계정 이름 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-subscribe-to-the-pro-plan-in-your-github-personal-account/">GitHub 개인 계정의 유료 Pro 플랜 구독하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-link-github-remote-repository-and-local-git-repository/">GitHub 원격 저장소와 로컬 Git 저장소 연동하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-github-outage-status/">GitHub 장애 상황을 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-new-remote-git-repository-on-github/">GitHub에서 새로운 저장소 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-disclose-whether-you-are-a-member-of-the-github-organization/">GitHub 단체(Organization) 멤버 여부 공개하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-remove-git-repository-and-github-repository/">Git 저장소와 원격 GitHub 저장소를 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-rename-local-github-branch/">GitHub 저장소의 브랜치 이름을 변경하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/android/">Android</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-turn-off-android-touch-and-keyboard-vibration/">안드로이드 터치 및 키보드 진동 끄는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/bmw/">BMW</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-my-bmw-remote-camera-3d-view/">My BMW 리모트 카메라 3D 뷰 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-link-digital-key-with-driver-profile-in-bmw/">BMW 디지털 키와 운전자 프로필 연동하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/android-auto/">Android Auto</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/idrive-7/">iDrive 7</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-bmw-idrive-7-android-auto/">BMW iDrive 7 안드로이드 오토 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-my-bmw-remote-camera-3d-view/">My BMW 리모트 카메라 3D 뷰 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-link-digital-key-with-driver-profile-in-bmw/">BMW 디지털 키와 운전자 프로필 연동하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/apple-carplay/">Apple Carplay</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/iphone/">iPhone</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-android-and-iphone-to-bmw-at-the-same-time/">BMW 아이폰과 안드로이드 동시에 연결하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/my-bmw/">My BMW</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-my-bmw-remote-camera-3d-view/">My BMW 리모트 카메라 3D 뷰 사용법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/network/">network</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/linux-nslookup-command-how-to-query-dns/">[리눅스] nslookup 명령어: DNS 쿼리하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-the-ip-address-of-a-private-network/">[Windows 10] 컴퓨터 IP 주소 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/dns/">DNS</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/linux-nslookup-command-how-to-query-dns/">[리눅스] nslookup 명령어: DNS 쿼리하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/wsl2/">WSL2</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">[Windows 10] WSL2 설치 및 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/a-complete-guide-to-how-to-install-docker-desktop-on-windows-10/">[Windows 10] Docker 설치 완벽 가이드(Home 포함)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ssh/">SSH</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-connect-to-linux-server-with-ssh-on-windows-10/">[Windows 10] SSH로 리눅스 서버에 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-port-number-of-openssh-server-on-windosw-10/">[Windows 10] SSH 서버 포트(22) 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/">[Windows 10] OpenSSH 서버 실행하고 SSH로 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-enable-and-access-an-ssh-server-to-your-synology-nas/">Synology NAS에 SSH 서버 활성화하고 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/creating-ssh-key-for-github/">GitHub 접속 용 SSH 키 만드는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/alpine/">Alpine</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/uname/">uname</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-your-linux-distribution-and-version/">리눅스 배포판 및 버전 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/">[리눅스] uname 명령어: 시스템 및 커널 정보 출력</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/usim/">USIM</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-enhance-sim-security-with-sim-pin-on-ihpnoe-and-ipad/">아이폰과 아이패드에서 SIM PIN으로 유심 보안 강화하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/apple-watch/">Apple Watch</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-turn-off-workout-start-notification-on-apple-watch/">애플워치의 운동 시작 알림 끄는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-take-a-screenshot-on-apple-watch/">애플워치에서 스크린샷 캡쳐하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/chocolatey/">Chocolatey</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-latest-version-of-git-on-windows-10/">[Windows 10] Git 최신 버전 설치 및 사용 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-package-manager-chocolatey-on-windows-10/">[Windows 10] 패키지 매니저 Chocolatey를 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/recycle-bin/">Recycle Bin</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-hide-the-recycle-bin-from-the-desktop-on-windows-10/">[Windows 10] 바탕화면에서 휴지통 제거하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/3-ways-to-find-the-disappeared-recycle-bin-on-windows-10/">[Windows 10] 바탕화면에서 제거한 휴지통을 찾는 3가지 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/virtual-machine/">Virtual Machine</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-and-uninstall-vagrant-on-mac/">맥에서 Vagrant 설치 및 삭제하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-vagrant-on-windows-10/">[Windows 10] Vagrant 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-virtualbox-on-windows-10/">[Windows 10] VirtualBox 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ifttt/">IFTTT</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-ifttt-account-and-subscribe-pro-plan/">IFTTT 계정 생성 방법 및 Pro 플랜</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/automation/">Automation</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-ifttt-account-and-subscribe-pro-plan/">IFTTT 계정 생성 방법 및 Pro 플랜</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/rss/">RSS</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/email/">Email</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/receive-emails-when-new-posts-are-posted-on-rss-using-ifttt/">IFTTT로 RSS에 새 글 올라오면 이메일 요약 받아보기</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/remote-desktop/">Remote Desktop</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-port-number-of-remote-desktop-on-windosw-10/">[Windows 10] 원격 데스크톱 포트(3389) 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-mac/">맥에서 Windows 10 원격 데스크톱 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-access-windows-10-remote-desktop-from-another-windows-machine/">윈도우에서 Windows 10 원격 데스크톱 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-home-with-rdp-wrapper/">Windows 10 Home에서 원격 데스크톱 사용하는 방법(RDP Wrapper)</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-remote-desktop-in-windows-10-pro/">Windows 10 Pro에서 원격 데스크톱 사용하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/shattered-pixel-dungeon/">Shattered Pixel Dungeon</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-download-and-run-shattered-pixel-dungeon-on-mac/">녹픽던 실행하는 방법(Windows 10, 맥)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/gitlab/">GitLab</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-gitlab-account/">GitLab 계정 생성하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-programmable-serach-engine/">Google Programmable Serach Engine</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-google-programmable-search-engine/">구글 커스텀 검색으로 사이트에 검색 기능 구현하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/search/">Search</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-google-programmable-search-engine/">구글 커스텀 검색으로 사이트에 검색 기능 구현하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/credit-card/">Credit Card</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-input-your-english-billing-address-when-paying-by-credit-card/">영문 주소 변환 방법: 배송 주소, 카드 청구 주소 등</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/english/">English</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-input-your-english-billing-address-when-paying-by-credit-card/">영문 주소 변환 방법: 배송 주소, 카드 청구 주소 등</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows-terminal/">Windows Terminal</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-windows-terminal-powershell-wsl2/">윈도우 터미널(Windows Terminal) 설치 및 사용법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-run-windows-terminal-and-powershell-in-administrator-mode/">윈도우 터미널 앱 관리자 모드로 실행하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/virtualbox/">VirtualBox</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-virtualbox-on-windows-10/">[Windows 10] VirtualBox 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/visual-studio-code/">Visual Studio Code</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-execute-visual-studio-code-from-terminal/">터미널에서 Visual Studio Code 실행하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-macos/">맥에서 Visual Studio Code 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-language-setting-in-visual-studio-code/">VS Code 언어를 한국어(한글)로 설정하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-visual-studio-code-on-windows-10/">[Windows 10] Visual Studio Code 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-analytics/">Google Analytics</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-avoid-double-counting-of-google-analytics-pageviews/">구글 애널리틱스 페이지뷰 중복 집계 방지하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-tag-manager/">Google Tag Manager</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-avoid-double-counting-of-google-analytics-pageviews/">구글 애널리틱스 페이지뷰 중복 집계 방지하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-chrome/">Google Chrome</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-chrome-on-windows-10/">[Windows 10] Google Chrome 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/xcode/">Xcode</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-command-line-tools-on-macos/">맥에서 명령어 라인 도구(Command Line Tools) 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/firefox/">Firefox</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-package-manager-chocolatey-on-windows-10/">[Windows 10] 패키지 매니저 Chocolatey를 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows/">Windows</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/_net-framework/">.NET Framework</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-dotnet-framework-version-in-windows/">윈도우에서 .NET Framework 버전을 확인하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ebook/">eBook</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/book/">Book</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/o'reilly/">O'Reilly</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/amazon-kindle/">Amazon Kindle</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/insight-book/">Insight Book</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ridibooks/">RIDIBOOKS</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/programming-ebook-sites-for-software-developers/">개발자를 위한 프로그래밍 전자책(eBook) 사이트 4선</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/adobe/">Adobe</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-adobe-creative-cloud/">Adobe Creative Cloud 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/adobe-creative-cloud/">Adobe Creative Cloud</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-adobe-creative-cloud/">Adobe Creative Cloud 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/2-step-verification/">2-step verification</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-docker-hub-account/">Docker Hub 계정 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-activate-google-account-2-factor-authentication-otp/">Google 계정에서 2단계 인증(OTP) 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/github-activate-two-factor-authentication/">GitHub 2단계 인증(OTP) 활성화하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-up-two-step-verification-otp-for-your-microsoft-account/">Microsoft 계정에 2단계 인증 OTP 설정하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/tailscale/">Tailscale</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/vpn/">VPN</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-ubuntu/">Ubuntu에 Tailscale VPN 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/synology-dsm/">Synology DSM</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-enable-and-access-an-ssh-server-to-your-synology-nas/">Synology NAS에 SSH 서버 활성화하고 접속하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-find-nas-on-your-home-network-with-synology-assistant/">Synology Assistant로 홈 네트워크의 NAS 찾는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-and-use-docker-on-your-synology-nas/">Synology NAS에 Docker 설치하고 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-upgrade-synology-from-dsm6-to-dsm7/">Synology DSM 6에서 DSM 7로 업그레이드하는 방법 </a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-update-synology-nas-operating-system-dsm/">Synology NAS 운영체제 DSM 업데이트 하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-tailscale-on-synology-dsm/">Synology DSM에 Tailscale 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/winget/">winget</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-winget-on-windows-10/">[Windows 10] winget(앱 설치 관리자)를 설치하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/microsoft-edge/">Microsoft Edge</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-1password-extension-in-microsoft-edge/">Microsoft Edge에서 1Password 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-microsoft-edge-on-apple-silicon-mac/">애플 실리콘(M1) 맥에서 Microsoft Edge 설치하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-or-add-microsoft-edge-default-search-engine/">Microsoft Edge의 기본 검색 엔진을 변경하거나 추가하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-vertical-tabs-in-microsoft-edge/">Microsoft Edge 수직 탭(세로 탭) 사용하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-block-ads-with-tracking-prevention-in-microsoft-edge/">Microsoft Edge에서 추적 방지로 광고 차단하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/1password/">1Password</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-1password-extension-in-microsoft-edge/">Microsoft Edge에서 1Password 사용하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/hyper-v/">Hyper-V</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-disable-hyper-v-in-windows-10/">[Windows 10] Hyper-V 비활성화하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/microsoft/">Microsoft</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-if-windows-11-is-supported-by-whynotwin11/">WhyNotWin11: Windows 11 지원 여부 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/windows-11-minimum-hardware-requirements-overview/">Windows 11 설치 가능한 하드웨어 최소 사양</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-microsoft-account/">Microsoft 통합 계정(Windows, Office 365 등) 생성하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-add-a-user-linked-microsoft-account/">[Windows 10] Microsoft 계정 연동 사용자 추가하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-up-two-step-verification-otp-for-your-microsoft-account/">Microsoft 계정에 2단계 인증 OTP 설정하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/windows-11/">Windows 11</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-check-if-windows-11-is-supported-by-whynotwin11/">WhyNotWin11: Windows 11 지원 여부 확인하는 방법</a></div> -->
+    <!-- <div class="article"><a href="/ko/article/windows-11-minimum-hardware-requirements-overview/">Windows 11 설치 가능한 하드웨어 최소 사양</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/mozilla-firefox/">Mozilla Firefox</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-change-default-web-browser-on-mac/">맥에서 OS 기본 웹 브라우저 변경하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/web-browser/">Web browser</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-use-vertical-tabs-in-microsoft-edge/">Microsoft Edge 수직 탭(세로 탭) 사용하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/youtube/">Youtube</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-the-language-of-your-google-account/">Google 계정의 언어 설정하는 방법(한국어)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-drive/">Google Drive</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-set-the-language-of-your-google-account/">Google 계정의 언어 설정하는 방법(한국어)</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/ruby/">Ruby</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-deal-with-build-failure-when-installing-ruby-ffi-gem-on-mac-big-sur/">맥 Big Sur에서 Ruby ffi 젬 설치할 때 빌드 실패 대처 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/google-docs/">Google Docs</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-create-a-new-google-spreadsheet-document/">새로운 구글 스프레드시트 문서 생성하는 방법</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/directory/">Directory</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/linux-basics-root-directory-and-direcotry-structure/">리눅스 루트와 디렉토리 구조</a></div> -->
+  <!-- </div> -->
+  <!-- <div class="index-list">    <h2 class="subject"><a href="/ko/subject/go/">Go</a></h2> -->
+    <!-- <div class="article"><a href="/ko/article/how-to-install-google-go-language-for-apple-silicon-m1/">애플 실리콘 M1 용 Go 설치(Darwin/ARM64v8, 1.16 이상)</a></div> -->
+  <!-- </div> -->
+
+  <!-- </div> -->
+  <!-- <footer> -->
+    <!-- <div class="info"> -->
+      <!-- <div class="coupang">PARK4139은 쿠팡 파트너스 활동에 따른 수수료를 제공받습니다.</div> -->
+    <!-- </div> -->
+  <!-- </footer> -->
+<!-- </article> -->
+<!-- <nav id="sidebar"> -->
+  <!-- <div class="not-sticky"> -->
+    <!-- <div id="side-search"> -->
+      <!-- <div class="title">Search</div> -->
+      <!-- <div class="search-box"> -->
+        <!-- <div class="gcse-searchbox-only"></div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div id="side-index"> -->
+      <!-- <div class="title"><a href="/ko/subject/index/">INDEX</a></div> -->
+      <!-- <ul class="subject-list-col-1"> -->
+      <!-- <li><a href="/ko/article/a-summary-of-windows-10-remote-desktop/">Windows 10 원격 데스크톱 설정 및 사용법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/summary-of-git-commands-and-subcommands/">git 명령어와 서브커맨드 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/summary-of-how-to-use-docker/">개발자를 위한 Docker 사용법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/summary-of-how-to-use-github-for-developers/">개발자를 위한 GitHub 사용법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/summary-of-linux-commands/">리눅스 주요 명령어 사용법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/summary-of-how-to-use-git-for-source-code-management/">소스 코드 관리를 위한 Git 사용법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/a-summary-of-apple-silicon-development-environment-setup/">애플 실리콘(M1) 개발 환경 구축 방법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/a-summary-of-docker-installation-methods-by-operating-system/">운영체제 별 Docker 설치 방법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/a-summary-of-git-installation-methods-by-operating-system/">운영체제 별 Git 설치 방법 총 정리</a></li> -->
+      <!-- <li><a href="/ko/article/a-summary-of-Windows-10-development-environment-setup/">윈도우 개발환경 구축 방법 총 정리</a></li> -->
+      <!-- </ul> -->
+    <!-- </div> -->
+  <!-- </div> -->
+  <!-- <div class="sticky"> -->
+    <!-- <div id="side-category"> -->
+      <!-- <div class="title"><a href="/ko">카테고리</a></div> -->
+      <!-- <ul class="subject-list-col-2"> -->
+      <!-- <li><a href="/ko/subject/apple-silicon/">Apple Silicon</a></li> -->
+      <!-- <li><a href="/ko/subject/docker/">Docker</a></li> -->
+      <!-- <li><a href="/ko/subject/git/">Git</a></li> -->
+      <!-- <li><a href="/ko/subject/github/">GitHub</a></li> -->
+      <!-- <li><a href="/ko/subject/google/">Google</a></li> -->
+      <!-- <li><a href="/ko/subject/linux/">Linux</a></li> -->
+      <!-- <li><a href="/ko/subject/microsoft/">Microsoft</a></li> -->
+      <!-- <li><a href="/ko/subject/microsoft-edge/">Microsoft Edge</a></li> -->
+      <!-- <li><a href="/ko/subject/powershell/">PowerShell</a></li> -->
+      <!-- <li><a href="/ko/subject/remote-desktop/">Remote Desktop</a></li> -->
+      <!-- <li><a href="/ko/subject/ssh/">SSH</a></li> -->
+      <!-- <li><a href="/ko/subject/synology-dsm/">Synology DSM</a></li> -->
+      <!-- <li><a href="/ko/subject/ubuntu/">Ubuntu</a></li> -->
+      <!-- <li><a href="/ko/subject/windows-10/">Windows 10</a></li> -->
+      <!-- <li><a href="/ko/subject/macos/">macOS</a></li> -->
+      <!-- <li><a href="/ko/subject/security/">security</a></li> -->
+      <!-- </ul> -->
+    <!-- </div> -->
+    <!-- <div id="side-promotion"> -->
+      <!-- <div class="title">개발은 M1 맥북 에어!</div> -->
+      <!-- <div class="promotion"> -->
+        <!-- <a href="https://coupa.ng/cbDKID"> -->
+          <!-- <img src="/ko/images/m1_macbook.png" /> -->
+        <!-- </a> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </nav> -->
+
+<!-- </div> -->
+
+<!-- <footer class="footer"> -->
+ <!-- <a href="https://www.PARK4139.com/ko/"> -->
+    <!-- ©PARK4139 -->
+  <!-- </a> -->
+  <!-- <a href="https://www.PARK4139.com/ko/feed.xml"> -->
+    <!-- RSS -->
+  <!-- </a> -->
+<!-- </footer> -->
+Global site tag (gtag.js) - Google Analytics
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXWR8QSSX5"></script> -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46785477-5"></script> -->
+<!-- <script> -->
+  <!-- window.dataLayer = window.dataLayer || []; -->
+  <!-- function gtag(){dataLayer.push(arguments);} -->
+  <!-- gtag('js', new Date()); -->
+  <!-- gtag('config', 'UA-46785477-5', { 'send_page_view': false }); -->
+  <!-- gtag('config', 'G-YXWR8QSSX5'); -->
+<!-- </script> -->
+<!-- <script> -->
+<!-- (function(window, document) { -->
+  <!-- function main() { -->
+    <!-- (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': -->
+    <!-- new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], -->
+    <!-- j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= -->
+    <!-- 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); -->
+    <!-- })(window,document,'script','dataLayer','GTM-NW9WDTW'); -->
+
+    <!-- var noscriptTag = document.getElementsByTagName('noscript')[0]; -->
+    <!-- var gtm = document.createElement('iframe'); -->
+    <!-- gtm.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NW9WDTW'; -->
+    <!-- gtm.style = 'display:none;visibility:hidden'; -->
+    <!-- gtm.hegiht = 0 -->
+    <!-- gtm.width = 0 -->
+    <!-- noscriptTag.appendChild(gtm, noscriptTag); -->
+
+    <!-- var googleAdsense = document.createElement('script'); -->
+    <!-- var script = document.getElementsByTagName('script')[0]; -->
+    <!-- googleAdsense.type = 'text/javascript'; -->
+    <!-- googleAdsense.async = true; -->
+    <!-- googleAdsense.dataset.adClient = 'ca-pub-3577578367271413'; -->
+    <!-- googleAdsense.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'; -->
+    <!-- script.parentNode.insertBefore(googleAdsense, script); -->
+
+    <!-- var googleAdsense = document.createElement('script'); -->
+    <!-- var script = document.getElementsByTagName('script')[0]; -->
+    <!-- googleAdsense.type = 'text/javascript'; -->
+    <!-- googleAdsense.async = true; -->
+    <!-- googleAdsense.src = 'https://cse.google.com/cse.js?cx=148fb9d70c8a80fe7'; -->
+    <!-- script.parentNode.insertBefore(googleAdsense, script); -->
+  <!-- } -->
+
+  <!-- var lazyLoaded = false; -->
+  <!-- function onLazyLoad() { -->
+    <!-- if (lazyLoaded === false) { -->
+      <!-- lazyLoaded = true; -->
+      <!-- window.removeEventListener('scroll', onLazyLoad); -->
+      <!-- window.removeEventListener('mousedown', onLazyLoad); -->
+      <!-- window.removeEventListener('mousemove', onLazyLoad); -->
+      <!-- window.removeEventListener('touchstart', onLazyLoad); -->
+      <!-- window.removeEventListener('keydown', onLazyLoad); -->
+      <!-- main(); -->
+    <!-- } -->
+  <!-- } -->
+  <!-- window.addEventListener('scroll', onLazyLoad); -->
+  <!-- window.addEventListener('mousedown', onLazyLoad); -->
+  <!-- window.removeEventListener('mousemove', onLazyLoad); -->
+  <!-- window.addEventListener('touchstart', onLazyLoad); -->
+  <!-- window.addEventListener('keydown', onLazyLoad); -->
+
+  <!-- // document.addEventListener("DOMContentLoaded", function(){ -->
+  <!-- // }); -->
+<!-- })(window, document); -->
+
+<!-- </script> -->
+<!-- </body> -->
+<!-- </html> -->
